@@ -10,7 +10,7 @@ public class XpSystem : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            //collision.collider.GetComponent<PlayerPassiveSkill>().AddPlayerXP(playerXP.point);
+            collision.collider.GetComponent<PlayerEXP>().AddPlayerXP(playerXP.point);
             Destroy(gameObject);
         }
     }

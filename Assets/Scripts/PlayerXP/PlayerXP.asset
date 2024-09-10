@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82458d75b9e2a384d9e3def251c2c0db, type: 3}
-  m_Name: PlayerXpData
+  m_Script: {fileID: 11500000, guid: 2a20c183de3bf944687c45f039787732, type: 3}
+  m_Name: PlayerXP
   m_EditorClassIdentifier: 
-  playerXP: 1
+  point: 1
