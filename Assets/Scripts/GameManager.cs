@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // 선택 스킬
+    public bool playerSkill0 { get; private set; }
+    public bool playerSkill1 { get; private set; }
+    public bool PlayerSkill2 { get; private set; }
+
 
     // 선택한 캐릭터
     // 레벨
