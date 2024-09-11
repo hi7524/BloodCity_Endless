@@ -1,7 +1,8 @@
+using UnityEditor;
 using UnityEngine;
 
 // 플레이어의 이동 구현
-public class PlayerController : Character
+public class PlayerController : MonoBehaviour
 {
     private PlayerCharacterState charState; // 캐릭터 스탯
 

@@ -26,7 +26,7 @@ public class PlayerEXP : MonoBehaviour
     {
         // 초기 설정
         circleCollider2D.radius = charState.magnetism; // 자성 범위 설정
-        magnetStrength = charState.magnetism * 0.5f;   // 자석 힘 설정 (빨아들이는 빠르기)
+        magnetStrength = charState.magnetism * 0.7f;   // 자석 힘 설정 (빨아들이는 빠르기)
 
         levelText.text = ("Lv." + GameManager.Instance.playerLevel.ToString()); // UI
     }

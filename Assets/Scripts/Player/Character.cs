@@ -4,21 +4,21 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     // 기본 스탯
-    public float maxHealth { get; protected set; } // 최대 체력
-    public float health { get; protected set; } // 체력
-    public float restorePerSec { get; protected set; }  // 초당 회복량
-    public float defense { get; protected set; }  // 방어력
-    public float speed { get; protected set; }  // 이동 속도 (%)
-    public float attackDamage { get; protected set; }  // 공격력 (%)
-    public float attackRange { get; protected set; }   // 공격 범위 (%)
-    public float abilityHaste { get; protected set; }    // 능력 가속 (쿨감, %)
-    public float magnetism { get; protected set; }      // 자성
-    public float curse { get; protected set; }         // 저주
+    protected float maxHealth; // 최대 체력
+    protected float health; // 체력
+    protected float restorePerSec;  // 초당 회복량
+    protected float defense;  // 방어력
+    protected float speed;  // 이동 속도 (%)
+    protected float attackDamage;  // 공격력 (%)
+    protected float attackRange;   // 공격 범위 (%)
+    protected float abilityHaste;    // 능력 가속 (쿨감, %)
+    protected float magnetism;      // 자성
+    protected float curse;       // 저주
 
     private float storeSec = 0; // 초당 회복 계산을 위한 변수
 
     // 캐릭터 스탯 설정
-    protected void SetStates(CharacterStates charState)
+    /*protected void SetStates(CharacterStates charState)
     {
         maxHealth = charState.maxHealth; // 최대 체력 설정
         health = maxHealth;              // 초기 체력 설정
@@ -37,7 +37,7 @@ public class Character : MonoBehaviour
         magnetism += charState.magnetism;                             // 자성 설정
 
         curse += charState.curse; // 저주 설정
-    }
+    }*/
 
     // 초당 체력 회복
     protected void RestoreHealthPerSec()
