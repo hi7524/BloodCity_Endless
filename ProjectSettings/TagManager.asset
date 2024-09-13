@@ -43,3 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Road Background
+    uniqueID: 3425733761
+    locked: 0
+  - name: SIdewalk
+    uniqueID: 2839280797
+    locked: 0
+  - name: Road Line
+    uniqueID: 990444443
+    locked: 0
+  - name: Water
+    uniqueID: 2561792783
+    locked: 0
+  - name: Flower Bed
+    uniqueID: 3654464675
+    locked: 0
+  - name: Fireplug
+    uniqueID: 4210006755
+    locked: 0
