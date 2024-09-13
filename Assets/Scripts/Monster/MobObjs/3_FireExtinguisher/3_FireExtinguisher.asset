@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab9ddf09e8dd2e46a4c406f02515d76, type: 3}
+  m_Name: 3_FireExtinguisher
+  m_EditorClassIdentifier: 
+  mobName: "\uC18C\uD654\uAE30"
+  dropExp: 0200000004000000
+  MoveType: 1
+  AttackType: 0
+  DeadType: 0
+  Attack_Range: 0
+  Attack_Speed: 0
+  Distance_Range: 0
+  minHealth: 0
+  maxHealth: 0
+  attackDamage: 0
+  speed: 0
