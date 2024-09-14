@@ -5,21 +5,21 @@ using TMPro;
 // 플레이어의 체력 관리
 public class PlayerHealth : MonoBehaviour
 {
-    public TMP_Text healthText;
     public Image healthBarImg;
+    public TMP_Text healthText;
 
     private float health;        // 플레이어 체력
     private float maxHealth;     // 최대 체력
     private float restorePerSec; // 초당 회복할 체력
     private float storeSec;      // 초 계산을 위한 변수
 
-    private PlayerCharacterState charState; // 캐릭터 스탯
+    private PlayerState charState; // 캐릭터 스탯
 
 
     private void Awake()
     {
         // 컴포넌트 초기화
-        charState = GetComponent<PlayerCharacterState>();
+        charState = GetComponent<PlayerState>();
     }
 
     private void Start()

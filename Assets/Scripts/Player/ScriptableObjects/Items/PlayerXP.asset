@@ -9,16 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9a89bb9e025d242bd6226cab54ea74, type: 3}
-  m_Name: TEST
+  m_Script: {fileID: 11500000, guid: 2a20c183de3bf944687c45f039787732, type: 3}
+  m_Name: PlayerXP
   m_EditorClassIdentifier: 
-  characterName: SpaceMarine
-  maxHealth: 120
-  restorePerSec: 1
-  defense: 5
-  speed: 100
-  attackDamage: 100
-  attackRange: 100
-  abilityHaste: 20
-  magnetism: 5
-  curse: 1
+  point: 3

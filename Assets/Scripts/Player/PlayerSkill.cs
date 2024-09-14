@@ -16,11 +16,11 @@ public class PlayerSkill : MonoBehaviour
     private float iceTime; // 얼음 수류탄 스킬 시간 계산 위한 변수
     private float iceCoolTime = 2; // 얼음 수류탄 쿨타임
 
-    private PlayerCharacterState characterState;
+    private PlayerState characterState;
 
     private void Awake()
     {
-        characterState = GetComponent<PlayerCharacterState>();
+        characterState = GetComponent<PlayerState>();
     }
 
     private void Start()

@@ -12,13 +12,13 @@ public class PlayerEXP : MonoBehaviour
     private float levelUpXp = 10; // 레벨업을 위해 필요한 경험치
     private float playerXP; // 플레이어 경험치
 
-    private PlayerCharacterState charState; // 캐릭터 스탯
+    private PlayerState charState; // 캐릭터 스탯
     private CircleCollider2D circleCollider2D;
 
     private void Awake()
     {
         // 컴포넌트 초기화
-        charState = GetComponent<PlayerCharacterState>();
+        charState = GetComponent<PlayerState>();
         circleCollider2D = GetComponent<CircleCollider2D>();
     }
 
@@ -48,7 +48,7 @@ public class PlayerEXP : MonoBehaviour
         // 경험치를 끌어 당김
         if (collision.CompareTag("XP"))
         {
-            collision.transform.position = Vector3.Lerp(collision.transform.position, this.transform.position, magnetStrength * Time.deltaTime);
+            //collision.transform.position = Vector3.Lerp(collision.transform.position, this.transform.position, magnetStrength * Time.deltaTime);
         }
     }
 

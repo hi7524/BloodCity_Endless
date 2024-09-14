@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 // 들고 다닐 UI Manager
 public class UIManager : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] GameObject pauseWindow; // 옵션 창
+    public GameObject pauseWindow; // 옵션 창
+
 
     private void Start()
     {
