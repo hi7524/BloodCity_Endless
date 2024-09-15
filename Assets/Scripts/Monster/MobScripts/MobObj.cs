@@ -4,9 +4,9 @@ using UnityEditor;
 using UnityEngine;
 
 
-public enum AI_MoveType { Normal, Distance }; // ÀÌµ¿ À¯Çü
+public enum AI_MoveType { Normal, Distance }; // ì´ë™ ìœ í˜•
 
-public enum AI_AttackType { Simple, Skill }; // °ø°İ À¯Çü
+public enum AI_AttackType { Simple, Skill }; // ê³µê²© ìœ í˜•
 
 
 [CreateAssetMenu(menuName = "Scriptable/MobObj")]
@@ -14,35 +14,35 @@ public class MobObj : ScriptableObject
 {
 
     [Header("Basic")]
-    public string mobName; // ¸ó½ºÅÍ ÀÌ¸§
-    public int[] dropExp = { 0, 0 }; //  µå¶ø °æÇèÄ¡
+    public string mobName; // ëª¬ìŠ¤í„° ì´ë¦„
+    public int[] dropExp = { 0, 0 }; //  ë“œë ê²½í—˜ì¹˜
 
 
     [Header("AI_Type")]
-    public AI_MoveType MoveType; // ÀÌµ¿ À¯Çü
-    public AI_AttackType AttackType; // °ø°İ À¯Çü
+    public AI_MoveType MoveType; // ì´ë™ ìœ í˜•
+    public AI_AttackType AttackType; // ê³µê²© ìœ í˜•
 
 
     [Header("AI_Propertys")]
-    public float Attack_Range; //  °ø°İ À¯Çü : °ø°İ »ç°Å¸®
-    public float Attack_Speed; //  °ø°İ À¯Çü : °ø°İ ¼Óµµ   
+    public float Attack_Range; //  ê³µê²© ìœ í˜• : ê³µê²© ì‚¬ê±°ë¦¬
+    public float Attack_Speed; //  ê³µê²© ìœ í˜• : ê³µê²© ì†ë„   
 
-    public float Distance_Range; // ÀÌµ¿ À¯Çü : °Å¸® Á¶Àı - Á¢±Ù °Å¸®
+    public float Distance_Range; // ì´ë™ ìœ í˜• : ê±°ë¦¬ ì¡°ì ˆ - ì ‘ê·¼ ê±°ë¦¬
 
 
 
     [Header("States")]
-    public float minHealth;   // ÃÖ¼Ò Ã¼·Â
-    public float maxHealth;   // ÃÖ´ë Ã¼·Â
+    public float minHealth;   // ìµœì†Œ ì²´ë ¥
+    public float maxHealth;   // ìµœëŒ€ ì²´ë ¥
 
-    public float attackDamage; // °ø°İ·Â
+    public float attackDamage; // ê³µê²©ë ¥
 
-    public float speed;  // ÀÌµ¿ ¼Óµµ
+    public float speed;  // ì´ë™ ì†ë„
 
 
     [Header("Abilitys")]
-    public IMobSkill MobAttack; // ¸ó½ºÅÍ ±âº» °ø°İ ½ºÅ©¸³Æ®
-    public IMobSkill MobSkill; // ¸ó½ºÅÍ ½ºÅ³ ½ºÅ©¸³Æ®
-    public IMobSkill MobDeadEvent; // ¸ó½ºÅÍ »ç¸Á ½Ã ÀÌº¥Æ® ½ºÅ©¸³Æ®
+    public IMobSkill MobAttack; // ëª¬ìŠ¤í„° ê¸°ë³¸ ê³µê²© ìŠ¤í¬ë¦½íŠ¸
+    public IMobSkill MobSkill; // ëª¬ìŠ¤í„° ìŠ¤í‚¬ ìŠ¤í¬ë¦½íŠ¸
+    public IMobSkill MobDeadEvent; // ëª¬ìŠ¤í„° ì‚¬ë§ ì‹œ ì´ë²¤íŠ¸ ìŠ¤í¬ë¦½íŠ¸
 
 }

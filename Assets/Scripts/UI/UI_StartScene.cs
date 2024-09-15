@@ -6,40 +6,36 @@ using UnityEngine.SceneManagement;
 // UI Manager
 public class UI_StartScene : MonoBehaviour
 {
-    [SerializeField] GameObject chaWindow; // Ä³¸¯ÅÍ Ã¢
-    [SerializeField] GameObject equipWindow; // Àåºñ Ã¢
+    [SerializeField] GameObject chaWindow; // ìºë¦­í„° ì°½
+    [SerializeField] GameObject equipWindow; // ì¥ë¹„ ì°½
 
     private void Start()
     {
-        // ÃÊ±â ¼³Á¤
+        // ì´ˆê¸° ì„¤ì •
         chaWindow.SetActive(false);
         equipWindow.SetActive(false);
     }
 
     public void GameStartBtn()
     {
-        //¹öÆ° È¿°úÀ½
+        //ë²„íŠ¼ íš¨ê³¼ìŒ
         chaWindow.SetActive(true);
         Time.timeScale = 0.0f;
     }
 
     public void EquipBtn()
     {
-        // ¹öÆ° È¿°úÀ½
+        // ë²„íŠ¼ íš¨ê³¼ìŒ
         equipWindow.SetActive(true);
         Time.timeScale = 0.0f;
     }
 
-    // ¿©±âºÎÅÍ Ä³¸¯ÅÍ ¼±ÅÃÃ¢ ¹öÆ°
-
-
-
-
-
+    // ìºë¦­í„° ì„ íƒì°½ ë²„íŠ¼
     public void GoStage()
     {
         SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1.0f;
     }
 
-    // ¿©±âºÎÅÍ ¿µ±¸ °­È­ Ã¢ ¹öÆ°
+    // ì—¬ê¸°ë¶€í„° ì˜êµ¬ ê°•í™” ì°½ ë²„íŠ¼
 }

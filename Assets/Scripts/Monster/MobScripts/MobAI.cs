@@ -8,25 +8,25 @@ using UnityEngine;
 public class MobAI : MonoBehaviour
 {
 
-    public MobObj obj; // ¸ó½ºÅÍ Á¤º¸ ÂüÁ¶¿ë ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®
+    public MobObj obj; // ëª¬ìŠ¤í„° ì •ë³´ ì°¸ì¡°ìš© ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸
 
     [HideInInspector]
-    public Rigidbody2D RB; // ¸ó½ºÅÍ ¸®Áöµå ¹Ùµğ 
+    public Rigidbody2D RB; // ëª¬ìŠ¤í„° ë¦¬ì§€ë“œ ë°”ë”” 
 
     [HideInInspector]
-    public GameObject Mob; // º»ÀÎ ¿ÀºêÁ§Æ®
+    public GameObject Mob; // ë³¸ì¸ ì˜¤ë¸Œì íŠ¸
 
     [HideInInspector]
-    public GameObject Target; // Å¸°Ù ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®
+    public GameObject Target; // íƒ€ê²Ÿ í”Œë ˆì´ì–´ ì˜¤ë¸Œì íŠ¸
 
     [HideInInspector]
-    public bool isUsingSkillState = false; // ½ºÅ³ »ç¿ë »óÅÂ ¿©ºÎ
+    public bool isUsingSkillState = false; // ìŠ¤í‚¬ ì‚¬ìš© ìƒíƒœ ì—¬ë¶€
 
     [HideInInspector]
-    public float dis = 0; // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®
+    public float dis = 0; // í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬
 
     [HideInInspector]
-    public Vector2 dir = Vector2.zero; // ÇÃ·¹ÀÌ¾îÀÇ ¹æÇâ 
+    public Vector2 dir = Vector2.zero; // í”Œë ˆì´ì–´ì˜ ë°©í–¥ 
 
 
     IMobSkill[] mobSkills;
@@ -36,11 +36,11 @@ public class MobAI : MonoBehaviour
 
         Mob = gameObject;
 
-        Target = GameObject.FindWithTag("Player"); // »ı¼º ½Ã Áï½Ã ¼³Á¤
+        Target = GameObject.FindWithTag("Player"); // ìƒì„± ì‹œ ì¦‰ì‹œ ì„¤ì •
 
         RB = GetComponent<Rigidbody2D>();
 
-        mobSkills = GetComponents<IMobSkill>(); // ½ºÅ³ ½ºÅ©¸³Æ® ÄÄÆ÷³ÍÆ®
+        mobSkills = GetComponents<IMobSkill>(); // ìŠ¤í‚¬ ìŠ¤í¬ë¦½íŠ¸ ì»´í¬ë„ŒíŠ¸
 
         foreach (IMobSkill skill in mobSkills)
         {
@@ -54,33 +54,33 @@ public class MobAI : MonoBehaviour
     private void Update()
     {
 
-        dis = Vector2.Distance(transform.position, Target.transform.position); // °Å¸® Â÷ °è»ê
-        dir = (Target.transform.position - transform.position).normalized; // ¹æÇâ °è»ê
+        dis = Vector2.Distance(transform.position, Target.transform.position); // ê±°ë¦¬ ì°¨ ê³„ì‚°
+        dir = (Target.transform.position - transform.position).normalized; // ë°©í–¥ ê³„ì‚°
 
         Routine_Move(dis, dir);
         Routine_Attack(dis, dir);
 
     }
 
-    private void Routine_Move(float dis, Vector2 dir) // ÀÌµ¿ ·çÆ¾
+    private void Routine_Move(float dis, Vector2 dir) // ì´ë™ ë£¨í‹´
     {
 
-        if(!isUsingSkillState) // ½ºÅ³ »ç¿ë »óÅÂ°¡ ¾Æ´Ñ °æ¿ì¿¡¸¸
+        if(!isUsingSkillState) // ìŠ¤í‚¬ ì‚¬ìš© ìƒíƒœê°€ ì•„ë‹Œ ê²½ìš°ì—ë§Œ
         {
 
-            if (obj.MoveType == AI_MoveType.Normal) // ´Ü¼ø ÃßÀû
+            if (obj.MoveType == AI_MoveType.Normal) // ë‹¨ìˆœ ì¶”ì 
             {
 
-                RB.MovePosition(RB.position + dir * obj.speed * Time.deltaTime); // ÇÃ·¹ÀÌ¾î ¹æÇâÀ¸·Î ÀÌµ¿
+                RB.MovePosition(RB.position + dir * obj.speed * Time.deltaTime); // í”Œë ˆì´ì–´ ë°©í–¥ìœ¼ë¡œ ì´ë™
 
             }
-            else if (obj.MoveType == AI_MoveType.Distance) // °Å¸® Á¶Àı
+            else if (obj.MoveType == AI_MoveType.Distance) // ê±°ë¦¬ ì¡°ì ˆ
             {
 
-                if (obj.Distance_Range < dis) // °Å¸® ¹üÀ§ ¹ÛÀÌ¶ó¸é Á¢±Ù
+                if (obj.Distance_Range < dis) // ê±°ë¦¬ ë²”ìœ„ ë°–ì´ë¼ë©´ ì ‘ê·¼
                 {
 
-                    RB.MovePosition(RB.position + dir * obj.speed * Time.deltaTime); // ÇÃ·¹ÀÌ¾î ¹æÇâÀ¸·Î ÀÌµ¿
+                    RB.MovePosition(RB.position + dir * obj.speed * Time.deltaTime); // í”Œë ˆì´ì–´ ë°©í–¥ìœ¼ë¡œ ì´ë™
 
                 }
 
@@ -90,7 +90,7 @@ public class MobAI : MonoBehaviour
 
     }
 
-    private void Routine_Attack(float dis, Vector2 dir) // °ø°İ ·çÆ¾
+    private void Routine_Attack(float dis, Vector2 dir) // ê³µê²© ë£¨í‹´
     {
 
         if (obj.AttackType == AI_AttackType.Simple)
@@ -102,7 +102,7 @@ public class MobAI : MonoBehaviour
         else if (obj.AttackType == AI_AttackType.Skill)
         {
 
-            if (obj.Attack_Range >= dis) // ¹üÀ§ ¾ÈÀÌ¶ó¸é ½ºÅ³ »ç¿ë
+            if (obj.Attack_Range >= dis) // ë²”ìœ„ ì•ˆì´ë¼ë©´ ìŠ¤í‚¬ ì‚¬ìš©
             {
 
                 Skill_Use();
@@ -113,7 +113,7 @@ public class MobAI : MonoBehaviour
 
     }
 
-    private void Skill_Use() // ½ºÅ³ »ç¿ë
+    private void Skill_Use() // ìŠ¤í‚¬ ì‚¬ìš©
     {
 
         foreach(IMobSkill skill in mobSkills)
@@ -135,9 +135,9 @@ public class MobAI : MonoBehaviour
 
     }
 
-    private IEnumerator Skill_Cooltime(IMobSkill skill) // ½ºÅ³ ÄğÅ¸ÀÓ
+    private IEnumerator Skill_Cooltime(IMobSkill skill) // ìŠ¤í‚¬ ì¿¨íƒ€ì„
     {
-        yield return new WaitForSeconds(skill.data.coolTime); // ´ë±â
+        yield return new WaitForSeconds(skill.data.coolTime); // ëŒ€ê¸°
 
         skill.coolDown = false;
         isUsingSkillState = false;
@@ -145,4 +145,3 @@ public class MobAI : MonoBehaviour
     }
 
 }
-

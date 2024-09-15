@@ -4,12 +4,13 @@ using System.IO;
 
 public class PlayerData
 {
-    // SettingResolution ½ºÅ©¸³Æ®
+    // SettingResolution ìŠ¤í¬ë¦½íŠ¸
     public bool fullScreen;
     public int fullValue = 0;
     public int dropdownValue = 0;
 
-    // ±× ¿Ü ½ºÅ©¸³Æ®¿¡¼­ ÀúÀåÇÒ °Å
+    // ChaSelect ìŠ¤í¬ë¦½íŠ¸
+    public int currentIndex = 0;
 }
 
 public class DataManager : MonoBehaviour
@@ -27,7 +28,7 @@ public class DataManager : MonoBehaviour
         {
             string FromJsonData = File.ReadAllText(filePath);
             player = JsonUtility.FromJson<PlayerData>(FromJsonData);
-            print("ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ ºÒ·¯¿À±â ¿Ï·á");
+            print("í”Œë ˆì´ì–´ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸° ì™„ë£Œ");
         }
     }
 
@@ -36,7 +37,7 @@ public class DataManager : MonoBehaviour
         string ToJsonData = JsonUtility.ToJson(player);
         string filePath = Application.persistentDataPath + "/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
-        print("ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ ÀúÀå ¿Ï·á");
+        print("í”Œë ˆì´ì–´ ë°ì´í„° ì €ì¥ ì™„ë£Œ");
     }
 
     public void Awake()
@@ -70,21 +71,31 @@ public class DataManager : MonoBehaviour
 
     public void Save()
     {
-        print("°ÔÀÓ µ¥ÀÌÅÍ ÀúÀå Áß...");
+        print("ê²Œì„ ë°ì´í„° ì €ì¥ ì¤‘...");
         
         player.fullScreen = SettingResolution.Instance.fullScreen;
         player.fullValue = SettingResolution.Instance.full.value;
         player.dropdownValue = SettingResolution.Instance.dropdown.value;
+        player.currentIndex = ChaSelect.Instance.currentIndex;
 
+        PrintData();
         SavePlayerData();
     }
 
-    // µ¥ÀÌÅÍ ÃÊ±âÈ­
+    // ì €ì¥ëœ íŒŒì¼ ëœ¯ì–´ë³´ê¸° ê·€ì°®ì•„ì„œ ì´ë²ˆì—ë„ ë§Œë“œëŠ” í”„ë¦°íŠ¸í•¨ìˆ˜
+    public void PrintData()
+    {
+        Debug.Log($"ì§€ê¸ˆê¹Œì§€ ì €ì¥ëœ ë°ì´í„°ëŠ” " +
+            $"\nì „ì²´í™”ë©´ ì—¬ë¶€ : {player.fullScreen} \nì „ì²´í™”ë©´ ë“œë¡­ë‹¤ìš´ ê°’ : {player.fullValue}" +
+            $"\ní•´ìƒë„ ë“œë¡­ë‹¤ìš´ ê°’ : {player.dropdownValue} \nìºë¦­í„° ì„ íƒ ê°’ : {player.currentIndex}");
+    }
+
+    // ë°ì´í„° ì´ˆê¸°í™”
     public void DataDelete()
     {
         if (File.Exists(Application.persistentDataPath + "/" + GameDataFileName))
         {
-            Debug.Log("ÀúÀåµÈ µ¥ÀÌÅÍ°¡ ÀÖ½À´Ï´Ù.");
+            Debug.Log("ì €ì¥ëœ ë°ì´í„°ê°€ ìˆìŠµë‹ˆë‹¤.");
             File.Delete(Application.persistentDataPath + "/" + GameDataFileName);
             File.Delete(Application.persistentDataPath + "/SoundData.json");
 
@@ -92,8 +103,8 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("ÀúÀå µÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+            Debug.Log("ì €ì¥ ëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
         }
-        Debug.Log("µ¥ÀÌÅÍ°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.");
+        Debug.Log("ë°ì´í„°ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
 }

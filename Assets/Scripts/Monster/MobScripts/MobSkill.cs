@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum MobSkillTag { Attack, Skill, Dead } // ¸ó½ºÅÍ ½ºÅ³ ÅÂ±×
+public enum MobSkillTag { Attack, Skill, Dead } // ëª¬ìŠ¤í„° ìŠ¤í‚¬ íƒœê·¸
 
 public interface IMobSkill
 {
 
-    public MobSkillData data { get; set; } // ½ºÅ³ µ¥ÀÌÅÍ
+    public MobSkillData data { get; set; } // ìŠ¤í‚¬ ë°ì´í„°
 
-    public bool coolDown { get; set; } // ÇöÀç ÄğÅ¸ÀÓ
+    public bool coolDown { get; set; } // í˜„ì¬ ì¿¨íƒ€ì„
 
-    public void Init() // ÃÊ±âÈ­
+    public void Init() // ì´ˆê¸°í™”
     {
         data = data ?? new MobSkillData();
     }
 
-    public void Use(MobAI AI); // ½ºÅ³ »ç¿ë
+    public void Use(MobAI AI); // ìŠ¤í‚¬ ì‚¬ìš©
 
 }

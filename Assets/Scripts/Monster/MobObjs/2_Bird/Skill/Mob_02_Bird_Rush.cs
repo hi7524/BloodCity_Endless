@@ -5,10 +5,10 @@ using UnityEngine;
 public class Mob_02_Bird_Rush : MonoBehaviour, IMobSkill
 {
 
-    public MobSkillData skillData; // ½ºÅ³ µ¥ÀÌÅÍ
-    public MobSkillData data { get; set; } // ½ºÅ³ µ¥ÀÌÅÍ
+    public MobSkillData skillData; // ìŠ¤í‚¬ ë°ì´í„°
+    public MobSkillData data { get; set; } // ìŠ¤í‚¬ ë°ì´í„°
 
-    public bool coolDown { get; set; } // ÇöÀç ÄğÅ¸ÀÓ
+    public bool coolDown { get; set; } // í˜„ì¬ ì¿¨íƒ€ì„
 
     public void Init()
     {

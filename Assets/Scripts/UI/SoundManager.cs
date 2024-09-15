@@ -5,7 +5,7 @@ using System.IO;
 
 public class SoundManager : MonoBehaviour
 {
-    // ½Ì±ÛÅæ
+    // ì‹±ê¸€í†¤
     public static SoundManager Instance { get; private set; }
 
     private void Awake()
@@ -42,7 +42,7 @@ public class SoundManager : MonoBehaviour
         UpdateAudioMixer();
     }
 
-    // 0ÀÌ ¹è°æÀ½ 1ÀÌ È¿°úÀ½
+    // 0ì´ ë°°ê²½ìŒ 1ì´ íš¨ê³¼ìŒ
     public void SetVolume(int type)
     {
         if (type == 0)
@@ -58,14 +58,14 @@ public class SoundManager : MonoBehaviour
         SaveSoundData();
     }
     
-    // »ç¿îµå ¼³Á¤
+    // ì‚¬ìš´ë“œ ì„¤ì •
     private void UpdateAudioMixer()
     {
         audioMixer.SetFloat("BGM", Mathf.Log10(sound.BGM) * 20);
         audioMixer.SetFloat("SFX", Mathf.Log10(sound.SFX) * 20);
     }
 
-    // »ç¿îµå ºÒ·¯¿À±â
+    // ì‚¬ìš´ë“œ ë¶ˆëŸ¬ì˜¤ê¸°
     public void LoadSoundData()
     {
         string filePath = Application.persistentDataPath + "/" + GameDataFileName;
@@ -74,16 +74,16 @@ public class SoundManager : MonoBehaviour
         {
             string FromJsonData = File.ReadAllText(filePath);
             sound = JsonUtility.FromJson<SoundData>(FromJsonData);
-            Debug.Log("»ç¿îµå µ¥ÀÌÅÍ ºÒ·¯¿À±â ¿Ï·á");
+            Debug.Log("ì‚¬ìš´ë“œ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸° ì™„ë£Œ");
         }
     }
 
-    // »ç¿îµå ÀúÀåÇÏ±â
+    // ì‚¬ìš´ë“œ ì €ì¥í•˜ê¸°
     public void SaveSoundData()
     {
         string ToJsonData = JsonUtility.ToJson(sound);
         string filePath = Application.persistentDataPath + "/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
-        Debug.Log("»ç¿îµå µ¥ÀÌÅÍ ÀúÀå ¿Ï·á");
+        Debug.Log("ì‚¬ìš´ë“œ ë°ì´í„° ì €ì¥ ì™„ë£Œ");
     }
 }

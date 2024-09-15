@@ -8,12 +8,12 @@ using UnityEngine;
 public class MobSkillData : ScriptableObject
 {
 
-    public string skillName; // ½ºÅ³ ÀÌ¸§
+    public string skillName; // ìŠ¤í‚¬ ì´ë¦„
 
-    public MobSkillTag skillTag; // ½ºÅ³ ÅÂ±×
+    public MobSkillTag skillTag; // ìŠ¤í‚¬ íƒœê·¸
 
-    public float coolTime; // ½ºÅ³ ÄğÅ¸ÀÓ
+    public float coolTime; // ìŠ¤í‚¬ ì¿¨íƒ€ì„
 
-    public GameObject SkillEffect; // ½ºÅ³ ÀÌÆåÆ®
+    public GameObject SkillEffect; // ìŠ¤í‚¬ ì´í™íŠ¸
 
 }

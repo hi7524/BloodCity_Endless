@@ -6,15 +6,15 @@ public class SettingResolution : MonoBehaviour
 {
     public static SettingResolution Instance { get; private set; }
 
-    public TMP_Dropdown dropdown;                                       // ÇØ»óµµ µå·Ó´Ù¿î
-    public TMP_Dropdown full;                                           // ÀüÃ¼È­¸é µå·Ó´Ù¿î
+    public TMP_Dropdown dropdown;                                       // í•´ìƒë„ ë“œë¡­ë‹¤ìš´
+    public TMP_Dropdown full;                                           // ì „ì²´í™”ë©´ ë“œë¡­ë‹¤ìš´
 
     [Header("Real")]
-    public int RealWidth;                                               // µğ¹ÙÀÌ½ºÀÇ ¿ø·¡ ³Êºñ
-    public int RealHeight;                                              // µğ¹ÙÀÌ½ºÀÇ ¿ø·¡ ³ôÀÌ
+    public int RealWidth;                                               // ë””ë°”ì´ìŠ¤ì˜ ì›ë˜ ë„ˆë¹„
+    public int RealHeight;                                              // ë””ë°”ì´ìŠ¤ì˜ ì›ë˜ ë†’ì´
 
     [Header("Alter")]
-    public bool fullScreen;                                             // ÀüÃ¼ È­¸éÀÌ´Ï?
+    public bool fullScreen;                                             // ì „ì²´ í™”ë©´ì´ë‹ˆ?
 
     public void Awake()
     {
@@ -30,19 +30,19 @@ public class SettingResolution : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/PlayerData.json"))
         {
-            Debug.Log("ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ°¡ Á¸ÀçÇÕ´Ï´Ù.");
+            Debug.Log("í”Œë ˆì´ì–´ ë°ì´í„°ê°€ ì¡´ì¬í•©ë‹ˆë‹¤.");
             fullScreen = DataManager.Instance.player.fullScreen;
             dropdown.value = DataManager.Instance.player.dropdownValue;
             full.value = DataManager.Instance.player.fullValue;
 
-            Debug.Log("ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ µ¿±âÈ­ ¿Ï·á.");
+            Debug.Log("í”Œë ˆì´ì–´ ë°ì´í„° ë™ê¸°í™” ì™„ë£Œ.");
 
             SetResolution();
             FullScreen();
         }
         else
         {
-            Debug.Log("ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ°¡ ¾ÆÁ÷ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+            Debug.Log("í”Œë ˆì´ì–´ ë°ì´í„°ê°€ ì•„ì§ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
             Screen.SetResolution(1920, 1080, false);
         }
     }
@@ -52,7 +52,7 @@ public class SettingResolution : MonoBehaviour
         Resolution currentResolution = Screen.currentResolution;
         RealWidth = currentResolution.width;
         RealHeight = currentResolution.height;
-        Debug.Log($"ÀÌ µğ¹ÙÀÌ½ºÀÇ ÀüÃ¼ È­¸éÀº {RealWidth} X {RealHeight}");
+        Debug.Log($"ì´ ë””ë°”ì´ìŠ¤ì˜ ì „ì²´ í™”ë©´ì€ {RealWidth} X {RealHeight}");
     }
 
     public void SetResolution()
@@ -77,20 +77,20 @@ public class SettingResolution : MonoBehaviour
     private void SetScreenResolution(int width, int height)
     {
         Screen.SetResolution(width, height, false);
-        Debug.Log($"Áö±İ È­¸éÀº {Screen.width} X {Screen.height}");
+        Debug.Log($"ì§€ê¸ˆ í™”ë©´ì€ {Screen.width} X {Screen.height}");
     }
 
     public void FullScreen()
     {
         switch (full.value)
         {
-            case 0: // Ã¢¸ğµå
+            case 0: // ì°½ëª¨ë“œ
                 SetWindowedMode();
                 break;
-            case 1: // ÀüÃ¼È­¸é Ã¢¸ğµå
+            case 1: // ì „ì²´í™”ë©´ ì°½ëª¨ë“œ
                 SetFullWindow();
                 break;
-            case 2: // ÀüÃ¼È­¸é
+            case 2: // ì „ì²´í™”ë©´
                 SetFullScreenMode();
                 break;
         }
@@ -103,24 +103,24 @@ public class SettingResolution : MonoBehaviour
     private void SetWindowedMode()
     {
         SetResolution();
-        dropdown.interactable = true;                                   // ÇØ»óµµ Á¶Àı °¡´ÉÇÏ°Ô
+        dropdown.interactable = true;                                   // í•´ìƒë„ ì¡°ì ˆ ê°€ëŠ¥í•˜ê²Œ
         fullScreen = false;
-        Debug.Log("Ã¢¸ğµå ÀÔ´Ï´Ù");
+        Debug.Log("ì°½ëª¨ë“œ ì…ë‹ˆë‹¤");
     }
 
     private void SetFullWindow()
     {
         Screen.SetResolution(RealWidth, RealHeight - 30, false);
-        dropdown.interactable = false;                                  // ÇØ»óµµ Á¶Àı ºÒ°¡´É
+        dropdown.interactable = false;                                  // í•´ìƒë„ ì¡°ì ˆ ë¶ˆê°€ëŠ¥
         fullScreen = false;
-        Debug.Log("ÀüÃ¼È­¸é Ã¢¸ğµå ÀÔ´Ï´Ù");
+        Debug.Log("ì „ì²´í™”ë©´ ì°½ëª¨ë“œ ì…ë‹ˆë‹¤");
     }
 
     private void SetFullScreenMode()
     {
         Screen.SetResolution(RealWidth, RealHeight, true);
-        dropdown.interactable = false;                                  // ÇØ»óµµ Á¶Àı ºÒ°¡´É
+        dropdown.interactable = false;                                  // í•´ìƒë„ ì¡°ì ˆ ë¶ˆê°€ëŠ¥
         fullScreen = true;
-        Debug.Log("ÀüÃ¼È­¸é ÀÔ´Ï´Ù");
+        Debug.Log("ì „ì²´í™”ë©´ ì…ë‹ˆë‹¤");
     }
 }

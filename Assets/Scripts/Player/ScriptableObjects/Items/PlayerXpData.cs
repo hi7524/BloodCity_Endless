@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// ÇÃ·¹ÀÌ¾î °æÇèÄ¡
+// í”Œë ˆì´ì–´ ê²½í—˜ì¹˜
 [CreateAssetMenu(menuName = "Scriptable/PlayerXP", fileName = "PlayerXP")]
 public class PlayerXpData : ScriptableObject
 {

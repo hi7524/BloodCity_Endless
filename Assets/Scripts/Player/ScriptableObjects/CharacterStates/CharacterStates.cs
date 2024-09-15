@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Ä³¸¯ÅÍ ½ºÅÈ
+// ìºë¦­í„° ìŠ¤íƒ¯
 [CreateAssetMenu(menuName = "Scriptable/CharacterState", fileName = "CharacterState")]
 public class CharacterStates : ScriptableObject
 {
@@ -8,17 +8,17 @@ public class CharacterStates : ScriptableObject
     public string characterName;
 
     [Header("States")]
-    public float maxHealth = 0;    // ÃÖ´ë Ã¼·Â (+)
+    public float maxHealth = 0;    // ìµœëŒ€ ì²´ë ¥ (+)
 
-    public float restorePerSec = 0;  // ÃÊ´ç È¸º¹·® (+)
-    public float defense = 1;        // ¹æ¾î·Â (+)
-    public float speed = 100;        // ÀÌµ¿ ¼Óµµ (%)
+    public float restorePerSec = 0;  // ì´ˆë‹¹ íšŒë³µëŸ‰ (+)
+    public float defense = 1;        // ë°©ì–´ë ¥ (+)
+    public float speed = 100;        // ì´ë™ ì†ë„ (%)
 
-    public float attackDamage = 100; // °ø°İ·Â (%)
-    public float attackRange = 100;  // °ø°İ ¹üÀ§ (%)
+    public float attackDamage = 100; // ê³µê²©ë ¥ (%)
+    public float attackRange = 100;  // ê³µê²© ë²”ìœ„ (%)
 
-    public float abilityHaste = 100;   // ´É·Â °¡¼Ó (Äğ°¨, %)
-    public float magnetism = 0;      // ÀÚ¼º (+)
+    public float abilityHaste = 100;   // ëŠ¥ë ¥ ê°€ì† (ì¿¨ê°, %)
+    public float magnetism = 0;      // ìì„± (+)
 
-    public float curse = 0;          // ÀúÁÖ (+)
+    public float curse = 0;          // ì €ì£¼ (+)
 }

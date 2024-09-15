@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class AudioClipManager : MonoBehaviour
 {
-    // Àç»ıµÇ´Â ¿Àµğ¿À Å¬¸³À» ¸ğµÎ °ü¸®ÇÏ´Â ½ºÅ©¸³Æ®
+    // ì¬ìƒë˜ëŠ” ì˜¤ë””ì˜¤ í´ë¦½ì„ ëª¨ë‘ ê´€ë¦¬í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 
     public static AudioClipManager Instance { get; private set; }
 
     // BGM
 
-    // ½ÃÀÛÈ­¸é
-    // ¾À¸¶´Ù ¹è°æÀ» ´Ù¸£°Ô °¥°ÇÁö Ã¢¸¶´Ù ´Ù¸£°Ô °¥°ÇÁö
+    // ì‹œì‘í™”ë©´
+    // ì”¬ë§ˆë‹¤ ë°°ê²½ì„ ë‹¤ë¥´ê²Œ ê°ˆê±´ì§€ ì°½ë§ˆë‹¤ ë‹¤ë¥´ê²Œ ê°ˆê±´ì§€
 
 
     // SFX
 
     // UI
-    // ¹öÆ° Å¬¸¯½Ã
+    // ë²„íŠ¼ í´ë¦­ì‹œ
     public AudioClip audioClick;
     
     // Player
@@ -39,7 +39,7 @@ public class AudioClipManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // ¿Àµğ¿À ¼Ò½º ºÒ·¯¿À±â
+        // ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ë¶ˆëŸ¬ì˜¤ê¸°
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -53,7 +53,7 @@ public class AudioClipManager : MonoBehaviour
         }
         audioSource.Play();
 
-        // µ¿½Ã¿¡ ÇÃ·¹ÀÌ µÇ¾î¾ß ÇÑ´Ù¸é ¿Àµğ¿À ¼Ò½º¸¦ ¿©·¯°³ ºÒ·¯¼­ À§Ä¡¸¦ ´Ù¸£°Ô ÇÏ´Â°Ô ÁÁÀ»µí
-        // BGMSource / SFXSource µµ UI ¼Ò¸® ¸ó½ºÅÍ ¼Ò¸® ÇÃ·¹ÀÌ¾î ¼Ò¸® ´Ù µé·Á¾ß ÇÏ´Ï±î 
+        // ë™ì‹œì— í”Œë ˆì´ ë˜ì–´ì•¼ í•œë‹¤ë©´ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ë¥¼ ì—¬ëŸ¬ê°œ ë¶ˆëŸ¬ì„œ ìœ„ì¹˜ë¥¼ ë‹¤ë¥´ê²Œ í•˜ëŠ”ê²Œ ì¢‹ì„ë“¯
+        // BGMSource / SFXSource ë„ UI ì†Œë¦¬ ëª¬ìŠ¤í„° ì†Œë¦¬ í”Œë ˆì´ì–´ ì†Œë¦¬ ë‹¤ ë“¤ë ¤ì•¼ í•˜ë‹ˆê¹Œ 
     }
 }

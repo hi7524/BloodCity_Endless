@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// ÇÃ·¹ÀÌ¾î ÄÚÀÎ
+// í”Œë ˆì´ì–´ ì½”ì¸
 [CreateAssetMenu(menuName = "Scriptable/PlayerCoin", fileName = "PlayerCoin")]
 public class PlayerCoinData : ScriptableObject
 {
