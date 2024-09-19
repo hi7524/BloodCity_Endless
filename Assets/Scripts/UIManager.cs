@@ -8,14 +8,44 @@ using TMPro;
 // 들고 다닐 UI Manager
 public class UIManager : MonoBehaviour
 {
+    // 싱글톤 선언
+    private static UIManager instance;
+    public static UIManager Instance
+    {
+        get
+        {
+            if (null == instance)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
+
     [Header("UI")]
     public GameObject pauseWindow; // 옵션 창
+    public GameObject levelUpWindow; // 레벨업시 나타날 스텟 업그레이드 창
 
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     private void Start()
     {
         // 초기 설정
         pauseWindow.SetActive(false); // 옵션 창 비활성화
+        levelUpWindow.SetActive(false); // 레벨업 창 비활성화
     }
 
     private void Update()
@@ -27,6 +57,23 @@ public class UIManager : MonoBehaviour
             Pause();
         }
     }
+
+    public void ToggleWindow(GameObject window)
+    {
+        // 창 끄기
+        if (window.activeSelf)
+        {
+            window.SetActive(false);
+            Time.timeScale = 1.0f;
+        }
+        // 창 켜기
+        else
+        {
+            window.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
+    }
+
 
     // 게임 일시정지
     public void Pause()

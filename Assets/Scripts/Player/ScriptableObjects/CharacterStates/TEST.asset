@@ -20,5 +20,6 @@ MonoBehaviour:
   attackDamage: 100
   attackRange: 100
   abilityHaste: 20
-  magnetism: 1
+  magnetism: 5
   curse: 1
+  characterDetail: 

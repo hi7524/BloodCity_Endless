@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -86,11 +87,17 @@ public class PlayerState : MonoBehaviour
     // 플레이어 레벨 업
     private void LevelUp()
     {
+        // UI
         xpBar.fillAmount = 0;  // 경험치 바 초기화
         playerXP -= levelUpXp; // 경험치 초기화
+
+        // 데이터
         ExpToNextLevel();      // 다음 레벨업까지 획득해야 할 경험치 계산
         GameManager.Instance.PlayerLevelUp(); // 레벨 업
         levelText.text = ("Lv." + GameManager.Instance.playerLevel.ToString()); // UI
+        UIManager.Instance.ToggleWindow(UIManager.Instance.levelUpWindow); // 레벨업 창 활성화
+
+
     }
 
     // 레벨업을 위한 획득 경험치 계산

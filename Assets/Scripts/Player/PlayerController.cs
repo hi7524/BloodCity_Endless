@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         // 컴포넌트 초기화
         charState = GetComponent<PlayerState>();
-    }
+    }   
 
     private void Start()
     {

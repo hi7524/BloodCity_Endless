@@ -21,4 +21,7 @@ public class CharacterStates : ScriptableObject
     public float magnetism = 0;      // 자성 (+)
 
     public float curse = 0;          // 저주 (+)
+
+    [Header("Detail")]
+    [TextArea(2, 8)] public string characterDetail;
 }
