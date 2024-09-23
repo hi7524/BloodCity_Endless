@@ -16,11 +16,10 @@ MonoBehaviour:
   dropExp: 0100000003000000
   MoveType: 0
   AttackType: 0
-  DeadType: 0
   Attack_Range: 0
-  Attack_Speed: 0
   Distance_Range: 0
   minHealth: 15
   maxHealth: 15
   attackDamage: 10
   speed: 100
+  upgradeCoinDropPer: 5

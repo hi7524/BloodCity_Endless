@@ -31,6 +31,9 @@ public class MobAI : MonoBehaviour
 
     IMobSkill[] mobSkills;
 
+    int bodyAttackTime = 1; // 몸빵 피해 대기 시간
+    bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
+
     private void Start()
     {
 
@@ -71,7 +74,7 @@ public class MobAI : MonoBehaviour
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
 
-                RB.MovePosition(RB.position + dir * obj.speed * Time.deltaTime); // 플레이어 방향으로 이동
+                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.15f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
             }
             else if (obj.MoveType == AI_MoveType.Distance) // 거리 조절
@@ -80,7 +83,7 @@ public class MobAI : MonoBehaviour
                 if (obj.Distance_Range < dis) // 거리 범위 밖이라면 접근
                 {
 
-                    RB.MovePosition(RB.position + dir * obj.speed * Time.deltaTime); // 플레이어 방향으로 이동
+                    RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.15f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                 }
 
@@ -123,11 +126,10 @@ public class MobAI : MonoBehaviour
             {
 
                 skill.coolDown = true;
-                isUsingSkillState = true;
-
-                StartCoroutine(Skill_Cooltime(skill));
 
                 skill.Use(this);
+
+                StartCoroutine(Skill_Cooltime(skill));
 
             }
 
@@ -137,11 +139,34 @@ public class MobAI : MonoBehaviour
 
     private IEnumerator Skill_Cooltime(IMobSkill skill) // 스킬 쿨타임
     {
+
         yield return new WaitForSeconds(skill.data.coolTime); // 대기
 
         skill.coolDown = false;
-        isUsingSkillState = false;
 
+    }
+
+    private void OnTriggerStay2D(Collider2D coll)
+    {
+
+        GameObject Player = coll.gameObject;
+
+        if (Player.tag == "Player" && isCanbodyAttack) // 몸빵 피해 적용
+        {
+
+            isCanbodyAttack = false;
+
+            Player.GetComponent<PlayerHealth>().Damaged(obj.attackDamage); // 피해 적용
+
+            Invoke("BodyAttack_Delay", bodyAttackTime);
+
+        }
+
+    }
+
+    void BodyAttack_Delay() // 몸빵 피해 대기
+    {
+        isCanbodyAttack = true;
     }
 
 }

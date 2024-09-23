@@ -18,5 +18,4 @@ public interface IMobSkill
     }
 
     public void Use(MobAI AI); // 스킬 사용
-
 }

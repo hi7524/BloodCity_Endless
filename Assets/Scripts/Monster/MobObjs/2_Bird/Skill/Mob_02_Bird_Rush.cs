@@ -20,7 +20,22 @@ public class Mob_02_Bird_Rush : MonoBehaviour, IMobSkill
     public void Use(MobAI AI)
     {
 
-        AI.Mob.GetComponent<Rigidbody2D>().AddForce(AI.dir * 10, ForceMode2D.Impulse);
+        AI.isUsingSkillState = true;
+
+        AI.Mob.GetComponent<Rigidbody2D>().AddForce(AI.dir * 12.5f, ForceMode2D.Impulse);
+
+        StartCoroutine(MoveDelay(AI));
+
+    }
+
+    private IEnumerator MoveDelay(MobAI AI)
+    {
+
+        yield return new WaitForSeconds(1.25f);
+
+        AI.isUsingSkillState = false;
+
+        AI.Mob.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
     }
 

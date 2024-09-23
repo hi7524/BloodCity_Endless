@@ -9,17 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fab9ddf09e8dd2e46a4c406f02515d76, type: 3}
-  m_Name: 2_Bird
+  m_Script: {fileID: 11500000, guid: 9443e5ade0e34a44096fa51db9c519df, type: 3}
+  m_Name: Mob_03_FE_Fire
   m_EditorClassIdentifier: 
-  mobName: "\uC0C8"
-  dropExp: 0100000002000000
-  MoveType: 1
-  AttackType: 1
-  Attack_Range: 5
-  Distance_Range: 5
-  minHealth: 1
-  maxHealth: 5
-  attackDamage: 7
-  speed: 150
-  upgradeCoinDropPer: 5
+  skillName: "\uD654\uC5FC\uAD6C"
+  skillTag: 0
+  coolTime: 0.75
+  SkillEffect: {fileID: 1603417326835060389, guid: c829d897e041a7d4a90f148cde636461, type: 3}

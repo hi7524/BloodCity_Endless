@@ -25,8 +25,6 @@ public class MobObj : ScriptableObject
 
     [Header("AI_Propertys")]
     public float Attack_Range; //  공격 유형 : 공격 사거리
-    public float Attack_Speed; //  공격 유형 : 공격 속도   
-
     public float Distance_Range; // 이동 유형 : 거리 조절 - 접근 거리
 
 
@@ -35,9 +33,11 @@ public class MobObj : ScriptableObject
     public float minHealth;   // 최소 체력
     public float maxHealth;   // 최대 체력
 
-    public float attackDamage; // 공격력
+    public int attackDamage; // 공격력
 
     public float speed;  // 이동 속도
+
+    public float upgradeCoinDropPer; // 강화 코인 드랍 확률
 
 
     [Header("Abilitys")]

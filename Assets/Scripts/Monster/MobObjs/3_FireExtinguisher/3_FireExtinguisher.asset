@@ -15,12 +15,11 @@ MonoBehaviour:
   mobName: "\uC18C\uD654\uAE30"
   dropExp: 0200000004000000
   MoveType: 1
-  AttackType: 0
-  DeadType: 0
-  Attack_Range: 0
-  Attack_Speed: 0
-  Distance_Range: 0
-  minHealth: 0
-  maxHealth: 0
-  attackDamage: 0
-  speed: 0
+  AttackType: 1
+  Attack_Range: 130
+  Distance_Range: 22.5
+  minHealth: 15
+  maxHealth: 15
+  attackDamage: 7
+  speed: 60
+  upgradeCoinDropPer: 5
