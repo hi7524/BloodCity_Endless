@@ -37,5 +37,10 @@ public class UI_StartScene : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    // 여기부터 영구 강화 창 버튼
+    // 영구강화창 끄기
+    public void Return()
+    {
+        equipWindow.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
 }
