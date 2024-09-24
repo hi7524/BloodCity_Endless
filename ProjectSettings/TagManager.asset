@@ -62,3 +62,9 @@ TagManager:
   - name: Fireplug
     uniqueID: 4210006755
     locked: 0
+  - name: Building
+    uniqueID: 3433562497
+    locked: 0
+  - name: Building 1
+    uniqueID: 1149672549
+    locked: 0
