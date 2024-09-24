@@ -41,7 +41,10 @@ public class HeavyMachineGunBullet : MonoBehaviour
         // 적과 충돌시
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("적 공격"); // 적 데미지
+            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage);
+            print("몬스터에게 가한 피해 : " + attackDamage);
+            collision.GetComponent<MobAI>().Damaged(attackDamage);
+
             Destroy(gameObject); // 오브젝트 파괴
         }
     }

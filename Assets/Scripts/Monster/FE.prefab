@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7592757309411713985}
   - component: {fileID: 4600571979025045512}
   - component: {fileID: 5422669034424579014}
+  - component: {fileID: 7033397714495769303}
   m_Layer: 0
   m_Name: FE
   m_TagString: Enemy
@@ -169,6 +170,8 @@ MonoBehaviour:
   isUsingSkillState: 0
   dis: 0
   dir: {x: 0, y: 0}
+  hp: 0
+  isDead: 0
 --- !u!114 &5422669034424579014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +185,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 82e9e20a2094b9f42be537674a828a78, type: 2}
+--- !u!114 &7033397714495769303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093028249316305240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea09434ecaba7c64793cc92bda8d5f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 50d05afebdf19034b82182a08d13eadc, type: 2}

@@ -28,11 +28,16 @@ public class MobAI : MonoBehaviour
     [HideInInspector]
     public Vector2 dir = Vector2.zero; // 플레이어의 방향 
 
+    public int hp; // 현재 체력
 
-    IMobSkill[] mobSkills;
+    [HideInInspector]
+    public bool isDead; // 사망 여부
 
-    int bodyAttackTime = 1; // 몸빵 피해 대기 시간
-    bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
+
+    protected IMobSkill[] mobSkills; // 스킬 배열
+
+    private int bodyAttackTime = 1; // 몸빵 피해 대기 시간
+    private bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
 
     private void Start()
     {
@@ -52,16 +57,21 @@ public class MobAI : MonoBehaviour
 
         }
 
+        hp = Random.Range(obj.minHealth, obj.maxHealth + 1);
+
     }
 
     private void Update()
     {
 
-        dis = Vector2.Distance(transform.position, Target.transform.position); // 거리 차 계산
-        dir = (Target.transform.position - transform.position).normalized; // 방향 계산
+        if (!isDead) // 사망 상태가 아닌 경우에만
+        {
+            dis = Vector2.Distance(transform.position, Target.transform.position); // 거리 차 계산
+            dir = (Target.transform.position - transform.position).normalized; // 방향 계산
 
-        Routine_Move(dis, dir);
-        Routine_Attack(dis, dir);
+            Routine_Move(dis, dir);
+            Routine_Attack(dis, dir);
+        }
 
     }
 
@@ -74,16 +84,16 @@ public class MobAI : MonoBehaviour
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
 
-                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.15f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
             }
             else if (obj.MoveType == AI_MoveType.Distance) // 거리 조절
             {
 
-                if (obj.Distance_Range < dis) // 거리 범위 밖이라면 접근
+                if ((obj.Distance_Range / 20) < dis) // 거리 범위 밖이라면 접근
                 {
 
-                    RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.15f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                    RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                 }
 
@@ -146,6 +156,54 @@ public class MobAI : MonoBehaviour
 
     }
 
+
+    public void Damaged(int damage) // 몬스터 피해
+    {
+        
+        if(!isDead) // 사망 상태가 아닌 경우 
+        {
+
+            hp -= damage; // 피해
+            print(obj.mobName + " 현재 체력 : " + hp);
+            if(hp <= 0) // 사망할 경우
+            {
+
+                bool isDying = true;
+                isDead = true;
+
+                foreach (IMobSkill skill in mobSkills) // 사망 시 스킬 검사
+                {
+
+                    if (skill.data && skill.data.skillTag == MobSkillTag.Dead)
+                    {
+
+                        isDying = false;
+
+                        skill.Use(this);
+
+                    }
+
+                }
+
+                if (isDying) // 별도의 예외 없이 사망하는 경우 사망 처리
+                {
+
+                    Dead();
+
+                }
+
+            }
+
+        }
+
+    }
+
+    public void Dead() // 몬스터 사망 처리
+    {
+        Destroy(gameObject);
+        print(obj.mobName + " 사망");
+    }
+
     private void OnTriggerStay2D(Collider2D coll)
     {
 
@@ -157,7 +215,7 @@ public class MobAI : MonoBehaviour
             isCanbodyAttack = false;
 
             Player.GetComponent<PlayerHealth>().Damaged(obj.attackDamage); // 피해 적용
-
+            
             Invoke("BodyAttack_Delay", bodyAttackTime);
 
         }

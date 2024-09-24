@@ -17,7 +17,7 @@ MonoBehaviour:
   MoveType: 1
   AttackType: 1
   Attack_Range: 130
-  Distance_Range: 22.5
+  Distance_Range: 25
   minHealth: 15
   maxHealth: 15
   attackDamage: 7

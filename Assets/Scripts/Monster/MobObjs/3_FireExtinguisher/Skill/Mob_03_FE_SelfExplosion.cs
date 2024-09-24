@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mob_03_FE_Fire : MonoBehaviour, IMobSkill
+public class Mob_03_FE_SelfExplosion : MonoBehaviour, IMobSkill
 {
 
     public MobSkillData skillData; // 스킬 데이터
@@ -22,20 +22,17 @@ public class Mob_03_FE_Fire : MonoBehaviour, IMobSkill
 
         GameObject Fire = Instantiate(data.SkillEffect, AI.gameObject.transform.position, AI.gameObject.transform.rotation);
 
-        Fire.GetComponent<Rigidbody2D>().AddForce(AI.dir * 0.6f, ForceMode2D.Impulse);
-        Fire.GetComponent<MobSkillDamage>().init_damage = AI.obj.attackDamage;
-
-        StartCoroutine(Remove(Fire));
+        StartCoroutine(Remove(Fire, AI));
 
     }
 
-    private IEnumerator Remove(GameObject obj)
+    private IEnumerator Remove(GameObject obj, MobAI AI)
     {
 
-        yield return new WaitForSeconds(16.5f);
+        yield return new WaitForSeconds(1.5f);
 
-        if (obj != null)
-            Destroy(obj);
+        Destroy(obj);
+        AI.Dead();
 
     }
 

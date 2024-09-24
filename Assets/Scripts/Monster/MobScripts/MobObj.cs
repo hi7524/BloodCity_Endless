@@ -30,8 +30,8 @@ public class MobObj : ScriptableObject
 
 
     [Header("States")]
-    public float minHealth;   // 최소 체력
-    public float maxHealth;   // 최대 체력
+    public int minHealth;   // 최소 체력
+    public int maxHealth;   // 최대 체력
 
     public int attackDamage; // 공격력
 
