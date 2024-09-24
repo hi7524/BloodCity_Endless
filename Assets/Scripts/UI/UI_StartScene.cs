@@ -11,9 +11,7 @@ public class UI_StartScene : MonoBehaviour
 
     private void Start()
     {
-        // 초기 설정
-        chaWindow.SetActive(false);
-        equipWindow.SetActive(false);
+        Return();
     }
 
     public void GameStartBtn()
@@ -37,9 +35,10 @@ public class UI_StartScene : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    // 영구강화창 끄기
+    // 초기 상태
     public void Return()
     {
+        chaWindow.SetActive(false);
         equipWindow.SetActive(false);
         Time.timeScale = 1.0f;
     }

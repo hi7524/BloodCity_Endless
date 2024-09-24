@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d701fece639fd948929c074b3304f6a, type: 3}
+  m_Name: SpaceMarin
+  m_EditorClassIdentifier: 
+  characterName: "\uC6B0\uC8FC \uD574\uBCD1"
+  maxHealthBonus: 20
+  restorePerSecBonus: 0
+  defenseBonus: 0
+  speedBonus: 0
+  attackDamageBonus: 0
+  attackRangeBonus: 0
+  abilityHasteBonus: 20
+  magnetismBonus: 0
+  curseBonus: 0

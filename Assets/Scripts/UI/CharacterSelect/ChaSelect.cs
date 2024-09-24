@@ -2,88 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-[System.Serializable]
-public class CharacterStats
-{
-    // 기본 스탯
-    public float maxHealth = 100;    // 최대 체력
-    public float restorePerSec = 0; // 초당 회복량
-    public float defense = 1;        // 방어력
-    public float speed = 100;        // 이동 속도 (%)
-
-    public float attackDamage = 100; // 공격력 (%)
-    public float attackRange = 100;   // 공격 범위 (%)
-
-    public float abilityHaste = 0;  // 능력 가속 (쿨감, %)
-    public float magnetism = 0;       // 자성
-    public float curse = 0;           // 저주
-
-    // 보너스 스탯
-    public float maxHealthBonus = 0;    // 최대 체력 보너스
-    public float restorePerSecBonus = 0; // 초당 회복량 보너스
-    public float defenseBonus = 0;        // 방어력 보너스
-    public float speedBonus = 0;          // 이동 속도 보너스
-
-    public float attackDamageBonus = 0; // 공격력 보너스
-    public float attackRangeBonus = 0;   // 공격 범위 보너스
-
-    public float abilityHasteBonus = 0;  // 능력 가속 보너스
-    public float magnetismBonus = 0;      // 자성 보너스
-    public float curseBonus = 0;          // 저주 보너스
-
-    // 스탯을 문자열로 반환하는 메서드
-    public string GetStats()
-    {
-        string stats = $"최대 체력: {maxHealth}";
-        if (maxHealthBonus != 0)
-        {
-            stats += $" <color=red>+ {maxHealthBonus}</color>";
-        }
-        stats += $"\n초당 회복량: {restorePerSec}";
-        if (restorePerSecBonus != 0)
-        {
-            stats += $" <color=red>+ {restorePerSecBonus}</color>";
-        }
-        stats += $"\n방어력: {defense}";
-        if (defenseBonus != 0)
-        {
-            stats += $" <color=red>+ {defenseBonus}</color>";
-        }
-        stats += $"\n이동 속도: {speed}";
-        if (speedBonus != 0)
-        {
-            stats += $" <color=red>+ {speedBonus}</color>";
-        }
-        stats += $"\n\n공격력: {attackDamage}";
-        if (attackDamageBonus != 0)
-        {
-            stats += $" <color=red>+ {attackDamageBonus}</color>";
-        }
-        stats += $"\n공격 범위: {attackRange}";
-        if (attackRangeBonus != 0)
-        {
-            stats += $" <color=red>+ {attackRangeBonus}</color>";
-        }
-        stats += $"\n\n능력 가속: {abilityHaste}";
-        if (abilityHasteBonus != 0)
-        {
-            stats += $" <color=red>+ {abilityHasteBonus}</color>";
-        }
-        stats += $"\n자성: {magnetism}";
-        if (magnetismBonus != 0)
-        {
-            stats += $" <color=red>+ {magnetismBonus}</color>";
-        }
-        stats += $"\n저주: {curse}";
-        if (curseBonus != 0)
-        {
-            stats += $" <color=red>+ {curseBonus}</color>";
-        }
-
-        return stats;
-    }
-}
-
 public class ChaSelect : MonoBehaviour
 {
     public static ChaSelect Instance { get; private set; }
@@ -98,7 +16,7 @@ public class ChaSelect : MonoBehaviour
 
     [Header("Stat")]
     public TMP_Text chaState; // 캐릭터 스탯 텍스트
-    public CharacterStats[] characterStats = new CharacterStats[5]; // 캐릭터 스탯 배열
+    public ChaStateManager[] characterStates = new ChaStateManager[5]; // 캐릭터 스탯 배열
 
     [Header("Etc.")]
     public Button LBtn;
@@ -130,21 +48,23 @@ public class ChaSelect : MonoBehaviour
         characterDescriptions[3] = "4번\r\n대충설명";
         characterDescriptions[4] = "5번\r\n대충설명";
 
-        check.gameObject.SetActive(false);
+        check.SetActive(false);
     }
 
-    // 영구 강화로 강화된 스탯에 캐릭터 보정치를 따로 더하려고 이렇게 만들었는데 나중에 바꾸던지 합시다...
     public void PermanentStat()
     {
         // 강화된 기본 스탯들
+        characterStates[currentIndex].InitializeStats();
+        chaState.text = characterStates[currentIndex].GetStats();
 
         // 도전할 스테이지 번호
 
-        currentIndex = DataManager.Instance.player.currentIndex;
+        //currentIndex = DataManager.Instance.player.currentIndex;
     }
 
     private void OnEnable()
     {
+        PermanentStat(); // 영구강화 데이터 받아오기
         AssignImagesToSlots(); // 슬롯에 이미지를 할당
         UpdateCharacterDisplay(); // 초기 디스플레이 업데이트
     }
@@ -208,7 +128,8 @@ public class ChaSelect : MonoBehaviour
         if (chaDescription != null && chaState != null)
         {
             chaDescription.text = characterDescriptions[currentIndex];
-            chaState.text = characterStats[currentIndex].GetStats(); // 스탯 업데이트
+            characterStates[currentIndex].InitializeStats();
+            chaState.text = characterStates[currentIndex].GetStats(); // 스탯 업데이트
         }
         else
         {
@@ -222,15 +143,15 @@ public class ChaSelect : MonoBehaviour
         DataManager.Instance.Save();
 
         // 캐릭터 인덱스에 따라 스트링값 넣고 스테이지 값 나중에 불러오고
-        check_text.text = $"현재 선택한 캐릭터 : 우주해병" +
-            $"\r\n도전 할 스테이지 : 스테이지 1" +
+        check_text.text = $"현재 선택한 캐릭터 : ㅇㅇㅇㅇ" +
+            $"\r\n이번 필드 : ㅁㅁㅁㅁ?" +
             "\r\n\r\n게임을 시작하시겠습니까?"; ;
 
-        check.gameObject.SetActive(true);
+        check.SetActive(true);
     }
 
     public void CheckOff()
     {
-        check.gameObject.SetActive(false);
+        check.SetActive(false);
     }
 }

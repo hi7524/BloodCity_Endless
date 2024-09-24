@@ -12,8 +12,8 @@ public class PlayerData
     // ChaSelect 스크립트
     public int currentIndex = 0;
 
-    //UpgradeManager 스크립트
-    public PlayerStats playerStats;
+    // GameManager에서 저장할 공간
+    public int coins;
 }
 
 public class DataManager : MonoBehaviour
@@ -80,7 +80,6 @@ public class DataManager : MonoBehaviour
         player.fullValue = SettingResolution.Instance.full.value;
         player.dropdownValue = SettingResolution.Instance.dropdown.value;
         player.currentIndex = ChaSelect.Instance.currentIndex;
-        player.playerStats = UpgradeManager.Instance.playerStats;
 
         PrintData();
         SavePlayerData();
@@ -91,8 +90,7 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log($"지금까지 저장된 데이터는 " +
             $"\n전체화면 여부 : {player.fullScreen} \n전체화면 드롭다운 값 : {player.fullValue}" +
-            $"\n해상도 드롭다운 값 : {player.dropdownValue} \n캐릭터 선택 값 : {player.currentIndex}" +
-            $"\n플레이어 스탯 : {player.playerStats}");
+            $"\n해상도 드롭다운 값 : {player.dropdownValue} \n캐릭터 선택 값 : {player.currentIndex}");
     }
 
     // 데이터 초기화
