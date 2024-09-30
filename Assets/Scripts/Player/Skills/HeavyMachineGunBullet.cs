@@ -1,6 +1,7 @@
 using UnityEngine;
 
 // 헤비머신건 스킬의 총알
+// 가장 가까운 적 감지 및 추적
 public class HeavyMachineGunBullet : MonoBehaviour
 {
     public LayerMask detectLayer; // 추적 대상 레이어 선택
@@ -49,14 +50,11 @@ public class HeavyMachineGunBullet : MonoBehaviour
         if (closetTarget == null)
         {
 
-            Debug.Log("적 djqtdma");
             Destroy(gameObject);
         }
         // 추적 대상이 존재할 경우
         else
         {
-
-            Debug.Log("적 있음");
             transform.position = Vector2.MoveTowards(transform.position, closetTarget.transform.position, moveSpeed * Time.deltaTime);
         }
     }
