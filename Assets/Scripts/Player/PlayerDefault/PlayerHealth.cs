@@ -66,7 +66,6 @@ public class PlayerHealth : MonoBehaviour
 
             if (storeSec > 1f)
             {
-                Debug.Log("체력 회복");
                 health += restorePerSec; // 초당 회복력 만큼 회복
                 storeSec = 0;
             }
@@ -78,7 +77,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health > 0)
         {
-            Debug.Log("방어력 적용 (데미지 - 방어력)");
             health = health - (damage - charState.defense);
         }
     }

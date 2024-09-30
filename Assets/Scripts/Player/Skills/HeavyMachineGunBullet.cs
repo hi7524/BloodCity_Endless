@@ -3,24 +3,33 @@ using UnityEngine;
 // 헤비머신건 스킬의 총알
 public class HeavyMachineGunBullet : MonoBehaviour
 {
-    public LayerMask detectLayer; // 레이어 선택
+    public LayerMask detectLayer; // 추적 대상 레이어 선택
+
     private float moveSpeed = 10; // 총알 속도
     private float detectRange = 5f; // 적 감지 범위
+    private Transform closetTarget; // 추적 대상
 
+
+    private void Start()
+    {
+        DetectEnemy();
+    }
 
     private void Update()
     {
-        DetectEnemy(); // 적 감지
+        FollowEnemy(); // 적 감지
     }
 
-    // 적 감지 및 추적
+    // 적 감지 및 추적할 적 설정
     private void DetectEnemy()
     {
-        // 가장 가까운 몬스터 감지
+        Debug.Log("적 감지");
+        // 적 감지
         MobAI[] enemies = FindObjectsOfType<MobAI>();
-        Transform closetTarget = null;
+        closetTarget = null;
         float maxDis = Mathf.Infinity;
 
+        // 가장 가까운 적 설정
         foreach (MobAI mob in enemies)
         {
             float targetDis = Vector2.Distance(transform.position, mob.transform.position);
@@ -31,9 +40,25 @@ public class HeavyMachineGunBullet : MonoBehaviour
                 maxDis = targetDis;
             }
         }
+    }
 
-        // 총알 발사(추적)
-        transform.position = Vector2.MoveTowards(transform.position, closetTarget.transform.position, moveSpeed * Time.deltaTime);
+    // 적 추적
+    private void FollowEnemy()
+    {
+        // 추적 대상이 존재하지 않을 경우
+        if (closetTarget == null)
+        {
+
+            Debug.Log("적 djqtdma");
+            Destroy(gameObject);
+        }
+        // 추적 대상이 존재할 경우
+        else
+        {
+
+            Debug.Log("적 있음");
+            transform.position = Vector2.MoveTowards(transform.position, closetTarget.transform.position, moveSpeed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +67,6 @@ public class HeavyMachineGunBullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage);
-            print("몬스터에게 가한 피해 : " + attackDamage);
             collision.GetComponent<MobAI>().Damaged(attackDamage);
 
             Destroy(gameObject); // 오브젝트 파괴

@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
+// 플레이어 스킬 인터페이스
 public interface IPlayerSkill
 {
-    public bool isSkillActive { get; set; }
+    public Vector3 playerVec { get; set; }
     public void UseSkill();
 }

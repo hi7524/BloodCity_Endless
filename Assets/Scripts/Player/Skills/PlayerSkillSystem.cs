@@ -1,27 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerSkillSystem : MonoBehaviour
 {
-    public GameObject[] skills;
+    //public GameObject[] skills;
+    public List<GameObject> skills;
 
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 스킬 활성화 (임시)
-        for (int i = 0; i < skills.Length; i++)
+        // 플레이어 장착 무기 추가
+        IPlayerSkill skill = collision.GetComponent<IPlayerSkill>();
+
+        if (skill != null)
         {
-           
-            skills[i].GetComponent<IPlayerSkill>().isSkillActive = true;
+            skills.Add(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
-
     }
-
     private void Update()
     {
-        for (int i = 0; i < skills.Length; i++)
+        for (int i = 0; i < skills.Count; i++)
         {
+            Debug.Log("스킬사용함");
             skills[i].GetComponent<IPlayerSkill>().UseSkill();
+            skills[i].GetComponent<IPlayerSkill>().playerVec = transform.position;
+           
         }
     }
 
