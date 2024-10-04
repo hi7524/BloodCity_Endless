@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab9ddf09e8dd2e46a4c406f02515d76, type: 3}
+  m_Name: 5_LoudSpeaker
+  m_EditorClassIdentifier: 
+  mobName: "\uD655\uC131\uAE30"
+  dropExp: 0500000005000000
+  MoveType: 1
+  AttackType: 1
+  Attack_Range: 0
+  Distance_Range: -150
+  minHealth: 25
+  maxHealth: 25
+  attackDamage: 5
+  speed: 50
+  upgradeCoinDropPer: 5

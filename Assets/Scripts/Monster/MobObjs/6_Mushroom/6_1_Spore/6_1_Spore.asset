@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab9ddf09e8dd2e46a4c406f02515d76, type: 3}
+  m_Name: 6_1_Spore
+  m_EditorClassIdentifier: 
+  mobName: "\uD3EC\uC790"
+  dropExp: 0000000001000000
+  MoveType: 0
+  AttackType: 0
+  Attack_Range: 0
+  Distance_Range: 0
+  minHealth: 10
+  maxHealth: 10
+  attackDamage: 5
+  speed: 110
+  upgradeCoinDropPer: 0

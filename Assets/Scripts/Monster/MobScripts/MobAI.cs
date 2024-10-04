@@ -28,6 +28,7 @@ public class MobAI : MonoBehaviour
     [HideInInspector]
     public Vector2 dir = Vector2.zero; // 플레이어의 방향 
 
+    [HideInInspector]
     public int hp; // 현재 체력
 
     [HideInInspector]
@@ -90,10 +91,26 @@ public class MobAI : MonoBehaviour
             else if (obj.MoveType == AI_MoveType.Distance) // 거리 조절
             {
 
-                if ((obj.Distance_Range / 20) < dis) // 거리 범위 밖이라면 접근
+                if(obj.Distance_Range > 0) // 추적
                 {
 
-                    RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                    if ((obj.Distance_Range / 20) < dis) // 거리 범위 밖이라면 접근
+                    {
+
+                        RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+
+                    }
+
+                }
+                else // 도주
+                {
+
+                    if ((obj.Distance_Range * -1 / 20) >= dis) // 거리 범위 안이라면 도주
+                    {
+
+                        RB.MovePosition(RB.position - dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+
+                    }
 
                 }
 
@@ -115,7 +132,7 @@ public class MobAI : MonoBehaviour
         else if (obj.AttackType == AI_AttackType.Skill)
         {
 
-            if (obj.Attack_Range >= dis) // 범위 안이라면 스킬 사용
+            if (obj.Attack_Range >= dis || obj.Attack_Range == 0) // 범위 안이라면 스킬 사용
             {
 
                 Skill_Use();
@@ -178,7 +195,7 @@ public class MobAI : MonoBehaviour
                     {
 
                         isDying = false;
-
+                        
                         skill.Use(this);
 
                     }
