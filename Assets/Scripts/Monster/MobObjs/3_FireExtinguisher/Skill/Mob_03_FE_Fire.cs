@@ -12,9 +12,7 @@ public class Mob_03_FE_Fire : MonoBehaviour, IMobSkill
 
     public void Init()
     {
-
         data = skillData;
-
     }
 
     public void Use(MobAI AI)
@@ -25,17 +23,7 @@ public class Mob_03_FE_Fire : MonoBehaviour, IMobSkill
         Fire.GetComponent<Rigidbody2D>().AddForce(AI.dir * 0.6f, ForceMode2D.Impulse);
         Fire.GetComponent<MobSkillDamage>().init_damage = AI.obj.attackDamage;
 
-        StartCoroutine(Remove(Fire));
-
-    }
-
-    private IEnumerator Remove(GameObject obj)
-    {
-
-        yield return new WaitForSeconds(16.5f);
-
-        if (obj != null)
-            Destroy(obj);
+        Fire.GetComponent<Mob_03_FE_Fire_Destroy>().StartRemove();
 
     }
 

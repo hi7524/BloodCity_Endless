@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1603417326835060389
+--- !u!1 &7093028249316305240
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2002478420168212579}
-  - component: {fileID: 7893235749269820394}
-  - component: {fileID: 5294093781293393770}
-  - component: {fileID: 1723912088699972349}
-  - component: {fileID: -2061152849422319789}
-  - component: {fileID: 744842507614054703}
+  - component: {fileID: 791662268639260422}
+  - component: {fileID: 673482825740737685}
+  - component: {fileID: 2336603434616285669}
+  - component: {fileID: 7592757309411713985}
+  - component: {fileID: 4600571979025045512}
   m_Layer: 0
-  m_Name: Mob_03_FE_Fire
-  m_TagString: Enemy_Skill
+  m_Name: Speaker
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2002478420168212579
+--- !u!4 &791662268639260422
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603417326835060389}
+  m_GameObject: {fileID: 7093028249316305240}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.89, y: 3.17, z: 0}
+  m_LocalPosition: {x: 0.74265593, y: 0.6157461, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7893235749269820394
+--- !u!212 &673482825740737685
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603417326835060389}
+  m_GameObject: {fileID: 7093028249316305240}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.27044016, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,14 +87,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5294093781293393770
+--- !u!50 &2336603434616285669
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603417326835060389}
+  m_GameObject: {fileID: 7093028249316305240}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -115,13 +114,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &1723912088699972349
+--- !u!58 &7592757309411713985
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603417326835060389}
+  m_GameObject: {fileID: 7093028249316305240}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -150,29 +149,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-2061152849422319789
+--- !u!114 &4600571979025045512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603417326835060389}
+  m_GameObject: {fileID: 7093028249316305240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2d0f12c98be289459bff85dc812e947, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d23d218453e2f34b999e7578991053e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &744842507614054703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603417326835060389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bf8e07fdf00f9e4abdc73b960697d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  init_damage: 0
-  isDelete: 1
+  obj: {fileID: 11400000, guid: 57a4efbe2b1f16943a5bcc47e3049275, type: 2}
+  RB: {fileID: 0}
+  Mob: {fileID: 0}
+  Target: {fileID: 0}
+  isUsingSkillState: 0
+  dis: 0
+  dir: {x: 0, y: 0}
+  hp: 0
+  isDead: 0
