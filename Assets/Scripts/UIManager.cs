@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-// 들고 다닐 UI Manager
+// UI Manager
 public class UIManager : MonoBehaviour
 {
     // 싱글톤 선언
