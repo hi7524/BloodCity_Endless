@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// UI Manager
 public class UI_StartScene : MonoBehaviour
 {
+    [SerializeField] GameObject pauseWindow; // 옵션 창
     [SerializeField] GameObject chaWindow; // 캐릭터 창
     [SerializeField] GameObject equipWindow; // 장비 창
 
@@ -14,18 +12,20 @@ public class UI_StartScene : MonoBehaviour
         Return();
     }
 
-    public void GameStartBtn()
+    public void ToggleWindow(GameObject window)
     {
-        //버튼 효과음
-        chaWindow.SetActive(true);
-        Time.timeScale = 0.0f;
-    }
-
-    public void EquipBtn()
-    {
-        // 버튼 효과음
-        equipWindow.SetActive(true);
-        Time.timeScale = 0.0f;
+        // 창 끄기
+        if (window.activeSelf)
+        {
+            window.SetActive(false);
+            Time.timeScale = 1.0f;
+        }
+        // 창 켜기
+        else
+        {
+            window.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
     }
 
     // 캐릭터 선택창 버튼
@@ -39,7 +39,14 @@ public class UI_StartScene : MonoBehaviour
     public void Return()
     {
         chaWindow.SetActive(false);
+        pauseWindow.SetActive(false);
         equipWindow.SetActive(false);
         Time.timeScale = 1.0f;
+    }
+
+    // 게임 종료
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
