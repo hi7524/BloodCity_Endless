@@ -3,21 +3,40 @@ using UnityEngine;
 // 샷건(플레이어 기본 스킬)의 총알 구현 → 날아감
 public class ShotGunBullet : MonoBehaviour
 {
-    private Vector3 mousePos;
-    private Camera mainCam;
+    public float bulletLifeTime = 0.8f; // 총알이 유지될 시간
+    public float minForce = 4f; // 최소 힘(속도)
+    public float maxForce = 5;  // 최고 힘(속도)
+    public int bulletDamage = 3; // 공격 데미지
+
+    private float force;          // 현재 총알이 가질 힘
+
+    private Vector3 mousePos; // 마우스 위치
+    private Camera mainCam;   // 마우스 위치를 계산할 카메라
     private Rigidbody2D rigid;
-    public float force = 5;
+
+
+    private void Awake()
+    {
+        // 컴포넌트 초기화
+        rigid = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
-        mainCam = Camera.main;
-        rigid = GetComponent<Rigidbody2D>();
+        mainCam = Camera.main; // 카메라 설정
+        force = Random.Range(minForce, maxForce + 1); // 힘 랜덤 설정
+        
+        // 마우스 위치 확인 및 방향 설정
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - transform.position;
         Vector3 rotation = transform.position - mousePos;
-        rigid.velocity = new Vector2(direction.x, direction.y).normalized * force;
+
+        // 해당 위치로 이동
+        rigid.velocity = new Vector2(direction.x + Random.Range(0f, 1.5f), direction.y + Random.Range(0f, 1.5f)).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+
+        Destroy(gameObject, bulletLifeTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +44,8 @@ public class ShotGunBullet : MonoBehaviour
         // 적과 충돌시
         if (collision.CompareTag("Enemy"))
         {
-            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage);
+            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
+
             collision.GetComponent<MobAI>().Damaged(attackDamage);
 
             Destroy(gameObject); // 오브젝트 파괴

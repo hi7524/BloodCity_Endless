@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeavyMachineGunBullet : MonoBehaviour
 {
     public LayerMask detectLayer; // 추적 대상 레이어 선택
+    public int bulletDamage = 1;
 
     private float moveSpeed = 10; // 총알 속도
     private float detectRange = 5f; // 적 감지 범위
@@ -64,7 +65,7 @@ public class HeavyMachineGunBullet : MonoBehaviour
         // 적과 충돌시
         if (collision.CompareTag("Enemy"))
         {
-            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage);
+            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
             collision.GetComponent<MobAI>().Damaged(attackDamage);
 
             Destroy(gameObject); // 오브젝트 파괴

@@ -3615,7 +3615,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrf: {fileID: 9056647222278653129, guid: 68ceab182fc509946824e52de68a5f9d, type: 3}
   bulletTrans: {fileID: 1596995393}
-  coolDown: 0.5
+  coolDown: 1
+  bulletCount: 6
 --- !u!1001 &1746344267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4083,6 +4084,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 770509146809780630, guid: 8b409d62f7f52964fbda45d284b29fe0, type: 3}
+      propertyPath: coolDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6114486242943068404, guid: 8b409d62f7f52964fbda45d284b29fe0, type: 3}
       propertyPath: m_Name
       value: HeavyMachineGun

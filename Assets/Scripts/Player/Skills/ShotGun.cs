@@ -4,12 +4,15 @@ using UnityEngine;
 // 샷건(플레이어의 기본 공격 스킬) 구현
 public class ShotGun : MonoBehaviour
 {
-    private Camera mainCam;
-    private Vector3 mousePos;
     public GameObject bulletPrf;
     public Transform bulletTrans;
     public float coolDown;
+    public int bulletCount = 6; // 발사 총알 개수
+
     private float curCoolDown;
+
+    private Camera mainCam;
+    private Vector3 mousePos;
 
     private void Start()
     {
@@ -32,7 +35,14 @@ public class ShotGun : MonoBehaviour
 
         if (curCoolDown > coolDown)
         {
-            Instantiate(bulletPrf, bulletTrans.position, Quaternion.identity);
+
+            for(int i = 0; i < bulletCount; i++)
+            {
+                Instantiate(bulletPrf, bulletTrans.position, Quaternion.identity);
+            }
+           
+
+
             curCoolDown = 0;
         }
         

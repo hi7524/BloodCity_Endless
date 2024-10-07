@@ -161,4 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319905c727080ae44b891f89e554df45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5
+  bulletLifeTime: 0.8
+  minForce: 4
+  maxForce: 5
