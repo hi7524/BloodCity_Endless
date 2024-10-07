@@ -3952,6 +3952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charState: {fileID: 11400000, guid: 3fa1760dfe6239440a223ccd7d3cdd2f, type: 2}
+  defaultState: {fileID: 11400000, guid: 79e7c39a7c89c3641b7c2b0bd42b85a3, type: 2}
   xpBar: {fileID: 963066961}
   levelText: {fileID: 1360382299}
 --- !u!58 &1814338288

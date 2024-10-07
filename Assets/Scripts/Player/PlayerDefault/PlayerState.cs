@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +7,9 @@ public class PlayerState : MonoBehaviour
 { 
     [Header("캐릭터 스탯")]
     public CharacterStates charState;
+
+    [Header("플레이어 기본 스탯")]
+    public CharacterStates defaultState;
 
     [Header("레벨 및 경험치")]
     public Image xpBar;        // 경험치 바
@@ -59,11 +61,11 @@ public class PlayerState : MonoBehaviour
     // 초기 스탯 설정
     private void SetStates(CharacterStates charState)
     {
-        maxHealth = charState.maxHealth; // 최대 체력 설정
+        maxHealth = defaultState.maxHealth + charState.maxHealth; // 최대 체력 설정
         health = maxHealth;              // 초기 체력 설정
 
-        restorePerSec += charState.restorePerSec; // 초당 회복량 설정
-        defense += charState.defense;             // 방어력 설정
+        restorePerSec = defaultState.restorePerSec + charState.restorePerSec; // 초당 회복량 설정
+        defense = defaultState.restorePerSec + charState.defense;             // 방어력 설정
         speed = 1;
         speed = speed * (charState.speed / 100);  // 이동 속도 설정
 
