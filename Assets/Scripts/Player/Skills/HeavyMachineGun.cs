@@ -5,7 +5,7 @@ public class HeavyMachineGun : MonoBehaviour, IPlayerSkill
 {
     public Vector3 playerVec { get; set; } // 플레이어 위치
     public GameObject bulletPrf; // 총알 프리팹
-    public float coolDown = 1;   // 스킬 쿨타임
+    public float coolDown = 2;   // 스킬 쿨타임
 
     private float curCoolDown = 0;
 
