@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum MobSkillTag { Attack, Skill, Dead } // 몬스터 스킬 태그
+public enum MobSkillTag { Attack, Skill, Dead, Init } // 몬스터 스킬 태그
 
 public interface IMobSkill
 {

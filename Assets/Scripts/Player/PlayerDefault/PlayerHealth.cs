@@ -77,7 +77,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health > 0)
         {
-            health = health - (damage - charState.defense);
+            damage = damage - charState.defense;
+
+            if(damage > 0)
+                health = health - damage;
         }
     }
 

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fab9ddf09e8dd2e46a4c406f02515d76, type: 3}
-  m_Name: 1_Human
+  m_Name: 11_Bus
   m_EditorClassIdentifier: 
-  mobName: "\uC778\uAC04"
-  dropExp: 0100000003000000
-  MoveType: 0
-  AttackType: 0
-  Attack_Range: 0
-  Distance_Range: 0
-  minHealth: 15
-  maxHealth: 15
-  attackDamage: 10
-  speed: 100
+  mobName: "\uBC84\uC2A4"
+  dropExp: 0000000000000000
+  MoveType: 1
+  AttackType: 1
+  Attack_Range: 5
+  Distance_Range: 5
+  minHealth: 800
+  maxHealth: 800
+  attackDamage: 30
+  speed: 150
   upgradeCoinDropPer: 100
