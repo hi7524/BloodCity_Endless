@@ -1,4 +1,5 @@
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 // 샷건(플레이어의 기본 공격 스킬) 구현
@@ -35,16 +36,17 @@ public class ShotGun : MonoBehaviour
 
         if (curCoolDown > coolDown)
         {
-
-            for(int i = 0; i < bulletCount; i++)
-            {
-                Instantiate(bulletPrf, bulletTrans.position, Quaternion.identity);
-            }
-           
-
-
+            StartCoroutine(Fire());
             curCoolDown = 0;
         }
-        
+    }
+    
+    IEnumerator Fire()
+    {
+        for (int i = 0; i < bulletCount; i++)
+        {
+            Instantiate(bulletPrf, bulletTrans.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }

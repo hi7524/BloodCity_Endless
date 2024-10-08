@@ -3,7 +3,7 @@ using UnityEngine;
 // 샷건(플레이어 기본 스킬)의 총알 구현 → 날아감
 public class ShotGunBullet : MonoBehaviour
 {
-    public float bulletLifeTime = 0.8f; // 총알이 유지될 시간
+    public float bulletLifeTime = 1.0f; // 총알이 유지될 시간
     public float minForce = 4f; // 최소 힘(속도)
     public float maxForce = 5;  // 최고 힘(속도)
     public int bulletDamage = 3; // 공격 데미지
@@ -32,7 +32,7 @@ public class ShotGunBullet : MonoBehaviour
         Vector3 rotation = transform.position - mousePos;
 
         // 해당 위치로 이동
-        rigid.velocity = new Vector2(direction.x + Random.Range(0f, 1.5f), direction.y + Random.Range(0f, 1.5f)).normalized * force;
+        rigid.velocity = new Vector2(direction.x + Random.Range(-1f, 1f), direction.y + Random.Range(-1f, 1f)).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
 
