@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7592757309411713985}
   - component: {fileID: 4600571979025045512}
   m_Layer: 0
-  m_Name: Mushroom
+  m_Name: Spore
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d23d218453e2f34b999e7578991053e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 11400000, guid: ca90a21bfe624224c9dbabf455ac0715, type: 2}
+  obj: {fileID: 11400000, guid: 395312a27a613c946ad6a24e909a130e, type: 2}
   RB: {fileID: 0}
   Mob: {fileID: 0}
   Target: {fileID: 0}
@@ -170,3 +170,5 @@ MonoBehaviour:
   dir: {x: 0, y: 0}
   hp: 0
   isDead: 0
+  Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
+  Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}

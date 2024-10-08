@@ -170,3 +170,5 @@ MonoBehaviour:
   dir: {x: 0, y: 0}
   hp: 0
   isDead: 0
+  Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
+  Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}

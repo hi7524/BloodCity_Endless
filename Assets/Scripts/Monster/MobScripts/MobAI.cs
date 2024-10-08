@@ -28,11 +28,17 @@ public class MobAI : MonoBehaviour
     [HideInInspector]
     public Vector2 dir = Vector2.zero; // 플레이어의 방향 
 
-    [HideInInspector]
+    //[HideInInspector]
     public int hp; // 현재 체력
 
     [HideInInspector]
     public bool isDead; // 사망 여부
+
+    [SerializeField]
+    private GameObject Exp; // 경험치 오브젝트
+
+    [SerializeField]
+    private GameObject Coin; // 코인 오브젝트
 
 
     protected IMobSkill[] mobSkills; // 스킬 배열
@@ -51,14 +57,17 @@ public class MobAI : MonoBehaviour
 
         mobSkills = GetComponents<IMobSkill>(); // 스킬 스크립트 컴포넌트
 
-        foreach (IMobSkill skill in mobSkills)
+        hp = Random.Range(obj.minHealth, obj.maxHealth + 1); // 현재 체력 초기화
+
+        foreach (IMobSkill skill in mobSkills) // 스킬 초기화
         {
 
             skill.Init();
 
-        }
+            if (skill.data.skillTag == MobSkillTag.Init) // 초기화형 스킬일 경우 즉시 사용
+                skill.Use(this);
 
-        hp = Random.Range(obj.minHealth, obj.maxHealth + 1);
+        }
 
     }
 
@@ -120,16 +129,10 @@ public class MobAI : MonoBehaviour
 
     }
 
-    private void Routine_Attack(float dis, Vector2 dir) // 공격 루틴
+    private void Routine_Attack(float dis, Vector2 dir) // 공격 루틴 (스킬 타입 전용)
     {
 
-        if (obj.AttackType == AI_AttackType.Simple)
-        {
-
-
-
-        }
-        else if (obj.AttackType == AI_AttackType.Skill)
+         if (obj.AttackType == AI_AttackType.Skill)
         {
 
             if (obj.Attack_Range >= dis || obj.Attack_Range == 0) // 범위 안이라면 스킬 사용
@@ -185,6 +188,21 @@ public class MobAI : MonoBehaviour
             if(hp <= 0) // 사망할 경우
             {
 
+                // 경험치 드랍
+                int expValue = Random.Range(obj.dropExp[0], obj.dropExp[1] + 1);
+                if (expValue > 0)
+                {
+                    GameObject exp = Instantiate(Exp, gameObject.transform.position, gameObject.transform.rotation);
+                    exp.GetComponent<Exp>().xpData.point = expValue;
+                }
+
+                // 강화 코인 드랍
+                int coinPer = Random.Range(1, 101);
+                if (obj.upgradeCoinDropPer >= coinPer)
+                    Instantiate(Coin, gameObject.transform.position, gameObject.transform.rotation);
+
+
+                // 사망 처리 시작
                 bool isDying = true;
                 isDead = true;
 
@@ -226,7 +244,7 @@ public class MobAI : MonoBehaviour
 
         GameObject Player = coll.gameObject;
 
-        if (Player.tag == "Player" && isCanbodyAttack) // 몸빵 피해 적용
+        if (Player.tag == "Player" && isCanbodyAttack && !isDead) // 몸빵 피해 적용
         {
 
             isCanbodyAttack = false;
