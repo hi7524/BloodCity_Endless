@@ -25,7 +25,6 @@ public class HeavyMachineGunBullet : MonoBehaviour
     // 적 감지 및 추적할 적 설정
     private void DetectEnemy()
     {
-        Debug.Log("적 감지");
         // 적 감지
         MobAI[] enemies = FindObjectsOfType<MobAI>();
         closetTarget = null;
