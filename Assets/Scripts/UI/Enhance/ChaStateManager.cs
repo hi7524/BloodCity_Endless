@@ -1,10 +1,10 @@
 [System.Serializable]
 public class ChaStateManager
 {
-    public CharacterStates playerStates;
-    public BonusStates bonusStates;
+    public CharacterStates playerStates; // 여기에 Player
+    public CharacterStates bonusStates; // 여기에 캐릭터별 오브젝트
 
-    // 기본 스탯
+    // 기본 스탯 + 영구 강화
     float maxHealth = 100;    // 최대 체력
     float restorePerSec = 0; // 초당 회복량
     float defense = 1;        // 방어력
@@ -15,9 +15,10 @@ public class ChaStateManager
 
     float abilityHaste = 0;  // 능력 가속 (쿨감, %)
     float magnetism = 0;       // 자성
+
     float curse = 0;           // 저주
 
-    // 보너스 스탯
+    // 캐릭터 보너스 스탯
     float maxHealthBonus = 0;    // 최대 체력 보너스
     float restorePerSecBonus = 0; // 초당 회복량 보너스
     float defenseBonus = 0;        // 방어력 보너스
@@ -44,15 +45,15 @@ public class ChaStateManager
         magnetism = playerStates.magnetism;
         curse = playerStates.curse;
 
-        maxHealthBonus = bonusStates.maxHealthBonus;
-        restorePerSecBonus = bonusStates.restorePerSecBonus;
-        defenseBonus = bonusStates.defenseBonus;
-        speedBonus = bonusStates.speedBonus;
-        attackDamageBonus = bonusStates.attackDamageBonus;
-        attackRangeBonus = bonusStates.attackRangeBonus;
-        abilityHasteBonus = bonusStates.abilityHasteBonus;
-        magnetismBonus = bonusStates.magnetismBonus;
-        curseBonus = bonusStates.curseBonus;
+        maxHealthBonus = bonusStates.maxHealth;
+        restorePerSecBonus = bonusStates.restorePerSec;
+        defenseBonus = bonusStates.defense;
+        speedBonus = bonusStates.speed;
+        attackDamageBonus = bonusStates.attackDamage;
+        attackRangeBonus = bonusStates.attackRange;
+        abilityHasteBonus = bonusStates.abilityHaste;
+        magnetismBonus = bonusStates.magnetism;
+        curseBonus = bonusStates.curse;
     }
 
     // 스탯을 문자열로 반환

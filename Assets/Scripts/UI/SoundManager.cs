@@ -89,7 +89,7 @@ public class SoundManager : MonoBehaviour
     // 사운드 설정
     private void UpdateAudioMixer(string name, float value)
     {
-        Debug.Log($"현재 {name} volume 값 : {value}");
+        //Debug.Log($"현재 {name} volume 값 : {value}");
         audioMixer.SetFloat(name, Mathf.Log10(value / 100) * 20);
     }
 
@@ -102,7 +102,7 @@ public class SoundManager : MonoBehaviour
         {
             string FromJsonData = File.ReadAllText(filePath);
             sound = JsonUtility.FromJson<SoundData>(FromJsonData);
-            Debug.Log("사운드 데이터 불러오기 완료");
+            Debug.Log("<color=lime>[SUCCESS]</color> 사운드 데이터 불러오기 완료");
         }
     }
 
@@ -112,6 +112,6 @@ public class SoundManager : MonoBehaviour
         string ToJsonData = JsonUtility.ToJson(sound);
         string filePath = Application.persistentDataPath + "/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
-        Debug.Log("사운드 데이터 저장 완료");
+        //Debug.Log("<color=lime>[SUCCESS]</color> 사운드 데이터 저장 완료");
     }
 }

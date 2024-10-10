@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+[System.Serializable]
 public class PlayerData
 {
     // SettingResolution 스크립트
@@ -12,15 +13,18 @@ public class PlayerData
     // ChaSelect 스크립트
     public int currentIndex = 0;
 
-    // GameManager에서 저장할 공간
+    // UpgradeManager
     public int coins;
+    public float[] characterStats = new float[9]; // 캐릭터 스탯 배열
+    public int[] enhanceLevels = new int[9]; // 각 EnhanceState의 업그레이드 레벨
+    public bool[] isUpgraded = new bool[9]; // 각 EnhanceState의 업그레이드 여부
 }
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance { get; private set; }
 
-    string GameDataFileName = "PlayerData.json";
+    private string GameDataFileName = "PlayerData.json";
 
     public PlayerData player = new PlayerData();
 
@@ -31,7 +35,7 @@ public class DataManager : MonoBehaviour
         {
             string FromJsonData = File.ReadAllText(filePath);
             player = JsonUtility.FromJson<PlayerData>(FromJsonData);
-            print("플레이어 데이터 불러오기 완료");
+            Debug.Log("<color=lime>[SUCCESS]</color> 플레이어 데이터 불러오기 완료");
         }
     }
 
@@ -40,7 +44,7 @@ public class DataManager : MonoBehaviour
         string ToJsonData = JsonUtility.ToJson(player);
         string filePath = Application.persistentDataPath + "/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
-        print("플레이어 데이터 저장 완료");
+        //Debug.Log("<color=lime>[SUCCESS]</color> 플레이어 데이터 저장 완료");
     }
 
     public void Awake()
@@ -48,14 +52,34 @@ public class DataManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
 
         Data();
+
+        Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + P - 데이터 출력");
+        Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + R - 플레이어 스탯 데이터 리셋");
+        Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + G - 코인 증가 + 1000");
+    }
+
+    private void Update()
+    {
+        // 쉬프트 + P 데이터 출력
+        if (Input.GetKeyDown(KeyCode.P) && Input.GetKey(KeyCode.LeftShift))
+        {
+            PrintData();
+        }
+        // 쉬프트 + R 플레이어 스탯 데이터 리셋
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift))
+        {
+            UpgradeManager.Instance.ResetStates();
+        }
+        // 쉬프트 + G 코인 증가
+        if (Input.GetKeyDown(KeyCode.G) && Input.GetKey(KeyCode.LeftShift))
+        {
+            player.coins += 1000;
+            UpgradeManager.Instance.currentCoins = player.coins;
+            UpgradeManager.Instance.UpdateCoinsText();
+        }
     }
 
     public void Data()
@@ -74,23 +98,27 @@ public class DataManager : MonoBehaviour
 
     public void Save()
     {
-        print("게임 데이터 저장 중...");
-        
+        // 스크립트에서 직접 저장하는 형식으로 나중에 바꿀수도
         player.fullScreen = SettingResolution.Instance.fullScreen;
         player.fullValue = SettingResolution.Instance.full.value;
         player.dropdownValue = SettingResolution.Instance.dropdown.value;
         player.currentIndex = ChaSelect.Instance.currentIndex;
 
-        PrintData();
         SavePlayerData();
     }
 
-    // 저장된 파일 뜯어보기 귀찮아서 이번에도 만드는 프린트함수
+    
+
+    // 저장된 값
     public void PrintData()
     {
-        Debug.Log($"지금까지 저장된 데이터는 " +
+        Debug.Log($"<color=cyan>[INFO]</color> 지금까지 저장된 데이터 " +
             $"\n전체화면 여부 : {player.fullScreen} \n전체화면 드롭다운 값 : {player.fullValue}" +
-            $"\n해상도 드롭다운 값 : {player.dropdownValue} \n캐릭터 선택 값 : {player.currentIndex}");
+            $"\n해상도 드롭다운 값 : {player.dropdownValue} \n캐릭터 선택 값 : {player.currentIndex}" +
+            $"\n코인 : {player.coins}" +
+            "\n캐릭터 스탯: " + string.Join(", ", player.characterStats) +
+            "\nEnhanceLevels: " + string.Join(", ", player.enhanceLevels) +
+            "\nIsUpgraded: " + string.Join(", ", player.isUpgraded));
     }
 
     // 데이터 초기화
@@ -98,7 +126,6 @@ public class DataManager : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/" + GameDataFileName))
         {
-            Debug.Log("저장된 데이터가 있습니다.");
             File.Delete(Application.persistentDataPath + "/" + GameDataFileName);
             File.Delete(Application.persistentDataPath + "/SoundData.json");
 
@@ -106,8 +133,8 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("저장 된 데이터가 없습니다.");
+            Debug.Log("<color=orange>[WARNING]</color> 저장된 데이터가 없습니다.");
         }
-        Debug.Log("데이터가 삭제되었습니다.");
+        Debug.Log("<color=lime>[SUCCESS]</color> 데이터가 삭제되었습니다.");
     }
 }

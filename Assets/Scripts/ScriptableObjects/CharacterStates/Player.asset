@@ -22,5 +22,5 @@ MonoBehaviour:
   abilityHaste: 0
   magnetism: 0
   curse: 0
-  characterDetail: "\uC601\uAD6C \uAC15\uD654\uC5D0 \uC4F0\uC774\uB294 \uCE90\uB9AD\uD130
-    \uAE30\uBCF8 \uB2A5\uB825\uCE58"
+  characterDetail: "\uCE90\uB9AD\uD130 \uAE30\uBCF8 \uB2A5\uB825\uCE58 + \uC601\uAD6C\uAC15\uD654
+    \uAC12"
