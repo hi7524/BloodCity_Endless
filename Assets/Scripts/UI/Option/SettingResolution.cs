@@ -30,19 +30,18 @@ public class SettingResolution : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/PlayerData.json"))
         {
-            Debug.Log("플레이어 데이터가 존재합니다.");
             fullScreen = DataManager.Instance.player.fullScreen;
             dropdown.value = DataManager.Instance.player.dropdownValue;
             full.value = DataManager.Instance.player.fullValue;
 
-            Debug.Log("플레이어 데이터 동기화 완료.");
+            Debug.Log("<color=lime>[SUCCESS]</color> 플레이어 데이터 동기화 완료.");
 
             SetResolution();
             FullScreen();
         }
         else
         {
-            Debug.Log("플레이어 데이터가 아직 존재하지 않습니다.");
+            Debug.Log("<color=orange>[WARNING]</color> 플레이어 데이터가 아직 존재하지 않습니다.");
             Screen.SetResolution(1920, 1080, false);
         }
     }
@@ -52,7 +51,7 @@ public class SettingResolution : MonoBehaviour
         Resolution currentResolution = Screen.currentResolution;
         RealWidth = currentResolution.width;
         RealHeight = currentResolution.height;
-        Debug.Log($"이 디바이스의 전체 화면은 {RealWidth} X {RealHeight}");
+        Debug.Log($"<color=cyan>[INFO]</color> 디바이스 전체 화면 : {RealWidth} X {RealHeight}");
     }
 
     public void SetResolution()
@@ -77,7 +76,7 @@ public class SettingResolution : MonoBehaviour
     private void SetScreenResolution(int width, int height)
     {
         Screen.SetResolution(width, height, false);
-        Debug.Log($"지금 화면은 {Screen.width} X {Screen.height}");
+        //Debug.Log($"지금 화면은 {Screen.width} X {Screen.height}");
     }
 
     public void FullScreen()
@@ -105,7 +104,7 @@ public class SettingResolution : MonoBehaviour
         SetResolution();
         dropdown.interactable = true;                                   // 해상도 조절 가능하게
         fullScreen = false;
-        Debug.Log("창모드 입니다");
+        //Debug.Log("창모드 입니다");
     }
 
     private void SetFullWindow()
@@ -113,7 +112,7 @@ public class SettingResolution : MonoBehaviour
         Screen.SetResolution(RealWidth, RealHeight - 30, false);
         dropdown.interactable = false;                                  // 해상도 조절 불가능
         fullScreen = false;
-        Debug.Log("전체화면 창모드 입니다");
+        //Debug.Log("전체화면 창모드 입니다");
     }
 
     private void SetFullScreenMode()
@@ -121,6 +120,6 @@ public class SettingResolution : MonoBehaviour
         Screen.SetResolution(RealWidth, RealHeight, true);
         dropdown.interactable = false;                                  // 해상도 조절 불가능
         fullScreen = true;
-        Debug.Log("전체화면 입니다");
+        //Debug.Log("전체화면 입니다");
     }
 }

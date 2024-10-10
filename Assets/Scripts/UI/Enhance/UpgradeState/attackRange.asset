@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: attackRange
   value: 100
-  statUpgrade:
-  - increaseAmount: 0
-    cost: 0
-  - increaseAmount: 0
-    cost: 0
-  - increaseAmount: 0
-    cost: 0
+  stateUpgrade:
+  - increaseAmount: 3.3
+    cost: 200
+    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uACF5\uACA9 \uBC94\uC704\uB97C"
+    isPercentage: 1
+  - increaseAmount: 3.3
+    cost: 600
+    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uACF5\uACA9 \uBC94\uC704\uB97C"
+    isPercentage: 1
+  - increaseAmount: 3.4
+    cost: 1000
+    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uACF5\uACA9 \uBC94\uC704\uB97C"
+    isPercentage: 1
   enhanceLevel: 0
   isUpgraded: 0

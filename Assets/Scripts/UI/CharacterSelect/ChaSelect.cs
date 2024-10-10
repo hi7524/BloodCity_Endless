@@ -7,16 +7,15 @@ public class ChaSelect : MonoBehaviour
     public static ChaSelect Instance { get; private set; }
 
     [Header("Image")]
-    public Sprite[] character = new Sprite[5]; // 캐릭터 이미지 배열
-    public Image[] ChaList = new Image[5]; // 캐릭터 슬롯 오브젝트 배열
+    public Sprite[] character = new Sprite[3]; // 캐릭터 이미지 배열
+    public Image[] ChaList = new Image[3]; // 캐릭터 슬롯 오브젝트 배열
 
     [Header("Des")]
     public TMP_Text chaDescription; // 캐릭터 설명 텍스트
-    public string[] characterDescriptions = new string[5]; // 캐릭터 설명 배열
 
     [Header("Stat")]
     public TMP_Text chaState; // 캐릭터 스탯 텍스트
-    public ChaStateManager[] characterStates = new ChaStateManager[5]; // 캐릭터 스탯 배열
+    public ChaStateManager[] characterStates = new ChaStateManager[3]; // 캐릭터 스탯 배열
 
     [Header("Etc.")]
     public Button LBtn;
@@ -38,15 +37,6 @@ public class ChaSelect : MonoBehaviour
         ChaList[0] = GameObject.Find("Cha1").GetComponent<Image>();
         ChaList[1] = GameObject.Find("Cha2").GetComponent<Image>();
         ChaList[2] = GameObject.Find("Cha3").GetComponent<Image>();
-        ChaList[3] = GameObject.Find("Cha4").GetComponent<Image>();
-        ChaList[4] = GameObject.Find("Cha5").GetComponent<Image>();
-
-        // 캐릭터 설명 넣기
-        characterDescriptions[0] = "우주 해병은 잘 훈련된 엘리트 집단입니다. \r\n기본적인 전투 훈련을 받아 강인한 체력을 가지고 있고 무기 조작에 능합니다.";
-        characterDescriptions[1] = "2번\r\n대충설명";
-        characterDescriptions[2] = "3번\r\n대충설명";
-        characterDescriptions[3] = "4번\r\n대충설명";
-        characterDescriptions[4] = "5번\r\n대충설명";
 
         check.SetActive(false);
     }
@@ -81,7 +71,7 @@ public class ChaSelect : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"ChaList[{i}]는 null입니다.");
+                Debug.LogError($"<color=orange>[WARNING]</color> ChaList[{i}]는 null입니다.");
             }
         }
     }
@@ -91,12 +81,12 @@ public class ChaSelect : MonoBehaviour
         // 현재 인덱스를 업데이트
         if (LR == "L")
         {
-            Debug.Log("왼쪽으로 캐릭터를 넘겼습니다.");
+            //Debug.Log("왼쪽으로 캐릭터를 넘겼습니다.");
             currentIndex = (currentIndex - 1 + character.Length) % character.Length;
         }
         else if (LR == "R")
         {
-            Debug.Log("오른쪽으로 캐릭터를 넘겼습니다.");
+            //Debug.Log("오른쪽으로 캐릭터를 넘겼습니다.");
             currentIndex = (currentIndex + 1) % character.Length;
         }
 
@@ -115,7 +105,7 @@ public class ChaSelect : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"슬롯 또는 캐릭터 이미지가 null입니다.");
+                Debug.LogError($"<color=orange>[WARNING]</color> 슬롯 또는 캐릭터 이미지가 null입니다.");
             }
         }
 
@@ -127,13 +117,13 @@ public class ChaSelect : MonoBehaviour
     {
         if (chaDescription != null && chaState != null)
         {
-            chaDescription.text = characterDescriptions[currentIndex];
+            chaDescription.text = characterStates[currentIndex].bonusStates.characterDetail;
             characterStates[currentIndex].InitializeStats();
             chaState.text = characterStates[currentIndex].GetStats(); // 스탯 업데이트
         }
         else
         {
-            Debug.LogError("chaDescription 또는 chaState가 null입니다.");
+            Debug.LogError("<color=orange>[WARNING]</color> chaDescription 또는 chaState가 null입니다.");
         }
     }
 
