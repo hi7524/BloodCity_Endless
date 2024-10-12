@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 // UI Manager
@@ -26,9 +23,14 @@ public class UIManager : MonoBehaviour
     public GameObject pauseWindow; // 옵션 창
     public GameObject levelUpWindow; // 레벨업시 나타날 스텟 업그레이드 창
 
+    [Header("플레이어 체력")]
+    public Image healthBarImg;
+    public TMP_Text healthText;
+
 
     void Awake()
     {
+        // 싱글톤
         if (instance == null)
         {
             instance = this;
@@ -58,6 +60,14 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // 플레이어 체력 정보 업데이트
+    public void UpdatePlayerHealth(float health, float maxHealth)
+    {
+        healthText.text = $"{health.ToString()} / {maxHealth.ToString()}";
+        healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, health / maxHealth, Time.deltaTime * 10);
+    }
+
+    // 창 활성화 및 비활성화
     public void ToggleWindow(GameObject window)
     {
         // 창 끄기
@@ -73,7 +83,6 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 0.0f;
         }
     }
-
 
     // 게임 일시정지
     public void Pause()

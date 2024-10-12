@@ -3719,7 +3719,7 @@ GameObject:
   - component: {fileID: 1814338290}
   - component: {fileID: 1814338288}
   - component: {fileID: 1814338286}
-  - component: {fileID: 1814338285}
+  - component: {fileID: 1814338297}
   - component: {fileID: 1814338284}
   - component: {fileID: 1814338295}
   - component: {fileID: 1814338294}
@@ -3814,18 +3814,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarImg: {fileID: 186398896}
   healthText: {fileID: 582807980}
---- !u!114 &1814338285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814338281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce72d5e5edf9c7341bb67ce7cf0bac9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1814338286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3954,6 +3942,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1814338297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814338281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7129613fe907894498f5018e61544ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1.5
 --- !u!1 &1827149128
 GameObject:
   m_ObjectHideFlags: 0

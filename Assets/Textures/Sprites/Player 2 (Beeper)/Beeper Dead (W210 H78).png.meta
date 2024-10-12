@@ -1,0 +1,1654 @@
+fileFormatVersion: 2
+guid: 37201289aa53db14994f7df0a238acd6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969bbf63dc6847e49af175f39e6eab57
+      internalID: -179581132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84ebbad62590944989c4608f119dcfc
+      internalID: 656115238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_2
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5bb4e6820427d439d7843d335eb0e5
+      internalID: -818164839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_3
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779c0254be2f4784db301e4ba25a0398
+      internalID: 1817362707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_4
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f80ec09ee6c8bc48ad2db0c718670ac
+      internalID: -276478722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_5
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb3ab389baafcd42bea38d808f429fa
+      internalID: -691737787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_6
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0f86263adb1874a8e2205a3546ef9f
+      internalID: -1270387580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_7
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8122a2b416c4145adf6122a117eae5
+      internalID: 785520223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_8
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5af3b6d9dc2aa24c8220126577719e7
+      internalID: 2068083218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_9
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff7422a8a580c140b14413c706ab493
+      internalID: -422551328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_10
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561d79c829c01b14ca3686081e1eb986
+      internalID: 2021542174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_11
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a733ca1acb83aa42942b010ec6850a2
+      internalID: -288816147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_12
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304f90eedeb51df42bcacf3bea93bf93
+      internalID: -1261160674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_13
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a8291da8bad4548922e1087ace2f70
+      internalID: -1325391462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_14
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616d313b1971f97478563a53fa72967b
+      internalID: -1951410725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_15
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2fbc1bd02c3924ebdf1bdf1a67bc12
+      internalID: -1976331002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_16
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54ec9bb8ba6f6547a700c6aab0b4fa4
+      internalID: 1595101330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_17
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688bfe7a1fb4c8149a6f2b3306a57e82
+      internalID: 1805356338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_18
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24574e8025f028042ba591d32e1a97c2
+      internalID: -1642612240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_19
+      rect:
+        serializedVersion: 2
+        x: 3990
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba19589384714e4389b8300e8a6834d
+      internalID: 355259155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_20
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585b0ad9298af3f4b9d08abcc2b66b0f
+      internalID: 1769690768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_21
+      rect:
+        serializedVersion: 2
+        x: 4410
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb3920f585323446894b23b7b629fee
+      internalID: -1047552522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_22
+      rect:
+        serializedVersion: 2
+        x: 4620
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8dd1246b1427a248b23fcafbfaed313
+      internalID: -1039042575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_23
+      rect:
+        serializedVersion: 2
+        x: 4830
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1acc30ef87dbc6b4b9b5c1946142c0c5
+      internalID: -858305964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_24
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68eafade104661741b9063c6ae822251
+      internalID: 1405962208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_25
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f64799964fdef4d9d16ac420621221
+      internalID: 1169538656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_26
+      rect:
+        serializedVersion: 2
+        x: 5460
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cd72e8bd98cc340ab103bdfc5ea760
+      internalID: -675690293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_27
+      rect:
+        serializedVersion: 2
+        x: 5670
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efaaaae066597984982c5a54dd2f65a3
+      internalID: 352129320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_28
+      rect:
+        serializedVersion: 2
+        x: 5880
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6d293c7dfa4f144b33f42c154156d9
+      internalID: -2079923171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_29
+      rect:
+        serializedVersion: 2
+        x: 6090
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa361dba85ede845863a05a9cddc50d
+      internalID: -144389031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_30
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbca6e191be9cbc44a3ffb3c84c72a7b
+      internalID: -2033646476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_31
+      rect:
+        serializedVersion: 2
+        x: 6510
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca33e38f2ffdcb3489223201d5b8f2a4
+      internalID: 1112309195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_32
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18f62a193b8e3d41bcd77b83d2398dd
+      internalID: 241303625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_33
+      rect:
+        serializedVersion: 2
+        x: 6930
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4befaa4d6967cdd459cbd830e7af5eb3
+      internalID: 2006447085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_34
+      rect:
+        serializedVersion: 2
+        x: 7140
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927045ef0259143489eee9fb9b7c9994
+      internalID: 139310892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_35
+      rect:
+        serializedVersion: 2
+        x: 7350
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b52af96fc9ad0428b23edbbb123e89
+      internalID: 1414304136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_36
+      rect:
+        serializedVersion: 2
+        x: 7560
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cf9f4fc502c9340b93d24b9562b0ff
+      internalID: -193314129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_37
+      rect:
+        serializedVersion: 2
+        x: 7770
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679e60426cff0c140ab586f76aa06083
+      internalID: -1173770818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_38
+      rect:
+        serializedVersion: 2
+        x: 7980
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e840314613bc44383d6e278898b664
+      internalID: -114789719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_39
+      rect:
+        serializedVersion: 2
+        x: 8190
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ee7559f52034b4a99b94531f9a9bab
+      internalID: 1476610581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_40
+      rect:
+        serializedVersion: 2
+        x: 8400
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b17ee075e2b5d3488ec51c5b24052fa
+      internalID: 464753024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_41
+      rect:
+        serializedVersion: 2
+        x: 8610
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e254defcd842fec4f8763cb6cc1d209a
+      internalID: 1081766172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_42
+      rect:
+        serializedVersion: 2
+        x: 8820
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a488c147f845f24cbc3f7f11b6f40fa
+      internalID: 203873806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_43
+      rect:
+        serializedVersion: 2
+        x: 9030
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12df607f49eed744b9f9daf785f8cea
+      internalID: -1414167984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_44
+      rect:
+        serializedVersion: 2
+        x: 9240
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdca6f4bf6ab4c144ab918d8628a686a
+      internalID: 1258043585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_45
+      rect:
+        serializedVersion: 2
+        x: 9450
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8872bb6def0b08478a43f5247d7c6da
+      internalID: 1340956748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_46
+      rect:
+        serializedVersion: 2
+        x: 9660
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bc95001b1671c4b90b09b0634940d6
+      internalID: -51374940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_47
+      rect:
+        serializedVersion: 2
+        x: 9870
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b4699def7eb8f4987bb8bbdf1664e4
+      internalID: -1266252025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_48
+      rect:
+        serializedVersion: 2
+        x: 10080
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f639ec499c845843b78472d2b2f8e51
+      internalID: -895777101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_49
+      rect:
+        serializedVersion: 2
+        x: 10290
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65def36b8e1612741a97c4a38d38f562
+      internalID: 1084680523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_50
+      rect:
+        serializedVersion: 2
+        x: 10500
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8bfdef41236c74f8e396b2aaa299ec
+      internalID: 1949251484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_51
+      rect:
+        serializedVersion: 2
+        x: 10710
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50937d9af6ac8d409328a614198ac5e
+      internalID: -45507809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_52
+      rect:
+        serializedVersion: 2
+        x: 10920
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcca2744c7e32184381edfe5abd19025
+      internalID: 2016499390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_53
+      rect:
+        serializedVersion: 2
+        x: 11130
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4e24d597863c84a90c94028180302f
+      internalID: 722814985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_54
+      rect:
+        serializedVersion: 2
+        x: 11340
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d67b8e83e58abc4ab6130d8ca6b8961
+      internalID: 2142922277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_55
+      rect:
+        serializedVersion: 2
+        x: 11550
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffa4abd2675eab4397b589d5a7d6091
+      internalID: -2075051001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_56
+      rect:
+        serializedVersion: 2
+        x: 11760
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481772f69c8ef9545be112e2c4b2e7c9
+      internalID: 2018491440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_57
+      rect:
+        serializedVersion: 2
+        x: 11970
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e5344dfb848a945a7184c8a4371b15
+      internalID: -876649443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_58
+      rect:
+        serializedVersion: 2
+        x: 12180
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d506e5ce1d6bef4297b4aaf9b3aee39
+      internalID: -1111733058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_59
+      rect:
+        serializedVersion: 2
+        x: 12390
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95aa87696b625944bbd51125e4bc8df
+      internalID: 912554411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_60
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef4913d96661f24e85d27a4c1ab79fd
+      internalID: -1801197760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_61
+      rect:
+        serializedVersion: 2
+        x: 12810
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4f42537691f244aab165578d732e52
+      internalID: 202262973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_62
+      rect:
+        serializedVersion: 2
+        x: 13020
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a5787444e651d4da7e02b21d034a1f
+      internalID: 503815586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_63
+      rect:
+        serializedVersion: 2
+        x: 13230
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2868f5a6cbc76704ba40a01951b1a7f1
+      internalID: -1624396012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_64
+      rect:
+        serializedVersion: 2
+        x: 13440
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3154e69423431478eef787d739ff58
+      internalID: 661463895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_65
+      rect:
+        serializedVersion: 2
+        x: 13650
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca0babbc93bd33429f5b28856f8fc7b
+      internalID: -1350097073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_66
+      rect:
+        serializedVersion: 2
+        x: 13860
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e841e10b95f5ed64081b145cd7308e89
+      internalID: -722366022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_67
+      rect:
+        serializedVersion: 2
+        x: 14070
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38c9df55d996164db03bc195de659b1
+      internalID: -786601018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_68
+      rect:
+        serializedVersion: 2
+        x: 14280
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff70a2720de43c8469695836b66ee6c8
+      internalID: -467336714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beeper Dead (W210 H78)_69
+      rect:
+        serializedVersion: 2
+        x: 14490
+        y: 0
+        width: 210
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebac94533a930804b90d4bd069d3e135
+      internalID: 572936708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Beeper Dead (W210 H78)_0: -179581132
+      Beeper Dead (W210 H78)_1: 656115238
+      Beeper Dead (W210 H78)_10: 2021542174
+      Beeper Dead (W210 H78)_11: -288816147
+      Beeper Dead (W210 H78)_12: -1261160674
+      Beeper Dead (W210 H78)_13: -1325391462
+      Beeper Dead (W210 H78)_14: -1951410725
+      Beeper Dead (W210 H78)_15: -1976331002
+      Beeper Dead (W210 H78)_16: 1595101330
+      Beeper Dead (W210 H78)_17: 1805356338
+      Beeper Dead (W210 H78)_18: -1642612240
+      Beeper Dead (W210 H78)_19: 355259155
+      Beeper Dead (W210 H78)_2: -818164839
+      Beeper Dead (W210 H78)_20: 1769690768
+      Beeper Dead (W210 H78)_21: -1047552522
+      Beeper Dead (W210 H78)_22: -1039042575
+      Beeper Dead (W210 H78)_23: -858305964
+      Beeper Dead (W210 H78)_24: 1405962208
+      Beeper Dead (W210 H78)_25: 1169538656
+      Beeper Dead (W210 H78)_26: -675690293
+      Beeper Dead (W210 H78)_27: 352129320
+      Beeper Dead (W210 H78)_28: -2079923171
+      Beeper Dead (W210 H78)_29: -144389031
+      Beeper Dead (W210 H78)_3: 1817362707
+      Beeper Dead (W210 H78)_30: -2033646476
+      Beeper Dead (W210 H78)_31: 1112309195
+      Beeper Dead (W210 H78)_32: 241303625
+      Beeper Dead (W210 H78)_33: 2006447085
+      Beeper Dead (W210 H78)_34: 139310892
+      Beeper Dead (W210 H78)_35: 1414304136
+      Beeper Dead (W210 H78)_36: -193314129
+      Beeper Dead (W210 H78)_37: -1173770818
+      Beeper Dead (W210 H78)_38: -114789719
+      Beeper Dead (W210 H78)_39: 1476610581
+      Beeper Dead (W210 H78)_4: -276478722
+      Beeper Dead (W210 H78)_40: 464753024
+      Beeper Dead (W210 H78)_41: 1081766172
+      Beeper Dead (W210 H78)_42: 203873806
+      Beeper Dead (W210 H78)_43: -1414167984
+      Beeper Dead (W210 H78)_44: 1258043585
+      Beeper Dead (W210 H78)_45: 1340956748
+      Beeper Dead (W210 H78)_46: -51374940
+      Beeper Dead (W210 H78)_47: -1266252025
+      Beeper Dead (W210 H78)_48: -895777101
+      Beeper Dead (W210 H78)_49: 1084680523
+      Beeper Dead (W210 H78)_5: -691737787
+      Beeper Dead (W210 H78)_50: 1949251484
+      Beeper Dead (W210 H78)_51: -45507809
+      Beeper Dead (W210 H78)_52: 2016499390
+      Beeper Dead (W210 H78)_53: 722814985
+      Beeper Dead (W210 H78)_54: 2142922277
+      Beeper Dead (W210 H78)_55: -2075051001
+      Beeper Dead (W210 H78)_56: 2018491440
+      Beeper Dead (W210 H78)_57: -876649443
+      Beeper Dead (W210 H78)_58: -1111733058
+      Beeper Dead (W210 H78)_59: 912554411
+      Beeper Dead (W210 H78)_6: -1270387580
+      Beeper Dead (W210 H78)_60: -1801197760
+      Beeper Dead (W210 H78)_61: 202262973
+      Beeper Dead (W210 H78)_62: 503815586
+      Beeper Dead (W210 H78)_63: -1624396012
+      Beeper Dead (W210 H78)_64: 661463895
+      Beeper Dead (W210 H78)_65: -1350097073
+      Beeper Dead (W210 H78)_66: -722366022
+      Beeper Dead (W210 H78)_67: -786601018
+      Beeper Dead (W210 H78)_68: -467336714
+      Beeper Dead (W210 H78)_69: 572936708
+      Beeper Dead (W210 H78)_7: 785520223
+      Beeper Dead (W210 H78)_8: 2068083218
+      Beeper Dead (W210 H78)_9: -422551328
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

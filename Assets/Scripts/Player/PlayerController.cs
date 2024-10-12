@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // 플레이어 이동·애니메이션
-public class PlayerController_DRAFT : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1.5f; // 임시 **나중에 정보 연결할 것**
 
@@ -12,6 +12,9 @@ public class PlayerController_DRAFT : MonoBehaviour
     {
         // 컴포넌트 초기화
         animator = GetComponent<Animator>();
+
+        Debug.Log("<color=cyan>**스탯 연결 필요** (이동 속도)</color>");
+        Debug.Log("<color=yellow>**PlayerTag 적용해주세요**</color>");
     }
 
     private void Update()
