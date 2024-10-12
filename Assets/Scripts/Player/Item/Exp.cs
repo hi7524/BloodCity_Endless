@@ -7,7 +7,7 @@ public class Exp : MonoBehaviour, IItem
 
     public void Use(GameObject target)
     {
-        target.GetComponent<PlayerState>().AddExp(xpData.point);
+        target.GetComponent<PlayerLevel>().AddExp(xpData.point);
         AudioManager.Instance.PlayExpSound();
         Destroy(gameObject);
     }

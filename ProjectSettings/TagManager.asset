@@ -83,3 +83,6 @@ TagManager:
   - name: Bridge1
     uniqueID: 902797987
     locked: 0
+  - name: Character
+    uniqueID: 704111289
+    locked: 0
