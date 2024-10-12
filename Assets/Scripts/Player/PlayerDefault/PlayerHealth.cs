@@ -1,30 +1,19 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-// 플레이어의 체력 관리
+// 플레이어의 체력 및 사망 상태 관리
 public class PlayerHealth : MonoBehaviour
 {
-    public Image healthBarImg;
-    public TMP_Text healthText;
+    [SerializeField] private float health;            // 플레이어 체력
+    [SerializeField] private float maxHealth = 100;   // 최대 체력
+    [SerializeField] private float restorePerSec = 1; // 초당 회복할 체력
+    [SerializeField] private float storeSec;          // 초 계산을 위한 변수
+    [SerializeField] private float defense = 1;
 
-    private float health;        // 플레이어 체력
-    private float maxHealth;     // 최대 체력
-    private float restorePerSec; // 초당 회복할 체력
-    private float storeSec;      // 초 계산을 위한 변수
-
-    private PlayerState charState; // 캐릭터 스탯
-
-
-    private void Awake()
-    {
-        // 컴포넌트 초기화
-        charState = GetComponent<PlayerState>();
-    }
 
     private void Start()
     {
-        SetHealthStates();
+        Debug.Log("<color=cyan>**스탯 연결 필요** (체력 관련 정보, 방어력)</color>");
+        health = maxHealth; // 체력 초기화
     }
 
     private void Update()
@@ -42,18 +31,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void SetHealthStates()
-    {
-        health = charState.health;
-        maxHealth = charState.maxHealth;
-        restorePerSec = charState.restorePerSec;
-    }
-
     // 체력 UI 업데이트
     private void UpdateHpUI()
     {
-        healthText.text = $"{health.ToString()} / {maxHealth.ToString()}";
-        healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, health / maxHealth, Time.deltaTime * 10);
+        UIManager.Instance.UpdatePlayerHealth(health, maxHealth);
     }
 
     // 초당 체력 회복
@@ -77,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health > 0)
         {
-            damage = damage - charState.defense;
+            damage = damage - defense;
 
             if(damage > 0)
                 health = health - damage;

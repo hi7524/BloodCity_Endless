@@ -1,0 +1,1764 @@
+fileFormatVersion: 2
+guid: 302514c669cd8c644ad511307cff987e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bad86fb52c6c34a8df2d2464ed6b10
+      internalID: 683006469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38009c0a8866a0a4b9802d203530ce7e
+      internalID: 1695257547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3581ea6fb536aa4a842a409492eecb7
+      internalID: 1284362624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6700e20f6952e458feee3efcf95462
+      internalID: 375662120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cae5a3cbd306549b0ba71c7d94a7d5
+      internalID: 205222254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe361c81df47b01449a818af9fe05f09
+      internalID: -1600495149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_6
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461d841396df73143971c128c91ec5c8
+      internalID: -2127289762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_7
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97f2ede4481f0643a94922cc1629221
+      internalID: -1999146188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_8
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58df883d7acd5984d8b21390008d6acf
+      internalID: -702233017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_9
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a38fcad488c2fa4d8630014bfefb475
+      internalID: 1228113624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_10
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbb3935bc82bc14eb634797fcd55196
+      internalID: -696533552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_11
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78931032c44998a4abdd1bcdf2a7b31a
+      internalID: 1309859954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_12
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9701e850cc476b04a85d6afe55c7db4d
+      internalID: -1888997626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_13
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5b1a333084a1c4c9c4fe523863475d
+      internalID: 1589439756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_14
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29943d184a0743249bbfb2b006042356
+      internalID: 2008976995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_15
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b240246d5f5de43ae3b2548dd78325
+      internalID: 1358781242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_16
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c2e4cd57987b245a913768b985538f
+      internalID: 249251306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_17
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa127323c5b08334dbed87aa8e2f0509
+      internalID: -1387778722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_18
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9fa87b3094573438e19a8cf2b37c87
+      internalID: 849003427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_19
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b307e7447a0fb249a36184f02a3cf18
+      internalID: -1677508622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_20
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6f76cb529599e4db8f50839887c2fb
+      internalID: 474474577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_21
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04fe22d675da29458a81cc19a5a656f
+      internalID: -1084427452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_22
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20a55a0f386c3f41b75201efe364231
+      internalID: 2641649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_23
+      rect:
+        serializedVersion: 2
+        x: 2392
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17b270a8f6e67245873fc5efb46eadf
+      internalID: 2100494130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_24
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d9ddb6d8e9a2e48a5da7915ec841e5
+      internalID: -526007241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_25
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b01d2277088f8a40865d6d86e307700
+      internalID: -1239465263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_26
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b3e20fe7870364b84b5c40560bf75a
+      internalID: 322003772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_27
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb214affaf5fe434b849bc7a9710d99d
+      internalID: -1738926405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_28
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72de93f5e74b8db45883308c30755310
+      internalID: 1063117431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_29
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7f16755fcc4d34aa1e3ab979da09a7
+      internalID: 2131710664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_30
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d976069e279b64e88162395ed378ec
+      internalID: -1992700317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_31
+      rect:
+        serializedVersion: 2
+        x: 3224
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6378ecdeafd97d4458d00dde2b53799a
+      internalID: -1245172977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_32
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb268379800aeee4d8c9c0759d7c5095
+      internalID: -528667194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_33
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcce7725d44d65a429dd87fab5f2a4fc
+      internalID: 523648307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_34
+      rect:
+        serializedVersion: 2
+        x: 3536
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126283e5fd3665a4ca741b290e1f8d45
+      internalID: 297268046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_35
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8b73f7770932046a52940135d7c486
+      internalID: -1062179491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_36
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47fd1ede43beca48934a0819655108f
+      internalID: 1256190968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_37
+      rect:
+        serializedVersion: 2
+        x: 3848
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e08a351eaf327d40b0a9395184817b2
+      internalID: -604168096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_38
+      rect:
+        serializedVersion: 2
+        x: 3952
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db584f107808bf54a9670a04d66a1cd1
+      internalID: -1160387455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_39
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4645055bdfd839a4ca04b746b0c8b616
+      internalID: 1546466606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_40
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9984a44ca55994a9dbc3fe9ec9dc03
+      internalID: -1624289231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_41
+      rect:
+        serializedVersion: 2
+        x: 4264
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc18798816141de469d12b0b9b47b5a2
+      internalID: 1630287557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_42
+      rect:
+        serializedVersion: 2
+        x: 4368
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdda1f31200147468db4be6711fbb0c
+      internalID: 1213067691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_43
+      rect:
+        serializedVersion: 2
+        x: 4472
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14173d1bf2a3044f8fc828cd8b25066
+      internalID: 505517458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_44
+      rect:
+        serializedVersion: 2
+        x: 4576
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8dc99e397668e4086deb31016f7565
+      internalID: -2021432264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_45
+      rect:
+        serializedVersion: 2
+        x: 4680
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3354a18eada78284793ba7c9fcef032c
+      internalID: -902610519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_46
+      rect:
+        serializedVersion: 2
+        x: 4784
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2638b9065a8ac49be85299434b2778
+      internalID: -2015003376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_47
+      rect:
+        serializedVersion: 2
+        x: 4888
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7eac866174e58449cea106fbfddc6a
+      internalID: 1861154852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_48
+      rect:
+        serializedVersion: 2
+        x: 4992
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9f22bd876d796439a225ffec43f5c0
+      internalID: -515614140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_49
+      rect:
+        serializedVersion: 2
+        x: 5096
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ff07813e7ec4744ab20b1a94492aed
+      internalID: -287452295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_50
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4991ba7c6e31f479b1cd4195513279
+      internalID: -1943793621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_51
+      rect:
+        serializedVersion: 2
+        x: 5304
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc52d366ed9fd946b872489f78e5a1a
+      internalID: -451585332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_52
+      rect:
+        serializedVersion: 2
+        x: 5408
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a691b9e2069ee7446b94be77df51aa28
+      internalID: -1757324991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_53
+      rect:
+        serializedVersion: 2
+        x: 5512
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69f21074c410864ab46770ed3208b14
+      internalID: -2105470099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_54
+      rect:
+        serializedVersion: 2
+        x: 5616
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058fbe1998cefd444867cbe1acbae452
+      internalID: -214128249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_55
+      rect:
+        serializedVersion: 2
+        x: 5720
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2aeb3eee30af84fb3bd077d3b65e9b
+      internalID: 2049102451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_56
+      rect:
+        serializedVersion: 2
+        x: 5824
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44ba049085f7244fb53adcfe5fa710e
+      internalID: -722305239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_57
+      rect:
+        serializedVersion: 2
+        x: 5928
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d190b0468a602dd4285b45b5460d9503
+      internalID: 1614760311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_58
+      rect:
+        serializedVersion: 2
+        x: 6032
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c7cf28ceb939340a904d666748239d
+      internalID: 540414538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_59
+      rect:
+        serializedVersion: 2
+        x: 6136
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f343a5eb2a835a48a1b81ff7ceff31b
+      internalID: 785627764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_60
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2db702f40de8d4684d72d964268a6e
+      internalID: 1398342257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_61
+      rect:
+        serializedVersion: 2
+        x: 6344
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ed1ae6e47752d45998a7cdc832f4e3
+      internalID: 1350830161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_62
+      rect:
+        serializedVersion: 2
+        x: 6448
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b50f70c996fa146a5ea3e176f1f8aa
+      internalID: 101165788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_63
+      rect:
+        serializedVersion: 2
+        x: 6552
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653ddcfc307d64344abb62b1b7b1e157
+      internalID: 1758788610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_64
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe59ec2adb60a0943ba3ba7e957f9e1b
+      internalID: 1233179752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_65
+      rect:
+        serializedVersion: 2
+        x: 6760
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a54139074067f4c9245333d76c2267
+      internalID: -1325500196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_66
+      rect:
+        serializedVersion: 2
+        x: 6864
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6951d5e97c0b8cf408582d13efb2a656
+      internalID: -692360257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_67
+      rect:
+        serializedVersion: 2
+        x: 6968
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b187284f7fa614c8300925a3ba922c
+      internalID: -551214275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_68
+      rect:
+        serializedVersion: 2
+        x: 7072
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0a482c67cda304d8aebf55c0f64a92
+      internalID: -783988159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_69
+      rect:
+        serializedVersion: 2
+        x: 7176
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe41adf5559df34da756c92811d17b9
+      internalID: -704730587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_70
+      rect:
+        serializedVersion: 2
+        x: 7280
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e2963278ea7b44c835c11a0adc1edd
+      internalID: 776968424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_71
+      rect:
+        serializedVersion: 2
+        x: 7384
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61cce2d8e1c834f4cb393c07a490ae37
+      internalID: -1797873210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_72
+      rect:
+        serializedVersion: 2
+        x: 7488
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565471175b8a6c44aad35a0309723b21
+      internalID: 2004234566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_73
+      rect:
+        serializedVersion: 2
+        x: 7592
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ead5fd5b0ebba64aa2fa228bc0abfa3
+      internalID: -1638065118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space Marine Dead (W104 H76)_74
+      rect:
+        serializedVersion: 2
+        x: 7696
+        y: 0
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b3821dc74970049b108fdebfcf56a8
+      internalID: 2107809975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Space Marine Dead (W104 H76)_0: 683006469
+      Space Marine Dead (W104 H76)_1: 1695257547
+      Space Marine Dead (W104 H76)_10: -696533552
+      Space Marine Dead (W104 H76)_11: 1309859954
+      Space Marine Dead (W104 H76)_12: -1888997626
+      Space Marine Dead (W104 H76)_13: 1589439756
+      Space Marine Dead (W104 H76)_14: 2008976995
+      Space Marine Dead (W104 H76)_15: 1358781242
+      Space Marine Dead (W104 H76)_16: 249251306
+      Space Marine Dead (W104 H76)_17: -1387778722
+      Space Marine Dead (W104 H76)_18: 849003427
+      Space Marine Dead (W104 H76)_19: -1677508622
+      Space Marine Dead (W104 H76)_2: 1284362624
+      Space Marine Dead (W104 H76)_20: 474474577
+      Space Marine Dead (W104 H76)_21: -1084427452
+      Space Marine Dead (W104 H76)_22: 2641649
+      Space Marine Dead (W104 H76)_23: 2100494130
+      Space Marine Dead (W104 H76)_24: -526007241
+      Space Marine Dead (W104 H76)_25: -1239465263
+      Space Marine Dead (W104 H76)_26: 322003772
+      Space Marine Dead (W104 H76)_27: -1738926405
+      Space Marine Dead (W104 H76)_28: 1063117431
+      Space Marine Dead (W104 H76)_29: 2131710664
+      Space Marine Dead (W104 H76)_3: 375662120
+      Space Marine Dead (W104 H76)_30: -1992700317
+      Space Marine Dead (W104 H76)_31: -1245172977
+      Space Marine Dead (W104 H76)_32: -528667194
+      Space Marine Dead (W104 H76)_33: 523648307
+      Space Marine Dead (W104 H76)_34: 297268046
+      Space Marine Dead (W104 H76)_35: -1062179491
+      Space Marine Dead (W104 H76)_36: 1256190968
+      Space Marine Dead (W104 H76)_37: -604168096
+      Space Marine Dead (W104 H76)_38: -1160387455
+      Space Marine Dead (W104 H76)_39: 1546466606
+      Space Marine Dead (W104 H76)_4: 205222254
+      Space Marine Dead (W104 H76)_40: -1624289231
+      Space Marine Dead (W104 H76)_41: 1630287557
+      Space Marine Dead (W104 H76)_42: 1213067691
+      Space Marine Dead (W104 H76)_43: 505517458
+      Space Marine Dead (W104 H76)_44: -2021432264
+      Space Marine Dead (W104 H76)_45: -902610519
+      Space Marine Dead (W104 H76)_46: -2015003376
+      Space Marine Dead (W104 H76)_47: 1861154852
+      Space Marine Dead (W104 H76)_48: -515614140
+      Space Marine Dead (W104 H76)_49: -287452295
+      Space Marine Dead (W104 H76)_5: -1600495149
+      Space Marine Dead (W104 H76)_50: -1943793621
+      Space Marine Dead (W104 H76)_51: -451585332
+      Space Marine Dead (W104 H76)_52: -1757324991
+      Space Marine Dead (W104 H76)_53: -2105470099
+      Space Marine Dead (W104 H76)_54: -214128249
+      Space Marine Dead (W104 H76)_55: 2049102451
+      Space Marine Dead (W104 H76)_56: -722305239
+      Space Marine Dead (W104 H76)_57: 1614760311
+      Space Marine Dead (W104 H76)_58: 540414538
+      Space Marine Dead (W104 H76)_59: 785627764
+      Space Marine Dead (W104 H76)_6: -2127289762
+      Space Marine Dead (W104 H76)_60: 1398342257
+      Space Marine Dead (W104 H76)_61: 1350830161
+      Space Marine Dead (W104 H76)_62: 101165788
+      Space Marine Dead (W104 H76)_63: 1758788610
+      Space Marine Dead (W104 H76)_64: 1233179752
+      Space Marine Dead (W104 H76)_65: -1325500196
+      Space Marine Dead (W104 H76)_66: -692360257
+      Space Marine Dead (W104 H76)_67: -551214275
+      Space Marine Dead (W104 H76)_68: -783988159
+      Space Marine Dead (W104 H76)_69: -704730587
+      Space Marine Dead (W104 H76)_7: -1999146188
+      Space Marine Dead (W104 H76)_70: 776968424
+      Space Marine Dead (W104 H76)_71: -1797873210
+      Space Marine Dead (W104 H76)_72: 2004234566
+      Space Marine Dead (W104 H76)_73: -1638065118
+      Space Marine Dead (W104 H76)_74: 2107809975
+      Space Marine Dead (W104 H76)_8: -702233017
+      Space Marine Dead (W104 H76)_9: 1228113624
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
