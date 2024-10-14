@@ -2284,6 +2284,8 @@ MonoBehaviour:
   levelUpWindow: {fileID: 2035017992}
   healthBarImg: {fileID: 186398896}
   healthText: {fileID: 582807980}
+  xpBar: {fileID: 963066961}
+  levelText: {fileID: 1360382299}
 --- !u!1 &1028060832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,6 +3059,8 @@ GameObject:
   - component: {fileID: 1506602012}
   - component: {fileID: 1506602011}
   - component: {fileID: 1506602010}
+  - component: {fileID: 1506602018}
+  - component: {fileID: 1506602019}
   m_Layer: 0
   m_Name: Baze
   m_TagString: Player
@@ -3250,6 +3254,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506602018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506602009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea83f478a7a4c934d98b47a8c14c7e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!114 &1506602019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506602009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095e23b05d06a642bfbfef3542c722e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1588999024
 GameObject:
   m_ObjectHideFlags: 0
