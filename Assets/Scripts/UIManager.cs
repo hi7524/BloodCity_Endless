@@ -20,12 +20,16 @@ public class UIManager : MonoBehaviour
     }
 
     [Header("UI")]
-    public GameObject pauseWindow; // 옵션 창
+    public GameObject pauseWindow;  // 옵션 창
     public GameObject levelUpWindow; // 레벨업시 나타날 스텟 업그레이드 창
 
     [Header("플레이어 체력")]
-    public Image healthBarImg;
-    public TMP_Text healthText;
+    public Image healthBarImg;  // 체력바
+    public TMP_Text healthText; // 체력 텍스트
+
+    [Header("플레이어 경험치")]
+    public Image xpBar;        // 경험치 바
+    public TMP_Text levelText; // 레벨 텍스트
 
 
     void Awake()
@@ -63,8 +67,16 @@ public class UIManager : MonoBehaviour
     // 플레이어 체력 정보 업데이트
     public void UpdatePlayerHealth(float health, float maxHealth)
     {
-        healthText.text = $"{health.ToString()} / {maxHealth.ToString()}";
-        healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, health / maxHealth, Time.deltaTime * 10);
+        if (health > 0)
+        {
+            healthText.text = $"{health.ToString()} / {maxHealth.ToString()}";
+            healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, health / maxHealth, Time.deltaTime * 10);
+        }
+        else
+        {
+            healthText.text = "0 /" + maxHealth.ToString();
+            healthBarImg.fillAmount = 0;
+        }
     }
 
     // 창 활성화 및 비활성화
