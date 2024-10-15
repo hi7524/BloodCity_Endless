@@ -49,7 +49,6 @@ public class HeavyMachineGunBullet : MonoBehaviour
         // 추적 대상이 존재하지 않을 경우
         if (closetTarget == null)
         {
-
             Destroy(gameObject);
         }
         // 추적 대상이 존재할 경우
@@ -68,6 +67,10 @@ public class HeavyMachineGunBullet : MonoBehaviour
             collision.GetComponent<MobAI>().Damaged(attackDamage);
 
             Destroy(gameObject); // 오브젝트 파괴
+        }
+        else
+        {
+            Debug.Log("충돌");
         }
     }
 }
