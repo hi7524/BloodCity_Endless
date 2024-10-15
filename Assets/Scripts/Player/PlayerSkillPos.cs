@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // 플레이어 주위로 무기가 돌도록 함
@@ -15,21 +13,27 @@ public class PlayerSkillPos : MonoBehaviour
     }
     private void Update()
     {
-        transform.Rotate(Vector3.back * speed * Time.deltaTime);
+        SkillRotate();
     }
     
-    void Batch()
+    // 스킬 회전
+    private void SkillRotate()
     {
-        for (int index = 0; index < count; index++)
+        transform.Rotate(Vector3.back * speed * Time.deltaTime);
+    }
+
+    // 스킬 배치
+    public void Batch()
+    {
+        for (int i = 0; i < count; i++)
         {
-            GameObject bullet = Instantiate(examplePrf);
+            GameObject bullet = Instantiate(examplePrf); 
 
-            bullet.transform.parent = transform;
+            bullet.transform.parent = transform; 
 
-            Vector3 rotvec = Vector3.forward * 360 * index / count;
-            bullet.transform.Rotate(rotvec);
-            bullet.transform.Translate(bullet.transform.up * 5f, Space.World);
-
+            Vector3 rotvec = Vector3.forward * 360 * i / count; // 위치 계산
+            bullet.transform.Rotate(rotvec);                    // 계산 위치에 배치
+            bullet.transform.Translate(bullet.transform.up * 5f, Space.World); // 플레이어로부터 거리 띄우기
         }
     }
 }

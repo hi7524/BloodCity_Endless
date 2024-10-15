@@ -67,14 +67,16 @@ public class UIManager : MonoBehaviour
     // 플레이어 체력 정보 업데이트
     public void UpdatePlayerHealth(float health, float maxHealth)
     {
-        healthText.text = $"{health.ToString()} / {maxHealth.ToString()}";
-        healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, health / maxHealth, Time.deltaTime * 10);
-    }
-
-    // 플레이어 경험치 정보 업데이트
-    public void UpdatePlayerEXP(float playerXP, float levelUpXp)
-    {
-
+        if (health > 0)
+        {
+            healthText.text = $"{health.ToString()} / {maxHealth.ToString()}";
+            healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, health / maxHealth, Time.deltaTime * 10);
+        }
+        else
+        {
+            healthText.text = "0 /" + maxHealth.ToString();
+            healthBarImg.fillAmount = 0;
+        }
     }
 
     // 창 활성화 및 비활성화
