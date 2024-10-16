@@ -43,6 +43,7 @@ public class MobAI : MonoBehaviour
 
     protected IMobSkill[] mobSkills; // 스킬 배열
 
+    private SpriteRenderer render; // 스프라이트 렌더러
     private int bodyAttackTime = 1; // 몸빵 피해 대기 시간
     private bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
 
@@ -69,6 +70,13 @@ public class MobAI : MonoBehaviour
 
         }
 
+
+        // 스프라이트 및 애니메이션 설정
+        render = GetComponent<SpriteRenderer>();
+
+        if (obj.AnimeControllers.Length > 0)
+            GetComponent<Animator>().runtimeAnimatorController = obj.AnimeControllers[Random.Range(0, obj.AnimeControllers.Length)];
+
     }
 
     private void Update()
@@ -78,7 +86,7 @@ public class MobAI : MonoBehaviour
         {
             dis = Vector2.Distance(transform.position, Target.transform.position); // 거리 차 계산
             dir = (Target.transform.position - transform.position).normalized; // 방향 계산
-
+            
             Routine_Move(dis, dir);
             Routine_Attack(dis, dir);
         }
@@ -90,6 +98,8 @@ public class MobAI : MonoBehaviour
 
         if(!isUsingSkillState) // 스킬 사용 상태가 아닌 경우에만
         {
+
+            render.flipX = dir.x > 0; // 스프라이트 플립 변경
 
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
@@ -184,7 +194,7 @@ public class MobAI : MonoBehaviour
         {
 
             hp -= damage; // 피해
-            print(obj.mobName + " 현재 체력 : " + hp);
+
             if(hp <= 0) // 사망할 경우
             {
 
@@ -236,7 +246,6 @@ public class MobAI : MonoBehaviour
     public void Dead() // 몬스터 사망 처리
     {
         Destroy(gameObject);
-        print(obj.mobName + " 사망");
     }
 
     private void OnTriggerStay2D(Collider2D coll)
