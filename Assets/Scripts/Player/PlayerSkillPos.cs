@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerSkillPos : MonoBehaviour
 {
     [Header("스킬 설정값")]
-    public float speed = 15; // 무기 회전 속도
+    public float rotateSpeed = 15; // 무기 회전 속도
+
     [Header("스킬")]
     public GameObject defaultSkill; // 기본 무기 (샷건)
     public List<GameObject> playerSkills = new List<GameObject>(); // 무기 목록
@@ -15,7 +16,7 @@ public class PlayerSkillPos : MonoBehaviour
     
     private void Start()
     {
-        count = 1;                      // 시작시 기본 무기 소지 시작 고정을 위한 개수 초기화
+        count = 2;                      // 시작시 기본 무기 소지 시작 고정을 위한 개수 초기화 **1로 수정하기**
         playerSkills.Add(defaultSkill); // 기본 무기 추가
 
         Batch();                        // 초기 무기 배치
@@ -29,7 +30,7 @@ public class PlayerSkillPos : MonoBehaviour
     // 스킬 회전
     private void SkillRotate()
     {
-        transform.Rotate(Vector3.back * speed * Time.deltaTime);
+        transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime);
     }
 
     // 스킬 배치

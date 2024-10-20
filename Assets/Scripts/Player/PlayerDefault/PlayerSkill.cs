@@ -4,7 +4,7 @@ using UnityEngine.UI;
 // 플레이어의 스킬 사용 및 관리
 public class PlayerSkill : MonoBehaviour
 {
-    // 플레임 벨트 스킬 오브젝트
+   /* // 플레임 벨트 스킬 오브젝트
     public GameObject flameObj;
 
     // 쿨타임을 나타낼 이미지
@@ -82,5 +82,5 @@ public class PlayerSkill : MonoBehaviour
     private void IceGrenade()
     {
         Debug.Log("얼음 수류탄 스킬");
-    }
+    }*/
 }

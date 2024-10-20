@@ -1,6 +1,4 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 // 플레이어의 경험치 및 레벨업 관리
 public class PlayerLevel : MonoBehaviour

@@ -32,12 +32,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // 스킬 (강화를 통해 얻는 스킬)
-    public bool passiveSkill;    // 플레임 벨트
-    public bool fragmentGrenade; // 파편 수류탄
-    public bool iceGrenade;      // 얼음 수류탄
-
-
 
     // 선택한 캐릭터
     // 레벨
@@ -52,7 +46,8 @@ public class GameManager : MonoBehaviour
     public void AddCoin(int addCoin)
     {
         coin += addCoin;
-        Debug.Log("Coin: " +  coin);    
+        Debug.Log("Coin: " +  coin);   
+        UIManager.Instance.UpdateCoin(coin);
     }
 
     // 플레이어 레벨업
