@@ -8,7 +8,6 @@ public class Coin : MonoBehaviour, IItem
     public void Use(GameObject target)
     {
         GameManager.Instance.AddCoin(coinData.point);
-        AudioManager.Instance.PlayCoinSound();
         Destroy(gameObject);
     }
 }

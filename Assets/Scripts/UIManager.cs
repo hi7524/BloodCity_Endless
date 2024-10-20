@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
         // 초기 설정
         pauseWindow.SetActive(false); // 옵션 창 비활성화
         levelUpWindow.SetActive(false); // 레벨업 창 비활성화
+        coinText.text = GameManager.Instance.coin.ToString(); // 기존 소지 코인 나타내기
     }
 
     private void Update()
