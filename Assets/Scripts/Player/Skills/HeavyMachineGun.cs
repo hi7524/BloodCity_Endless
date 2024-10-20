@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 // 플레이어 머신건 스킬
@@ -25,9 +26,14 @@ public class HeavyMachineGun : MonoBehaviour, IPlayerSkill
         // 쿨타임마다 스킬 사용
         curCoolDown += Time.deltaTime;
 
-        if(curCoolDown > coolDown)
+        // Fire
+        if (curCoolDown > coolDown)
         {
-            Instantiate(bulletPrf, firePos.position, Quaternion.identity); // 총알 발사 (생성)
+            // 흔들림 효과
+            transform.DOShakePosition(0.1f, 0.1f, 1, 1);
+
+            // 총알 생성
+            Instantiate(bulletPrf, firePos.position, Quaternion.identity);
             curCoolDown = 0;
         }
     }

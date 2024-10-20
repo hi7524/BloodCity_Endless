@@ -20,8 +20,9 @@ public class UIManager : MonoBehaviour
     }
 
     [Header("UI")]
-    public GameObject pauseWindow;  // 옵션 창
+    public GameObject pauseWindow;   // 옵션 창
     public GameObject levelUpWindow; // 레벨업시 나타날 스텟 업그레이드 창
+    public TMP_Text coinText;  // 인게임 코인 텍스트
 
     [Header("플레이어 체력")]
     public Image healthBarImg;  // 체력바
@@ -77,6 +78,12 @@ public class UIManager : MonoBehaviour
             healthText.text = "0 /" + maxHealth.ToString();
             healthBarImg.fillAmount = 0;
         }
+    }
+
+    // 플레이어 코인 정보 업데이트
+    public void UpdateCoin(int coin)
+    {
+        coinText.text = coin.ToString();
     }
 
     // 창 활성화 및 비활성화

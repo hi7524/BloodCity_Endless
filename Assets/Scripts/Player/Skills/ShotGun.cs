@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,10 @@ public class ShotGun : MonoBehaviour
     
     IEnumerator Fire()
     {
+        // 흔들림 효과
+        transform.DOShakePosition(0.2f, 0.2f, 1, 1);
+
+        // 총알 생성
         for (int i = 0; i < bulletCount; i++)
         {
             Instantiate(bulletPrf, bulletTrans.position, Quaternion.identity);
