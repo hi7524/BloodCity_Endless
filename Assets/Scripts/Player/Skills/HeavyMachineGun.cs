@@ -32,6 +32,8 @@ public class HeavyMachineGun : MonoBehaviour, IPlayerSkill
             // 흔들림 효과
             transform.DOShakePosition(0.1f, 0.1f, 1, 1);
 
+
+
             // 총알 생성
             Instantiate(bulletPrf, firePos.position, Quaternion.identity);
             curCoolDown = 0;
