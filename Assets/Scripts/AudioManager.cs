@@ -22,7 +22,8 @@ public class AudioManager : MonoBehaviour
     [Header("Sound Clips")]
     public AudioClip coinSound;
     public AudioClip expSound;
-
+    public AudioClip playerHitSound;
+        
 
     private AudioSource audioSource;
 
@@ -44,14 +45,24 @@ public class AudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayCoinSound()
+    public void PlaySound(string soundName)
     {
-        audioSource.PlayOneShot(coinSound);
+        switch (soundName)
+        {
+            case "coinSound":
+                audioSource.PlayOneShot(coinSound);
+                break;
+            case "expSound":
+                audioSource.PlayOneShot(expSound);
+                break;
+            case "playerHitSound":
+                audioSource.PlayOneShot(playerHitSound);
+                break;
+            default:
+                Debug.Log("재생할 효과음이 없습니다.");
+                break;
+        }
     }
 
-    public void PlayExpSound()
-    {
-        audioSource.PlayOneShot(expSound);
-    }
 }
 
