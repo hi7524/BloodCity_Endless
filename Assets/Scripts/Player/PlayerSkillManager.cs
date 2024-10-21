@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// 플레이어 주위로 무기가 돌도록 함
-public class PlayerSkillPos : MonoBehaviour
+// 스킬 배치 및 회전
+// 스킬 사용
+public class PlayerSkillManager : MonoBehaviour
 {
     [Header("스킬 설정값")]
     public float rotateSpeed = 15; // 무기 회전 속도
@@ -11,12 +12,15 @@ public class PlayerSkillPos : MonoBehaviour
     public GameObject defaultSkill; // 기본 무기 (샷건)
     public List<GameObject> playerSkills = new List<GameObject>(); // 무기 목록
 
+    [Header("모든 스킬 목록")]
+    public List<GameObject> allPlayerSkills = new List<GameObject>(); // 무기 목록
+
     private float count;     // 무기 개수
 
     
     private void Start()
     {
-        count = 2;                      // 시작시 기본 무기 소지 시작 고정을 위한 개수 초기화 **1로 수정하기**
+        count = 1 + playerSkills.Count; // 기본 소지 무기 개수                    
         playerSkills.Add(defaultSkill); // 기본 무기 추가
 
         Batch();                        // 초기 무기 배치
@@ -55,30 +59,22 @@ public class PlayerSkillPos : MonoBehaviour
     }
 
     // 스킬 개수 추가 및 재배치
-    public void AddSkill()
+    public void AddSkill(int skillID)
     {
+        // 스킬 개수 추가
+        count++;
+
+        // 플레이어 사용 스킬 목록에 스킬 추가
+        playerSkills.Add(allPlayerSkills[skillID]);
+
         // 기존 스킬 제거 (재배치를 위함)
         for (int i = 0; i < transform.childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
         }
 
-        // 스킬 개수 추가
-        count++;
-
         // 스킬 배치
         Batch();
     }
 
-    // Trrigger
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // 스킬 충돌시 충돌 스킬 추가
-        if (collision.CompareTag("PlayerSkill"))
-        {
-            playerSkills.Add(collision.gameObject); // 충돌한 아이템 추가
-
-            AddSkill();
-        }   
-    }
 }

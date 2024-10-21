@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip coinSound;
     public AudioClip expSound;
     public AudioClip playerHitSound;
+    public AudioClip addSkillSound;
         
 
     private AudioSource audioSource;
@@ -57,6 +58,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "playerHitSound":
                 audioSource.PlayOneShot(playerHitSound);
+                break;
+            case "addSkillSound":
+                audioSource.PlayOneShot(addSkillSound);
                 break;
             default:
                 Debug.Log("재생할 효과음이 없습니다.");
