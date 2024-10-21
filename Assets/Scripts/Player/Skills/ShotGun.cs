@@ -1,6 +1,5 @@
 using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // 샷건(플레이어의 기본 공격 스킬) 구현
@@ -12,7 +11,7 @@ public class ShotGun : MonoBehaviour
     public int bulletCount = 6; // 발사 총알 개수
 
     private float curCoolDown;
-
+   
     private Camera mainCam;
     private Vector3 mousePos;
 
