@@ -2939,8 +2939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 15
   defaultSkill: {fileID: 7430159223837483755, guid: a6a6a7219abf17440b5ab646e6133fcc, type: 3}
-  playerSkills:
-  - {fileID: 6367858690743225992, guid: af4b4b7b9f92c7b44867e276e23757b1, type: 3}
+  playerSkills: []
   allPlayerSkills:
   - {fileID: 6367858690743225992, guid: af4b4b7b9f92c7b44867e276e23757b1, type: 3}
 --- !u!1 &1124404651
