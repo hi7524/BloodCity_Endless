@@ -3,9 +3,9 @@ using UnityEngine;
 // 영구 강화를 통해 얻는 스킬
 public class PermanentBuffSkill : MonoBehaviour
 {
-    // 플레임 밸트
-    // 파편 수류탄
-    // 얼음 수류탄
+    // [0] flame belt 플레임 밸트  
+    // [1] shrapnel grenade 파편 수류탄  
+    // [2] ice grenade 얼음 수류탄  
 
     [Header("영구 강화 스킬")] 
     public GameObject[] permanentSkills; // 영구 강화를 통해 얻을 수 있는 전체 스킬
