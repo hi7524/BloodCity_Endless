@@ -7,6 +7,7 @@ public class ShotGunBullet : MonoBehaviour
     public float minForce = 4f; // 최소 힘(속도)
     public float maxForce = 5;  // 최고 힘(속도)
     public int bulletDamage = 3; // 공격 데미지
+    public GameObject damageTextPrf;
 
     private float force;          // 현재 총알이 가질 힘
 
@@ -44,8 +45,10 @@ public class ShotGunBullet : MonoBehaviour
         // 적과 충돌시
         if (collision.CompareTag("Enemy"))
         {
-            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
+            GameObject damageText = Instantiate(damageTextPrf);
+            damageText.transform.position = collision.transform.position;
 
+            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
             collision.GetComponent<MobAI>().Damaged(attackDamage);
 
             Destroy(gameObject); // 오브젝트 파괴
