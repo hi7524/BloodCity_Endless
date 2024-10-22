@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 
@@ -223,7 +224,8 @@ public class MobAI : MonoBehaviour
                     {
 
                         isDying = false;
-                        
+                        transform.tag = "Untagged";
+
                         skill.Use(this);
 
                     }

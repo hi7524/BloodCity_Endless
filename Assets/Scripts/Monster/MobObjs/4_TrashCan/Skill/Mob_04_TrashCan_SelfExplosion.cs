@@ -20,6 +20,8 @@ public class Mob_04_TrashCan_SelfExplosion : MonoBehaviour, IMobSkill
     public void Use(MobAI AI)
     {
 
+        AI.GetComponent<SpriteRenderer>().sortingOrder = -4;
+
         GameObject Fire = Instantiate(data.SkillEffect, AI.gameObject.transform.position, AI.gameObject.transform.rotation);
 
         StartCoroutine(Remove(Fire, AI));
