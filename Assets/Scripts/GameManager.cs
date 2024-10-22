@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     public void AddCoin(int addCoin)
     {
         coin += addCoin;
-        Debug.Log("Coin: " +  coin);   
         UIManager.Instance.UpdateCoin(coin);
     }
 
