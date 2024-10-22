@@ -23,3 +23,7 @@ MonoBehaviour:
   attackDamage: 7
   speed: 150
   upgradeCoinDropPer: 5
+  AnimeControllers:
+  - {fileID: 9100000, guid: 2e5135c6677402e499c8d1c6a83c7137, type: 2}
+  - {fileID: 9100000, guid: 42209dda4ba9c0342b7f756bd3e58b41, type: 2}
+  - {fileID: 9100000, guid: 40d30733220cb9740aab5be4ae9101cc, type: 2}
