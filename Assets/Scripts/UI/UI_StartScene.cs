@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class UI_StartScene : MonoBehaviour
 {
+    [SerializeField] GameObject mainWindow; // 메인 창
     [SerializeField] GameObject pauseWindow; // 옵션 창
     [SerializeField] GameObject chaWindow; // 캐릭터 창
     [SerializeField] GameObject equipWindow; // 장비 창
@@ -10,6 +11,7 @@ public class UI_StartScene : MonoBehaviour
     private void Start()
     {
         Return();
+        mainWindow.SetActive(true);
     }
 
     public void ToggleWindow(GameObject window)
@@ -17,12 +19,14 @@ public class UI_StartScene : MonoBehaviour
         // 창 끄기
         if (window.activeSelf)
         {
+            mainWindow.SetActive(true);
             window.SetActive(false);
             Time.timeScale = 1.0f;
         }
         // 창 켜기
         else
         {
+            Return();
             window.SetActive(true);
             Time.timeScale = 0.0f;
         }
@@ -38,10 +42,10 @@ public class UI_StartScene : MonoBehaviour
     // 초기 상태
     public void Return()
     {
+        mainWindow.SetActive(false);
         chaWindow.SetActive(false);
         pauseWindow.SetActive(false);
         equipWindow.SetActive(false);
-        Time.timeScale = 1.0f;
     }
 
     // 게임 종료
