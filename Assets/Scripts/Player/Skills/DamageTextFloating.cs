@@ -19,9 +19,11 @@ public class DamageTextFloating : MonoBehaviour
 
     private void TextEffect()
     {
-
-        Vector3 targetVec = new Vector3(0, 0.2f, 0);
-        tmp.DOFade(0, 0.5f);
-        tmp.transform.DOMove(transform.position + targetVec, 0.2f);
+        tmp.text = damage.ToString();
+        Vector3 targetVec = new Vector3(0, 0.5f, 0);
+        tmp.DOFade(0, 1f);
+        tmp.transform.DOMove(transform.position + targetVec, 0.5f).OnComplete(() =>{
+            Destroy(transform.parent.gameObject);
+        });
     }
 }
