@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 
@@ -44,5 +45,9 @@ public class MobObj : ScriptableObject
     public IMobSkill MobAttack; // 몬스터 기본 공격 스크립트
     public IMobSkill MobSkill; // 몬스터 스킬 스크립트
     public IMobSkill MobDeadEvent; // 몬스터 사망 시 이벤트 스크립트
+
+
+    [Header("Animation")]
+    public AnimatorController[] AnimeControllers; // 애니메이터 컨트롤러
 
 }
