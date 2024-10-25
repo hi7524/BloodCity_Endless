@@ -45,11 +45,12 @@ public class ShotGunBullet : MonoBehaviour
         // 적과 충돌시
         if (collision.CompareTag("Enemy"))
         {
-            GameObject damageText = Instantiate(damageTextPrf);
-            damageText.transform.position = collision.transform.position;
-
             int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
             collision.GetComponent<MobAI>().Damaged(attackDamage);
+
+            GameObject damageText = Instantiate(damageTextPrf);
+            damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;
+            damageText.transform.position = collision.transform.position;
 
             Destroy(gameObject); // 오브젝트 파괴
         }

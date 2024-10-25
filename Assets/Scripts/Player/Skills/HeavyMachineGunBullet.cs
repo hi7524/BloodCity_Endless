@@ -6,7 +6,7 @@ public class HeavyMachineGunBullet : MonoBehaviour
 {
     public LayerMask detectLayer; // 추적 대상 레이어 선택
     public int bulletDamage = 1;
-
+    public GameObject damageTextPrf;
     private float moveSpeed = 10; // 총알 속도
     private float detectRange = 5f; // 적 감지 범위
     private Transform closetTarget; // 추적 대상
@@ -65,6 +65,10 @@ public class HeavyMachineGunBullet : MonoBehaviour
         {
             int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
             collision.GetComponent<MobAI>().Damaged(attackDamage);
+
+            GameObject damageText = Instantiate(damageTextPrf);
+            damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;
+            damageText.transform.position = collision.transform.position;
 
             Destroy(gameObject); // 오브젝트 파괴
         }
