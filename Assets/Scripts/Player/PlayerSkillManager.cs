@@ -61,20 +61,26 @@ public class PlayerSkillManager : MonoBehaviour
     // 스킬 개수 추가 및 재배치
     public void AddSkill(int skillID)
     {
-        // 스킬 개수 추가
-        count++;
-
         // 플레이어 사용 스킬 목록에 스킬 추가
-        playerSkills.Add(allPlayerSkills[skillID]);
-
-        // 기존 스킬 제거 (재배치를 위함)
-        for (int i = 0; i < transform.childCount; i++)
+        if (skillID == 0)
         {
-            Destroy(transform.GetChild(i).gameObject);
+            Debug.Log("무기 타입 설정 필요");
         }
+        else
+        {
+            // 스킬 개수 추가
+            count++;
 
-        // 스킬 배치
-        Batch();
+            playerSkills.Add(allPlayerSkills[skillID]);
+
+            // 기존 스킬 제거 (재배치를 위함)
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Destroy(transform.GetChild(i).gameObject);
+            }
+
+            // 스킬 배치
+            Batch();
+        }
     }
-
 }
