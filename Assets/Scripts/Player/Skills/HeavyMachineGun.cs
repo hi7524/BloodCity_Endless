@@ -4,9 +4,13 @@ using UnityEngine;
 // 플레이어 머신건 스킬
 public class HeavyMachineGun : MonoBehaviour
 {
-    public Transform firePos;
+    [Header("Skill")]
+    public Transform firePos;    // 총구 위치
     public GameObject bulletPrf; // 총알 프리팹
     public float coolDown = 2;   // 스킬 쿨타임
+    [Header("Effect")]
+    public float shakeDuration = 0.1f; // 총기 흔들림 효과 지속 시간
+    public float shakeIntens = 0.1f;   // 총기 흔들림 효과 강도
 
     private float curCoolDown = 0;
     private Transform closetTarget; // 추적 대상
@@ -71,9 +75,7 @@ public class HeavyMachineGun : MonoBehaviour
         if (curCoolDown > coolDown)
         {
             // 흔들림 효과
-            transform.DOShakePosition(0.1f, 0.1f, 1, 1);
-
-
+            transform.DOShakePosition(shakeDuration, shakeIntens, 1, 1);
 
             // 총알 생성
             Instantiate(bulletPrf, firePos.position, Quaternion.identity);

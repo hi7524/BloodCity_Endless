@@ -4,8 +4,8 @@ using UnityEngine;
 public class ItemSkill : MonoBehaviour
 {
     public int skillID = 0; // 플레이어에게 추가할 스킬 ID
-    // HeavyMachineGun = 0
-    // 
+    // HeavyMachineGun = 1
+    // RocketLauncher = 2
 
 
     private void OnTriggerEnter2D(Collider2D collision)
