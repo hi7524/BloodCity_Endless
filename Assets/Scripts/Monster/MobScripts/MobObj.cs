@@ -18,6 +18,7 @@ public class MobObj : ScriptableObject
     public string mobName; // 몬스터 이름
     public int[] dropExp = { 0, 0 }; //  드랍 경험치
 
+    public int[] spawnPers = new int[16]; // 스폰 확률
 
     [Header("AI_Type")]
     public AI_MoveType MoveType; // 이동 유형

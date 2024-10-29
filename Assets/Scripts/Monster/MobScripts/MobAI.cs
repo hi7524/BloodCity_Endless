@@ -33,6 +33,9 @@ public class MobAI : MonoBehaviour
     public int hp; // 현재 체력
 
     [HideInInspector]
+    public bool isInstantSpawn = false; // 간이 소환 여부 
+
+    [HideInInspector]
     public bool isDead; // 사망 여부
 
     [SerializeField]
@@ -247,7 +250,10 @@ public class MobAI : MonoBehaviour
 
     public void Dead() // 몬스터 사망 처리
     {
-        Destroy(gameObject);
+        if (isInstantSpawn)
+            Destroy(gameObject);
+        else
+            gameObject.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D coll)

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobName: "\uC74C\uC4F0\uD1B5"
   dropExp: 0500000006000000
+  spawnPers: 0000000000000000000000000f0000000f000000140000001400000000000000000000000a0000000a0000000a00000000000000000000000000000000000000
   MoveType: 0
   AttackType: 1
   Attack_Range: 0
@@ -23,3 +24,4 @@ MonoBehaviour:
   attackDamage: 10
   speed: 120
   upgradeCoinDropPer: 5
+  AnimeControllers: []
