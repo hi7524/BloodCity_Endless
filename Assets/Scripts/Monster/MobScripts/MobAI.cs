@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 
@@ -29,7 +28,7 @@ public class MobAI : MonoBehaviour
     [HideInInspector]
     public Vector2 dir = Vector2.zero; // 플레이어의 방향 
 
-    //[HideInInspector]
+    [HideInInspector]
     public int hp; // 현재 체력
 
     [HideInInspector]
