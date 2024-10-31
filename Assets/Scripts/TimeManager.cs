@@ -23,6 +23,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
 
     // 시간 관련 프로퍼티
     public float nowTime { get; private set; } // 현재 시간
+    public bool isReady { get; private set; } = true; // 준비 여부
     public bool isPaused { get; private set; } = false; // 정지 여부
     public bool isGameOver { get; private set; } = false; // 게임 오버 여부
 
@@ -30,6 +31,15 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     // 스폰 관련 프로퍼티
     [SerializeField]
     private int[] minSpawnNums = new int[16]; // 분당 최소 스폰 마리수
+
+    [SerializeField]
+    private GameObject[] NormalMobPrefabs; // 일반 몬스터 프리팹
+
+    [SerializeField]
+    private GameObject[] HalfBossMobPrefabs; // 중간 보스 몬스터 프리팹
+
+    [SerializeField]
+    private GameObject[] BossMobPrefabs; // 보스 몬스터 프리팹
 
 
     void Start() // 씬 시작 시 초기화
@@ -43,17 +53,22 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     {
         print("현재 시간 : " + (int)nowTime);
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            TogglePause();
-        }
+        if (isReady || isGameOver || isPaused) return; // 게임 오버 상태나 정지 상태일 경우 시간 업뎃 방지
 
-        if (isGameOver || isPaused) return; // 게임 오버 상태나 정지 상태일 경우 시간 업뎃 방지
-
-        // 남은 시간을 업데이트
         nowTime += Time.deltaTime;
     }
 
+
+    public void ResetTime() // 시간 초기화
+    {
+        isReady = true;
+        nowTime = 0;
+    }
+
+    public void EndReady() // 준비 종료
+    {
+        isReady = false;
+    }
 
     public void GameOver() // 게임 오버 처리
     {
