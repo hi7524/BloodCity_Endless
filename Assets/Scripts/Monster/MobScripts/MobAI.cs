@@ -32,7 +32,7 @@ public class MobAI : MonoBehaviour
     public int hp; // 현재 체력
 
     [HideInInspector]
-    public bool isInstantSpawn = false; // 간이 소환 여부 
+    public bool isInstantSpawn = true; // 간이 소환 여부 
 
     [HideInInspector]
     public bool isDead; // 사망 여부
@@ -85,14 +85,16 @@ public class MobAI : MonoBehaviour
     private void Update()
     {
 
-        if (!isDead) // 사망 상태가 아닌 경우에만
+        if (!isDead && Target) // 사망 상태가 아니고 경우에만
         {
             dis = Vector2.Distance(transform.position, Target.transform.position); // 거리 차 계산
             dir = (Target.transform.position - transform.position).normalized; // 방향 계산
-            
+
             Routine_Move(dis, dir);
             Routine_Attack(dis, dir);
         }
+        else
+            Target = GameObject.FindWithTag("Player");
 
     }
 
