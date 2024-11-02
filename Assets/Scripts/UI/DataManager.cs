@@ -44,7 +44,6 @@ public class DataManager : MonoBehaviour
         string ToJsonData = JsonUtility.ToJson(player);
         string filePath = Application.persistentDataPath + "/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
-        //Debug.Log("<color=lime>[SUCCESS]</color> 플레이어 데이터 저장 완료");
     }
 
     public void Awake()
@@ -130,6 +129,7 @@ public class DataManager : MonoBehaviour
             File.Delete(Application.persistentDataPath + "/SoundData.json");
 
             SceneManager.LoadScene("StartScene");
+            UpgradeManager.Instance.ResetStates();
         }
         else
         {

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -29,7 +30,11 @@ public class UpgradeManager : MonoBehaviour
     
     private void Start()
     {
-        LoadStates();
+        if (File.Exists(Application.persistentDataPath + "playerData.json"))
+        {
+            LoadStates();
+        }
+
         UpdateCoinsText();
         SetupButtons();
         purchaseButton.onClick.AddListener(OnPurchaseButtonClicked);

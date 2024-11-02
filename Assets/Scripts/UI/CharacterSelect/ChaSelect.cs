@@ -8,13 +8,10 @@ public class ChaSelect : MonoBehaviour
 
     [Header("Image")]
     public Sprite[] character = new Sprite[3]; // 캐릭터 이미지 배열
-    public Image[] ChaList = new Image[3]; // 캐릭터 슬롯 오브젝트 배열
-
-    [Header("Des")]
-    public TMP_Text chaDescription; // 캐릭터 설명 텍스트
+    public GameObject ChaWindow;
 
     [Header("Stat")]
-    public TMP_Text chaState; // 캐릭터 스탯 텍스트
+    public TMP_Text[] chaState = new TMP_Text[9]; // 캐릭터 스탯 텍스트 배열
     public ChaStateManager[] characterStates = new ChaStateManager[3]; // 캐릭터 스탯 배열
 
     [Header("Etc.")]
@@ -33,11 +30,6 @@ public class ChaSelect : MonoBehaviour
             Instance = this;
         }
 
-        // 창 꺼지니까 할당이 풀려서 임시조치
-        ChaList[0] = GameObject.Find("Cha1").GetComponent<Image>();
-        ChaList[1] = GameObject.Find("Cha2").GetComponent<Image>();
-        ChaList[2] = GameObject.Find("Cha3").GetComponent<Image>();
-
         check.SetActive(false);
     }
 
@@ -45,35 +37,14 @@ public class ChaSelect : MonoBehaviour
     {
         // 강화된 기본 스탯들
         characterStates[currentIndex].InitializeStats();
-        chaState.text = characterStates[currentIndex].GetStats();
-
-        // 도전할 스테이지 번호
-
-        //currentIndex = DataManager.Instance.player.currentIndex;
+        ChaWindow.GetComponent<Image>().sprite = character[currentIndex];
+        characterStates[currentIndex].GetStats();
     }
 
     private void OnEnable()
     {
         PermanentStat(); // 영구강화 데이터 받아오기
-        AssignImagesToSlots(); // 슬롯에 이미지를 할당
-        UpdateCharacterDisplay(); // 초기 디스플레이 업데이트
-    }
-
-    private void AssignImagesToSlots()
-    {
-        // ChaList 배열에 캐릭터 이미지를 할당
-        for (int i = 0; i < ChaList.Length; i++)
-        {
-            if (ChaList[i] != null && character.Length > 0)
-            {
-                int index = (currentIndex + i) % character.Length;
-                ChaList[i].sprite = character[index];
-            }
-            else
-            {
-                Debug.LogError($"<color=orange>[WARNING]</color> ChaList[{i}]는 null입니다.");
-            }
-        }
+        UpdateCharacterInfo();
     }
 
     public void ShowNextCharacter(string LR)
@@ -81,49 +52,43 @@ public class ChaSelect : MonoBehaviour
         // 현재 인덱스를 업데이트
         if (LR == "L")
         {
-            //Debug.Log("왼쪽으로 캐릭터를 넘겼습니다.");
             currentIndex = (currentIndex - 1 + character.Length) % character.Length;
+            PermanentStat();
         }
         else if (LR == "R")
         {
-            //Debug.Log("오른쪽으로 캐릭터를 넘겼습니다.");
             currentIndex = (currentIndex + 1) % character.Length;
+            PermanentStat();
         }
-
-        UpdateCharacterDisplay();
-    }
-
-    private void UpdateCharacterDisplay()
-    {
-        // 슬롯에 이미지를 업데이트
-        for (int i = 0; i < ChaList.Length; i++)
-        {
-            if (ChaList[i] != null && character.Length > 0)
-            {
-                int index = (currentIndex + i) % character.Length;
-                ChaList[i].sprite = character[index];
-            }
-            else
-            {
-                Debug.LogError($"<color=orange>[WARNING]</color> 슬롯 또는 캐릭터 이미지가 null입니다.");
-            }
-        }
-
-        // 캐릭터 설명과 스탯 업데이트
         UpdateCharacterInfo();
     }
 
     private void UpdateCharacterInfo()
     {
-        if (chaDescription != null && chaState != null)
+        for (int i = 0; i < chaState.Length; i++)
         {
-            chaDescription.text = characterStates[currentIndex].bonusStates.characterDetail;
-            characterStates[currentIndex].InitializeStats();
-            chaState.text = characterStates[currentIndex].GetStats(); // 스탯 업데이트
-        }
-        else
-        {
-            Debug.LogError("<color=orange>[WARNING]</color> chaDescription 또는 chaState가 null입니다.");
+
+            chaState[i].color = Color.white;
+
+            if (currentIndex == 0)
+            {
+                chaState[0].color = Color.green;
+                chaState[6].color = Color.green;
+            }
+            else if (currentIndex == 1)
+            {
+                chaState[1].text = "<color=red>-</color>";
+                chaState[2].color = Color.green;
+                chaState[4].color = Color.green;
+            }
+            else if (currentIndex == 2)
+            {
+                chaState[1].color = Color.green;
+                chaState[3].color = Color.green;
+                chaState[5].color = Color.green;
+            }
+
+            chaState[i].text = characterStates[currentIndex].stateList[i].ToString();
         }
     }
 

@@ -7,7 +7,7 @@ public class CharacterStates : ScriptableObject
     public string characterName;
 
     [Header("States")]
-    public float maxHealth = 0;    // 최대 체력 (+)
+    public float maxHealth = 100;    // 최대 체력 (+)
     public float restorePerSec = 0;  // 초당 회복량 (+)
     public float defense = 1;        // 방어력 (+)
     public float speed = 100;        // 이동 속도 (%)
@@ -15,7 +15,7 @@ public class CharacterStates : ScriptableObject
     public float attackDamage = 100; // 공격력 (%)
     public float attackRange = 100;  // 공격 범위 (%)
 
-    public float abilityHaste = 100;   // 능력 가속 (쿨감, %)
+    public float abilityHaste = 0;   // 능력 가속 (쿨감, %)
     public float magnetism = 0;      // 자성 (+)
 
     public float curse = 0;          // 저주 (+)
@@ -28,7 +28,7 @@ public class CharacterStates : ScriptableObject
         speed = 100;
         attackDamage = 100;
         attackRange = 100;
-        abilityHaste = 100;
+        abilityHaste = 0;
         magnetism = 0;
         curse = 0;
     }
