@@ -1,8 +1,12 @@
+using System.Diagnostics;
+
 [System.Serializable]
 public class ChaStateManager
 {
     public CharacterStates playerStates; // 여기에 Player
     public CharacterStates bonusStates; // 여기에 캐릭터별 오브젝트
+
+    public float[] stateList = new float[9];
 
     // 기본 스탯 + 영구 강화
     float maxHealth = 100;    // 최대 체력
@@ -57,54 +61,16 @@ public class ChaStateManager
     }
 
     // 스탯을 문자열로 반환
-    public string GetStats()
+    public void GetStats()
     {
-        string stats = $"최대 체력 : {maxHealth}";
-        if (maxHealthBonus != 0)
-        {
-            stats += $" <color=red>+ {maxHealthBonus}</color>";
-        }
-        stats += $"\n회복 : {restorePerSec}";
-        if (restorePerSecBonus != 0)
-        {
-            stats += $" <color=red>+ {restorePerSecBonus}</color>";
-        }
-        stats += $"\n방어력 : {defense}";
-        if (defenseBonus != 0)
-        {
-            stats += $" <color=red>+ {defenseBonus}</color>";
-        }
-        stats += $"\n이동 속도 : {speed}";
-        if (speedBonus != 0)
-        {
-            stats += $" <color=red>+ {speedBonus}</color>";
-        }
-        stats += $"\n\n피해량 : {attackDamage}";
-        if (attackDamageBonus != 0)
-        {
-            stats += $" <color=red>+ {attackDamageBonus}</color>";
-        }
-        stats += $"\n공격 범위: {attackRange}";
-        if (attackRangeBonus != 0)
-        {
-            stats += $" <color=red>+ {attackRangeBonus}</color>";
-        }
-        stats += $"\n\n쿨타임: {abilityHaste}";
-        if (abilityHasteBonus != 0)
-        {
-            stats += $" <color=red>+ {abilityHasteBonus}</color>";
-        }
-        stats += $"\n자석: {magnetism}";
-        if (magnetismBonus != 0)
-        {
-            stats += $" <color=red>+ {magnetismBonus}</color>";
-        }
-        stats += $"\n\n저주: {curse}";
-        if (curseBonus != 0)
-        {
-            stats += $" <color=red>+ {curseBonus}</color>";
-        }
-
-        return stats;
+        stateList[0] = maxHealth + maxHealthBonus;
+        stateList[1] = restorePerSec + restorePerSecBonus;
+        stateList[2] = defense + defenseBonus;
+        stateList[3] = speed + speedBonus;
+        stateList[4] = attackDamage + attackDamageBonus;
+        stateList[5] = attackRange + attackRangeBonus;
+        stateList[6] = abilityHaste + abilityHasteBonus;
+        stateList[7] = magnetism + magnetismBonus;
+        stateList[8] = curse + curseBonus;
     }
 }
