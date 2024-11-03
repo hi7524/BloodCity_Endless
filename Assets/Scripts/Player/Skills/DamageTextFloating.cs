@@ -1,10 +1,13 @@
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class DamageTextFloating : MonoBehaviour
 {
     public float damage;
+    public Color textColor = Color.red;
+
     private TextMeshProUGUI tmp;
 
 
@@ -14,6 +17,7 @@ public class DamageTextFloating : MonoBehaviour
         tmp = GetComponent<TextMeshProUGUI>();
 
         // 텍스트 이펙트
+        tmp.color = textColor;
         TextEffect();
     }
 
