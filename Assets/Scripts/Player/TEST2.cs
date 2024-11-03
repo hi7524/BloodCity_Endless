@@ -42,7 +42,7 @@ public class TEST2 : MonoBehaviour
             {
                 obj.GetComponent<TestMonster>().DamageTest(25);
             }
-            else if (distance <= testNum*2)
+            else if (distance <= testNum * 2)
             {
                 obj.GetComponent<TestMonster>().DamageTest(15);
             }
@@ -50,7 +50,6 @@ public class TEST2 : MonoBehaviour
             {
                 obj.GetComponent<TestMonster>().DamageTest(10);
             }
-
         }
     }
 
@@ -58,9 +57,10 @@ public class TEST2 : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, testNum);
-        Gizmos.DrawWireSphere(transform.position, testNum*2);
-        Gizmos.DrawWireSphere(transform.position, testNum*3);
-        //Gizmos.DrawWireSphere(transform.position, detectionRadius);
+
+        for (int i = 0; i < 3; i++)
+        {
+            Gizmos.DrawWireSphere(transform.position, testNum * (i+1));
+        }
     }
 }

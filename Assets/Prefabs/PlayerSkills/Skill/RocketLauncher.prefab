@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePos: {fileID: 2884473656045293768}
-  bulletPrf: {fileID: 3890127280238124188, guid: 162f765536ee3c34dafe5397f4ffc72a, type: 3}
+  bulletPrf: {fileID: 2731628550382717676, guid: 162f765536ee3c34dafe5397f4ffc72a, type: 3}
   coolDown: 2
   shakeDuration: 0.3
   shakeIntens: 0.3
