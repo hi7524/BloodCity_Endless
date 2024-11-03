@@ -11,10 +11,17 @@ public class HeavyMachineGun : MonoBehaviour
     [Header("Effect")]
     public float shakeDuration = 0.1f; // 총기 흔들림 효과 지속 시간
     public float shakeIntens = 0.1f;   // 총기 흔들림 효과 강도
+    public AudioClip fireSound;        // 총 발사 효과음
 
     private float curCoolDown = 0;
     private Transform closetTarget; // 추적 대상
+    private AudioSource audioSource;
 
+    private void Awake()
+    {
+        // 컴포넌트 초기화
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -76,6 +83,10 @@ public class HeavyMachineGun : MonoBehaviour
         {
             // 흔들림 효과
             transform.DOShakePosition(shakeDuration, shakeIntens, 1, 1);
+
+            // 효과음
+            audioSource.clip = fireSound;
+            audioSource.Play();
 
             // 총알 생성
             Instantiate(bulletPrf, firePos.position, Quaternion.identity);

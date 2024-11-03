@@ -9,14 +9,20 @@ public class ShotGun : MonoBehaviour
     public Transform bulletTrans;
     public float coolDown;
     public int bulletCount = 6; // 발사 총알 개수
+    public AudioClip fireSound;
 
     private float curCoolDown;
    
     private Camera mainCam;
     private Vector3 mousePos;
+    private AudioSource audioSource;
 
     private void Start()
     {
+        // 컴포넌트 초기화
+        audioSource = GetComponent<AudioSource>();
+
+        // 초기 설정
         mainCam = Camera.main;
     }
 
@@ -45,6 +51,10 @@ public class ShotGun : MonoBehaviour
     {
         // 흔들림 효과
         transform.DOShakePosition(0.2f, 0.2f, 1, 1);
+
+        // 효과음
+        audioSource.clip = fireSound;
+        audioSource.Play();
 
         // 총알 생성
         for (int i = 0; i < bulletCount; i++)
