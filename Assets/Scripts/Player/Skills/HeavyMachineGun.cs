@@ -9,9 +9,10 @@ public class HeavyMachineGun : MonoBehaviour
     public GameObject bulletPrf; // 총알 프리팹
     public float coolDown = 2;   // 스킬 쿨타임
     [Header("Effect")]
-    public float shakeDuration = 0.1f; // 총기 흔들림 효과 지속 시간
-    public float shakeIntens = 0.1f;   // 총기 흔들림 효과 강도
-    public AudioClip fireSound;        // 총 발사 효과음
+    public float shakeDuration = 0.1f;  // 총기 흔들림 효과 지속 시간
+    public float shakeIntens = 0.1f;    // 총기 흔들림 효과 강도
+    public AudioClip fireSound;         // 총 발사 효과음
+    public ParticleSystem fireParticle; // 총 발사 파티클
 
     private float curCoolDown = 0;
     private Transform closetTarget; // 추적 대상
@@ -68,12 +69,12 @@ public class HeavyMachineGun : MonoBehaviour
             transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(0, 0, rotationZ), 5 * Time.deltaTime);
 
             // 총알 발사
-            UseSkill();
+            Fire();
         }
     }
 
     // 스킬 사용
-    public void UseSkill()
+    public void Fire()
     {
         // 쿨타임마다 스킬 사용
         curCoolDown += Time.deltaTime;
@@ -87,6 +88,9 @@ public class HeavyMachineGun : MonoBehaviour
             // 효과음
             audioSource.clip = fireSound;
             audioSource.Play();
+
+            // 이펙트
+            fireParticle.Play();
 
             // 총알 생성
             Instantiate(bulletPrf, firePos.position, Quaternion.identity);

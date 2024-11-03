@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletLifeTime: 1
-  minForce: 4
-  maxForce: 5
-  bulletDamage: 3
+  minForce: 5
+  maxForce: 6
+  bulletDamage: 4
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
