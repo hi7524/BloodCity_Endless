@@ -5,11 +5,15 @@ using UnityEngine;
 // 샷건(플레이어의 기본 공격 스킬) 구현
 public class ShotGun : MonoBehaviour
 {
+    [Header("ShotGun")]
     public GameObject bulletPrf;
     public Transform bulletTrans;
     public float coolDown;
     public int bulletCount = 6; // 발사 총알 개수
+
+    [Header("Effect")]
     public AudioClip fireSound;
+    public ParticleSystem fireParticle;
 
     private float curCoolDown;
    
@@ -44,6 +48,7 @@ public class ShotGun : MonoBehaviour
         {
             StartCoroutine(Fire());
             curCoolDown = 0;
+            //fireParticle.Play(); // 파티클
         }
     }
     
@@ -52,7 +57,7 @@ public class ShotGun : MonoBehaviour
         // 흔들림 효과
         transform.DOShakePosition(0.2f, 0.2f, 1, 1);
 
-        // 효과음
+        // 이펙트
         audioSource.clip = fireSound;
         audioSource.Play();
 
