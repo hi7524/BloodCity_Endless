@@ -5,6 +5,7 @@ public class UI_StartScene : MonoBehaviour
 {
     [SerializeField] GameObject mainWindow; // 메인 창
     [SerializeField] GameObject pauseWindow; // 옵션 창
+    [SerializeField] GameObject StageSelect; // 스테이지 선택 창
     [SerializeField] GameObject chaWindow; // 캐릭터 창
     [SerializeField] GameObject equipWindow; // 장비 창
 
@@ -45,6 +46,7 @@ public class UI_StartScene : MonoBehaviour
         mainWindow.SetActive(false);
         chaWindow.SetActive(false);
         pauseWindow.SetActive(false);
+        StageSelect.SetActive(false);
         equipWindow.SetActive(false);
     }
 

@@ -13,6 +13,8 @@ public class PlayerData
     // ChaSelect 스크립트
     public int currentIndex = 0;
 
+    public int stageIndex;
+
     // UpgradeManager
     public int coins;
     public float[] characterStats = new float[9]; // 캐릭터 스탯 배열
@@ -97,7 +99,7 @@ public class DataManager : MonoBehaviour
 
     public void Save()
     {
-        // 스크립트에서 직접 저장하는 형식으로 나중에 바꿀수도
+        // 모든 저장시기에 같이 저장되어야 할 거 아니면 스크립트에서 직접 저장하는 형식으로 추후 바꿀 예정
         player.fullScreen = SettingResolution.Instance.fullScreen;
         player.fullValue = SettingResolution.Instance.full.value;
         player.dropdownValue = SettingResolution.Instance.dropdown.value;
