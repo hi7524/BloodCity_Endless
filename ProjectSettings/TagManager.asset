@@ -45,44 +45,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Road Background
-    uniqueID: 3425733761
+  - name: Background
+    uniqueID: 1648978881
     locked: 0
-  - name: Lake
-    uniqueID: 2175911537
-    locked: 0
-  - name: SIdewalk
-    uniqueID: 2839280797
-    locked: 0
-  - name: Road Line
-    uniqueID: 990444443
-    locked: 0
-  - name: Road
-    uniqueID: 4085115977
-    locked: 0
-  - name: Water
-    uniqueID: 2561792783
-    locked: 0
-  - name: Flower Bed
-    uniqueID: 3654464675
-    locked: 0
-  - name: Fireplug
-    uniqueID: 4210006755
-    locked: 0
-  - name: Building
-    uniqueID: 3433562497
-    locked: 0
-  - name: Building 1
-    uniqueID: 1149672549
-    locked: 0
-  - name: Street Lamp
-    uniqueID: 3158438697
-    locked: 0
-  - name: Bridge
-    uniqueID: 1550862741
-    locked: 0
-  - name: Bridge1
-    uniqueID: 902797987
+  - name: Objects
+    uniqueID: 3188030323
     locked: 0
   - name: Character
     uniqueID: 704111289
