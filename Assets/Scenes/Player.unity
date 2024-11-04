@@ -3208,6 +3208,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a310ccdd9ce746246b9474858cdae0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterStates:
+  - playerStates: {fileID: 11400000, guid: 79e7c39a7c89c3641b7c2b0bd42b85a3, type: 2}
+    bonusStates: {fileID: 11400000, guid: 39af82fdbfc35fb4e9cd044ab4231802, type: 2}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 11400000, guid: 79e7c39a7c89c3641b7c2b0bd42b85a3, type: 2}
+    bonusStates: {fileID: 11400000, guid: 7e1661099c3fb68419e1d0a4b81ffbbe, type: 2}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 11400000, guid: 79e7c39a7c89c3641b7c2b0bd42b85a3, type: 2}
+    bonusStates: {fileID: 11400000, guid: 5884f76fcec75c745bae8d65852df7de, type: 2}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  currentIndex: 2
+  SpaceMarine: {fileID: 1930902968}
+  Beeper: {fileID: 919713818}
+  Baz: {fileID: 141351343}
 --- !u!4 &1011079443
 Transform:
   m_ObjectHideFlags: 0
