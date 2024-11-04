@@ -20,6 +20,7 @@ public class UpgradeManager : MonoBehaviour
 
     public GameObject statTap;
     public GameObject skillTap;
+    public GameObject select;
 
     private void Awake()
     {
@@ -88,6 +89,7 @@ public class UpgradeManager : MonoBehaviour
     public void PickState(int index)
     {
         selectedIndex = index; // 선택된 스탯 인덱스를 저장
+        select.SetActive(true);
     }
 
     public void Upgrade()
@@ -119,6 +121,7 @@ public class UpgradeManager : MonoBehaviour
             stateButtons[selectedIndex].interactable = false; // 상호작용 끄기
             engauge += 1;
             GaugeUp();
+            select.SetActive(false);
 
             DataManager.Instance.player.engauge = engauge;
             DataManager.Instance.player.coins = currentCoins;
