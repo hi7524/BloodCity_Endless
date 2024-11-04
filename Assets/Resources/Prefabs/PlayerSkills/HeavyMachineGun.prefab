@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -142853468710436659}
   - component: {fileID: 9218188954693811576}
   m_Layer: 0
-  m_Name: HeavyMachinegun
+  m_Name: HeavyMachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
