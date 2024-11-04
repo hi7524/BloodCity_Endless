@@ -16,18 +16,6 @@ public class EnhanceState : ScriptableObject
         isUpgraded = false; // 기본값
     }
 
-    // 아직 필요없음
-    public void DisplayUpgradeOptions()
-    {
-        for (int i = 0; i < stateUpgrade.Length; i++)
-        {
-            if (i < enhanceLevel)
-            {
-                Debug.Log($"업그레이드 {i + 1}: {stateUpgrade[i].GetDescription()}");
-            }
-        }
-    }
-
     public float GetEnhancedValue()
     {
         float enhancedValue = value; // 기본 값으로 초기화
@@ -48,7 +36,7 @@ public class EnhanceState : ScriptableObject
             }
         }
 
-        return enhancedValue; // 최종 값 반환
+        return enhancedValue;
     }
 }
 
@@ -58,19 +46,12 @@ public class StateUpgrade
 {
     public float increaseAmount; // 증가량 (퍼센트 또는 정수)
     public float cost; // 업그레이드 비용
-    public string description; // 스탯 설명
     public bool isPercentage; // 증가 방식 (true: 퍼센트, false: 정수)
 
-    public StateUpgrade(float increaseAmount, float cost, string description, bool isPercentage)
+    public StateUpgrade(float increaseAmount, float cost, bool isPercentage)
     {
         this.increaseAmount = increaseAmount;
         this.cost = cost;
-        this.description = description;
         this.isPercentage = isPercentage;
-    }
-
-    public string GetDescription()
-    {
-        return $"{description} {increaseAmount}{(isPercentage ? "%" : "")} 증가시킵니다.";
     }
 }

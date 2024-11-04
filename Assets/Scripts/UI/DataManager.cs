@@ -15,6 +15,8 @@ public class PlayerData
 
     public int stageIndex;
 
+    public int engauge;
+
     // UpgradeManager
     public int coins;
     public float[] characterStats = new float[9]; // 캐릭터 스탯 배열
