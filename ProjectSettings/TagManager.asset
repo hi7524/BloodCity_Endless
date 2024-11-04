@@ -51,6 +51,21 @@ TagManager:
   - name: Objects
     uniqueID: 3188030323
     locked: 0
+  - name: Objects1
+    uniqueID: 2147011645
+    locked: 0
+  - name: Objects2
+    uniqueID: 516984055
+    locked: 0
+  - name: Objects3
+    uniqueID: 3699910645
+    locked: 0
+  - name: Objects4
+    uniqueID: 3127235135
+    locked: 0
+  - name: Objects5
+    uniqueID: 1639442041
+    locked: 0
   - name: Character
     uniqueID: 704111289
     locked: 0
