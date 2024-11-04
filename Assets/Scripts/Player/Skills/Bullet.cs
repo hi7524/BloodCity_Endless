@@ -14,10 +14,14 @@ public class Bullet : MonoBehaviour
 
     private float detectRange = 5f;       // 적 감지 범위
     private Transform closetTarget;       // 추적 대상
-    private int attackDamage;
+    protected int attackDamage;
 
+    protected void Start()
+    {
+        attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage; // 공격력 계산
+    }
 
-    private void Update()
+    protected void Update()
     {
         DetectEnemy();
         FollowEnemy();
@@ -62,7 +66,7 @@ public class Bullet : MonoBehaviour
     protected void OnTriggerEnter2D(Collider2D collision)
     {
         // 적과 충돌시
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && collEnemy == null)
         {
             // 충돌 적 정보
             collEnemy = collision.gameObject;
@@ -79,9 +83,9 @@ public class Bullet : MonoBehaviour
     public virtual void Fire()
     {
         // 몬스터 공격
-        attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage; // 공격력 받아오기
-        collEnemy.GetComponent<MobAI>().Damaged(attackDamage);                             // 몬스터 공격
+        //attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage; // 공격력 받아오기
 
+        collEnemy.GetComponent<MobAI>().Damaged(attackDamage);                             // 몬스터 공격
         Destroy(gameObject); // 오브젝트 파괴
     }
 
@@ -90,7 +94,9 @@ public class Bullet : MonoBehaviour
     {
         // 공격 이펙트
         GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
-        damageText.GetComponentInChildren<DamageTextFloating>().damage = floatingDamage;// 텍스트로 띄울 공격력 전달
-        damageText.transform.position = collEnemy.transform.position;                   // 충돌 위치에 프리팹 생성
+        damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
+
+        Vector2 textVec = new Vector2(collEnemy.transform.position.x + Random.Range(-0.4f, 0.5f), collEnemy.transform.position.y);
+        damageText.transform.position = textVec;                   // 충돌 위치에 프리팹 생성
     }
 }
