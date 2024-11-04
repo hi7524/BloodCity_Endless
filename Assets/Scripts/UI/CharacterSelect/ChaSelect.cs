@@ -23,6 +23,9 @@ public class ChaSelect : MonoBehaviour
     public GameObject check;
     public TMP_Text check_text;
 
+    string cha;
+    string sta;
+
     private void Awake()
     {
         if (Instance == null)
@@ -97,9 +100,40 @@ public class ChaSelect : MonoBehaviour
         DataManager.Instance.player.currentIndex = currentIndex;
         DataManager.Instance.Save();
 
+        switch (currentIndex) {
+            case 0:
+                cha = "우주해병";
+                break;
+            case 1:
+                cha = "Beeper";
+                break;
+            case 2:
+                cha = "바즈";
+                break;
+            default:
+                cha = "알 수 없는 캐릭터";
+                break;
+        }
+
+        switch (DataManager.Instance.player.stageIndex)
+        {
+            case 0:
+                sta = "Stage 1";
+                break;
+            case 1:
+                sta = "Stage 2";
+                break;
+            case 2:
+                sta = "Stage 3";
+                break;
+            default:
+                sta = "알 수 없는 스테이지";
+                break;
+        }
+
         // 캐릭터 인덱스에 따라 스트링값 넣고 스테이지 값 나중에 불러오고
-        check_text.text = $"현재 선택한 캐릭터 : ㅇㅇㅇㅇ" +
-            $"\r\n이번 필드 : ㅁㅁㅁㅁ?" +
+        check_text.text = $"현재 선택한 캐릭터 : " + cha +
+            $"\r\n이번 필드 : " + sta +
             "\r\n\r\n게임을 시작하시겠습니까?"; ;
 
         check.SetActive(true);
