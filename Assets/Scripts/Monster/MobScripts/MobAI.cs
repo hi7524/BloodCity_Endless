@@ -109,7 +109,7 @@ public class MobAI : MonoBehaviour
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
 
-                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
             }
             else if (obj.MoveType == AI_MoveType.Distance) // 거리 조절
@@ -121,7 +121,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range / 20) < dis) // 거리 범위 밖이라면 접근
                     {
 
-                        RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                     }
 
@@ -132,7 +132,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range * -1 / 20) >= dis) // 거리 범위 안이라면 도주
                     {
 
-                        RB.MovePosition(RB.position - dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.MovePosition(RB.position - dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                     }
 
@@ -257,7 +257,7 @@ public class MobAI : MonoBehaviour
             gameObject.SetActive(false);
     }
 
-    private void OnTriggerStay2D(Collider2D coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
 
         GameObject Player = coll.gameObject;
@@ -265,11 +265,14 @@ public class MobAI : MonoBehaviour
         if (Player.tag == "Player" && isCanbodyAttack && !isDead) // 몸빵 피해 적용
         {
 
-            isCanbodyAttack = false;
+            if(!Player.GetComponent<PlayerState>().isPlayerDead) // 사망 상태가 아닐 경우에만
+            {
+                isCanbodyAttack = false;
 
-            Player.GetComponent<PlayerHealth>().Damaged(obj.attackDamage); // 피해 적용
-            
-            Invoke("BodyAttack_Delay", bodyAttackTime);
+                Player.GetComponent<PlayerHealth>().Damaged(obj.attackDamage); // 피해 적용
+
+                Invoke("BodyAttack_Delay", bodyAttackTime);
+            }
 
         }
 
