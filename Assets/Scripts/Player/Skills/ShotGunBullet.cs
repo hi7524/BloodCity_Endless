@@ -14,6 +14,7 @@ public class ShotGunBullet : MonoBehaviour
     private Vector3 mousePos; // 마우스 위치
     private Camera mainCam;   // 마우스 위치를 계산할 카메라
     private Rigidbody2D rigid;
+    private GameObject collEnemy; // 충돌 적
 
 
     private void Awake()
@@ -43,14 +44,18 @@ public class ShotGunBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 적과 충돌시
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && collEnemy == null)
         {
+            collEnemy = collision.gameObject;
             int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
             collision.GetComponent<MobAI>().Damaged(attackDamage);
 
-            GameObject damageText = Instantiate(damageTextPrf);
-            damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;
-            damageText.transform.position = collision.transform.position;
+            // 공격 이펙트
+            GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
+            damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
+
+            Vector2 textVec = new Vector2(collEnemy.transform.position.x + Random.Range(-0.4f, 0.5f), collEnemy.transform.position.y);
+            damageText.transform.position = textVec;
 
             Destroy(gameObject); // 오브젝트 파괴
         }
