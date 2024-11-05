@@ -46,7 +46,9 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     [SerializeField]
     private GameObject[] BossMobPrefabs; // 보스 몬스터 프리팹
 
-    private Coroutine coroutine; // 무한 루프 코루틴
+    private Coroutine spawn_coroutine; // 몬스터 생성 무한 루프 코루틴
+    private Coroutine check_coroutine; // 몬스터 검사 무한 루프 코루틴
+
     private List<GameObject> Pools; // 오브젝트 풀
     private int spawnNums; //현재 스폰 마리 수    
 
@@ -66,14 +68,16 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         isReady = false;
         Time.timeScale = 1f; // 게임 시작 시 타임 스케일 초기화
         nowTime = 0; // 현재 시간 초기화
-        
+
         spawnNums = 0; // 현재 스폰 수 초기화
         Pools = new List<GameObject>(); // 풀 초기화
         grid = GameObject.Find("Grid");
 
-        coroutine = StartCoroutine(SpawnMonster()); // 스폰 코루틴 최초 시작
+        spawn_coroutine = StartCoroutine(SpawnMonster()); // 스폰 코루틴 최초 시작
+
+        spawn_coroutine = StartCoroutine(CheckMonster()); // 체크 코루틴 최초 시작
     }
-    
+
     void Start() // 씬 시작 시 최초 초기화
     {
         ResetAll();
@@ -86,7 +90,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         nowTime += Time.deltaTime;
     }
 
-    
+
     public void EndReady() // 준비 종료
     {
         isReady = false;
@@ -121,13 +125,12 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
             }
             else
             {
-                spawnNums = GameObject.FindGameObjectsWithTag("Enemy").Length; // 현재 몬스터 스폰 수
 
                 int nowMin = (int)(nowTime / 60); // 현재 분
                 nowMin = nowMin > 15 ? 15 : nowMin;
 
-                print("현재 시간(분) : " + nowMin);
-                print("몬스터 수 : " + spawnNums + " / " + minSpawnNums[nowMin]);
+                //print("현재 시간(분) : " + nowMin);
+                //print("몬스터 수 : " + spawnNums + " / " + minSpawnNums[nowMin]);
 
                 if (spawnNums < minSpawnNums[nowMin]) // 최소 스폰 마리 미달일 경우
                 {
@@ -148,7 +151,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                             if (nowSpawnPer > 0) // 스폰 확률이 있고
                             {
                                 spawnPers += nowSpawnPer;
-
+                                print("랜덤 확률 : " + rand + " 현재 스폰 확률 : " + spawnPers + "\n몬스터 이름 : " + monster.GetComponent<MobAI>().obj.name);
                                 if (rand <= spawnPers) // 랜덤 확률보다 높거나 같다면
                                 {
                                     mob = monster; // 이 몬스터로 스폰
@@ -160,13 +163,20 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                         }
 
                         // 스폰 포인트 구함
-                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * (Random.value > 0.5f ? 1 : -1), 52 * (Random.value > 0.5f ? 1 : -1));
-                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * (Random.value > 0.5f ? 1 : -1), 45 * (Random.value > 0.5f ? 1 : -1));
+                        int xDir = Random.value > 0.5f ? 1 : -1;
+                        int yDir = Random.value > 0.5f ? 1 : -1;
+                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 52 * xDir);
+                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 45 * yDir);
+
                         Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
                         // 몬스터 생성
                         if (mob != null)
+                        {
                             Instantiate(mob, spawnPosition, Quaternion.identity);
+                            spawnNums += 1;
+                        }
+
                     }
                 }
 
@@ -176,13 +186,28 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         }
     }
 
+
+    private IEnumerator CheckMonster()
+    {
+        yield return new WaitForSeconds(2f);
+
+        spawnNums = GameObject.FindGameObjectsWithTag("Enemy").Length; // 현재 몬스터 스폰 수
+    }
+
+
     void OnDestroy()
     {
         // 객체가 파괴될 때 코루틴 중지
-        if (coroutine != null)
+        if (spawn_coroutine != null)
         {
-            StopCoroutine(coroutine);
+            StopCoroutine(spawn_coroutine);
         }
+
+        if (check_coroutine != null)
+        {
+            StopCoroutine(check_coroutine);
+        }
+
     }
 
 }

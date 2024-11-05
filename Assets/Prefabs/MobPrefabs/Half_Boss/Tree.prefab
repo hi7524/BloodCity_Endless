@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5710682017885245}
   - component: {fileID: 6515110406311753733}
   - component: {fileID: 4814646125147683655}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tree
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 704111289
-  m_SortingLayer: 14
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
