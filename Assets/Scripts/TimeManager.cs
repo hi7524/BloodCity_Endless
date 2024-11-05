@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using Unity.VisualScripting;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 
 public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처리)
 {
@@ -43,11 +46,14 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     [SerializeField]
     private GameObject[] BossMobPrefabs; // 보스 몬스터 프리팹
 
+    private Coroutine spawn_coroutine; // 몬스터 생성 무한 루프 코루틴
+    private Coroutine check_coroutine; // 몬스터 검사 무한 루프 코루틴
+
     private List<GameObject> Pools; // 오브젝트 풀
     private int spawnNums; //현재 스폰 마리 수    
 
     private Transform playerTransform; // 플레이어의 Transform
-    private Tilemap tilemap; // 타일맵
+    private GameObject grid; // 그리드 오브젝트
 
     private float minXDistance = 20f; // X 방향 최소 거리
     private float minYDistance = 15f; // Y 방향 최소 거리
@@ -62,9 +68,14 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         isReady = false;
         Time.timeScale = 1f; // 게임 시작 시 타임 스케일 초기화
         nowTime = 0; // 현재 시간 초기화
-        
+
         spawnNums = 0; // 현재 스폰 수 초기화
         Pools = new List<GameObject>(); // 풀 초기화
+        grid = GameObject.Find("Grid");
+
+        spawn_coroutine = StartCoroutine(SpawnMonster()); // 스폰 코루틴 최초 시작
+
+        spawn_coroutine = StartCoroutine(CheckMonster()); // 체크 코루틴 최초 시작
     }
 
     void Start() // 씬 시작 시 최초 초기화
@@ -75,18 +86,11 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
 
     void Update() // 현재 시간 업데이트
     {
-        print("현재 시간 : " + (int)nowTime);
-
         if (isReady || isGameOver || isPaused) return; // 게임 오버 상태나 정지 상태일 경우 시간 업뎃 방지
-
         nowTime += Time.deltaTime;
-
-        spawnNums = GameObject.FindGameObjectsWithTag("Enemy").Length; // 현재 몬스터 스폰 수
-
-        SpawnMonster(); // 몬스터 스폰 검사 및 수행
     }
 
-    
+
     public void EndReady() // 준비 종료
     {
         isReady = false;
@@ -111,71 +115,99 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     }
 
 
-    private void SpawnMonster() // 몬스터 스폰
+    private IEnumerator SpawnMonster() // 몬스터 스폰 코루틴
     {
-
-        int nowMin = (int)(nowTime / 60); // 현재 분
-        nowMin = nowMin > 15 ? 15 : nowMin;
-
-        
-        if (spawnNums < minSpawnNums[nowMin]) // 최소 스폰 마리 미달일 경우
-        playerTransform = GameObject.FindWithTag("Player").transform;
-
-        if (playerTransform != null ) // 플레이어 유닛이 있을 때만
+        while (true) // 무한 루프
         {
-            int spawnPer = Random.Range(1, 101); // 스폰 확률
-            GameObject mob = null; // 스폰할 몹
-
-            int spawnPers = 0; // 합산 스폰 확률
-            foreach (var monster in NormalMobPrefabs)
+            if (isReady || isGameOver || isPaused) // 게임 오버 상태나 정지 상태일 경우 스폰 방지
             {
-                int nowSpawnPer = monster.GetComponent<MobAI>().obj.spawnPers[nowMin]; // 현재 스폰 확률
+                yield return new WaitForSeconds(0.2f);
+            }
+            else
+            {
 
-                if (nowSpawnPer > 0) // 스폰 확률이 있고
+                int nowMin = (int)(nowTime / 60); // 현재 분
+                nowMin = nowMin > 15 ? 15 : nowMin;
+
+                //print("현재 시간(분) : " + nowMin);
+                //print("몬스터 수 : " + spawnNums + " / " + minSpawnNums[nowMin]);
+
+                if (spawnNums < minSpawnNums[nowMin]) // 최소 스폰 마리 미달일 경우
                 {
-                    spawnPers += nowSpawnPer;
+                    playerTransform = GameObject.FindWithTag("Player").transform;
 
-                    if (spawnPers >= nowSpawnPer) // 현재 스폰 확률보다 높거나 같다면
+                    if (playerTransform != null) // 플레이어 유닛이 있을 때만
                     {
-                        mob = monster; // 이 몬스터로 스폰
-                        break;
-                    }
+                        int spawnPer = Random.Range(1, 101); // 스폰 확률
+                        GameObject mob = null; // 스폰할 몹
 
+                        int spawnPers = 0; // 합산 스폰 확률
+                        int rand = Random.Range(1, 101);
+
+                        foreach (var monster in NormalMobPrefabs)
+                        {
+                            int nowSpawnPer = monster.GetComponent<MobAI>().obj.spawnPers[nowMin]; // 현재 스폰 확률
+
+                            if (nowSpawnPer > 0) // 스폰 확률이 있고
+                            {
+                                spawnPers += nowSpawnPer;
+                                print("랜덤 확률 : " + rand + " 현재 스폰 확률 : " + spawnPers + "\n몬스터 이름 : " + monster.GetComponent<MobAI>().obj.name);
+                                if (rand <= spawnPers) // 랜덤 확률보다 높거나 같다면
+                                {
+                                    mob = monster; // 이 몬스터로 스폰
+                                    break;
+                                }
+
+                            }
+
+                        }
+
+                        // 스폰 포인트 구함
+                        int xDir = Random.value > 0.5f ? 1 : -1;
+                        int yDir = Random.value > 0.5f ? 1 : -1;
+                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 52 * xDir);
+                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 45 * yDir);
+
+                        Vector2 spawnPosition = new Vector2(spawnX, spawnY);
+
+                        // 몬스터 생성
+                        if (mob != null)
+                        {
+                            Instantiate(mob, spawnPosition, Quaternion.identity);
+                            spawnNums += 1;
+                        }
+
+                    }
                 }
 
+                // 0.1초 대기
+                yield return new WaitForSeconds(0.1f);
             }
-
-            Vector2 spawnPosition = GetSpawnPosition(); // 스폰 포인트 구함
-
-            // 유효한 위치에서만 몬스터 생성
-            if (mob != null && spawnPosition != Vector2.zero)
-                Instantiate(mob, spawnPosition, Quaternion.identity);
         }
-
     }
 
-    private Vector2 GetSpawnPosition() // 스폰 포인트 반환
-    {
-        for (int i = 0; i < 10; i++) // 시도 횟수 제한 (10회)
-        {
-            float spawnX = playerTransform.position.x + (Random.value > 0.5f ? minXDistance : -minXDistance) + Random.Range(0, 5f);
-            float spawnY = playerTransform.position.y + (Random.value > 0.5f ? minYDistance : -minYDistance) + Random.Range(0, 5f);
-            Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
-            // 스폰 위치가 타일맵 위에 있는지 확인
-            Vector3Int cellPosition = tilemap.WorldToCell(spawnPosition);
-            if (tilemap.HasTile(cellPosition))
-            {
-                // 타일이 있고 콜라이더가 없을 경우에만 반환
-                if (!Physics2D.OverlapPoint(spawnPosition, obstacleLayer))
-                {
-                    return spawnPosition;
-                }
-            }
+    private IEnumerator CheckMonster()
+    {
+        yield return new WaitForSeconds(2f);
+
+        spawnNums = GameObject.FindGameObjectsWithTag("Enemy").Length; // 현재 몬스터 스폰 수
+    }
+
+
+    void OnDestroy()
+    {
+        // 객체가 파괴될 때 코루틴 중지
+        if (spawn_coroutine != null)
+        {
+            StopCoroutine(spawn_coroutine);
         }
 
-        // 유효한 위치를 찾지 못하면 Vector2.zero 반환
-        return Vector2.zero;
+        if (check_coroutine != null)
+        {
+            StopCoroutine(check_coroutine);
+        }
+
     }
 
 }
