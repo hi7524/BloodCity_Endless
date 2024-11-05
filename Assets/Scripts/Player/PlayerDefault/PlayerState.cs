@@ -27,7 +27,7 @@ public class PlayerState : MonoBehaviour
         maxHealth = 100; // 최대 체력
         restorePerSec = 1;   // 초당 회복량
         defense = 1;  // 방어력
-        speed = 1.5f;  // 이동 속도 (%)
+        speed = 4f;  // 이동 속도 (%)
         attackDamage = 1;   // 공격력 (%)
         attackRange = 0;  // 공격 범위 (%)
         abilityHaste = 0;  // 능력 가속 (쿨감, %)
