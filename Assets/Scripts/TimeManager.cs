@@ -50,7 +50,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     private Coroutine check_coroutine; // 몬스터 검사 무한 루프 코루틴
 
     private List<GameObject> Pools; // 오브젝트 풀
-    private int spawnNums; //현재 스폰 마리 수    
+    public int spawnNums; //현재 스폰 마리 수    
 
     private Transform playerTransform; // 플레이어의 Transform
     private GameObject grid; // 그리드 오브젝트
@@ -74,8 +74,6 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         grid = GameObject.Find("Grid");
 
         spawn_coroutine = StartCoroutine(SpawnMonster()); // 스폰 코루틴 최초 시작
-
-        spawn_coroutine = StartCoroutine(CheckMonster()); // 체크 코루틴 최초 시작
     }
 
     void Start() // 씬 시작 시 최초 초기화
@@ -129,8 +127,8 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                 int nowMin = (int)(nowTime / 60); // 현재 분
                 nowMin = nowMin > 15 ? 15 : nowMin;
 
-                //print("현재 시간(분) : " + nowMin);
-                //print("몬스터 수 : " + spawnNums + " / " + minSpawnNums[nowMin]);
+                // print("현재 시간(분) : " + nowMin);
+                // print("몬스터 수 : " + spawnNums + " / " + minSpawnNums[nowMin]);
 
                 if (spawnNums < minSpawnNums[nowMin]) // 최소 스폰 마리 미달일 경우
                 {
@@ -151,7 +149,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                             if (nowSpawnPer > 0) // 스폰 확률이 있고
                             {
                                 spawnPers += nowSpawnPer;
-                                print("랜덤 확률 : " + rand + " 현재 스폰 확률 : " + spawnPers + "\n몬스터 이름 : " + monster.GetComponent<MobAI>().obj.name);
+                                // print("랜덤 확률 : " + rand + " 현재 스폰 확률 : " + spawnPers + "\n몬스터 이름 : " + monster.GetComponent<MobAI>().obj.name);
                                 if (rand <= spawnPers) // 랜덤 확률보다 높거나 같다면
                                 {
                                     mob = monster; // 이 몬스터로 스폰
@@ -187,25 +185,12 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     }
 
 
-    private IEnumerator CheckMonster()
-    {
-        yield return new WaitForSeconds(2f);
-
-        spawnNums = GameObject.FindGameObjectsWithTag("Enemy").Length; // 현재 몬스터 스폰 수
-    }
-
-
     void OnDestroy()
     {
         // 객체가 파괴될 때 코루틴 중지
         if (spawn_coroutine != null)
         {
             StopCoroutine(spawn_coroutine);
-        }
-
-        if (check_coroutine != null)
-        {
-            StopCoroutine(check_coroutine);
         }
 
     }
