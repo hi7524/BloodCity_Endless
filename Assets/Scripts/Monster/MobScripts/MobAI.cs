@@ -47,11 +47,18 @@ public class MobAI : MonoBehaviour
     protected IMobSkill[] mobSkills; // 스킬 배열
 
     private SpriteRenderer render; // 스프라이트 렌더러
+
+    private Coroutine coroutine; //무한 루프 코루틴
+
     private int bodyAttackTime = 1; // 몸빵 피해 대기 시간
     private bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
 
-    private void Start()
+
+    private void Init() // 초기화
     {
+        gameObject.SetActive(true);
+
+        isDead = false;
 
         Mob = gameObject;
 
@@ -73,29 +80,50 @@ public class MobAI : MonoBehaviour
 
         }
 
-
         // 스프라이트 및 애니메이션 설정
         render = GetComponent<SpriteRenderer>();
 
         if (obj.AnimeControllers.Length > 0)
             GetComponent<Animator>().runtimeAnimatorController = obj.AnimeControllers[Random.Range(0, obj.AnimeControllers.Length)];
 
+        // 루틴 시작
+        coroutine = StartCoroutine(Routine()); // 코루틴 최초 시작
     }
 
-    private void Update()
+    private void Start() // 초기화 호출
     {
+        Init();
+    }
 
-        if (!isDead && Target) // 사망 상태가 아니고 경우에만
+    private IEnumerator Routine() // 루틴 무한 반복 코루틴
+    {
+        while (true)
         {
-            dis = Vector2.Distance(transform.position, Target.transform.position); // 거리 차 계산
-            dir = (Target.transform.position - transform.position).normalized; // 방향 계산
+            if (!isDead && Target) // 사망 상태가 아닌 경우에만
+            {
+                dis = Vector2.Distance(transform.position, Target.transform.position); // 거리 차 계산
+                dir = (Target.transform.position - transform.position).normalized; // 방향 계산
+    
+                Routine_Move(dis, dir);
+                Routine_Attack(dis, dir);
+            }
+            else
+                Target = GameObject.FindWithTag("Player");
 
-            Routine_Move(dis, dir);
-            Routine_Attack(dis, dir);
+            // 카메라가 오브젝트를 볼 수 있는지 체크
+            if (IsObjectVisible(Camera.main, gameObject))
+            {
+                // 오브젝트가 보이면 렌더링 활성화
+                render.enabled = true;
+            }
+            else
+            {
+                // 오브젝트가 보이지 않으면 렌더링 비활성화
+                render.enabled = false;
+            }
+
+            yield return new WaitForSeconds(0.001f); // 0.001초마다 반복 수행
         }
-        else
-            Target = GameObject.FindWithTag("Player");
-
     }
 
     private void Routine_Move(float dis, Vector2 dir) // 이동 루틴
@@ -109,7 +137,7 @@ public class MobAI : MonoBehaviour
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
 
-                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
             }
             else if (obj.MoveType == AI_MoveType.Distance) // 거리 조절
@@ -121,7 +149,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range / 20) < dis) // 거리 범위 밖이라면 접근
                     {
 
-                        RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                     }
 
@@ -132,7 +160,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range * -1 / 20) >= dis) // 거리 범위 안이라면 도주
                     {
 
-                        RB.MovePosition(RB.position - dir * (1 + (obj.speed * 0.1f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.MovePosition(RB.position - dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                     }
 
@@ -251,13 +279,23 @@ public class MobAI : MonoBehaviour
 
     public void Dead() // 몬스터 사망 처리
     {
-        if (isInstantSpawn)
-            Destroy(gameObject);
-        else
-            gameObject.SetActive(false);
+        Destroy(gameObject);
+        //if (isInstantSpawn)
+        //    Destroy(gameObject);
+        //else
+        //{
+        //    gameObject.SetActive(false);
+
+        //    if (coroutine != null)
+        //    {
+        //        StopCoroutine(coroutine);
+        //    }
+        //}
+
+        TimeManager.Instance.spawnNums -= 1;
     }
 
-    private void OnTriggerStay2D(Collider2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
 
         GameObject Player = coll.gameObject;
@@ -265,19 +303,40 @@ public class MobAI : MonoBehaviour
         if (Player.tag == "Player" && isCanbodyAttack && !isDead) // 몸빵 피해 적용
         {
 
-            isCanbodyAttack = false;
+            if (!Player.GetComponent<PlayerState>().isPlayerDead) // 사망 상태가 아닐 경우에만
+            {
+                isCanbodyAttack = false;
 
-            Player.GetComponent<PlayerHealth>().Damaged(obj.attackDamage); // 피해 적용
-            
-            Invoke("BodyAttack_Delay", bodyAttackTime);
+                Player.GetComponent<PlayerHealth>().Damaged(obj.attackDamage); // 피해 적용
+
+                Invoke("BodyAttack_Delay", bodyAttackTime);
+            }
 
         }
-
     }
 
     void BodyAttack_Delay() // 몸빵 피해 대기
     {
         isCanbodyAttack = true;
+    }
+
+
+    // 카메라가 오브젝트를 보는지 체크하는 함수
+    bool IsObjectVisible(Camera camera, GameObject obj)
+    {
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
+        CapsuleCollider2D collider = obj.GetComponent<CapsuleCollider2D>();
+        return GeometryUtility.TestPlanesAABB(planes, collider.bounds);
+    }
+
+    void OnDestroy()
+    {
+        // 객체가 파괴될 때 코루틴 중지
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+
     }
 
 }

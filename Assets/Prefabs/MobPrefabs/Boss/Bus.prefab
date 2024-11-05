@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6137544730978826092}
   - component: {fileID: 1700396700648097047}
   - component: {fileID: 8465995654349234341}
-  - component: {fileID: 5710682017885245}
   - component: {fileID: 6515110406311753733}
+  - component: {fileID: 5812903521946552613}
   m_Layer: 11
   m_Name: Bus
   m_TagString: Enemy
@@ -113,9 +113,33 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &5710682017885245
-CircleCollider2D:
+  m_Constraints: 4
+--- !u!114 &6515110406311753733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83231135852118981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d23d218453e2f34b999e7578991053e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 11400000, guid: 987dc5a134a14d94d951c32d0d82b4bb, type: 2}
+  RB: {fileID: 0}
+  Mob: {fileID: 0}
+  Target: {fileID: 0}
+  isUsingSkillState: 0
+  dis: 0
+  dir: {x: 0, y: 0}
+  hp: 0
+  isInstantSpawn: 1
+  isDead: 0
+  Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
+  Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
+--- !u!70 &5812903521946552613
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -143,33 +167,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &6515110406311753733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83231135852118981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d23d218453e2f34b999e7578991053e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 11400000, guid: 987dc5a134a14d94d951c32d0d82b4bb, type: 2}
-  RB: {fileID: 0}
-  Mob: {fileID: 0}
-  Target: {fileID: 0}
-  isUsingSkillState: 0
-  dis: 0
-  dir: {x: 0, y: 0}
-  hp: 0
-  isInstantSpawn: 1
-  isDead: 0
-  Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
-  Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0

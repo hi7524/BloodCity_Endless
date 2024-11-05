@@ -20,7 +20,7 @@ public class Mob_03_FE_Fire : MonoBehaviour, IMobSkill
 
         GameObject Fire = Instantiate(data.SkillEffect, AI.gameObject.transform.position, AI.gameObject.transform.rotation);
 
-        Fire.GetComponent<Rigidbody2D>().AddForce(AI.dir * 0.6f, ForceMode2D.Impulse);
+        Fire.GetComponent<Rigidbody2D>().AddForce(AI.dir * 3f, ForceMode2D.Impulse);
         Fire.GetComponent<MobSkillDamage>().init_damage = AI.obj.attackDamage;
 
         Fire.GetComponent<Mob_03_FE_Fire_Destroy>().StartRemove();
