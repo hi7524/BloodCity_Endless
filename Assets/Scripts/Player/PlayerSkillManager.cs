@@ -53,7 +53,7 @@ public class PlayerSkillManager : MonoBehaviour
             // 위치값 설정 및 배치
             Vector3 rotvec = Vector3.forward * 360 * i / count; // 위치 계산
             skill.transform.Rotate(rotvec);                    // 계산 위치에 배치
-            skill.transform.Translate(skill.transform.up * 5f, Space.World); // 플레이어로부터 거리 띄우기
+            skill.transform.Translate(skill.transform.up * 4f, Space.World); // 플레이어로부터 거리 띄우기
         }
         
     }
