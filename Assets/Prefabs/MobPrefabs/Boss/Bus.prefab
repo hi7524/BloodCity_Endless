@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8465995654349234341}
   - component: {fileID: 5710682017885245}
   - component: {fileID: 6515110406311753733}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 704111289
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -169,6 +169,7 @@ MonoBehaviour:
   dis: 0
   dir: {x: 0, y: 0}
   hp: 0
+  isInstantSpawn: 1
   isDead: 0
   Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
   Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
