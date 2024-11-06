@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
         // 컴포넌트 초기화
         animator = GetComponent<Animator>();
         playerState = GetComponent<PlayerState>();
-
-        Debug.Log("<color=yellow>**PlayerTag 적용해주세요**</color>");
     }
 
     private void Update()
