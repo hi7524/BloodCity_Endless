@@ -48,7 +48,7 @@ public class ShotGun : MonoBehaviour
         {
             StartCoroutine(Fire());
             curCoolDown = 0;
-            //fireParticle.Play(); // 파티클
+            fireParticle.Play(); // 파티클
         }
     }
     
