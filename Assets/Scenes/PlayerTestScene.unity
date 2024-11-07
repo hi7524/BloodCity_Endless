@@ -1920,7 +1920,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 507863232}
-  - {fileID: 1727819539}
   m_Father: {fileID: 1746309036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302929151
@@ -9802,6 +9801,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1727819539}
   - {fileID: 1101282828}
   - {fileID: 1154847274}
   - {fileID: 969125233}
@@ -37917,7 +37917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e359557bdb502f479349376f03bc329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 40
+  rotateSpeed: 50
   rotateEffect: {fileID: 969125228}
   effectSpeed: 10
   defaultSkill: {fileID: 7430159223837483755, guid: a6a6a7219abf17440b5ab646e6133fcc, type: 3}
@@ -38233,7 +38233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   permanentSkills:
-  - {fileID: 7603267878604520957, guid: 1e5e6ebbcafd2af44a1e6c6eeab20ca3, type: 3}
+  - {fileID: 2024400525292676850, guid: e1eb3cb23f6e38b438a9f944be3a3a3e, type: 3}
   - {fileID: 4792379595125925972, guid: 508776c11b91198449eace345f2fdbd1, type: 3}
   - {fileID: 1669739500767007939, guid: 3a4d8d33826f6d343933e5a3beb8da2e, type: 3}
   skillImg:
@@ -125329,12 +125329,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727819538}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.68, y: 0.13, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 291706603}
+  m_Father: {fileID: 919713821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1727819540
 MonoBehaviour:

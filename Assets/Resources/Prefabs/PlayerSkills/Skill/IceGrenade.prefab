@@ -9916,7 +9916,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   damage: 10
-  damageRadius: 1
+  damageRadius: 1.5
   speed: 18
   fireEffect: {fileID: 3034740426523281786}
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
