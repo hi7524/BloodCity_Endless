@@ -66,6 +66,9 @@ TagManager:
   - name: Objects5
     uniqueID: 1639442041
     locked: 0
+  - name: Objects6
+    uniqueID: 1307320763
+    locked: 0
   - name: Character
     uniqueID: 704111289
     locked: 0
