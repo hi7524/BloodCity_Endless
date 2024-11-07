@@ -1,26 +1,51 @@
+using System.Collections;
 using UnityEngine;
 
 // FlameBelt 스킬 (플레이어 패시브 스킬)
 public class FlameBelt : MonoBehaviour
 {
-    float currTime;
+    public int damage = 2; // 적에게 입힐 데미지
+    public float tickTime = 2; // 도트딜 간격
+    public float damageRadius;
+    public LayerMask damageLayer;
+    public GameObject damageTextPrf;
 
     private void Start()
     {
-        Debug.Log("<color=yellow>코드 병합 후 적 구분 조건 수정할 것</color>");
+        StartCoroutine(TickDamage());
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    { 
-        if (collision.CompareTag("Enemy"))
+    // 일정 시간마다 공격
+    private IEnumerator TickDamage()
+    {
+        while (true)
         {
-            currTime += Time.deltaTime;
-       
-            if (currTime > 1)
-            {
-                Debug.Log("Damage");
-                currTime = 0;
-            }
+            Damage();
+            yield return new WaitForSeconds(tickTime);
         }
+    }
+
+    // 적 데미지
+    private void Damage()
+    {
+        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, damageRadius, damageLayer);
+
+        foreach (Collider2D obj in hitObjects)
+        {
+            obj.GetComponent<MobAI>().Damaged(damage);
+
+            GameObject damageText = Instantiate(damageTextPrf);                       // 텍스트 플로팅 프리팹 생성
+            damageText.GetComponentInChildren<DamageTextFloating>().damage = damage;  // 텍스트로 띄울 공격력 전달
+            damageText.transform.position = obj.transform.position;                   // 충돌 위치에 프리팹 생성
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+
+        
+        Gizmos.DrawWireSphere(transform.position, damageRadius);
+
     }
 }
