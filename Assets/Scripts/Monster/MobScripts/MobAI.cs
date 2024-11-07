@@ -32,6 +32,9 @@ public class MobAI : MonoBehaviour
     public int hp; // 현재 체력
 
     [HideInInspector]
+    public float speed; // 현재 이동속도
+
+    [HideInInspector]
     public bool isInstantSpawn = true; // 간이 소환 여부 
 
     [HideInInspector]
@@ -48,7 +51,7 @@ public class MobAI : MonoBehaviour
 
     private SpriteRenderer render; // 스프라이트 렌더러
 
-    private Coroutine coroutine; //무한 루프 코루틴
+    private Coroutine coroutine; // 무한 루프 코루틴
 
     private int bodyAttackTime = 1; // 몸빵 피해 대기 시간
     private bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
@@ -69,6 +72,7 @@ public class MobAI : MonoBehaviour
         mobSkills = GetComponents<IMobSkill>(); // 스킬 스크립트 컴포넌트
 
         hp = Random.Range(obj.minHealth, obj.maxHealth + 1); // 현재 체력 초기화
+        speed = obj.speed; // 현재 이속 초기화
 
         foreach (IMobSkill skill in mobSkills) // 스킬 초기화
         {
@@ -88,12 +92,29 @@ public class MobAI : MonoBehaviour
 
         // 루틴 시작
         coroutine = StartCoroutine(Routine()); // 코루틴 최초 시작
+
     }
 
     private void Start() // 초기화 호출
     {
         Init();
     }
+
+    public void AddSpeed(float value) // 이동 속도 증감
+    {
+        speed += value;
+    }
+
+    public void SetSpeed(float value) // 이동 속도 설정
+    {
+       speed = value;
+    }
+
+    public void ResetSpeed() // 이동 속도 초기화
+    {
+        speed = obj.speed;
+    }
+
 
     private IEnumerator Routine() // 루틴 무한 반복 코루틴
     {
@@ -129,7 +150,7 @@ public class MobAI : MonoBehaviour
     private void Routine_Move(float dis, Vector2 dir) // 이동 루틴
     {
 
-        if(!isUsingSkillState) // 스킬 사용 상태가 아닌 경우에만
+        if(!isUsingSkillState && speed > 0) // 스킬 사용 상태가 아니고 이동 속도가 1이상일 때만
         {
 
             render.flipX = dir.x > 0; // 스프라이트 플립 변경
@@ -137,7 +158,7 @@ public class MobAI : MonoBehaviour
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
 
-                RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                RB.MovePosition(RB.position + dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
             }
             else if (obj.MoveType == AI_MoveType.Distance) // 거리 조절
@@ -149,7 +170,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range / 20) < dis) // 거리 범위 밖이라면 접근
                     {
 
-                        RB.MovePosition(RB.position + dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.MovePosition(RB.position + dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                     }
 
@@ -160,7 +181,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range * -1 / 20) >= dis) // 거리 범위 안이라면 도주
                     {
 
-                        RB.MovePosition(RB.position - dir * (1 + (obj.speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.MovePosition(RB.position - dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
 
                     }
 
@@ -235,14 +256,14 @@ public class MobAI : MonoBehaviour
                 int expValue = Random.Range(obj.dropExp[0], obj.dropExp[1] + 1);
                 if (expValue > 0)
                 {
-                    GameObject exp = Instantiate(Exp, gameObject.transform.position, gameObject.transform.rotation);
+                    GameObject exp = Instantiate(Exp, gameObject.transform.position + new Vector3(Random.Range(-2, 3), Random.Range(-2, 3), 0), gameObject.transform.rotation);
                     exp.GetComponent<Exp>().xpData.point = expValue;
                 }
 
                 // 강화 코인 드랍
                 int coinPer = Random.Range(1, 101);
                 if (obj.upgradeCoinDropPer >= coinPer)
-                    Instantiate(Coin, gameObject.transform.position, gameObject.transform.rotation);
+                    Instantiate(Coin, gameObject.transform.position + new Vector3 (Random.Range(-2, 3), Random.Range(-2, 3), 0), gameObject.transform.rotation);
 
 
                 // 사망 처리 시작
