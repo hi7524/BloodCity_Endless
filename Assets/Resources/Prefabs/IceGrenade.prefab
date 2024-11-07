@@ -9824,7 +9824,7 @@ GameObject:
   - component: {fileID: 7235758780356529479}
   - component: {fileID: 3187829231948877582}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: IceGrenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
