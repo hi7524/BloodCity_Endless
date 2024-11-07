@@ -2,13 +2,14 @@ using System.Collections;
 using UnityEngine;
 
 // 수류탄 투척
-public class TEST_ThrowGrenade : MonoBehaviour
+public class ThrowGrenade : MonoBehaviour
 {
-    public int grenadeCount;      // 폭발할 수류탄 개수
+    public int grenadeCount = 8;      // 폭발할 수류탄 개수
     public GameObject grenadePrf; // 수류탄 프리팹
-    public float radius;          // 폭발 위치 (radius가 클수록 멀리서 터짐)
+    public float radius = 4;          // 폭발 위치 (radius가 클수록 멀리서 터짐)
+    public float coolDown = 5;    // 쿨타임
 
-    public GameObject[] grenades;
+    private GameObject[] grenades;
 
     private void Start()
     {
@@ -26,17 +27,21 @@ public class TEST_ThrowGrenade : MonoBehaviour
 
             grenades[i] = grenade;
         }
+
+        // 수류탄 투척
+        StartCoroutine(Skill());
     }
 
-    private void Update()
+    IEnumerator Skill()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        while (true) 
         {
             StartCoroutine(ThrowGrenades());
+            yield return new WaitForSeconds(coolDown);
         }
     }
 
-    // 수류탄 목표 위치 계산
+    // 수류탄 목표 위치 계산 및 투척
     IEnumerator ThrowGrenades()
     {
         for (int i = 0; i < grenadeCount; i++)
@@ -51,11 +56,9 @@ public class TEST_ThrowGrenade : MonoBehaviour
             Vector2 position = new Vector2(x, y);
 
             grenades[i].SetActive(true);
-            grenades[i].GetComponent<IceGrenade>().targetVec = position;
+            grenades[i].GetComponent<Grenade>().targetVec = position;
 
             yield return new WaitForSeconds(0.05f);
         }
     }
-
-
 }
