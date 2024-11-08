@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Scriptable/EnhancsStates", fileName = "EnhanceStates")]
+
 public class EnhanceState : ScriptableObject
 {
     public string stateName; // 스탯 이름

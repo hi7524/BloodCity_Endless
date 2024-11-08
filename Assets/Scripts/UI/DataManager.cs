@@ -5,23 +5,25 @@ using System.IO;
 [System.Serializable]
 public class PlayerData
 {
-    // SettingResolution 스크립트
+    [Header("SettingResolution")]
     public bool fullScreen;
     public int fullValue = 0;
     public int dropdownValue = 0;
 
-    // ChaSelect 스크립트
+    [Header("StartScene")]
     public int currentIndex = 0;
-
     public int stageIndex;
 
-    public int engauge;
-
-    // UpgradeManager
+    [Header("Enhance")]
     public int coins;
     public float[] characterStats = new float[9]; // 캐릭터 스탯 배열
     public int[] enhanceLevels = new int[9]; // 각 EnhanceState의 업그레이드 레벨
     public bool[] isUpgraded = new bool[9]; // 각 EnhanceState의 업그레이드 여부
+
+    [Header("Skill")]
+    public int level = 1;
+    public int engauge;
+    public bool[] skillON = new bool[3]; // 각 SkillStates의 업그레이드 여부
 }
 
 public class DataManager : MonoBehaviour
@@ -137,8 +139,8 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("<color=orange>[WARNING]</color> 저장된 데이터가 없습니다.");
+            ToolTipManager.Instance.TipOn("<color=orange>[WARNING]</color> 저장된 데이터가 없습니다.");
         }
-        Debug.Log("<color=lime>[SUCCESS]</color> 데이터가 삭제되었습니다.");
+        ToolTipManager.Instance.TipOn("<color=lime>[SUCCESS]</color> 데이터가 삭제되었습니다.");
     }
 }
