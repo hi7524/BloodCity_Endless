@@ -22,14 +22,12 @@ public class UI_StartScene : MonoBehaviour
         {
             mainWindow.SetActive(true);
             window.SetActive(false);
-            Time.timeScale = 1.0f;
         }
         // 창 켜기
         else
         {
             Return();
             window.SetActive(true);
-            Time.timeScale = 0.0f;
         }
     }
 

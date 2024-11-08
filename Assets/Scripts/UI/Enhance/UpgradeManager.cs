@@ -1,26 +1,41 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance { get; private set; }
 
     public DataManager DataManager { get; private set; }
-    public CharacterStates playerStates; // 여기에 Player 스탯
 
-    public Text coinsText; // 현재 코인 텍스트
-    public Button[] stateButtons; // 스탯 버튼 배열
-    public int engauge; // 강화 횟수
-    public Image[] gauge; // 게이지 배열
+    [Header("Data")]
+    public CharacterStates playerStates; // 여기에 Player 스탯
     public EnhanceState[] enhanceStates; // 인챈트 스탯 배열
+
+    [Header("Coin")]
+    public Text coinsText; // 현재 코인 텍스트
     public int currentCoins; // 현재 가진 돈, 초기값 설정
+
+    [Header("StatSelect")]
+    public Button[] stateButtons; // 스탯 버튼 배열
     public int selectedIndex = 0; // 선택된 스탯 인덱스
 
+    [Header("LevelGauge")]
+    public TMP_Text levelText; // 단계 텍스트
+    public int level = 1; // 현재 단계
+    public int engauge; // 강화 횟수
+    public Image[] gauge; // 게이지 배열
+
+    [Header("Skill")]
+    public SkillStates[] skillStates = new SkillStates[3]; // 스킬 스탯 배열
+    public Button[] Skills = new Button[3]; // 스킬 버튼
+    public int selectedSkillIndex = 0; // 선택된 스킬 인덱스
+
+    [Header("Tap")]
     public GameObject statTap;
     public GameObject skillTap;
     public GameObject select;
+    public GameObject selectskill;
 
     private void Awake()
     {
@@ -32,11 +47,14 @@ public class UpgradeManager : MonoBehaviour
     
     private void Start()
     {
-        if (File.Exists(Application.persistentDataPath + "PlayerData.json"))
+        if (level == 0)
         {
-            LoadStates();
+            level = 1;
+            DataManager.Instance.player.level = 1;
+            ResetStates();
         }
 
+        LoadStates();
         UpdateCoinsText();
         GaugeUp();
     }
@@ -48,12 +66,14 @@ public class UpgradeManager : MonoBehaviour
         {
             enhanceState.Initialize(); // EnhanceState 초기화
         }
-
+        foreach (var skillStates in skillStates)
+        {
+            skillStates.Intialize(); // skillStates 초기화
+        }
         for (int i = 0; i < stateButtons.Length; i++)
         {
-            stateButtons[i].interactable = true;
+            stateButtons[i].interactable = true; // 스탯들 활성화
         }
-        currentCoins = DataManager.Instance.player.coins;
 
         Debug.Log("<color=lime>[SUCCESS]</color> 스탯 데이터 초기화 완료");
     }
@@ -61,7 +81,15 @@ public class UpgradeManager : MonoBehaviour
     public void LoadStates()
     {
         currentCoins = DataManager.Instance.player.coins;
+        coinsText.text = currentCoins.ToString();
+
+        level = DataManager.Instance.player.level;
+        levelText.text = level.ToString(); 
+
         engauge = DataManager.Instance.player.engauge;
+        GaugeUp();
+
+
         playerStates.maxHealth = DataManager.Instance.player.characterStats[0];
         playerStates.restorePerSec = DataManager.Instance.player.characterStats[1];
         playerStates.defense = DataManager.Instance.player.characterStats[2];
@@ -82,6 +110,15 @@ public class UpgradeManager : MonoBehaviour
                 stateButtons[i].interactable = false;
             }
         }
+        for (int i = 0; i < skillStates.Length; i++)
+        {
+            skillStates[i].skillON = DataManager.Instance.player.skillON[i];
+
+            if (skillStates[i].skillON == true)
+            {
+                Skills[i].interactable = false;
+            }
+        }
 
         Debug.Log("<color=lime>[SUCCESS]</color> 스탯 데이터 불러오기 완료");
     }
@@ -89,7 +126,7 @@ public class UpgradeManager : MonoBehaviour
     public void PickState(int index)
     {
         selectedIndex = index; // 선택된 스탯 인덱스를 저장
-        select.SetActive(true);
+        select.SetActive(true); // 구매할래?
     }
 
     public void Upgrade()
@@ -148,7 +185,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("<color=orange>[WARNING]</color> 코인이 부족합니다!");
+            ToolTipManager.Instance.TipOn("※ 코인이 <color=orange>부족</color>합니다! ※");
         }
     }
 
@@ -161,15 +198,70 @@ public class UpgradeManager : MonoBehaviour
     {
         if (engauge == 0)
         {
-            for (int i = 0; i < enhanceStates.Length; i++) { gauge[i].GetComponent<Image>().color = Color.white; }
+            for (int i = 0; i < enhanceStates.Length; i++) { gauge[i].GetComponent<Image>().color = Color.white; stateButtons[i].interactable = true; }
         }
         else if (engauge > 0)
         {
             for (int i = 0; i < engauge; i++) { gauge[i].GetComponent<Image>().color = Color.green; }
+
+            if (engauge == 9)
+            {
+                if (level == 3)
+                {
+                    Debug.Log("스킬 업글 끝");   
+                }
+                else
+                {
+                    // 스킬 열리는 효과
+                    Skillinteractable();
+                }
+            }
         }
     }
 
-    // 단계 하나 다 깨면 스킬 열리는 거랑 다시 업글 가능하게 푸는 건 추후 제작
+    public void Skillinteractable()
+    {
+        for (int i = 0; i < skillStates.Length; i++)
+        {
+            Skills[i].interactable = true;
+
+            if (skillStates[i].skillON == true)
+            {
+                Skills[i].interactable = false;
+            }
+        }
+    }
+
+    public void PickSkill(int index)
+    {
+        selectedSkillIndex = index; // 선택된 스탯 인덱스를 저장
+        selectskill.SetActive(true); // 구매할래?
+    }
+
+    public void SkillUpgrade()
+    {
+        if (skillStates[selectedSkillIndex].skillON == false)
+        {
+            skillStates[selectedSkillIndex].skillON = true;
+            Skills[selectedSkillIndex].interactable = false;
+
+            level += 1;
+            levelText.text = level.ToString();
+            engauge = 0;
+            for (int i = 0; i < enhanceStates.Length; i++) { gauge[i].GetComponent<Image>().color = Color.white; stateButtons[i].interactable = true; enhanceStates[i].isUpgraded = false; }
+
+            DataManager.Instance.player.level = level;
+            DataManager.Instance.player.engauge = engauge;
+
+            DataManager.Instance.player.skillON[selectedSkillIndex] = true;
+            DataManager.Instance.Save();
+
+            selectskill.SetActive(false);
+            Skills[0].interactable = false;
+            Skills[1].interactable = false;
+            Skills[2].interactable = false;
+        }
+    }
 
     public void TapSwitch(int tap)
     {

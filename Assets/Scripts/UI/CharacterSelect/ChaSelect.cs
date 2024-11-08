@@ -34,14 +34,17 @@ public class ChaSelect : MonoBehaviour
         }
 
         check.SetActive(false);
+        characterStates[0].playerStates.Initialize();
+        characterStates[1].playerStates.Initialize();
+        characterStates[2].playerStates.Initialize();
     }
 
     public void PermanentStat()
     {
         // 강화된 기본 스탯들
         characterStates[currentIndex].InitializeStats();
-        ChaWindow.GetComponent<Image>().sprite = character[currentIndex];
         characterStates[currentIndex].GetStats();
+        ChaWindow.GetComponent<Image>().sprite = character[currentIndex];
     }
 
     private void OnEnable()
@@ -55,13 +58,13 @@ public class ChaSelect : MonoBehaviour
         // 현재 인덱스를 업데이트
         if (LR == "L")
         {
-            currentIndex = (currentIndex - 1 + character.Length) % character.Length;
             PermanentStat();
+            currentIndex = (currentIndex - 1 + character.Length) % character.Length;
         }
         else if (LR == "R")
         {
-            currentIndex = (currentIndex + 1) % character.Length;
             PermanentStat();
+            currentIndex = (currentIndex + 1) % character.Length;
         }
         UpdateCharacterInfo();
     }

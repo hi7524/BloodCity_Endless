@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9a89bb9e025d242bd6226cab54ea74, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  characterName: Player
+  characterName: 
   maxHealth: 100
   restorePerSec: 0
   defense: 1
@@ -22,5 +22,4 @@ MonoBehaviour:
   abilityHaste: 0
   magnetism: 0
   curse: 0
-  characterDetail: "\uCE90\uB9AD\uD130 \uAE30\uBCF8 \uB2A5\uB825\uCE58 + \uC601\uAD6C\uAC15\uD654
-    \uAC12"
+  characterDetail: 
