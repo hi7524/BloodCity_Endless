@@ -1345,7 +1345,7 @@ SpriteRenderer:
   m_Size: {x: 8.96, y: 8.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &233314965
@@ -8768,6 +8768,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &775019276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.2808285
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5763589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226584759196296521, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364380648405826876, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_Name
+      value: PlasmaGunBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364380648405826876, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b91467b7e05f56c46856abdcbb2471b6, type: 3}
 --- !u!1 &808843186
 GameObject:
   m_ObjectHideFlags: 0
@@ -9775,7 +9836,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 704111289
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 10
   m_Sprite: {fileID: 216499495, guid: 620957cf57c91cd4aa1bbe3d94c0e15d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98744,6 +98805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2D Projectile 26 blue crystal
       objectReference: {fileID: 0}
+    - target: {fileID: 1018882707796302, guid: ca71d60a782e6e34db2c8b0da865e680, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4856668287497590, guid: ca71d60a782e6e34db2c8b0da865e680, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.28
@@ -124959,6 +125024,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6500947548680875246, guid: 8c2ec2ce0c1efe749b8b846b330c3e48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7523372702977556954, guid: 8c2ec2ce0c1efe749b8b846b330c3e48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.2045765
@@ -131584,7 +131653,7 @@ SpriteRenderer:
   m_Size: {x: 8.96, y: 8.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1930902968
@@ -135893,3 +135962,4 @@ SceneRoots:
   - {fileID: 1201807594}
   - {fileID: 1358806817}
   - {fileID: 1047319589}
+  - {fileID: 775019276}

@@ -21,6 +21,7 @@ public class ShotGun : MonoBehaviour
     private Vector3 mousePos;
     private AudioSource audioSource;
 
+
     private void Start()
     {
         // 컴포넌트 초기화
@@ -32,24 +33,25 @@ public class ShotGun : MonoBehaviour
 
     private void Update()
     {
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 rotation = mousePos - transform.position;
+            Vector3 rotation = mousePos - transform.position;
 
-        float rotationZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+            float rotationZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0, 0, rotationZ);
+            transform.rotation = Quaternion.Euler(0, 0, rotationZ);
 
 
-        // 쿨타임마다 스킬 사용
-        curCoolDown += Time.deltaTime;
+            // 쿨타임마다 스킬 사용
+            curCoolDown += Time.deltaTime;
 
-        if (curCoolDown > coolDown)
-        {
-            StartCoroutine(Fire());
-            curCoolDown = 0;
-            fireParticle.Play(); // 파티클
-        }
+            if (curCoolDown > coolDown)
+            {
+                StartCoroutine(Fire());
+                curCoolDown = 0;
+                fireParticle.Play(); // 파티클
+            }
+        
     }
     
     IEnumerator Fire()
@@ -65,7 +67,7 @@ public class ShotGun : MonoBehaviour
         for (int i = 0; i < bulletCount; i++)
         {
             Instantiate(bulletPrf, bulletTrans.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 }
