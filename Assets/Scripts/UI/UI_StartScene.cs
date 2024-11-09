@@ -45,7 +45,7 @@ public class UI_StartScene : MonoBehaviour
     // 캐릭터 선택창 버튼
     public void GoStage()
     {
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("PlayerTestScene");
         Time.timeScale = 1.0f;
     }
 

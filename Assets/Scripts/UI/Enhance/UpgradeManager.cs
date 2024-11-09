@@ -63,19 +63,19 @@ public class UpgradeManager : MonoBehaviour
         engauge = 0;
         GaugeUp();
 
-        foreach (var enhanceState in enhanceStates)
-        {
-            enhanceState.Initialize(); // EnhanceState 초기화
-        }
-        foreach (var skillStates in skillStates)
-        {
-            skillStates.Intialize(); // skillStates 초기화
-        }
         for (int i = 0; i < enhanceStates.Length; i++)
         {
+            enhanceStates[i].Initialize();
             stateButtons[i].interactable = true;
         }
+        for (int i = 0;i < skillStates.Length; i++)
+        {
+            skillStates[i].Intialize();
+            DataManager.Instance.player.skillON[i] = false;
+        }
         playerStates.Initialize(); // CharacterStates 초기화
+
+        DataManager.Instance.player.level = level;
         StateSave();
         Debug.Log("<color=lime>[SUCCESS]</color> 스탯 데이터 초기화 완료");
     }

@@ -16,10 +16,10 @@ MonoBehaviour:
   maxHealth: 100
   restorePerSec: 0
   defense: 1
-  speed: 100
-  attackDamage: 100
-  attackRange: 100
-  abilityHaste: 0
-  magnetism: 0
+  speed: 103.3
+  attackDamage: 111.5
+  attackRange: 103.3
+  abilityHaste: 100
+  magnetism: 16.5
   curse: 0
   characterDetail: 
