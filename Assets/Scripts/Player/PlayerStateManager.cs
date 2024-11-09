@@ -33,8 +33,6 @@ public class PlayerStateManager : MonoBehaviour
         DataManager.Instance.LoadPlayerData();
         currentIndex = DataManager.Instance.player.currentIndex;
 
-        // 플레이어가 꺼지면 몬스터가 작동을 못해서
-        // 지금 플레이어가 안꺼지는 구존데 이건 나중에 뭐 어케 해보고.....
         switch(currentIndex)
         {
             case 0:
