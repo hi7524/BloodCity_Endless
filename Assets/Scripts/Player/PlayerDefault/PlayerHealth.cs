@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    private bool isDead = false;
+
 
     private void Awake()
     {
@@ -37,8 +39,10 @@ public class PlayerHealth : MonoBehaviour
         RestoreHealthPerSec();
 
         // 체력이 0일 경우 사망
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
+            Debug.Log("Dead");
+            isDead = true;  // 중복 호출 방지용
             Die();
         }
 

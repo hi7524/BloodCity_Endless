@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // 로켓 런쳐 총알 스크립트
@@ -34,6 +35,9 @@ public class RocketLauncherBullet : Bullet
             // 폭발 이펙트
             explosionParticle.SetActive(true); // 파티클 실행
             // 효과음 재생
+
+            // 오브젝트 비활성화
+            Invoke("SetActiveFalse", 1f);
 
             // 범위 내 감지된 오브젝트 들에 영향
             foreach (Collider2D obj in hitObjects)
@@ -97,7 +101,12 @@ public class RocketLauncherBullet : Bullet
         // 나중에 수정하깅
     }
 
-    
+    // 오브젝트 비활성화
+    private void SetActiveFalse()
+    {
+        gameObject.SetActive(false);
+    }
+     
 
     
 }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using static ItemSkill;
 
@@ -15,14 +14,14 @@ public class PlayerSkillManager : MonoBehaviour
     public GameObject defaultSkill; // 기본 무기 (샷건)
     public List<GameObject> playerSkills = new List<GameObject>(); // 무기 목록
 
-    [Header("모든 스킬 목록")]
-    public List<GameObject> allPlayerSkills = new List<GameObject>(); // 무기 목록
-
     private float count;     // 무기 개수
-
+    private PlayerState playerState;
     
     private void Start()
     {
+        // 컴포넌트 초기화
+        playerState = transform.parent.GetComponent<PlayerState>();
+
         count = 1 + playerSkills.Count; // 기본 소지 무기 개수                    
         playerSkills.Add(defaultSkill); // 기본 무기 추가
 
@@ -31,7 +30,11 @@ public class PlayerSkillManager : MonoBehaviour
 
     private void Update()
     {
-        SkillRotate();
+        // 플레이어가 생존해있을 때만 작동
+        if (playerState.isPlayerDead == false)
+        {
+            SkillRotate();
+        }
     }
     
     // 스킬 회전
