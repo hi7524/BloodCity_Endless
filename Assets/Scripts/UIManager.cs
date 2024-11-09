@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject pauseWindow;   // 옵션 창
+    public GameObject gameEndWindow; // 게임 완료시 나타날 창
     public GameObject levelUpWindow; // 레벨업시 나타날 스텟 업그레이드 창
     public TMP_Text coinText;  // 인게임 코인 텍스트
 
@@ -53,6 +54,7 @@ public class UIManager : MonoBehaviour
         // 초기 설정
         pauseWindow.SetActive(false); // 옵션 창 비활성화
         levelUpWindow.SetActive(false); // 레벨업 창 비활성화
+        gameEndWindow.SetActive(false); 
         coinText.text = GameManager.Instance.coin.ToString(); // 기존 소지 코인 나타내기
     }
 
@@ -102,6 +104,11 @@ public class UIManager : MonoBehaviour
             window.SetActive(true);
             Time.timeScale = 0.0f;
         }
+    }
+
+    public void ActiveEndWindow()
+    {
+        gameEndWindow.SetActive(true);
     }
 
     // 게임 일시정지

@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 // 로켓 런쳐 총알 스크립트
 public class RocketLauncherBullet : Bullet
@@ -14,10 +15,13 @@ public class RocketLauncherBullet : Bullet
     private float distanceThreshold;     // 데미지 기준점
     private Vector3 textVec;             // 텍스트를 띄울 위치
     private bool isExplosioned = false;  // 폭발 여부 (폭발 중복 방지 변수)
-
+    private AudioSource audioSource;
 
     private void Start()
     {
+        // 컴포넌트 초기화
+        audioSource = GetComponent<AudioSource>();
+
         distanceThreshold = damageRadius / 3; // 데미지 차별을 주기 위해 영향 범위를 3개로 나눔
     }
 
@@ -34,7 +38,8 @@ public class RocketLauncherBullet : Bullet
 
             // 폭발 이펙트
             explosionParticle.SetActive(true); // 파티클 실행
-            // 효과음 재생
+            audioSource.clip = explosionSound; // 효과음 재생
+            audioSource.Play();
 
             // 오브젝트 비활성화
             Invoke("SetActiveFalse", 1f);

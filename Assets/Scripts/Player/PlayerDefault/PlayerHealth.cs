@@ -45,11 +45,6 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;  // 중복 호출 방지용
             Die();
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Die();
-        }
     }
 
     // 체력 UI 업데이트
@@ -104,5 +99,7 @@ public class PlayerHealth : MonoBehaviour
         playerState.SetPlayerDead(); // 플레이어 사망 처리
         animator.speed = 1.0f;       // 애니메이션 재생
         animator.SetTrigger("Dead"); // 사망 애니메이션 재생
+
+        UIManager.Instance.ActiveEndWindow();
     }
 }

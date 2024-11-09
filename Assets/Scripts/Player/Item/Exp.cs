@@ -8,7 +8,7 @@ public class Exp : MonoBehaviour, IItem
     public void Use(GameObject target)
     {
         target.GetComponent<PlayerLevel>().AddExp(xpData.point);
-        Debug.Log("효과음 추가하기");
+        AudioManager.Instance.PlaySound("expSound");
         Destroy(gameObject);
     }
 }

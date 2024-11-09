@@ -74,7 +74,7 @@ public class HeavyMachineGunBullet : MonoBehaviour
         }
         else
         {
-            Debug.Log("충돌");
+
         }
     }
 }
