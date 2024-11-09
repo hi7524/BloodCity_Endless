@@ -13,10 +13,18 @@ public class Grenade : MonoBehaviour
 
     [Header("이펙트")]
     public GameObject fireEffect; // 폭발 효과
-                                  // 효과음
+    public AudioClip  fireSound;   // 폭발 효과음
     public GameObject damageTextPrf; // 텍스트 플로팅
 
     private bool isFired = false; // 중복 방지용
+    private AudioSource audioSource;
+
+
+    private void Awake()
+    {
+        // 컴포넌트 초기화
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -28,6 +36,13 @@ public class Grenade : MonoBehaviour
         {
             Fire();
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("hi");
+            audioSource.clip = fireSound; // 효과음
+            audioSource.Play();
+        }
     }
 
     // 수류탄 폭발
@@ -35,8 +50,14 @@ public class Grenade : MonoBehaviour
     {
         if (!isFired)
         {
+            // 중복 폭발 방지 위한 변수 설정 변경
             isFired = true;
-            fireEffect.SetActive(true);
+
+            // 이펙트
+            fireEffect.SetActive(true); // 파티클
+            audioSource.clip = fireSound; // 효과음
+            audioSource.Play();
+
             // 데미지 반경 내의 오브젝트 감지
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, damageRadius, damageLayer);
 

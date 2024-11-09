@@ -4869,7 +4869,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9778,7 +9778,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -9822,6 +9822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6757888937987682248}
   - component: {fileID: 7235758780356529479}
+  - component: {fileID: 4422847817229328358}
   - component: {fileID: 3187829231948877582}
   m_Layer: 0
   m_Name: IceGrenade
@@ -9899,6 +9900,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &4422847817229328358
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804007808375237664}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6808535896401185292, guid: 56dd01553d5c359489af7e75a254fa27, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3187829231948877582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9919,6 +10016,7 @@ MonoBehaviour:
   damageRadius: 1.5
   speed: 18
   fireEffect: {fileID: 3034740426523281786}
+  fireSound: {fileID: 8300000, guid: 42d05c1801c2da94f835f268b8fc318b, type: 3}
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
 --- !u!1 &1885256407204119871
 GameObject:
@@ -14795,7 +14893,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -19695,7 +19793,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -24595,7 +24693,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -29499,7 +29597,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -34399,7 +34497,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -39299,7 +39397,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -39407,7 +39505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199230031816184984, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 199230031816184984, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39415,7 +39513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199450610705254838, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 199450610705254838, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39423,7 +39521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199574509586546038, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 199574509586546038, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39431,7 +39529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199869365633251996, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 199869365633251996, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39439,7 +39537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214114591449299371, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3214114591449299371, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39447,7 +39545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214219701076454343, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3214219701076454343, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39455,7 +39553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214475882008597809, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3214475882008597809, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39463,7 +39561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214560416651730289, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3214560416651730289, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39471,7 +39569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3940655545871224160, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3940655545871224160, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39479,7 +39577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3941935583747116022, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3941935583747116022, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39487,7 +39585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3941940439742482632, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3941940439742482632, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39495,7 +39593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3941962957435007788, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3941962957435007788, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39503,7 +39601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3942364007819448582, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3942364007819448582, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39511,7 +39609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3942747963199178482, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3942747963199178482, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID
@@ -39519,7 +39617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3942753434321644194, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3942753434321644194, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
       propertyPath: m_SortingLayerID

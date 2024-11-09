@@ -33,6 +33,8 @@ public class ShotGun : MonoBehaviour
 
     private void Update()
     {
+        if (UIManager.Instance.gameEndWindow.activeSelf == false)
+        {
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
             Vector3 rotation = mousePos - transform.position;
@@ -51,6 +53,7 @@ public class ShotGun : MonoBehaviour
                 curCoolDown = 0;
                 fireParticle.Play(); // 파티클
             }
+        }
         
     }
     

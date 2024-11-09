@@ -54,22 +54,25 @@ public class HeavyMachineGun : MonoBehaviour
     // 적 추적
     private void FollowEnemy()
     {
-        // 추적 대상이 존재하지 않을 경우
-        if (closetTarget == null)
+        if (UIManager.Instance.gameEndWindow.activeSelf == false)
         {
+            // 추적 대상이 존재하지 않을 경우
+            if (closetTarget == null)
+            {
 
-        }
-        // 추적 대상이 존재할 경우
-        else
-        {
-            // 적의 방향으로 회전 (적을 바라봄)
-            Vector3 rotation = closetTarget.position - transform.position;
-            float rotationZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-            
-            transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(0, 0, rotationZ), 5 * Time.deltaTime);
+            }
+            // 추적 대상이 존재할 경우
+            else
+            {
+                // 적의 방향으로 회전 (적을 바라봄)
+                Vector3 rotation = closetTarget.position - transform.position;
+                float rotationZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
-            // 총알 발사
-            Fire();
+                transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(0, 0, rotationZ), 5 * Time.deltaTime);
+
+                // 총알 발사
+                Fire();
+            }
         }
     }
 

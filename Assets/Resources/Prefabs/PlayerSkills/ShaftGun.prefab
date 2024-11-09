@@ -200,7 +200,7 @@ MonoBehaviour:
   coolDown: 1
   shakeDuration: 0.1
   shakeIntens: 0.1
-  fireSound: {fileID: 8300000, guid: 24f58b141312b5c48af9cb607af7e9dd, type: 3}
+  fireSound: {fileID: 8300000, guid: fc21263bf13af30498e168db08f7f4a1, type: 3}
   fireParticle: {fileID: 8393824633853216995}
 --- !u!1 &6500947548680875246
 GameObject:
@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5533773650475555691
 Transform:
   m_ObjectHideFlags: 0
