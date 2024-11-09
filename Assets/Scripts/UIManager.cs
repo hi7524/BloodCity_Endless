@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseWindow;   // 옵션 창
     public GameObject gameEndWindow; // 게임 완료시 나타날 창
     public GameObject levelUpWindow; // 레벨업시 나타날 스텟 업그레이드 창
+    public GameObject weaponLevelUp;
     public TMP_Text coinText;  // 인게임 코인 텍스트
 
     [Header("플레이어 체력")]
@@ -52,8 +53,9 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         // 초기 설정
-        pauseWindow.SetActive(false); // 옵션 창 비활성화
+        pauseWindow.SetActive(false);   // 옵션 창 비활성화
         levelUpWindow.SetActive(false); // 레벨업 창 비활성화
+        weaponLevelUp.SetActive(false); // 무기 강화 창 비활성화
         gameEndWindow.SetActive(false); 
         coinText.text = GameManager.Instance.coin.ToString(); // 기존 소지 코인 나타내기
     }
@@ -106,9 +108,16 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // 게임 결과 창 활성화
     public void ActiveEndWindow()
     {
         gameEndWindow.SetActive(true);
+    }
+
+    // 무기 강화 창 토글
+    public void WeaponLevelUp()
+    {
+        ToggleWindow(weaponLevelUp);
     }
 
     // 게임 일시정지

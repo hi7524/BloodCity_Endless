@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 
 // 스킬 아이템화 → 획득시 플레이어 스킬에 해당 스킬 추가
@@ -12,14 +11,8 @@ public class ItemSkill : MonoBehaviour
         RailGun,
         RocketLauncher
     }
-
     public GunType selectedWeapon;
 
-    private void Start()
-    {
-        // 아이템 이펙트
-        transform.DOBlendableLocalMoveBy(new Vector3(0, 0.5f, 0), 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -22,12 +22,11 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+
     private void Start()
     {
         // 체력 설정
         health = playerState.maxHealth;
-
-        Debug.Log("<color=#00FF22>[K] 플레이어 사망 테스트</color>");
     }
 
     private void Update()

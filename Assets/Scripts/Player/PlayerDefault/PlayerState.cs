@@ -28,18 +28,19 @@ public class PlayerState : MonoBehaviour
             Instance = this;
         }
 
-        DataManager.Instance.LoadPlayerData();
-        currentIndex = DataManager.Instance.player.currentIndex;
+        //DataManager.Instance.LoadPlayerData();
+        //currentIndex = DataManager.Instance.player.currentIndex;
 
         // 플레이어 스탯 + 캐릭터 보너스 스탯 한방에 가져오기
-        characterStates[currentIndex].InitializeStats();
-        characterStates[currentIndex].GetStats();
+        //characterStates[currentIndex].InitializeStats();
+        //characterStates[currentIndex].GetStats();
         SetStateDRAFT();
     }
 
-    public void SetStateDRAFT()
+    // 예진이가 연결할 때 쓸 메서드!!!!!
+    public void SetState()
     {
-        maxHealth = characterStates[currentIndex].stateList[0]; // 최대 체력
+        /*maxHealth = characterStates[currentIndex].stateList[0]; // 최대 체력
         restorePerSec = characterStates[currentIndex].stateList[1];   // 초당 회복량
         defense = characterStates[currentIndex].stateList[2];  // 방어력
         speed = characterStates[currentIndex].stateList[3];  // 이동 속도 (%)
@@ -47,7 +48,7 @@ public class PlayerState : MonoBehaviour
         attackRange = characterStates[currentIndex].stateList[5];  // 공격 범위 (%)
         abilityHaste = characterStates[currentIndex].stateList[6];  // 능력 가속 (쿨감, %)
         magnetism = characterStates[currentIndex].stateList[7];  // 자성
-        curse = characterStates[currentIndex].stateList[8]; // 저주
+        curse = characterStates[currentIndex].stateList[8]; // 저주*/
 
         if (currentIndex == 1)
         {
@@ -58,7 +59,7 @@ public class PlayerState : MonoBehaviour
         }
     }
 
-    /*
+    // 임시로 사용할 때 (연결 해제) 메서드~!!!!
     private void SetStateDRAFT()
     {
         isPlayerDead = false;  // 플레이어 사망 여부
@@ -72,7 +73,7 @@ public class PlayerState : MonoBehaviour
         magnetism = 1;  // 자성
         curse = 0; // 저주
     }
-    */
+    
 
     public void SetPlayerDead()
     {
