@@ -15,7 +15,7 @@ public class CharacterStates : ScriptableObject
     public float attackDamage = 100; // 공격력 (%)
     public float attackRange = 100;  // 공격 범위 (%)
 
-    public float abilityHaste = 0;   // 능력 가속 (쿨감, %)
+    public float abilityHaste = 100;   // 능력 가속 (쿨감, %)
     public float magnetism = 0;      // 자성 (+)
 
     public float curse = 0;          // 저주 (+)
@@ -28,7 +28,7 @@ public class CharacterStates : ScriptableObject
         speed = 100;
         attackDamage = 100;
         attackRange = 100;
-        abilityHaste = 0;
+        abilityHaste = 100;
         magnetism = 0;
         curse = 0;
 

@@ -44,6 +44,7 @@ public class PlayerLevel : MonoBehaviour
         ExpToNextLevel();      // 다음 레벨업까지 획득해야 할 경험치 계산
         GameManager.Instance.PlayerLevelUp(); // 레벨 업
         UIManager.Instance.levelText.text = "Lv. " + playerLevel.ToString(); // 레벨 나타냄
+        PlayerLevelUPManager.Instance.GenerateLevelUpCards();
         UIManager.Instance.ToggleWindow(UIManager.Instance.levelUpWindow); // 레벨업 창 활성화
     }
 

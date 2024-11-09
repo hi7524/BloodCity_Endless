@@ -132,7 +132,7 @@ public class DataManager : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/" + GameDataFileName))
         {
-            File.Delete(Application.persistentDataPath + "/" + GameDataFileName);
+            File.Delete(Application.persistentDataPath + "/PlayerData.json");
             File.Delete(Application.persistentDataPath + "/SoundData.json");
 
             UpgradeManager.Instance.ResetStates();

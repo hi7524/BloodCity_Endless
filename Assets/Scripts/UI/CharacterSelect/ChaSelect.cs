@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
 public class ChaSelect : MonoBehaviour
@@ -11,7 +10,7 @@ public class ChaSelect : MonoBehaviour
     public GameObject ChaWindow;
 
     [Header("Stat")]
-    public TMP_Text[] chaState = new TMP_Text[9]; // 캐릭터 스탯 텍스트 배열
+    public Text[] chaState = new Text[9]; // 캐릭터 스탯 텍스트 배열
     public ChaStateManager[] characterStates = new ChaStateManager[3]; // 캐릭터 스탯 배열
 
     [Header("Etc.")]
@@ -21,7 +20,7 @@ public class ChaSelect : MonoBehaviour
 
     [Header("check")]
     public GameObject check;
-    public TMP_Text check_text;
+    public Text check_text;
 
     string cha;
     string sta;
@@ -90,7 +89,17 @@ public class ChaSelect : MonoBehaviour
                 chaState[5].color = Color.green;
             }
 
-            chaState[i].text = characterStates[currentIndex].stateList[i].ToString();
+            float statValue = characterStates[currentIndex].stateList[i]; // 현재 스탯 값
+
+            // 소수점 이하 자리수에 따라 처리
+            if (statValue % 1 == 0) // 정수일 경우
+            {
+                chaState[i].text = statValue.ToString("F0"); // 소수점 없이 정수로 표시
+            }
+            else
+            {
+                chaState[i].text = statValue.ToString("F1"); // 소수점 둘째 자리까지 표시
+            }
         }
     }
 
