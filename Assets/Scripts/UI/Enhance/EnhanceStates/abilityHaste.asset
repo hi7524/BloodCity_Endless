@@ -15,17 +15,17 @@ MonoBehaviour:
   stateName: abilityHaste
   value: 0
   stateUpgrade:
+  - increaseAmount: 0
+    cost: 0
+    isPercentage: 0
   - increaseAmount: 11.5
     cost: 200
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uB2A5\uB825 \uCFE8\uD0C0\uC784\uC744"
     isPercentage: 1
   - increaseAmount: 11.5
     cost: 600
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uB2A5\uB825 \uCFE8\uD0C0\uC784\uC744"
     isPercentage: 1
   - increaseAmount: 12
     cost: 1000
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uB2A5\uB825 \uCFE8\uD0C0\uC784\uC744"
     isPercentage: 1
-  enhanceLevel: 0
-  isUpgraded: 0
+  enhanceLevel: 3
+  isUpgraded: 1

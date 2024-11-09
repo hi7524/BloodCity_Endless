@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // 플레이어 캐릭터의 스탯 정보를 적용
 public class PlayerState : MonoBehaviour
@@ -39,6 +40,13 @@ public class PlayerState : MonoBehaviour
     {
         Debug.Log("플레이어 사망");
         isPlayerDead = true;
+        
+        // 스타트씬으로 갔을 때 선택 창 띄우려고 추가함
+        DataManager.Instance.player.PlayerRestart = true;
+        DataManager.Instance.Save();
+
+        // 추후 업적 창 나오면 그거 버튼에다 옮길 예정
+        // SceneManager.LoadScene("StartScene");
     }
 
 

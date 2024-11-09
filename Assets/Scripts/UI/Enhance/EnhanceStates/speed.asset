@@ -15,17 +15,17 @@ MonoBehaviour:
   stateName: speed
   value: 100
   stateUpgrade:
+  - increaseAmount: 0
+    cost: 0
+    isPercentage: 0
   - increaseAmount: 3.3
     cost: 200
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C"
     isPercentage: 1
   - increaseAmount: 3.3
     cost: 600
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C"
     isPercentage: 1
   - increaseAmount: 3.4
     cost: 1000
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C"
     isPercentage: 1
-  enhanceLevel: 0
-  isUpgraded: 0
+  enhanceLevel: 3
+  isUpgraded: 1

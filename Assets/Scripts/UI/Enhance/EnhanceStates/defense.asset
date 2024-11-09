@@ -15,17 +15,17 @@ MonoBehaviour:
   stateName: defense
   value: 1
   stateUpgrade:
+  - increaseAmount: 0
+    cost: 0
+    isPercentage: 0
   - increaseAmount: 1
     cost: 200
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uBC29\uC5B4\uB825\uC744"
     isPercentage: 0
   - increaseAmount: 1
     cost: 600
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uBC29\uC5B4\uB825\uC744"
     isPercentage: 0
   - increaseAmount: 1
     cost: 1000
-    description: "\uD50C\uB808\uC774\uC5B4\uC758 \uBC29\uC5B4\uB825\uC744"
     isPercentage: 0
-  enhanceLevel: 0
-  isUpgraded: 0
+  enhanceLevel: 3
+  isUpgraded: 1

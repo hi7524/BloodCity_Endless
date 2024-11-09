@@ -47,13 +47,6 @@ public class UpgradeManager : MonoBehaviour
     
     private void Start()
     {
-        if (level == 0)
-        {
-            level = 1;
-            DataManager.Instance.player.level = 1;
-            ResetStates();
-        }
-
         LoadStates();
         UpdateCoinsText();
         GaugeUp();
@@ -61,7 +54,15 @@ public class UpgradeManager : MonoBehaviour
 
     public void ResetStates()
     {
-        playerStates.Initialize(); // CharacterStates 초기화
+        currentCoins = 0;
+        coinsText.text = "Coin : " + currentCoins.ToString();
+
+        level = 1;
+        levelText.text = level.ToString();
+
+        engauge = 0;
+        GaugeUp();
+
         foreach (var enhanceState in enhanceStates)
         {
             enhanceState.Initialize(); // EnhanceState 초기화
@@ -70,18 +71,19 @@ public class UpgradeManager : MonoBehaviour
         {
             skillStates.Intialize(); // skillStates 초기화
         }
-        for (int i = 0; i < stateButtons.Length; i++)
+        for (int i = 0; i < enhanceStates.Length; i++)
         {
-            stateButtons[i].interactable = true; // 스탯들 활성화
+            stateButtons[i].interactable = true;
         }
-
+        playerStates.Initialize(); // CharacterStates 초기화
+        StateSave();
         Debug.Log("<color=lime>[SUCCESS]</color> 스탯 데이터 초기화 완료");
     }
 
     public void LoadStates()
     {
         currentCoins = DataManager.Instance.player.coins;
-        coinsText.text = currentCoins.ToString();
+        coinsText.text = "Coin : " + currentCoins.ToString();
 
         level = DataManager.Instance.player.level;
         levelText.text = level.ToString(); 
@@ -132,16 +134,16 @@ public class UpgradeManager : MonoBehaviour
     public void Upgrade()
     {
         // 업그레이드 정보
-        float cost = enhanceStates[selectedIndex].stateUpgrade[0].cost; // 첫 번째 업그레이드 비용
+        float cost = enhanceStates[selectedIndex].stateUpgrade[level].cost; // 첫 번째 업그레이드 비용
         string statName = enhanceStates[selectedIndex].stateName; // 스탯 이름
 
         // 업그레이드 가능 여부 체크
         if (currentCoins >= cost)
         {
             // 스탯 업그레이드
-            float increaseAmount = enhanceStates[selectedIndex].stateUpgrade[0].increaseAmount;
+            float increaseAmount = enhanceStates[selectedIndex].stateUpgrade[level].increaseAmount;
 
-            if (enhanceStates[selectedIndex].stateUpgrade[0].isPercentage)
+            if (enhanceStates[selectedIndex].stateUpgrade[level].isPercentage)
             {
                 float currentStat = playerStates.GetStat(statName);
                 playerStates.SetStat(statName, currentStat * (1 + increaseAmount / 100));
@@ -156,37 +158,41 @@ public class UpgradeManager : MonoBehaviour
             enhanceStates[selectedIndex].enhanceLevel += 1; // 단계를 올리고
             enhanceStates[selectedIndex].isUpgraded = true; // 업그레이드 했다고 표시하고
             stateButtons[selectedIndex].interactable = false; // 상호작용 끄기
+            
             engauge += 1;
-            GaugeUp();
+            GaugeUp(); // 게이지 올리기
             select.SetActive(false);
 
-            DataManager.Instance.player.engauge = engauge;
-            DataManager.Instance.player.coins = currentCoins;
-
-            DataManager.Instance.player.characterStats[0] = playerStates.maxHealth;
-            DataManager.Instance.player.characterStats[1] = playerStates.restorePerSec;
-            DataManager.Instance.player.characterStats[2] = playerStates.defense;
-            DataManager.Instance.player.characterStats[3] = playerStates.speed;
-            DataManager.Instance.player.characterStats[4] = playerStates.attackDamage;
-            DataManager.Instance.player.characterStats[5] = playerStates.attackRange;
-            DataManager.Instance.player.characterStats[6] = playerStates.abilityHaste;
-            DataManager.Instance.player.characterStats[7] = playerStates.magnetism;
-            DataManager.Instance.player.characterStats[8] = playerStates.curse;
-
-            for (int i = 0; i < enhanceStates.Length; i++)
-            {
-                DataManager.Instance.player.enhanceLevels[i] = enhanceStates[i].enhanceLevel;
-                DataManager.Instance.player.isUpgraded[i] = enhanceStates[i].isUpgraded;
-            }
-            DataManager.Instance.Save();
-
-            // 코인 텍스트 업데이트
-            UpdateCoinsText();
+            StateSave(); //스탯 저장하고
+            UpdateCoinsText(); // 코인 재설정
         }
         else
         {
             ToolTipManager.Instance.TipOn("※ 코인이 <color=orange>부족</color>합니다! ※");
         }
+    }
+
+    public void StateSave()
+    {
+        DataManager.Instance.player.engauge = engauge;
+        DataManager.Instance.player.coins = currentCoins;
+
+        DataManager.Instance.player.characterStats[0] = playerStates.maxHealth;
+        DataManager.Instance.player.characterStats[1] = playerStates.restorePerSec;
+        DataManager.Instance.player.characterStats[2] = playerStates.defense;
+        DataManager.Instance.player.characterStats[3] = playerStates.speed;
+        DataManager.Instance.player.characterStats[4] = playerStates.attackDamage;
+        DataManager.Instance.player.characterStats[5] = playerStates.attackRange;
+        DataManager.Instance.player.characterStats[6] = playerStates.abilityHaste;
+        DataManager.Instance.player.characterStats[7] = playerStates.magnetism;
+        DataManager.Instance.player.characterStats[8] = playerStates.curse;
+
+        for (int i = 0; i < enhanceStates.Length; i++)
+        {
+            DataManager.Instance.player.enhanceLevels[i] = enhanceStates[i].enhanceLevel;
+            DataManager.Instance.player.isUpgraded[i] = enhanceStates[i].isUpgraded;
+        }
+        DataManager.Instance.Save();
     }
 
     public void UpdateCoinsText()
@@ -249,6 +255,7 @@ public class UpgradeManager : MonoBehaviour
             levelText.text = level.ToString();
             engauge = 0;
             for (int i = 0; i < enhanceStates.Length; i++) { gauge[i].GetComponent<Image>().color = Color.white; stateButtons[i].interactable = true; enhanceStates[i].isUpgraded = false; }
+            DesChange();
 
             DataManager.Instance.player.level = level;
             DataManager.Instance.player.engauge = engauge;
@@ -260,6 +267,46 @@ public class UpgradeManager : MonoBehaviour
             Skills[0].interactable = false;
             Skills[1].interactable = false;
             Skills[2].interactable = false;
+        }
+    }
+
+    public void DesChange()
+    {
+        // 어차피 이미지로 바뀔 수도 있으니까 대충 구현
+        for (int i = 0; i < enhanceStates.Length; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    stateButtons[0].GetComponentInChildren<Text>().text = $"최대 체력\n+{enhanceStates[0].stateUpgrade[level].increaseAmount}\n\n-{enhanceStates[0].stateUpgrade[level].cost}C";
+                    break;
+                case 1:
+                    stateButtons[1].GetComponentInChildren<Text>().text = $"회복\n+{enhanceStates[1].stateUpgrade[level].increaseAmount}\n\n-{enhanceStates[1].stateUpgrade[level].cost}C";
+                    break;
+                case 2:
+                    stateButtons[2].GetComponentInChildren<Text>().text = $"방어력\n+{enhanceStates[2].stateUpgrade[level].increaseAmount}\n\n-{enhanceStates[2].stateUpgrade[level].cost}C";
+                    break;
+                case 3:
+                    stateButtons[3].GetComponentInChildren<Text>().text = $"이동 속도\n+{enhanceStates[3].stateUpgrade[level].increaseAmount}%\n\n-{enhanceStates[3].stateUpgrade[level].cost}C";
+                    break;
+                case 4:
+                    stateButtons[4].GetComponentInChildren<Text>().text = $"피해량\n+{enhanceStates[4].stateUpgrade[level].increaseAmount}%\n\n-{enhanceStates[4].stateUpgrade[level].cost}C";
+                    break;
+                case 5:
+                    stateButtons[5].GetComponentInChildren<Text>().text = $"공격 범위\n+{enhanceStates[5].stateUpgrade[level].increaseAmount}%\n\n-{enhanceStates[5].stateUpgrade[level].cost}C";
+                    break;
+                case 6:
+                    stateButtons[6].GetComponentInChildren<Text>().text = $"쿨타임\n+{enhanceStates[6].stateUpgrade[level].increaseAmount}%\n\n-{enhanceStates[6].stateUpgrade[level].cost}C";
+                    break;
+                case 7:
+                    stateButtons[7].GetComponentInChildren<Text>().text = $"자석\n+{enhanceStates[7].stateUpgrade[level].increaseAmount}\n\n-{enhanceStates[7].stateUpgrade[level].cost}C";
+                    break;
+                case 8:
+                    stateButtons[8].GetComponentInChildren<Text>().text = $"저주\n+{enhanceStates[8].stateUpgrade[level].increaseAmount}\n\n-{enhanceStates[8].stateUpgrade[level].cost}C";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

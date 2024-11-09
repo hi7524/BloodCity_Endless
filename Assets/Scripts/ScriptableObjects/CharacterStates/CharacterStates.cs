@@ -31,6 +31,16 @@ public class CharacterStates : ScriptableObject
         abilityHaste = 0;
         magnetism = 0;
         curse = 0;
+
+        DataManager.Instance.player.characterStats[0] = maxHealth;
+        DataManager.Instance.player.characterStats[1] = restorePerSec;
+        DataManager.Instance.player.characterStats[2] = defense;
+        DataManager.Instance.player.characterStats[3] = speed;
+        DataManager.Instance.player.characterStats[4] = attackDamage;
+        DataManager.Instance.player.characterStats[5] = attackRange;
+        DataManager.Instance.player.characterStats[6] = abilityHaste;
+        DataManager.Instance.player.characterStats[7] = magnetism;
+        DataManager.Instance.player.characterStats[8] = curse;
     }
 
     public float GetStat(string statName)

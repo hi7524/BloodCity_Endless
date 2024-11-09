@@ -15,20 +15,17 @@ MonoBehaviour:
   stateName: curse
   value: 0
   stateUpgrade:
+  - increaseAmount: 0
+    cost: 0
+    isPercentage: 0
   - increaseAmount: 3.3
     cost: 200
-    description: "\uC801\uB4E4\uC758 \uB09C\uC774\uB3C4\uAC00 \uB192\uC544\uC9C0\uB294
-      \uC800\uC8FC\uB97C"
     isPercentage: 0
   - increaseAmount: 3.3
     cost: 600
-    description: "\uC801\uB4E4\uC758 \uB09C\uC774\uB3C4\uAC00 \uB192\uC544\uC9C0\uB294
-      \uC800\uC8FC\uB97C"
     isPercentage: 0
   - increaseAmount: 3.4
     cost: 1000
-    description: "\uC801\uB4E4\uC758 \uB09C\uC774\uB3C4\uAC00 \uB192\uC544\uC9C0\uB294
-      \uC800\uC8FC\uB97C"
     isPercentage: 0
-  enhanceLevel: 0
-  isUpgraded: 0
+  enhanceLevel: 3
+  isUpgraded: 1

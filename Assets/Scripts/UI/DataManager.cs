@@ -13,6 +13,7 @@ public class PlayerData
     [Header("StartScene")]
     public int currentIndex = 0;
     public int stageIndex;
+    public bool PlayerRestart;
 
     [Header("Enhance")]
     public int coins;
@@ -134,7 +135,6 @@ public class DataManager : MonoBehaviour
             File.Delete(Application.persistentDataPath + "/" + GameDataFileName);
             File.Delete(Application.persistentDataPath + "/SoundData.json");
 
-            SceneManager.LoadScene("StartScene");
             UpgradeManager.Instance.ResetStates();
         }
         else

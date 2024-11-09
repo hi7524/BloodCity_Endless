@@ -863,7 +863,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!70 &141351348
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -46803,7 +46803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterStates:
-  - playerStates: {fileID: 11400000, guid: 79e7c39a7c89c3641b7c2b0bd42b85a3, type: 2}
+  - playerStates: {fileID: 11400000, guid: 2caf2958c05ebf04ab9abf04d5179f1c, type: 2}
     bonusStates: {fileID: 11400000, guid: 39af82fdbfc35fb4e9cd044ab4231802, type: 2}
     stateList:
     - 0
@@ -46815,7 +46815,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-  - playerStates: {fileID: 11400000, guid: 79e7c39a7c89c3641b7c2b0bd42b85a3, type: 2}
+  - playerStates: {fileID: 11400000, guid: 2caf2958c05ebf04ab9abf04d5179f1c, type: 2}
     bonusStates: {fileID: 11400000, guid: 7e1661099c3fb68419e1d0a4b81ffbbe, type: 2}
     stateList:
     - 0
@@ -46827,7 +46827,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-  - playerStates: {fileID: 11400000, guid: 79e7c39a7c89c3641b7c2b0bd42b85a3, type: 2}
+  - playerStates: {fileID: 11400000, guid: 2caf2958c05ebf04ab9abf04d5179f1c, type: 2}
     bonusStates: {fileID: 11400000, guid: 5884f76fcec75c745bae8d65852df7de, type: 2}
     stateList:
     - 0
@@ -47824,8 +47824,6 @@ MonoBehaviour:
   effectSpeed: 10
   defaultSkill: {fileID: 7430159223837483755, guid: a6a6a7219abf17440b5ab646e6133fcc, type: 3}
   playerSkills: []
-  allPlayerSkills:
-  - {fileID: 6367858690743225992, guid: af4b4b7b9f92c7b44867e276e23757b1, type: 3}
 --- !u!1001 &1102829635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122974,7 +122972,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!70 &1930902973
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
