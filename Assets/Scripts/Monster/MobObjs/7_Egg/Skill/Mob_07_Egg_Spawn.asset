@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9443e5ade0e34a44096fa51db9c519df, type: 3}
+  m_Name: Mob_07_Egg_Spawn
+  m_EditorClassIdentifier: 
+  skillName: "\uBD80\uD654"
+  skillTag: 1
+  coolTime: 15
+  SkillEffect: {fileID: 6424665450951726683, guid: e7c25e458931f794f8110e84a01fc8dc, type: 3}
+  isStartCooldown: 1

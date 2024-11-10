@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4600571979025045512}
   - component: {fileID: 2740842158426966655}
   - component: {fileID: -703678698709711847}
+  - component: {fileID: 4065880573553288170}
   m_Layer: 11
   m_Name: Speaker
   m_TagString: Enemy
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 704111289
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 1
   m_Sprite: {fileID: 2136541092, guid: ebfde99d73eee3c40abd5b096de84196, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,6 +136,7 @@ MonoBehaviour:
   dis: 0
   dir: {x: 0, y: 0}
   hp: 0
+  speed: 0
   isInstantSpawn: 1
   isDead: 0
   Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
@@ -195,3 +197,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4065880573553288170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093028249316305240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dab1dbc2fe67a54ea6d08559112f87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 9bb15d5cced4e5548a6829f6e2b3fe89, type: 2}

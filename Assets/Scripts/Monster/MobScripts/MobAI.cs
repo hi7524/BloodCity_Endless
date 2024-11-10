@@ -31,7 +31,7 @@ public class MobAI : MonoBehaviour
     [HideInInspector]
     public int hp; // 현재 체력
 
-    [HideInInspector]
+    //[HideInInspector]
     public float speed; // 현재 이동속도
 
     [HideInInspector]
@@ -81,6 +81,8 @@ public class MobAI : MonoBehaviour
 
             if (skill.data.skillTag == MobSkillTag.Init) // 초기화형 스킬일 경우 즉시 사용
                 skill.Use(this);
+            else if (skill.data.isStartCooldown) // 시작 시 쿨타임 적용 스킬인 경우 쿨다운
+                StartCoroutine(Skill_Cooltime(skill));
 
         }
 
@@ -106,11 +108,13 @@ public class MobAI : MonoBehaviour
     public void AddSpeed(float value) // 이동 속도 증감
     {
         speed += value;
+        speed = speed < 0 ? 0 : speed;
     }
 
     public void SetSpeed(float value) // 이동 속도 설정
     {
        speed = value;
+       speed = speed < 0 ? 0 : speed;
     }
 
     public void ResetSpeed() // 이동 속도 초기화
@@ -222,11 +226,9 @@ public class MobAI : MonoBehaviour
             if (!skill.coolDown && skill.data && skill.data.skillTag != MobSkillTag.Dead)
             {
 
-                skill.coolDown = true;
+                StartCoroutine(Skill_Cooltime(skill));
 
                 skill.Use(this);
-
-                StartCoroutine(Skill_Cooltime(skill));
 
             }
 
@@ -236,6 +238,8 @@ public class MobAI : MonoBehaviour
 
     private IEnumerator Skill_Cooltime(IMobSkill skill) // 스킬 쿨타임
     {
+
+        skill.coolDown = true;
 
         yield return new WaitForSeconds(skill.data.coolTime); // 대기
 

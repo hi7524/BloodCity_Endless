@@ -16,4 +16,6 @@ public class MobSkillData : ScriptableObject
 
     public GameObject SkillEffect; // 스킬 이펙트
 
+    public bool isStartCooldown; // 초기화 시 쿨다운 여부
+
 }
