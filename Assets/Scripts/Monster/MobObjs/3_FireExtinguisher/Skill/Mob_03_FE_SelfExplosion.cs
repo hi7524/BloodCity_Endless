@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,9 @@ public class Mob_03_FE_SelfExplosion : MonoBehaviour, IMobSkill
     public void Use(MobAI AI)
     {
 
-        AI.GetComponent<SpriteRenderer>().sortingOrder = -4;
-
         GameObject Fire = Instantiate(data.SkillEffect, AI.gameObject.transform.position, AI.gameObject.transform.rotation);
+
+        Fire.gameObject.transform.DOScale(new Vector3(12, 12, 12), 1.5f);
 
         StartCoroutine(Remove(Fire, AI));
 
