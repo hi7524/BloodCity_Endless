@@ -19,7 +19,7 @@ public class ItemSkill : MonoBehaviour
         // 플레이어 감지
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponentInChildren<PlayerSkillManager>().AddSkill(selectedWeapon); // 플레이어 스킬 추가
+            collision.GetComponentInChildren<PlayerWeaponManager>().AddSkill(selectedWeapon); // 플레이어 스킬 추가
             AudioManager.Instance.PlaySound("addSkillSound");                                // 효과음 재생
             Destroy(gameObject);                                                             // 오브젝트 파괴
         }
