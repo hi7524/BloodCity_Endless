@@ -1069,6 +1069,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05f80d9712adc84aab3c1410482c105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterStates:
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  currentIndex: 0
 --- !u!1 &183622237
 GameObject:
   m_ObjectHideFlags: 0
@@ -47091,6 +47129,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05f80d9712adc84aab3c1410482c105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterStates:
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  currentIndex: 0
 --- !u!114 &919713827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123293,6 +123369,7 @@ MonoBehaviour:
   pauseWindow: {fileID: 1372921590}
   gameEndWindow: {fileID: 0}
   levelUpWindow: {fileID: 2016695516}
+  weaponLevelUp: {fileID: 0}
   coinText: {fileID: 1841865774}
   healthBarImg: {fileID: 1413732643}
   healthText: {fileID: 107221325}
@@ -123850,6 +123927,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05f80d9712adc84aab3c1410482c105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterStates:
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - playerStates: {fileID: 0}
+    bonusStates: {fileID: 0}
+    stateList:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  currentIndex: 0
 --- !u!114 &1930902976
 MonoBehaviour:
   m_ObjectHideFlags: 0

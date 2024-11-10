@@ -15,4 +15,4 @@ MonoBehaviour:
   skillName: "\uD654\uC5FC\uAD6C"
   skillTag: 0
   coolTime: 0.75
-  SkillEffect: {fileID: 1603417326835060389, guid: c829d897e041a7d4a90f148cde636461, type: 3}
+  SkillEffect: {fileID: 6839194114891683841, guid: 8f0c0987e036cc042be13e34bb5f6cf3, type: 3}
