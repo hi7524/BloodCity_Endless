@@ -28,17 +28,17 @@ public class MobAI : MonoBehaviour
     [HideInInspector]
     public Vector2 dir = Vector2.zero; // 플레이어의 방향 
 
-    [HideInInspector]
+    //[HideInInspector]
     public int hp; // 현재 체력
 
     //[HideInInspector]
     public float speed; // 현재 이동속도
 
-    [HideInInspector]
-    public bool isInstantSpawn = true; // 간이 소환 여부 
+    //[HideInInspector]
+    public bool isInstantSpawn = false; // 간이 소환 여부 
 
     [HideInInspector]
-    public bool isDead; // 사망 여부
+    public bool isDead = true; // 사망(활동 중단) 여부
 
     [SerializeField]
     private GameObject Exp; // 경험치 오브젝트
@@ -56,11 +56,16 @@ public class MobAI : MonoBehaviour
     private int bodyAttackTime = 1; // 몸빵 피해 대기 시간
     private bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
 
+    private void Start()
+    {
+        if (isInstantSpawn)
+            Init();
+    }
 
-    private void Init() // 초기화
+    public void Init(float hpPer = 1) // 초기화
     {
         gameObject.SetActive(true);
-
+        print(hpPer);
         isDead = false;
 
         Mob = gameObject;
@@ -71,7 +76,7 @@ public class MobAI : MonoBehaviour
 
         mobSkills = GetComponents<IMobSkill>(); // 스킬 스크립트 컴포넌트
 
-        hp = Random.Range(obj.minHealth, obj.maxHealth + 1); // 현재 체력 초기화
+        hp = (int)(Random.Range(obj.minHealth, obj.maxHealth + 1) * hpPer); // 현재 체력 초기화
         speed = obj.speed; // 현재 이속 초기화
 
         foreach (IMobSkill skill in mobSkills) // 스킬 초기화
@@ -95,11 +100,6 @@ public class MobAI : MonoBehaviour
         // 루틴 시작
         coroutine = StartCoroutine(Routine()); // 코루틴 최초 시작
 
-    }
-
-    private void Start() // 초기화 호출
-    {
-        Init();
     }
 
     public void AddSpeed(float value) // 이동 속도 증감
