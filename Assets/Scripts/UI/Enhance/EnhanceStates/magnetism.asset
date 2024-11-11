@@ -24,7 +24,7 @@ MonoBehaviour:
   - increaseAmount: 16.5
     cost: 600
     isPercentage: 0
-  - increaseAmount: 16.5
+  - increaseAmount: 17
     cost: 1000
     isPercentage: 0
   enhanceLevel: 3

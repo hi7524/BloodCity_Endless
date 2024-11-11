@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.IO;
 
 // 플레이어 캐릭터의 스탯 정보를 적용
@@ -56,10 +55,10 @@ public class PlayerState : MonoBehaviour
         maxHealth = characterStates[currentIndex].stateList[0]; // 최대 체력
         restorePerSec = characterStates[currentIndex].stateList[1];   // 초당 회복량
         defense = characterStates[currentIndex].stateList[2];  // 방어력
-        speed = characterStates[currentIndex].stateList[3];  // 이동 속도 (%)
-        attackDamage = characterStates[currentIndex].stateList[4];   // 공격력 (%)
-        attackRange = characterStates[currentIndex].stateList[5];  // 공격 범위 (%)
-        abilityHaste = characterStates[currentIndex].stateList[6];  // 능력 가속 (쿨감, %)
+        speed = 4 + speed * (characterStates[currentIndex].stateList[3] / 100);  // 이동 속도 (%)
+        attackDamage = 1 + attackDamage * (characterStates[currentIndex].stateList[4] / 100);   // 공격력 (%)
+        attackRange = 1 + attackRange * (characterStates[currentIndex].stateList[5] / 100);  // 공격 범위 (%)
+        abilityHaste = 1 + abilityHaste * (characterStates[currentIndex].stateList[6] / 100);  // 능력 가속 (쿨감, %)
         magnetism = characterStates[currentIndex].stateList[7];  // 자성
         curse = characterStates[currentIndex].stateList[8]; // 저주
 
@@ -89,13 +88,8 @@ public class PlayerState : MonoBehaviour
     {
         Debug.Log("플레이어 사망");
         isPlayerDead = true;
-        
-        // 스타트씬으로 갔을 때 선택 창 띄우려고 추가함
-        //DataManager.Instance.player.PlayerRestart = true;
-        //DataManager.Instance.Save();
 
-        // 추후 업적 창 나오면 그거 버튼에다 옮길 예정
-        // SceneManager.LoadScene("StartScene");
+        Time.timeScale = 0;
     }
 
 

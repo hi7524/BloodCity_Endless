@@ -5,10 +5,11 @@ public class LevelUpPreview : MonoBehaviour
 {
     public static LevelUpPreview Instance { get; private set; }
 
+    public Image Cha;
     public Button[] upgradeCards;
     public Text[] DesText;
 
-    public int selectState;
+    public string selectState;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class LevelUpPreview : MonoBehaviour
 
     public void ResetState()
     {
-        DesText[0].text = PlayerState.Instance.maxHealth.ToString("F1");
+        DesText[0].text = PlayerState.Instance.maxHealth.ToString();
         DesText[1].text = PlayerState.Instance.restorePerSec.ToString("F1");
         DesText[2].text = PlayerState.Instance.defense.ToString("F1");
         DesText[3].text = PlayerState.Instance.speed.ToString("F1");
@@ -33,109 +34,128 @@ public class LevelUpPreview : MonoBehaviour
         DesText[5].text = PlayerState.Instance.attackRange.ToString("F1");
         DesText[6].text = PlayerState.Instance.abilityHaste.ToString("F1");
         DesText[7].text = PlayerState.Instance.magnetism.ToString("F1");
-        DesText[8].text = PlayerState.Instance.curse.ToString("F1");
+        DesText[8].text = PlayerState.Instance.curse.ToString();
 
         for (int i = 0; i < DesText.Length; i++) { DesText[i].color = Color.white; }
+
+        switch (PlayerState.Instance.currentIndex) 
+        { 
+            case 0:
+                Cha.sprite = Resources.Load<Sprite>("States/player0");
+                break;
+            case 1:
+                Cha.sprite = Resources.Load<Sprite>("States/player1");
+                break;
+            case 2:
+                Cha.sprite = Resources.Load<Sprite>("States/player2");
+                break;
+        }
+
     }
 
+    /* 스탯 표시 */
     public void TextUpdate(int num)
     {
         ResetState();
 
-        string stateName = upgradeCards[num].GetComponent<Image>().sprite.name;
+        selectState = upgradeCards[num].GetComponent<Image>().sprite.name;
 
-        switch (stateName)
+        switch (selectState)
         {
-            case "maxHealth":
-                selectState = 0;
-                float.TryParse(DesText[0].text, out float maxHealthValue);
-                maxHealthValue += 3;
-                DesText[0].color = Color.green;
-                DesText[0].text = maxHealthValue.ToString();
+            case "surviveStats": survive();
                 break;
-            case "restorePerSec":
-                selectState = 1;
-                float.TryParse(DesText[1].text, out float restorePerSecValue);
-                restorePerSecValue += 0.1f;
-                DesText[1].color = Color.green;
-                DesText[1].text = restorePerSecValue.ToString();
+            case "strengthStats": strength();
                 break;
-            case "defense":
-                selectState = 2;
-                float.TryParse(DesText[2].text, out float defenseValue);
-                defenseValue += 0.5f;
-                DesText[2].color = Color.green;
-                DesText[2].text = defenseValue.ToString();
+            case "intellectStats": intellect();
                 break;
-            case "speed":
-                selectState = 3;
-                float.TryParse(DesText[3].text, out float speedValue);
-                speedValue += speedValue * 0.01f;
-                DesText[3].color = Color.green;
-                DesText[3].text = speedValue.ToString("F1");
+            case "SurStr": survive(); strength();
                 break;
-            case "attackDamage":
-                selectState = 4;
-                float.TryParse(DesText[4].text, out float attackDamageValue);
-                attackDamageValue += attackDamageValue * 0.03f;
-                DesText[4].color = Color.green;
-                DesText[4].text = attackDamageValue.ToString("F1");
+            case "StrInt": strength(); intellect();
                 break;
-            case "attackRange":
-                selectState = 5;
-                float.TryParse(DesText[5].text, out float attackRangeValue);
-                attackRangeValue += attackRangeValue * 0.005f;
-                DesText[5].color = Color.green;
-                DesText[5].text = attackRangeValue.ToString("F1");
-                break;
-            case "abilityHaste":
-                selectState = 6;
-                float.TryParse(DesText[6].text, out float abilityHasteValue);
-                abilityHasteValue += abilityHasteValue * 0.05f;
-                DesText[6].color = Color.green;
-                DesText[6].text = abilityHasteValue.ToString("F1");
-                break;
-            case "magnetism":
-                selectState = 7;
-                float.TryParse(DesText[7].text, out float magnetismValue);
-                magnetismValue += 3;
-                DesText[7].color = Color.green;
-                DesText[7].text = magnetismValue.ToString();
+            case "IntSur": intellect(); survive();
                 break;
         }
     }
 
+    private void survive()
+    {
+        UpdateStat(0, 3);          // maxHealth
+        UpdateStat(1, 0.1f);       // restorePerSec
+        UpdateStat(2, 0.5f);       // defense
+        UpdateStatPercentage(3, 0.01f); // speed
+    }
+
+    private void strength()
+    {
+        UpdateStatPercentage(4, 0.3f); // attackDamage
+        UpdateStatPercentage(5, 0.005f); // attackRange
+    }
+
+    private void intellect()
+    {
+        UpdateStatPercentage(6, 0.5f); // abilityHaste
+        UpdateStat(7, 3);            // magnetism
+    }
+
+    // 스탯 증가 표시
+    private void UpdateStat(int index, float increment)
+    {
+        float.TryParse(DesText[index].text, out float value);
+        value += increment;
+        DesText[index].color = Color.green;
+        DesText[index].text = value.ToString();
+    }
+
+    // 비율 증가 표시
+    private void UpdateStatPercentage(int index, float percentage)
+    {
+        float.TryParse(DesText[index].text, out float value);
+        value += value * percentage;
+        DesText[index].color = Color.green;
+        DesText[index].text = value.ToString("F1");
+    }
+
+
+    /* 진짜 스탯 업그레이드 */
     public void StateSelect()
     {
-        // 스탯 업그레이드
         switch (selectState) 
         {
-            case 0:
-                PlayerState.Instance.maxHealth += 3;
+            case "surviveStats": surviveStats();
                 break;
-            case 1:
-                PlayerState.Instance.restorePerSec += 0.1f;
+            case "strengthStats": strengthStats();
                 break;
-            case 2:
-                PlayerState.Instance.defense += 0.5f;
+            case "intellectStats": intellectStats();
                 break;
-            case 3:
-                PlayerState.Instance.speed += PlayerState.Instance.speed * 0.01f;
+            case "SurStr": surviveStats(); strengthStats();
                 break;
-            case 4:
-                PlayerState.Instance.attackDamage += PlayerState.Instance.attackDamage * 0.3f;
+            case "StrInt": strengthStats(); intellectStats();
                 break;
-            case 5:
-                PlayerState.Instance.attackRange += PlayerState.Instance.attackRange * 0.005f;
-                break;
-            case 6:
-                PlayerState.Instance.abilityHaste += PlayerState.Instance.abilityHaste * 0.5f;
-                break;
-            case 7:
-                PlayerState.Instance.magnetism += 3;
+            case "IntSur": intellectStats(); surviveStats();
                 break;
         }
-        UIManager.Instance.ToggleWindow(UIManager.Instance.levelUpWindow); // 레벨업 창 토글
         ResetState();
+
+        UIManager.Instance.ToggleWindow(UIManager.Instance.levelUpWindow); // 레벨업 창 토글
+    }
+
+    private void surviveStats()
+    {
+        PlayerState.Instance.maxHealth += 3;
+        PlayerState.Instance.restorePerSec += 0.1f;
+        PlayerState.Instance.defense += 0.5f;
+        PlayerState.Instance.speed += PlayerState.Instance.speed * 0.01f;
+    }
+
+    private void strengthStats()
+    {
+        PlayerState.Instance.attackDamage += PlayerState.Instance.attackDamage * 0.3f;
+        PlayerState.Instance.attackRange += PlayerState.Instance.attackRange * 0.005f;
+    }
+
+    private void intellectStats()
+    {
+        PlayerState.Instance.abilityHaste += PlayerState.Instance.abilityHaste * 0.5f;
+        PlayerState.Instance.magnetism += 3;
     }
 }
