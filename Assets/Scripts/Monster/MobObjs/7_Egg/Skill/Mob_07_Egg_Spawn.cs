@@ -22,10 +22,16 @@ public class Mob_07_Egg_Spawn : MonoBehaviour, IMobSkill
 
         Instantiate(data.SkillEffect, AI.gameObject.transform.position, AI.gameObject.transform.rotation);
 
-        for(int i = 0; i < 10; i++)
-            Instantiate(mobs[Random.Range(0, mobs.Length)], AI.gameObject.transform.position + new Vector3(Random.Range(-5, 6), Random.Range(-5, 6)), AI.gameObject.transform.rotation)
-                .GetComponent<MobAI>().isInstantSpawn = true;
-        
+        for (int i = 0; i < 10; i++)
+        {
+            MobAI ai = Instantiate(mobs[Random.Range(0, mobs.Length)], AI.gameObject.transform.position + new Vector3(Random.Range(-5, 6), Random.Range(-5, 6)), AI.gameObject.transform.rotation)
+                .GetComponent<MobAI>();
+
+            ai.isInstantSpawn = true;
+            ai.Init();
+        }
+
+
         AI.Dead();
 
     }

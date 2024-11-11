@@ -16,3 +16,4 @@ MonoBehaviour:
   skillTag: 1
   coolTime: 2
   SkillEffect: {fileID: 7093028249316305240, guid: fd4e42d31bf2c254a97a2fdd8d0d66ef, type: 3}
+  isStartCooldown: 1

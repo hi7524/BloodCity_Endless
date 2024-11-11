@@ -47,7 +47,6 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     private GameObject[] BossMobPrefabs; // 보스 몬스터 프리팹
 
     private Coroutine spawn_coroutine; // 몬스터 생성 무한 루프 코루틴
-    private Coroutine check_coroutine; // 몬스터 검사 무한 루프 코루틴
 
     private List<GameObject> Pools; // 오브젝트 풀
     public int spawnNums; //현재 스폰 마리 수    
@@ -60,6 +59,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
 
     private LayerMask obstacleLayer; // 콜라이더를 가진 오브젝트의 레이어
 
+    float[] hpPers = { 1, 1.1f, 1.15f, 1.15f, 1.2f, 1.3f, 1.35f, 1.4f, 1.45f, 1.5f, 1.6f, 1.7f, 1.8f, 1.9f, 2, 2 }; // 시간 비례 몬스터 체력량  
 
 
     public void ResetAll() // 일괄 초기화 (씬 전환 후 호출 필수)
@@ -171,7 +171,8 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                         // 몬스터 생성
                         if (mob != null)
                         {
-                            Instantiate(mob, spawnPosition, Quaternion.identity);
+                            Instantiate(mob, spawnPosition, Quaternion.identity)
+                                .GetComponent<MobAI>().Init(hpPers[nowMin]);
                             spawnNums += 1;
                         }
 
