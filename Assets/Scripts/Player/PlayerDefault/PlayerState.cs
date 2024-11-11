@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 // 플레이어 캐릭터의 스탯 정보를 적용
 public class PlayerState : MonoBehaviour
@@ -28,19 +29,31 @@ public class PlayerState : MonoBehaviour
             Instance = this;
         }
 
-        //DataManager.Instance.LoadPlayerData();
-        //currentIndex = DataManager.Instance.player.currentIndex;
+        if (File.Exists(Application.persistentDataPath + "/PlayerData.json"))
+        {
+            // 만약 오류나면 C:\(사용자)\(유저이름)\AppData\LocalLow\Endless\BloodCity_Endless 에서 PlayerData 지우기
+            Debug.Log("플레이어 데이터가 존재합니다");
 
-        // 플레이어 스탯 + 캐릭터 보너스 스탯 한방에 가져오기
-        //characterStates[currentIndex].InitializeStats();
-        //characterStates[currentIndex].GetStats();
-        SetStateDRAFT();
+            DataManager.Instance.LoadPlayerData();
+            currentIndex = DataManager.Instance.player.currentIndex;
+
+            // 플레이어 스탯 + 캐릭터 보너스 스탯 한방에 가져오기
+            characterStates[currentIndex].InitializeStats();
+            characterStates[currentIndex].GetStats();
+
+            SetState();
+        }
+        else
+        {
+            Debug.Log("게임씬에서 테스트 중입니다");
+            SetStateDRAFT();
+        }
+
     }
 
-    // 예진이가 연결할 때 쓸 메서드!!!!!
     public void SetState()
     {
-        /*maxHealth = characterStates[currentIndex].stateList[0]; // 최대 체력
+        maxHealth = characterStates[currentIndex].stateList[0]; // 최대 체력
         restorePerSec = characterStates[currentIndex].stateList[1];   // 초당 회복량
         defense = characterStates[currentIndex].stateList[2];  // 방어력
         speed = characterStates[currentIndex].stateList[3];  // 이동 속도 (%)
@@ -48,14 +61,11 @@ public class PlayerState : MonoBehaviour
         attackRange = characterStates[currentIndex].stateList[5];  // 공격 범위 (%)
         abilityHaste = characterStates[currentIndex].stateList[6];  // 능력 가속 (쿨감, %)
         magnetism = characterStates[currentIndex].stateList[7];  // 자성
-        curse = characterStates[currentIndex].stateList[8]; // 저주*/
+        curse = characterStates[currentIndex].stateList[8]; // 저주
 
         if (currentIndex == 1)
         {
-            // 비퍼는 회복을 못쓴다고 하더라고요? 
             restorePerSec = 0;
-
-            // 이후 업그레이드로도 작동하면 안되는데 그건 뭐 나중에...
         }
     }
 
