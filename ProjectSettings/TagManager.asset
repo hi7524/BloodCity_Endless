@@ -69,14 +69,14 @@ TagManager:
   - name: Objects6
     uniqueID: 1639442041
     locked: 0
+  - name: Character
+    uniqueID: 704111289
+    locked: 0
   - name: Objects7
     uniqueID: 1307320763
     locked: 0
   - name: Objects8
     uniqueID: 1186619145
-    locked: 0
-  - name: Character
-    uniqueID: 704111289
     locked: 0
   - name: Items
     uniqueID: 3982936475
