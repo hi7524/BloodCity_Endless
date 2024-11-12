@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9443e5ade0e34a44096fa51db9c519df, type: 3}
-  m_Name: Mob_08_Camera_Flash
+  m_Name: Mob_09_Beast_Rush
   m_EditorClassIdentifier: 
-  skillName: "\uCEA1\uCCD0"
+  skillName: "\uC800\uB3CC\uB9F9\uC9C4"
   skillTag: 1
-  coolTime: 3
-  SkillEffect: {fileID: 7181030817060915786, guid: 2050ea454e05a5e4982569eaa2413d06, type: 3}
-  isStartCooldown: 1
+  coolTime: 8
+  SkillEffect: {fileID: 0}
+  isStartCooldown: 0

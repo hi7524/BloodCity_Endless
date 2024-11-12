@@ -22,7 +22,7 @@ public class Mob_02_Bird_Rush : MonoBehaviour, IMobSkill
 
         AI.isUsingSkillState = true;
 
-        AI.Mob.GetComponent<Rigidbody2D>().AddForce(AI.dir * 12.5f, ForceMode2D.Impulse);
+        AI.Mob.GetComponent<Rigidbody2D>().AddForce(AI.dir * 17.5f, ForceMode2D.Impulse);
 
         StartCoroutine(MoveDelay(AI));
 

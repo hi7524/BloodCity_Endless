@@ -27,7 +27,9 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
 
 
     // 시간 관련 프로퍼티
-    public float nowTime { get; private set; } // 현재 시간
+    public float nowTime { get; private set; } // 현재 시간 (초)
+    public int nowMin { get; protected set; } // 현재 시간 (분)
+
     public bool isReady { get; private set; } = true; // 준비 여부
     public bool isPaused { get; private set; } = false; // 정지 여부
     public bool isGameOver { get; private set; } = false; // 게임 오버 여부
@@ -47,6 +49,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     private GameObject[] BossMobPrefabs; // 보스 몬스터 프리팹
 
     private Coroutine spawn_coroutine; // 몬스터 생성 무한 루프 코루틴
+    private Coroutine spawnBoss_coroutine; // 보스 몬스터 생성 코루틴
 
     private List<GameObject> Pools; // 오브젝트 풀
     public int spawnNums; //현재 스폰 마리 수    
@@ -74,6 +77,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         grid = GameObject.Find("Grid");
 
         spawn_coroutine = StartCoroutine(SpawnMonster()); // 스폰 코루틴 최초 시작
+        spawnBoss_coroutine = StartCoroutine(SpawnBossMonster_Routine());
     }
 
     void Start() // 씬 시작 시 최초 초기화
@@ -124,7 +128,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
             else
             {
 
-                int nowMin = (int)(nowTime / 60); // 현재 분
+                nowMin = (int)(nowTime / 60); // 현재 분
                 nowMin = nowMin > 15 ? 15 : nowMin;
 
                 // print("현재 시간(분) : " + nowMin);
@@ -161,10 +165,10 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                         }
 
                         // 스폰 포인트 구함
-                        int xDir = Random.value > 0.5f ? 1 : -1;
-                        int yDir = Random.value > 0.5f ? 1 : -1;
-                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 52 * xDir);
-                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 45 * yDir);
+                        float xDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
+                        float yDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
+                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 26 * xDir);
+                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 23 * yDir);
 
                         Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
@@ -186,12 +190,49 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     }
 
 
+    public void SpawnBossMonster(int stage = 0) // 보스 몬스터 스폰
+    {
+        float xDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
+        float yDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
+        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 30 * xDir);
+        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 30 * yDir);
+
+        Vector2 spawnPosition = new Vector2(spawnX, spawnY);
+
+        Instantiate(stage > 0 ? BossMobPrefabs[stage - 1] : HalfBossMobPrefabs[Random.Range(0, HalfBossMobPrefabs.Length)], spawnPosition, Quaternion.identity)
+        .GetComponent<MobAI>().Init(hpPers[nowMin]);
+    }
+
+    private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴
+    {
+
+        yield return new WaitForSeconds(180);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(120);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(60);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(180);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(60);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(120);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(180);
+        SpawnBossMonster(1);
+    }
+
+
     void OnDestroy()
     {
         // 객체가 파괴될 때 코루틴 중지
         if (spawn_coroutine != null)
         {
             StopCoroutine(spawn_coroutine);
+        }
+        if (spawnBoss_coroutine != null)
+        {
+            StopCoroutine(spawnBoss_coroutine);
         }
 
     }

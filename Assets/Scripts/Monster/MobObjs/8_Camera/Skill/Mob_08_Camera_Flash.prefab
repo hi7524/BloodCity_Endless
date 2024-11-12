@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3677920740927871900}
   - component: {fileID: 6191765982707878061}
   - component: {fileID: 5628835742216208070}
+  - component: {fileID: 2797074864537964721}
+  - component: {fileID: 8563942924411730684}
   m_Layer: 0
   m_Name: Mob_08_Camera_Flash
   m_TagString: Enemy_Skill
@@ -28,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 7181030817060915786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4.5, z: 0.5}
+  m_LocalPosition: {x: 2, y: 0.45, z: 0}
+  m_LocalScale: {x: 3, y: 4, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 13
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.38257703, b: 0.29874206, a: 0.15686275}
+  m_Color: {r: 1, g: 0.38257703, b: 0.29874206, a: 0.65882355}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,7 +95,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181030817060915786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -141,7 +143,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181030817060915786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -151,7 +153,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.7758393, b: 0.6194968, a: 1}
-  m_Intensity: 8
+  m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000c16b4962737b05be3dccf87ff78cd01e5d33d6a4f52788dc3fd265ba79e6b761bb21ec4d095fba46b9e2f7299bc966ed33e89f9a
@@ -185,3 +187,28 @@ MonoBehaviour:
   - {x: 0.5015763, y: -0.28963095, z: 0}
   - {x: 0.24397044, y: 0.15035674, z: 0}
   - {x: -0.00037718154, y: 0.57871336, z: 0}
+--- !u!114 &2797074864537964721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181030817060915786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfed7efc1a1a8e244aeb8394d56d886a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 8210f4d36b232a84caa444067619f6c9, type: 2}
+--- !u!114 &8563942924411730684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181030817060915786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c6344c9d05d4f418673f6cb638397f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
