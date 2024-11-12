@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 // 수류탄 투척
 public class ThrowGrenade : MonoBehaviour
@@ -8,6 +9,7 @@ public class ThrowGrenade : MonoBehaviour
     public GameObject grenadePrf; // 수류탄 프리팹
     public float radius = 4;          // 폭발 위치 (radius가 클수록 멀리서 터짐)
     public float coolDown = 5;    // 쿨타임
+
 
     private GameObject[] grenades;
 
@@ -37,6 +39,7 @@ public class ThrowGrenade : MonoBehaviour
         while (true) 
         {
             StartCoroutine(ThrowGrenades());
+            StartCoroutine(skillCool.Instance.Cool(coolDown,coolDown));
             yield return new WaitForSeconds(coolDown);
         }
     }
