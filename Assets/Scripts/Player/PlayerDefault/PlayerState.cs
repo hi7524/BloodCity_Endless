@@ -21,6 +21,10 @@ public class PlayerState : MonoBehaviour
 
     public int currentIndex = 0; // 현재 캐릭터 인덱스 번호
 
+    private bool[] skillOn;
+
+    PermanentSkillManager PermanentBuffSkill;
+
     private void Awake()
     {
         if (Instance == null)
@@ -41,6 +45,18 @@ public class PlayerState : MonoBehaviour
             characterStates[currentIndex].GetStats();
 
             SetState();
+            skillOn = DataManager.Instance.player.skillON;
+            PermanentBuffSkill = this.GetComponentInChildren<PermanentSkillManager>();
+
+            for (int i = 0; i < skillOn.Length; i++)
+            {
+                if (skillOn[i])
+                {
+                    PermanentBuffSkill.AddPermanentSkill(i);
+                }
+            }
+
+
         }
         else
         {
