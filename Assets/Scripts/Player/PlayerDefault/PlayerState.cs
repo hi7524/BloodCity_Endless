@@ -21,7 +21,7 @@ public class PlayerState : MonoBehaviour
 
     public int currentIndex = 0; // 현재 캐릭터 인덱스 번호
 
-    private bool[] skillOn;
+    public bool[] skillOn;
 
     PermanentSkillManager PermanentBuffSkill;
 
