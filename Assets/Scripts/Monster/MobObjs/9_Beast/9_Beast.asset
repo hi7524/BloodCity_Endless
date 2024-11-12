@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobName: "\uC9D0\uC2B9"
   dropExp: 080000000a000000
+  spawnPers: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   MoveType: 1
   AttackType: 1
-  Attack_Range: 5
-  Distance_Range: 5
+  Attack_Range: 20
+  Distance_Range: 20
   minHealth: 60
   maxHealth: 60
   attackDamage: 20
   speed: 120
   upgradeCoinDropPer: 5
+  AnimeControllers: []

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
-
 
 public class MobAI : MonoBehaviour
 {
@@ -65,7 +65,7 @@ public class MobAI : MonoBehaviour
     public void Init(float hpPer = 1) // 초기화
     {
         gameObject.SetActive(true);
-        print(hpPer);
+    
         isDead = false;
 
         Mob = gameObject;
