@@ -15,6 +15,6 @@ public class SupplyBox : MonoBehaviour, IItem
     public void Use(GameObject target)
     {
         animator.SetTrigger("BoxOpen");
-        //UIManager.Instance.WeaponLevelUp();
+        UIManager.Instance.WeaponLevelUp();
     }
 }
