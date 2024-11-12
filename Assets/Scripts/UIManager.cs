@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
     {
         if (health > 0)
         {
-            healthText.text = $"{health.ToString()} / {maxHealth.ToString()}";
+            healthText.text = $"{health:F0} / {maxHealth:F0}";
             healthBarImg.fillAmount = Mathf.Lerp(healthBarImg.fillAmount, health / maxHealth, Time.deltaTime * 10);
         }
         else

@@ -92,6 +92,7 @@ public class DataManager : MonoBehaviour
     {
         if (!File.Exists(Application.persistentDataPath + "/" + GameDataFileName))
         {
+            UpgradeManager.Instance.ResetStates();
             Save();
         }
         else
@@ -136,11 +137,11 @@ public class DataManager : MonoBehaviour
             File.Delete(Application.persistentDataPath + "/SoundData.json");
 
             UpgradeManager.Instance.ResetStates();
+            ToolTipManager.Instance.TipOn("<color=lime>[SUCCESS]</color> 데이터가 삭제되었습니다.");
         }
         else
         {
             ToolTipManager.Instance.TipOn("<color=orange>[WARNING]</color> 저장된 데이터가 없습니다.");
         }
-        ToolTipManager.Instance.TipOn("<color=lime>[SUCCESS]</color> 데이터가 삭제되었습니다.");
     }
 }
