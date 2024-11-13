@@ -133,6 +133,7 @@ MonoBehaviour:
   Mob: {fileID: 0}
   Target: {fileID: 0}
   isUsingSkillState: 0
+  isSkillBanState: 0
   dis: 0
   dir: {x: 0, y: 0}
   hp: 0
@@ -141,6 +142,7 @@ MonoBehaviour:
   isDead: 0
   Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
   Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
+  isReverseSprite: 0
 --- !u!70 &1198923887231439414
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -215,5 +217,3 @@ MonoBehaviour:
   - {fileID: 7093028249316305240, guid: 6b7bad145228a384dbd75211434914f7, type: 3}
   - {fileID: 7093028249316305240, guid: 2c5ed7328714acf479c88264683b58a5, type: 3}
   - {fileID: 2580971357824905079, guid: 4e51d88723e908245995b015d826ff5f, type: 3}
-  - {fileID: 7093028249316305240, guid: 623245c4184c7f24a986dc699d68d179, type: 3}
-  - {fileID: 7093028249316305240, guid: fd4e42d31bf2c254a97a2fdd8d0d66ef, type: 3}

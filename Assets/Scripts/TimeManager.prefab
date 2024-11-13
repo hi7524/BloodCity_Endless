@@ -51,13 +51,26 @@ MonoBehaviour:
   - {fileID: 7093028249316305240, guid: 2c5ed7328714acf479c88264683b58a5, type: 3}
   - {fileID: 2580971357824905079, guid: 4e51d88723e908245995b015d826ff5f, type: 3}
   - {fileID: 7093028249316305240, guid: 5928512d930f0b14fa0d3e6dcd2a0f50, type: 3}
-  - {fileID: 7093028249316305240, guid: 623245c4184c7f24a986dc699d68d179, type: 3}
-  - {fileID: 7093028249316305240, guid: fd4e42d31bf2c254a97a2fdd8d0d66ef, type: 3}
   - {fileID: 7093028249316305240, guid: 766987a3b7a5fc94f99dc62169de7368, type: 3}
   HalfBossMobPrefabs:
   - {fileID: 7093028249316305240, guid: 9327eb0c098cc914899da06e2d981005, type: 3}
-  - {fileID: 83231135852118981, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-  - {fileID: 83231135852118981, guid: a9deacfc903f2124f88c463188ca9cea, type: 3}
   BossMobPrefabs:
   - {fileID: 83231135852118981, guid: daf975003a78f2f43b2cd0df6593fc6e, type: 3}
   spawnNums: 0
+  hpPers:
+  - 1
+  - 1.1
+  - 1.15
+  - 1.15
+  - 1.2
+  - 1.3
+  - 1.35
+  - 1.4
+  - 1.45
+  - 1.5
+  - 1.6
+  - 1.7
+  - 1.8
+  - 1.9
+  - 2
+  - 2
