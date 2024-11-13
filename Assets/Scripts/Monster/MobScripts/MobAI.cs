@@ -51,11 +51,12 @@ public class MobAI : MonoBehaviour
 
     protected IMobSkill[] mobSkills; // 스킬 배열
 
-    private SpriteRenderer render; // 스프라이트 렌더러
+    public SpriteRenderer render; // 스프라이트 렌더러
     public bool isReverseSprite; // 스프라이트 반대 방향 여부
 
     private Coroutine coroutine; // 무한 루프 코루틴
 
+    public int bodyAttackDamage; // 몸빵 피해량
     private int bodyAttackTime = 1; // 몸빵 피해 대기 시간
     private bool isCanbodyAttack = true; // 몸빵 피해 가능 여부 
 
@@ -81,6 +82,7 @@ public class MobAI : MonoBehaviour
 
         hp = (int)(Random.Range(obj.minHealth, obj.maxHealth + 1) * hpPer); // 현재 체력 초기화
         speed = obj.speed; // 현재 이속 초기화
+        bodyAttackDamage = obj.attackDamage; // 현재 몸빵 피해량 초기화
 
         foreach (IMobSkill skill in mobSkills) // 스킬 초기화
         {
@@ -233,6 +235,9 @@ public class MobAI : MonoBehaviour
                     StartCoroutine(Skill_Cooltime(skill));
 
                     skill.Use(this);
+
+                    if (isSkillBanState || isUsingSkillState)
+                        break;
 
                 }
 

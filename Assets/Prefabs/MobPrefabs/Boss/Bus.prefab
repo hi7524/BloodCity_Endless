@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 6515110406311753733}
   - component: {fileID: 7812073735453886844}
   - component: {fileID: 2722633048892227467}
+  - component: {fileID: 5430405896688433507}
+  - component: {fileID: 8323239271703995610}
+  - component: {fileID: 4928841782126230898}
+  - component: {fileID: 8821894674964105300}
   m_Layer: 11
   m_Name: Bus
   m_TagString: Enemy
@@ -76,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 704111289
   m_SortingLayer: 9
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1463634834, guid: 85d4ace699f7d4c4e8a1dc695e7c252f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -141,7 +145,9 @@ MonoBehaviour:
   isDead: 0
   Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
   Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
+  render: {fileID: 0}
   isReverseSprite: 1
+  bodyAttackDamage: 0
 --- !u!70 &7812073735453886844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -157,7 +163,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -198,3 +204,57 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5430405896688433507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83231135852118981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec62f1fd8f1e2634a8994fc73c8e2d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 78f8e1f458fa3b74c87d137ab02274ec, type: 2}
+--- !u!114 &8323239271703995610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83231135852118981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db2cade54882de43af6da101a6b79ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 1ec4240bd3f9dc14ebb327e4210c806a, type: 2}
+--- !u!114 &4928841782126230898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83231135852118981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb237fcb4d5bac743b22c15111d07b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: f5d84f54870bbfd4aac4347113525165, type: 2}
+--- !u!114 &8821894674964105300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83231135852118981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfb577a3bf169a43bf4e3e185f8584d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 8138d6d8aca861f41a07b4621ff94197, type: 2}
+  mobs:
+  - {fileID: 7093028249316305240, guid: f069c10ba1c85d040aed35349ce497d0, type: 3}

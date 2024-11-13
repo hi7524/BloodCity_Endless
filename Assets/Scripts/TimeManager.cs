@@ -57,8 +57,8 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     private Transform playerTransform; // 플레이어의 Transform
     private GameObject grid; // 그리드 오브젝트
 
-    private float minXDistance = 20f; // X 방향 최소 거리
-    private float minYDistance = 15f; // Y 방향 최소 거리
+    private float minXDistance = 35f; // X 방향 최소 거리
+    private float minYDistance = 35f; // Y 방향 최소 거리
 
     private LayerMask obstacleLayer; // 콜라이더를 가진 오브젝트의 레이어
 
@@ -167,8 +167,8 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                         // 스폰 포인트 구함
                         float xDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
                         float yDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
-                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 26 * xDir);
-                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 23 * yDir);
+                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 45 * xDir);
+                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 45 * yDir);
 
                         Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
@@ -194,8 +194,8 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     {
         float xDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
         float yDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
-        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 30 * xDir);
-        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 30 * yDir);
+        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 50 * xDir);
+        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 50 * yDir);
 
         Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
@@ -203,6 +203,20 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         .GetComponent<MobAI>().Init(hpPers[nowMin]);
     }
 
+    private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴 (임시)
+    {
+
+        yield return new WaitForSeconds(30);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(30);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(30);
+        SpawnBossMonster();
+        yield return new WaitForSeconds(30);
+        SpawnBossMonster(1);
+    }
+
+    /*
     private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴
     {
 
@@ -221,7 +235,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         yield return new WaitForSeconds(180);
         SpawnBossMonster(1);
     }
-
+    */
 
     void OnDestroy()
     {
