@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1700396700648097047}
   - component: {fileID: 8465995654349234341}
   - component: {fileID: 6515110406311753733}
-  - component: {fileID: 5812903521946552613}
+  - component: {fileID: 7812073735453886844}
   - component: {fileID: 2722633048892227467}
   m_Layer: 11
   m_Name: Bus
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 83231135852118981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9197478, y: -1.5289979, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 704111289
-  m_SortingLayer: 11
+  m_SortingLayer: 9
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 1463634834, guid: 85d4ace699f7d4c4e8a1dc695e7c252f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   Mob: {fileID: 0}
   Target: {fileID: 0}
   isUsingSkillState: 0
+  isSkillBanState: 0
   dis: 0
   dir: {x: 0, y: 0}
   hp: 0
@@ -140,7 +141,8 @@ MonoBehaviour:
   isDead: 0
   Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
   Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
---- !u!70 &5812903521946552613
+  isReverseSprite: 1
+--- !u!70 &7812073735453886844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,9 +174,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0.13869423, y: -0.586471}
+  m_Size: {x: 5.442212, y: 2.537538}
+  m_Direction: 1
 --- !u!95 &2722633048892227467
 Animator:
   serializedVersion: 5
