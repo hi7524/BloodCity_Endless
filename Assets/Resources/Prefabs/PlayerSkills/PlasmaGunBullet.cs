@@ -27,7 +27,6 @@ public class PlasmaGunBullet : Bullet
         {
             targetEnemy = collision.gameObject; 
             StartCoroutine(TickDamage());       // 적 피격
-            StartCoroutine(CheckTargetEnemy()); // 적 사망 여부 확인
             isTargetSet = true;                 // 추적 대상 정보 (중복 방지용)
         }
     }
@@ -38,31 +37,13 @@ public class PlasmaGunBullet : Bullet
         Debug.Log(targetEnemy);
     }
 
-    // 적 사망 여부 확인
-    IEnumerator CheckTargetEnemy()
-    {
-        while (true)
-        {
-            // 적 사망시 총알 파괴 
-            if (targetEnemy.activeSelf == false)
-            {
-                StopCoroutine(TickDamage());
-                Destroy(gameObject);
-                yield break;
-            }
-            
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
     // 적에게 일정 간격마다 데미지
     IEnumerator TickDamage()
     {
         while (true)
         {
-            targetEnemy.GetComponent<MobAI>().Damaged(attackDamage);
-            TextFloatingEffect();
-            yield return new WaitForSeconds(damageCoolDown);
+
+            
         }
     }
 

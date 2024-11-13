@@ -44,6 +44,12 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;  // 중복 호출 방지용
             Die();
         }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Die();
+        }
+
     }
 
     // 체력 UI 업데이트
@@ -95,10 +101,14 @@ public class PlayerHealth : MonoBehaviour
     // 플레이어 사망
     private void Die()
     {
+        Debug.Log("dd");
         playerState.SetPlayerDead(); // 플레이어 사망 처리
         animator.speed = 1.0f;       // 애니메이션 재생
         animator.SetTrigger("Dead"); // 사망 애니메이션 재생
+    }
 
+    public void DeadWindow()
+    {
         UIManager.Instance.ActiveEndWindow();
     }
 }
