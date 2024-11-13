@@ -20,6 +20,17 @@ public class Mob_07_Egg_Spawn : MonoBehaviour, IMobSkill
     public void Use(MobAI AI)
     {
 
+        StartCoroutine(Delay(AI));
+
+    }
+
+    private IEnumerator Delay(MobAI AI)
+    {
+
+        AI.GetComponent<Animator>().SetBool("isUseSkill", true);
+
+        yield return new WaitForSeconds(1.6f);
+
         Instantiate(data.SkillEffect, AI.gameObject.transform.position, AI.gameObject.transform.rotation);
 
         for (int i = 0; i < 10; i++)
@@ -28,9 +39,11 @@ public class Mob_07_Egg_Spawn : MonoBehaviour, IMobSkill
                 .GetComponent<MobAI>();
 
             ai.isInstantSpawn = true;
-            ai.Init();
-        }
 
+            TimeManager spawner = TimeManager.Instance;
+
+            ai.Init(spawner != null ? spawner.hpPers[spawner.nowMin] : 1);
+        }
 
         AI.Dead();
 

@@ -21,6 +21,8 @@ public class MobAI : MonoBehaviour
 
     [HideInInspector]
     public bool isUsingSkillState = false; // 스킬 사용 상태 여부
+    [HideInInspector]
+    public bool isSkillBanState = false; // 스킬 차단 상태 여부
 
     [HideInInspector]
     public float dis = 0; // 플레이어와의 거리
@@ -50,6 +52,7 @@ public class MobAI : MonoBehaviour
     protected IMobSkill[] mobSkills; // 스킬 배열
 
     private SpriteRenderer render; // 스프라이트 렌더러
+    public bool isReverseSprite; // 스프라이트 반대 방향 여부
 
     private Coroutine coroutine; // 무한 루프 코루틴
 
@@ -160,7 +163,7 @@ public class MobAI : MonoBehaviour
         if(!isUsingSkillState && speed > 0) // 스킬 사용 상태가 아니고 이동 속도가 1이상일 때만
         {
 
-            render.flipX = dir.x > 0; // 스프라이트 플립 변경
+            render.flipX = (!isReverseSprite ? dir.x > 0 : dir.x < 0); // 스프라이트 플립 변경
 
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
@@ -220,19 +223,20 @@ public class MobAI : MonoBehaviour
     private void Skill_Use() // 스킬 사용
     {
 
-        foreach(IMobSkill skill in mobSkills)
-        {
-
-            if (!skill.coolDown && skill.data && skill.data.skillTag != MobSkillTag.Dead)
+        if(!isSkillBanState)
+            foreach(IMobSkill skill in mobSkills)
             {
 
-                StartCoroutine(Skill_Cooltime(skill));
+                if (!skill.coolDown && skill.data && skill.data.skillTag != MobSkillTag.Dead)
+                {
 
-                skill.Use(this);
+                    StartCoroutine(Skill_Cooltime(skill));
+
+                    skill.Use(this);
+
+                }
 
             }
-
-        }
 
     }
 

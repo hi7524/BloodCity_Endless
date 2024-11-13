@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: "\uBD80\uD654"
   skillTag: 1
-  coolTime: 15
+  coolTime: 13.4
   SkillEffect: {fileID: 6424665450951726683, guid: e7c25e458931f794f8110e84a01fc8dc, type: 3}
   isStartCooldown: 1
