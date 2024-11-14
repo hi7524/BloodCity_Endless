@@ -9,6 +9,7 @@ public class PlayerLevelUPManager : MonoBehaviour
     private string[] multiStats = { "SurStr", "StrInt", "IntSur" };
 
     public Image[] upgradeCards; // UpgradeState
+    public Button card3;
 
     private void Awake()
     {
@@ -26,7 +27,13 @@ public class PlayerLevelUPManager : MonoBehaviour
         // 카드 3 생성
         if (Random.Range(0f, 1f) < 0.3f) // 30% 확률
         {
+            card3.interactable = true;
             GenerateMultiStatCard();
+        }
+        else
+        {
+            upgradeCards[2].sprite = Resources.Load<Sprite>("States/null");
+            card3.interactable = false;
         }
     }
 
