@@ -18,8 +18,8 @@ public class SoundManager : MonoBehaviour
 
     public class SoundData
     {
-        public float BGM = 1.0f;
-        public float SFX = 1.0f;
+        public float BGM = 100.0f;
+        public float SFX = 100.0f;
 
         public float BGM_value = 240;
         public float SFX_value = 240;
@@ -41,10 +41,15 @@ public class SoundManager : MonoBehaviour
 
     public void Start()
     {
-        LoadSoundData();
-        LoadSetting();
-        UpdateAudioMixer("BGM", BGM_volume);
-        UpdateAudioMixer("SFX", SFX_volume);
+        if (!File.Exists(Application.persistentDataPath + "/" + GameDataFileName)) { Reset(); }
+        else { LoadSoundData(); }
+        LoadSetting(); 
+    }
+
+    public void Reset()
+    {
+        new SoundData();
+        SaveSoundData();
     }
 
     public void LoadSetting()
@@ -54,6 +59,9 @@ public class SoundManager : MonoBehaviour
 
         BGMFill.GetComponent<RectTransform>().sizeDelta = new Vector2(sound.BGM_value, 15);
         SFXFill.GetComponent<RectTransform>().sizeDelta = new Vector2(sound.SFX_value, 15);
+
+        UpdateAudioMixer("BGM", BGM_volume);
+        UpdateAudioMixer("SFX", SFX_volume);
     }
 
     public void Btn(int num)
