@@ -391,6 +391,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickSkill
@@ -681,6 +693,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: ToggleWindow
@@ -1012,6 +1036,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 813544925}
         m_TargetAssemblyTypeName: ChaSelect, Assembly-CSharp
         m_MethodName: ShowNextCharacter
@@ -1145,6 +1181,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -1277,6 +1325,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: ToggleWindow
@@ -1610,6 +1670,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -2131,6 +2203,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -2434,6 +2518,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -2566,6 +2662,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1521780960}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: Btn
@@ -2773,6 +2881,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: ToggleWindow
@@ -3460,6 +3580,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: SkillUpgrade
@@ -3721,6 +3853,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: Upgrade
@@ -3941,6 +4085,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickSkill
@@ -4464,6 +4620,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickSkill
@@ -4711,6 +4879,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1521780960}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: Btn
@@ -4945,9 +5125,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6808535896401185292, guid: 56dd01553d5c359489af7e75a254fa27, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 098aa7bf1e6504f49a122c2d0661f189, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5043,7 +5223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41f7707ddf196943948d82522b66161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClick: {fileID: 0}
+  audioClick: {fileID: 8300000, guid: 098aa7bf1e6504f49a122c2d0661f189, type: 3}
 --- !u!4 &871024647
 Transform:
   m_ObjectHideFlags: 0
@@ -5069,9 +5249,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7440246300850549459, guid: 56dd01553d5c359489af7e75a254fa27, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ed067ceca0f6dd34fbe54c8dd0198ab1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5237,6 +5417,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: Exit
@@ -5444,6 +5636,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 635832713}
         m_TargetAssemblyTypeName: StageSelectManager, Assembly-CSharp
         m_MethodName: ShowNextStage
@@ -5577,6 +5781,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -5777,6 +5993,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: GoStage
@@ -5909,6 +6137,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: ToggleWindow
@@ -6401,6 +6641,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -6533,6 +6785,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1521780960}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: Btn
@@ -6666,6 +6930,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -6954,6 +7230,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: ToggleWindow
@@ -7250,7 +7538,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1287779088}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1287779088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7642,6 +7942,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: ToggleWindow
@@ -7934,6 +8246,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0
@@ -8656,6 +8980,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 813544925}
         m_TargetAssemblyTypeName: ChaSelect, Assembly-CSharp
         m_MethodName: ChaSave
@@ -8788,6 +9124,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 363011481}
         m_TargetAssemblyTypeName: UI_StartScene, Assembly-CSharp
         m_MethodName: ToggleWindow
@@ -9294,6 +9642,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 813544925}
         m_TargetAssemblyTypeName: ChaSelect, Assembly-CSharp
         m_MethodName: ShowNextCharacter
@@ -9426,6 +9786,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1521780960}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: Btn
@@ -9663,6 +10035,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0
@@ -10286,6 +10670,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 968019199}
         m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
         m_MethodName: DataDelete
@@ -10494,6 +10890,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
@@ -10627,6 +11035,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 813544925}
         m_TargetAssemblyTypeName: ChaSelect, Assembly-CSharp
         m_MethodName: CheckOff
@@ -10912,7 +11332,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2025984233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2025984233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11109,6 +11541,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 635832713}
         m_TargetAssemblyTypeName: StageSelectManager, Assembly-CSharp
         m_MethodName: ShowNextStage
@@ -11316,16 +11760,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 635832713}
-        m_TargetAssemblyTypeName: StageSelectManager, Assembly-CSharp
-        m_MethodName: PickSelect
-        m_Mode: 1
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 363011481}
@@ -11461,6 +11905,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 871024646}
+        m_TargetAssemblyTypeName: AudioClipManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 465941575}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: PickState
