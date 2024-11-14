@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour
     // 플레이어 코인 정보 업데이트
     public void UpdateCoin(int coin)
     {
-        coinText.text = coin.ToString();
+        coinText.text = $"{coin:#,0}";
     }
 
     // 창 활성화 및 비활성화
