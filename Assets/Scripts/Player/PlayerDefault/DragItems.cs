@@ -8,26 +8,19 @@ public class DragItems : MonoBehaviour
     private float detectRange; // 아이템 감지 범위
     private float magnetStrength = 3.5f; // 아이템 당기는 힘(속도)
 
-    private PlayerState charState; // 캐릭터 스탯
-
-    private void Awake()
+    private void Magnet()
     {
-        // 컴포넌트 초기화
-        charState = GetComponent<PlayerState>();
-    }
+        detectRange = PlayerState.Instance.magnetism * 0.3f; // 자석 범위 설정
 
-    private void Start()
-    {
-        detectRange = charState.magnetism; // 자석 범위 설정
-
-        if (charState.magnetism > 3)
+        if (detectRange > 3)
         {
-            magnetStrength = charState.magnetism * 0.9f;   // 자석 힘 설정 (빨아들이는 빠르기)
+            magnetStrength = detectRange * 0.1f;   // 자석 힘 설정 (빨아들이는 빠르기)
         }
-    }
+    } 
 
     private void Update()
     {
+        Magnet();
         DetectItem();
     }
 
