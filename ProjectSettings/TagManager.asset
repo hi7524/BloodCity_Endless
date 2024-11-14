@@ -72,15 +72,15 @@ TagManager:
   - name: Character
     uniqueID: 704111289
     locked: 0
-  - name: Objects7
-    uniqueID: 1307320763
-    locked: 0
-  - name: Objects8
-    uniqueID: 1186619145
-    locked: 0
   - name: Items
     uniqueID: 3982936475
     locked: 0
   - name: Effects
     uniqueID: 2594170931
+    locked: 0
+  - name: Objects7
+    uniqueID: 1307320763
+    locked: 0
+  - name: Objects8
+    uniqueID: 1186619145
     locked: 0
