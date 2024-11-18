@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1613201732743645168}
   - component: {fileID: -7389895380885555018}
   - component: {fileID: -954798212937089513}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: TrashCan
   m_TagString: Enemy
   m_Icon: {fileID: 0}

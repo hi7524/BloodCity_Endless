@@ -206,11 +206,11 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴 (임시)
     {
 
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(5);
         SpawnBossMonster();
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(5);
         SpawnBossMonster();
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(5);
         SpawnBossMonster();
         yield return new WaitForSeconds(30);
         SpawnBossMonster(1);

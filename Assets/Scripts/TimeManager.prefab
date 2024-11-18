@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 7093028249316305240, guid: 766987a3b7a5fc94f99dc62169de7368, type: 3}
   HalfBossMobPrefabs:
   - {fileID: 7093028249316305240, guid: 9327eb0c098cc914899da06e2d981005, type: 3}
+  - {fileID: 83231135852118981, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
   BossMobPrefabs:
   - {fileID: 83231135852118981, guid: daf975003a78f2f43b2cd0df6593fc6e, type: 3}
   spawnNums: 0

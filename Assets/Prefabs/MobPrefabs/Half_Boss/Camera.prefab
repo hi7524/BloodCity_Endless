@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3159031672820069996}
   - component: {fileID: 833035048951989080}
   - component: {fileID: 6457589655944513037}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Camera
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

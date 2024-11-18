@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7033397714495769303}
   - component: {fileID: 5190450321390242894}
   - component: {fileID: -86185446866719082}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: FireEx
   m_TagString: Enemy
   m_Icon: {fileID: 0}
