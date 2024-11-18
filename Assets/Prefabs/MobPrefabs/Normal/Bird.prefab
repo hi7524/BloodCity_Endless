@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1406142962466276425}
   - component: {fileID: 7984123557602563713}
   - component: {fileID: -5648008162355627614}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Bird
   m_TagString: Enemy
   m_Icon: {fileID: 0}

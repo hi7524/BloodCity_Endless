@@ -35,6 +35,7 @@ public class Mob_09_Beast_Rush : MonoBehaviour, IMobSkill
 
             var dis = Vector2.Distance(transform.position, AI.Target.transform.position); // 거리 차 계산
             var dir = (AI.Target.transform.position - transform.position).normalized; // 방향 계산
+            AI.render.flipX = (!AI.isReverseSprite ? dir.x > 0 : dir.x < 0); // 방향 전환
 
             AI.Mob.GetComponent<Rigidbody2D>().AddForce(dir * 17.5f, ForceMode2D.Impulse);
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7592757309411713985}
   - component: {fileID: 4600571979025045512}
   - component: {fileID: -9115534203562850576}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Base
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -167,6 +167,7 @@ MonoBehaviour:
   Mob: {fileID: 0}
   Target: {fileID: 0}
   isUsingSkillState: 0
+  isSkillBanState: 0
   dis: 0
   dir: {x: 0, y: 0}
   hp: 0
@@ -175,6 +176,9 @@ MonoBehaviour:
   isDead: 0
   Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
   Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
+  render: {fileID: 0}
+  isReverseSprite: 0
+  bodyAttackDamage: 0
 --- !u!95 &-9115534203562850576
 Animator:
   serializedVersion: 5

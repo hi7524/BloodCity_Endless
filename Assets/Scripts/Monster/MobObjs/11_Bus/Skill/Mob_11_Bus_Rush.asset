@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: "\uD3ED\uC8FC"
   skillTag: 1
-  coolTime: 20
+  coolTime: 8
   SkillEffect: {fileID: 0}
   isStartCooldown: 1
