@@ -20,8 +20,8 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        if (DataManager.Instance.player.currentIndex == 0) { spaceMarine.SetActive(true); }
+        /*if (DataManager.Instance.player.currentIndex == 0) { spaceMarine.SetActive(true); }
         if (DataManager.Instance.player.currentIndex == 1) { beeper.SetActive(true); }
-        if (DataManager.Instance.player.currentIndex == 2) { baz.SetActive(true); }
+        if (DataManager.Instance.player.currentIndex == 2) { baz.SetActive(true); }*/
     }
 }
