@@ -6,9 +6,7 @@ public class PlayerSpawn : MonoBehaviour
 {
     public static PlayerSpawn Instance;
 
-    public GameObject spaceMarine;
-    public GameObject beeper;
-    public GameObject baz;
+    public GameObject cha;
 
     private void Awake()
     {
@@ -20,8 +18,6 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        /*if (DataManager.Instance.player.currentIndex == 0) { spaceMarine.SetActive(true); }
-        if (DataManager.Instance.player.currentIndex == 1) { beeper.SetActive(true); }
-        if (DataManager.Instance.player.currentIndex == 2) { baz.SetActive(true); }*/
+        //cha.AddComponent<Sprite>.
     }
 }

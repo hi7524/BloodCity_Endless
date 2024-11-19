@@ -19,6 +19,7 @@ public class GameResult : MonoBehaviour
     {
         // 끄고
         UIManager.Instance.ToggleWindow(UIManager.Instance.gameEndWindow);
+        UIManager.Instance.ToggleWindow(UIManager.Instance.mainWindow);
         Time.timeScale = 0;
         resultWindow.SetActive(true);
         Result();
