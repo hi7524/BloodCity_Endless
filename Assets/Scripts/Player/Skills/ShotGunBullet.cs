@@ -21,13 +21,17 @@ public class ShotGunBullet : MonoBehaviour
     {
         // 컴포넌트 초기화
         rigid = GetComponent<Rigidbody2D>();
+        mainCam = Camera.main; // 카메라 설정
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        mainCam = Camera.main; // 카메라 설정
+        Invoke("FireBullet", 0.01f);
+    }
+
+    private void FireBullet()
+    {
         force = Random.Range(minForce, maxForce + 1); // 힘 랜덤 설정
-        
         // 마우스 위치 확인 및 방향 설정
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - transform.position;
@@ -38,7 +42,7 @@ public class ShotGunBullet : MonoBehaviour
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
 
-        Destroy(gameObject, bulletLifeTime);
+        Invoke("ActiveFalse", bulletLifeTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,7 +61,12 @@ public class ShotGunBullet : MonoBehaviour
             Vector2 textVec = new Vector2(collEnemy.transform.position.x + Random.Range(-0.4f, 0.5f), collEnemy.transform.position.y);
             damageText.transform.position = textVec;
 
-            Destroy(gameObject); // 오브젝트 파괴
+            ActiveFalse();
         }
+    }
+
+    private void ActiveFalse()
+    {
+        gameObject.SetActive(false);
     }
 }

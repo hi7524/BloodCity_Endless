@@ -69,7 +69,7 @@ public class ShotGun : MonoBehaviour
         // 총알 생성
         for (int i = 0; i < bulletCount; i++)
         {
-            Instantiate(bulletPrf, bulletTrans.position, Quaternion.identity);
+            FindObjectOfType<BulletPool>().SpawnFromPool("ShotGunBullet", bulletTrans.position, Quaternion.identity);
             yield return new WaitForSeconds(0.02f);
         }
     }
