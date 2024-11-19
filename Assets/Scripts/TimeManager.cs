@@ -37,6 +37,10 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
 
     // 스폰 관련 프로퍼티
     [SerializeField]
+    private List<GameObject> playerWeapons; // 플레이어 무기 프리팹
+    private int leftWeaponDrop = 0; // 남은 무기 드랍 개수
+
+    [SerializeField]
     private int[] minSpawnNums = new int[16]; // 분당 최소 스폰 마리수
 
     [SerializeField]
@@ -50,6 +54,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
 
     private Coroutine spawn_coroutine; // 몬스터 생성 무한 루프 코루틴
     private Coroutine spawnBoss_coroutine; // 보스 몬스터 생성 코루틴
+    private Coroutine weaponDrop_coroutine; // 플레이어 무기 드랍 코루틴
 
     private List<GameObject> Pools; // 오브젝트 풀
     public int spawnNums; //현재 스폰 마리 수    
@@ -76,8 +81,10 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         Pools = new List<GameObject>(); // 풀 초기화
         grid = GameObject.Find("Grid");
 
-        spawn_coroutine = StartCoroutine(SpawnMonster()); // 스폰 코루틴 최초 시작
+        // 코루틴 일괄 최초 시작
+        spawn_coroutine = StartCoroutine(SpawnMonster());
         spawnBoss_coroutine = StartCoroutine(SpawnBossMonster_Routine());
+        weaponDrop_coroutine = StartCoroutine(WeaponDrop_Coroutine());
     }
 
     void Start() // 씬 시작 시 최초 초기화
@@ -167,8 +174,8 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                         // 스폰 포인트 구함
                         float xDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
                         float yDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
-                        float spawnX = playerTransform.position.x + Random.Range(minXDistance * xDir, 45 * xDir);
-                        float spawnY = playerTransform.position.y + Random.Range(minYDistance * yDir, 45 * yDir);
+                        float spawnX = (playerTransform.position.x + Random.Range(minXDistance * xDir, 45 * xDir)) + minXDistance * xDir / 3;
+                        float spawnY = (playerTransform.position.y + Random.Range(minYDistance * yDir, 45 * yDir)) + minYDistance * yDir / 3;
 
                         Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
@@ -189,7 +196,6 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         }
     }
 
-
     public void SpawnBossMonster(int stage = 0) // 보스 몬스터 스폰
     {
         float xDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
@@ -203,16 +209,36 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         .GetComponent<MobAI>().Init(hpPers[nowMin]);
     }
 
+
+    public void MonsterDead(Vector3 pos) // 몬스터 사망 카운팅 및 무기 드랍 검사
+    {
+
+        spawnNums--;
+
+        if (leftWeaponDrop > 0 && playerWeapons.Count >= 1)
+        {
+            leftWeaponDrop--;
+
+            int index = Random.Range(0, playerWeapons.Count);
+
+            Instantiate(playerWeapons[index], pos, Quaternion.identity);
+            playerWeapons.RemoveAt(index);
+        }
+
+        KillText.Instance.KillUP();
+    }
+
+
     private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴 (임시)
     {
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         SpawnBossMonster();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         SpawnBossMonster();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         SpawnBossMonster();
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(50);
         SpawnBossMonster(1);
     }
 
@@ -237,6 +263,25 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     }
     */
 
+    private IEnumerator WeaponDrop_Coroutine() // 무기 드랍 코루틴 (임시)
+    {
+        for (int i = 1; i <= 4; i++)
+        {
+            yield return new WaitForSeconds(10);
+            leftWeaponDrop += 1;
+        }
+    }
+
+    /*
+    private IEnumerator WeaponDrop_Coroutine() // 무기 드랍 코루틴
+    {
+        for(int i = 1; i <= 4; i++)
+        {
+            yield return new WaitForSeconds(180);
+            leftWeaponDrop += 1;
+        }
+    }*/
+
     void OnDestroy()
     {
         // 객체가 파괴될 때 코루틴 중지
@@ -248,7 +293,10 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         {
             StopCoroutine(spawnBoss_coroutine);
         }
-
+        if (weaponDrop_coroutine != null)
+        {
+            StopCoroutine(weaponDrop_coroutine);
+        }
     }
 
 }
