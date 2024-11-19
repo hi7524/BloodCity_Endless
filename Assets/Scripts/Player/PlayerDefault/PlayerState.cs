@@ -38,7 +38,7 @@ public class PlayerState : MonoBehaviour
             Debug.Log("플레이어 데이터가 존재합니다");
 
             DataManager.Instance.LoadPlayerData();
-            PlayerSpawn.Instance.Spawn();
+            //PlayerSpawn.Instance.Spawn();
             currentIndex = DataManager.Instance.player.currentIndex;
 
             // 플레이어 스탯 + 캐릭터 보너스 스탯 한방에 가져오기
