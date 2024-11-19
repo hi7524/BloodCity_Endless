@@ -3162,7 +3162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6289307, g: 0.6289307, b: 0.6289307, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3677,6 +3677,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bc5b3aefe61aa7443986e3b29c2bff9d, type: 3}
   - {fileID: 21300000, guid: 4f2a833e807d3b64782597e31fb5719d, type: 3}
   stageIndex: 0
+  pick: {fileID: 2084890692}
 --- !u!4 &635832714
 Transform:
   m_ObjectHideFlags: 0
