@@ -34,12 +34,6 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
         }
 
         // 컴포넌트 초기화

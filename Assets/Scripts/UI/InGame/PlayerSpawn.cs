@@ -18,6 +18,6 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        //cha.AddComponent<Sprite>.
+        
     }
 }
