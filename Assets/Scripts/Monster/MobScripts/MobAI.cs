@@ -264,7 +264,6 @@ public class MobAI : MonoBehaviour
 
             if(hp <= 0) // 사망할 경우
             {
-                KillText.Instance.KillUP();
 
                 // 경험치 드랍
                 int expValue = Random.Range(obj.dropExp[0], obj.dropExp[1] + 1);
@@ -327,7 +326,8 @@ public class MobAI : MonoBehaviour
         //    }
         //}
 
-        TimeManager.Instance.spawnNums -= 1;
+        if(!isInstantSpawn)
+            TimeManager.Instance.MonsterDead(transform.position);
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
