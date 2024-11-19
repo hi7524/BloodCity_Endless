@@ -2,15 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using TMPro;
 
 // 설명
 public class WeaponLvUpSystem : MonoBehaviour
 {
     public Image weaponImg; // 업그레이드 할 무기를 보여주는 이미지 
-    public TMP_Text weaponNameTMP; // 무기 이름을 나타낼 TMP
-    public TMP_Text optionTMP0;
-    public TMP_Text optionTMP1;
+    public Text weaponNameTMP; // 무기 이름을 나타낼 TMP
+    public Text optionTMP0;
+    public Text optionTMP1;
     public AudioClip selectSound; // 랜덤 뽑기시 재생할 사운드
 
     private PlayerWeaponManager weaponManager;

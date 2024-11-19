@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     }
 
     [Header("UI")]
+    public GameObject mainWindow;   // 메인UI 창
     public GameObject pauseWindow;   // 옵션 창
     public GameObject gameEndWindow; // 게임 완료시 나타날 창
     public GameObject levelUpWindow; // 레벨업시 나타날 스텟 업그레이드 창
@@ -57,7 +58,7 @@ public class UIManager : MonoBehaviour
         levelUpWindow.SetActive(false); // 레벨업 창 비활성화
         weaponLevelUp.SetActive(false); // 무기 강화 창 비활성화
         gameEndWindow.SetActive(false); 
-        coinText.text = $"{GameManager.Instance.coin}"; // 기존 소지 코인 나타내기
+        coinText.text = $"{GameManager.Instance.coin}   G"; // 기존 소지 코인 나타내기
     }
 
     private void Update()
@@ -88,7 +89,7 @@ public class UIManager : MonoBehaviour
     // 플레이어 코인 정보 업데이트
     public void UpdateCoin(int coin)
     {
-        coinText.text = $"{coin:#,0}";
+        coinText.text = $"{coin:#,0}   G";
     }
 
     // 창 활성화 및 비활성화

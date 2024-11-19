@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
             float y = Input.GetAxisRaw("Vertical");
 
             Vector2 movement = new Vector2(x, y) * PlayerState.Instance.speed * Time.deltaTime;
-            transform.GetComponent<Rigidbody2D>().MovePosition(movement);
+            transform.Translate(movement);
+            transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 
