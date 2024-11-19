@@ -3,10 +3,19 @@ using UnityEngine;
 // 플레이어의 경험치 및 레벨업 관리
 public class PlayerLevel : MonoBehaviour
 {
-    private float playerLevel = 0; // 플레이어 레벨
+    public static PlayerLevel Instance;
+
+    public float playerLevel = 0; // 플레이어 레벨
     private float playerXP;        // 현재 플레이어가 획득한 경험치
     private float levelUpXp;        // 레벨업을 위해 필요한 경험치
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {

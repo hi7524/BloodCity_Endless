@@ -60,6 +60,9 @@ TagManager:
   - name: Objects3
     uniqueID: 2765501277
     locked: 0
+  - name: Add
+    uniqueID: 1042560177
+    locked: 0
   - name: Objects4
     uniqueID: 3699910645
     locked: 0
