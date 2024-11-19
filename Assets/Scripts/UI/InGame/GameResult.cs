@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameResult : MonoBehaviour
 {
     public GameObject resultWindow;
     public GameObject BackBtn;
+
+    public Text result;
 
     public void Start()
     {
@@ -24,6 +27,7 @@ public class GameResult : MonoBehaviour
     // 결과창에 떠야 하는 것
     public void Result()
     {
+        result.text = $"생존 시간 :                {TimeManager.Instance.nowMin}:{TimeText.Instance.sec}";
         // 생존 시간
         // 플레이어 레벨
         // 처치한 적

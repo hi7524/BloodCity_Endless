@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
-            Vector2 movement = new Vector2(x, y) * playerState.speed * Time.deltaTime;
+            Vector2 movement = new Vector2(x, y) * PlayerState.Instance.speed * Time.deltaTime;
             transform.Translate(movement);
         }
     }
