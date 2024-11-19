@@ -17,11 +17,6 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 

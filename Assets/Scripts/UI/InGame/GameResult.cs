@@ -28,7 +28,7 @@ public class GameResult : MonoBehaviour
     // 결과창에 떠야 하는 것
     public void Result()
     {
-        result.text = $"생존 시간 :                {TimeManager.Instance.nowMin}:{TimeText.Instance.sec.ToString("f0")}\n" +
+        result.text = $"생존 시간 :                {TimeManager.Instance.nowMin}:{TimeText.Instance.sec.ToString("00")}\n" +
             $"도달한 레벨 :             {PlayerLevel.Instance.playerLevel} Lv\n" +
             $"처치한 적 :         {KillText.Instance.kill} 마리\n" +
             $"획득한 코인 :           {GameManager.Instance.coin} G\n";
@@ -40,7 +40,6 @@ public class GameResult : MonoBehaviour
     {
         // 등등 저장해야하는 것들
         DataManager.Instance.player.coins += GameManager.Instance.coin;
-        DataManager.Instance.player.PlayerRestart = true;
         DataManager.Instance.Save();
 
         SceneManager.LoadScene("StartScene");

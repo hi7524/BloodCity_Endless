@@ -18,7 +18,7 @@ public class TimeText : MonoBehaviour
         }
     }
 
-        void Update()
+    void Update()
     {
         min = TimeManager.Instance.nowMin;
         sec = TimeManager.Instance.nowTime;

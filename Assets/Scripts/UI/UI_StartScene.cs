@@ -22,8 +22,7 @@ public class UI_StartScene : MonoBehaviour
     private void Start()
     {
         Return();
-        if (DataManager.Instance.player.PlayerRestart == false) { mainWindow.SetActive(true); }
-        else { chaWindow.SetActive(true); }
+        mainWindow.SetActive(true);
     }
 
     public void ToggleWindow(GameObject window)
