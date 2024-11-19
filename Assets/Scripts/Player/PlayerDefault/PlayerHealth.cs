@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.K) && Input.GetKey(KeyCode.LeftShift))
         {
             Die();
         }

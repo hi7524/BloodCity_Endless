@@ -13,7 +13,6 @@ public class PlayerData
     [Header("StartScene")]
     public int currentIndex = 0;
     public int stageIndex;
-    public bool PlayerRestart;
 
     [Header("Enhance")]
     public int coins;
@@ -65,6 +64,7 @@ public class DataManager : MonoBehaviour
         Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + P - 데이터 출력");
         Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + R - 플레이어 스탯 데이터 리셋");
         Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + G - 코인 증가 + 1000");
+        Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + K - 자결");
     }
 
     private void Update()
