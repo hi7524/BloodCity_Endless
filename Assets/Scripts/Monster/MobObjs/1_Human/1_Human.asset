@@ -21,7 +21,7 @@ MonoBehaviour:
   Distance_Range: 0
   minHealth: 15
   maxHealth: 15
-  attackDamage: 10
+  attackDamage: 5
   speed: 100
   upgradeCoinDropPer: 100
   AnimeControllers:
