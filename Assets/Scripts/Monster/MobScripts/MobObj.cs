@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Animations;
 using UnityEngine;
 
 
@@ -49,6 +47,6 @@ public class MobObj : ScriptableObject
 
 
     [Header("Animation")]
-    public AnimatorController[] AnimeControllers; // 애니메이터 컨트롤러
+    public RuntimeAnimatorController[] AnimeControllers; // 애니메이터 컨트롤러
 
 }
