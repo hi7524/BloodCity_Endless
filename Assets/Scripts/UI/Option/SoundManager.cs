@@ -41,15 +41,18 @@ public class SoundManager : MonoBehaviour
 
     public void Start()
     {
-        if (!File.Exists(Application.persistentDataPath + "/" + GameDataFileName)) { Reset(); }
+        if (!File.Exists(Application.persistentDataPath + "/" + GameDataFileName)) { ResetSound(); }
         else { LoadSoundData(); }
         LoadSetting(); 
     }
 
-    public void Reset()
+    public void ResetSound()
     {
-        new SoundData();
-        SaveSoundData();
+        sound.BGM = 100f;
+        sound.SFX = 100f;
+        sound.BGM_value = 240;
+        sound.SFX_value = 240;
+        LoadSetting();
     }
 
     public void LoadSetting()

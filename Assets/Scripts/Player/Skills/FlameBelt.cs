@@ -32,12 +32,21 @@ public class FlameBelt : MonoBehaviour
 
         foreach (Collider2D obj in hitObjects)
         {
-            obj.GetComponent<MobAI>().Damaged(damage);
+            // MobAI 컴포넌트 가져오기
+            MobAI mobAI = obj.GetComponent<MobAI>();
 
-            GameObject damageText = Instantiate(damageTextPrf);                       // 텍스트 플로팅 프리팹 생성
-            damageText.GetComponentInChildren<DamageTextFloating>().damage = damage;  // 텍스트로 띄울 공격력 전달
-            damageText.transform.position = obj.transform.position;                   // 충돌 위치에 프리팹 생성
+            if (mobAI != null) // Null 체크
+            {
+                // 적 데미지
+                mobAI.Damaged(damage);
+
+                // 텍스트 플로팅
+                GameObject damageText = Instantiate(damageTextPrf); // 텍스트 플로팅 프리팹 생성
+                damageText.GetComponentInChildren<DamageTextFloating>().damage = damage; // 텍스트로 띄울 공격력 전달
+                damageText.transform.position = obj.transform.position; // 충돌 위치에 프리팹 생성
+            }
         }
+
     }
 
     void OnDrawGizmos()
