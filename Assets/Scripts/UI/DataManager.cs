@@ -54,10 +54,7 @@ public class DataManager : MonoBehaviour
 
     public void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
+        if (Instance == null) { Instance = this; }
 
         Data();
 
@@ -65,6 +62,7 @@ public class DataManager : MonoBehaviour
         Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + R - 플레이어 스탯 데이터 리셋");
         Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + G - 코인 증가 + 1000");
         Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + K - 자결");
+        Debug.Log("<color=yellow>[CHEAT]</color> 쉬프트 + H - 조작법과 안내사항");
     }
 
     private void Update()
@@ -85,6 +83,13 @@ public class DataManager : MonoBehaviour
             player.coins += 1000;
             UpgradeManager.Instance.currentCoins = player.coins;
             UpgradeManager.Instance.UpdateCoinsText();
+        }
+        // 쉬프트 + H 조작법과 안내사항
+        if (Input.GetKeyDown(KeyCode.H) && Input.GetKey(KeyCode.LeftShift))
+        {
+            ToolTipManager.Instance.TipOn("기본 조작 : <color=lime>W A S D</color> 혹은 방향키" +
+                "\r\n\r\n기본 공격 샷건 : 마우스로 <color=lime>방향만 조준</color>하면 자동 공격!" +
+                "\r\n\r\n잠깐! 키보드로 UI 버튼을 조작하려면, <color=lime>Tab</color>키를 누르고 방향키를 눌러주세요.");
         }
     }
 

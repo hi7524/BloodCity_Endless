@@ -3,7 +3,6 @@ using UnityEngine;
 // 플레이어 이동·애니메이션
 public class PlayerController : MonoBehaviour
 {
-    private PlayerState playerState; // 플레이어 정보
     private Animator animator;
     
 
@@ -11,7 +10,6 @@ public class PlayerController : MonoBehaviour
     {
         // 컴포넌트 초기화
         animator = GetComponent<Animator>();
-        playerState = GetComponent<PlayerState>();
     }
 
     private void Update()
@@ -24,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         // 플레이어가 생존한 경우에만 작동
-        if (!playerState.isPlayerDead)
+        if (!PlayerState.Instance.isPlayerDead)
         {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
@@ -39,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private void WalkAnimation()
     {
         // 플레이어가 생존한 경우에만 작동
-        if(!playerState.isPlayerDead)
+        if(!PlayerState.Instance.isPlayerDead)
         {   
             // 이동중엔 이동 애니메이션 재생, 멈추면 애니메이션 정지
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)

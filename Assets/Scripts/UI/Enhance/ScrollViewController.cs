@@ -3,10 +3,20 @@ using UnityEngine.UI;
 
 public class ScrollViewController : MonoBehaviour
 {
+    public static ScrollViewController Instance { get; private set; }
+
     public ScrollRect scrollRect; // 스크롤 뷰
     public float moveAmount = 360f; // 이동 거리
     public Button leftButton;
     public Button rightButton;
+
+    public GameObject S1Button;
+    public GameObject S2Button;
+
+    private void Awake()
+    {
+        if (Instance == null) { Instance = this; }
+    }
 
     private void Start()
     {
@@ -14,7 +24,16 @@ public class ScrollViewController : MonoBehaviour
         rightButton.onClick.AddListener(MoveRight);
     }
 
-    private void MoveLeft()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Comma)) { MoveLeft(); }
+        if (Input.GetKeyDown(KeyCode.Period)) { MoveRight(); }
+
+        if (S1Button.activeSelf) { if (Input.GetKeyDown(KeyCode.Slash)) { UpgradeManager.Instance.Upgrade(); } }
+        if (S2Button.activeSelf) { if (Input.GetKeyDown(KeyCode.Slash)) { UpgradeManager.Instance.SkillUpgrade(); } }
+    }
+
+    public void MoveLeft()
     {
         // 현재 스크롤 위치
         float newPosition = scrollRect.content.anchoredPosition.x + moveAmount;
@@ -25,7 +44,7 @@ public class ScrollViewController : MonoBehaviour
         scrollRect.content.anchoredPosition = new Vector2(newPosition, scrollRect.content.anchoredPosition.y);
     }
 
-    private void MoveRight()
+    public void MoveRight()
     {
         // 현재 스크롤 위치
         float newPosition = scrollRect.content.anchoredPosition.x - moveAmount;

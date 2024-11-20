@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 // 2D 빛 깜빡임 이펙트
 public class LightEffect : MonoBehaviour
 {
-    private Light2D light;
+    private new Light2D light;
     private float originIntensity; // 기존 조명 밝기
 
 
