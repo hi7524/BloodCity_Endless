@@ -74,11 +74,18 @@ public class RocketLauncherBullet : Bullet
                 else
                 {
                     int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 10; // 공격력 받아오기
-                    obj.GetComponent<MobAI>().Damaged(attackDamage);
 
-                    GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
-                    damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
-                    damageText.transform.position = obj.transform.position;
+                    // MobAI 컴포넌트 가져오기
+                    MobAI mobAI = obj.GetComponent<MobAI>();
+
+                    if (mobAI != null) // Null 체크
+                    {
+                        obj.GetComponent<MobAI>().Damaged(attackDamage);
+
+                        GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
+                        damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
+                        damageText.transform.position = obj.transform.position;
+                    }
                 }
             }
 

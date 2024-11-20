@@ -80,10 +80,6 @@ public class Grenade : MonoBehaviour
                         damageText.GetComponentInChildren<DamageTextFloating>().damage = damage; // 텍스트로 띄울 공격력 전달
                         damageText.transform.position = obj.transform.position;
                     }
-                    else
-                    {
-                        Debug.LogWarning($"{obj.name}에 MobAI 컴포넌트가 없습니다."); // 경고 메시지 출력
-                    }
                 }
             }
 
