@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5106569444028650011}
   - component: {fileID: 1512056026462069567}
   - component: {fileID: 1028037422636369569}
+  - component: {fileID: 1387937932563574789}
   m_Layer: 0
   m_Name: Item_PlasmaGun
   m_TagString: Untagged
@@ -158,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -312030821
-  m_SortingLayer: 12
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 74c156bf6abec8c4ba28a5e05c015168, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -230,6 +231,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedWeapon: 1
 --- !u!114 &1028037422636369569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653754306255893358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66fd78d212bac64b946635e57bdbe3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1387937932563574789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
