@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8439370182123217332}
   - component: {fileID: 1385474053143878770}
   - component: {fileID: 2435183554502505949}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Item_ShaftGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

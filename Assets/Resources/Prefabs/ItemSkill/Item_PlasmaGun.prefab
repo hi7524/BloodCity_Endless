@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1512056026462069567}
   - component: {fileID: 1028037422636369569}
   - component: {fileID: 1387937932563574789}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Item_PlasmaGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

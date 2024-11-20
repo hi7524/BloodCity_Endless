@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 390884449726134798}
   - component: {fileID: 6374053692801904970}
   - component: {fileID: 4485547953728379222}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Item_RailGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

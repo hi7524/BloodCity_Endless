@@ -35,6 +35,8 @@ public class Mob_11_Bus_Dead : MonoBehaviour, IMobSkill
         yield return new WaitForSeconds(2f);
 
         AI.Dead();
+
+        UIManager.Instance.ToggleWindow(UIManager.Instance.gameWinWindow);
     }
 
 }
