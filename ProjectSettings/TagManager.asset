@@ -23,9 +23,9 @@ TagManager:
   - TileMap
   - Enemy
   - Player
-  - 
-  - 
-  - 
+  - Player_Skill
+  - Monster_Skill
+  - MoveBlock
   - 
   - 
   - 

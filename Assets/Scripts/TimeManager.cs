@@ -167,10 +167,10 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                         }
 
                         // 스폰 포인트 구함
-                        float xDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
-                        float yDir = (Random.value > 0.5f ? 1 : -1) * Random.value;
-                        float spawnX = (playerTransform.position.x + Random.Range(minXDistance * xDir, 45 * xDir)) + minXDistance * xDir / 3;
-                        float spawnY = (playerTransform.position.y + Random.Range(minYDistance * yDir, 45 * yDir)) + minYDistance * yDir / 3;
+                        float xDirZero = (Random.value > 0.5f ? minXDistance : 0) * Random.value;
+                        float yDirZero = (Random.value > 0.5f ? minYDistance : 0) * Random.value;
+                        float spawnX = (playerTransform.position.x + Random.Range(xDirZero * (Random.value > 0.5f ? 1 : -1), 45 * (Random.value > 0.5f ? 1 : -1)));
+                        float spawnY = (playerTransform.position.y + Random.Range(yDirZero * (Random.value > 0.5f ? 1 : -1), 45 * (Random.value > 0.5f ? 1 : -1)));
 
                         Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
@@ -185,8 +185,8 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
                     }
                 }
 
-                // 0.1초 대기
-                yield return new WaitForSeconds(0.1f);
+                // 0.2초 대기
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }

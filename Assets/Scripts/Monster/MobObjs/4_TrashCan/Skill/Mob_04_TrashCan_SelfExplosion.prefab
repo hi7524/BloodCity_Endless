@@ -4809,7 +4809,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9707,7 +9707,7 @@ GameObject:
   - component: {fileID: 6598245673633157174}
   - component: {fileID: 2795949440904782039}
   - component: {fileID: 2718047426395073818}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Mob_04_TrashCan_SelfExplosion
   m_TagString: Enemy_Skill
   m_Icon: {fileID: 0}
@@ -9769,7 +9769,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.408805, g: 0, b: 0, a: 0}

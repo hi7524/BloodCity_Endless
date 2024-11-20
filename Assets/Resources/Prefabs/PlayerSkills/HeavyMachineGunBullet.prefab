@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6282660254206094549}
   - component: {fileID: 3329104923669830313}
   - component: {fileID: 9173005859410921154}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: HeavyMachineGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 704111289
-  m_SortingLayer: 8
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.7607844, g: 0.6117647, b: 0.9607844, a: 1}

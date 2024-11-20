@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 368591661}
   - component: {fileID: 368591660}
   - component: {fileID: 368591659}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Beeper
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -536,6 +536,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 962711828397876604, guid: 1fa485b016bdcc749a0be442bd40bf32, type: 3}
+      propertyPath: minSpawnNums.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4837265831769584453, guid: 1fa485b016bdcc749a0be442bd40bf32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -589,67 +593,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa485b016bdcc749a0be442bd40bf32, type: 3}
---- !u!1001 &1088357590
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 83231135852118981, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_Name
-      value: Beast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137544730978826092, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6515110406311753733, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
-      propertyPath: isInstantSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b1d3d2b01450cd2428ad20390c7fb802, type: 3}
 --- !u!1 &1107297541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,5 +1148,4 @@ SceneRoots:
   - {fileID: 1345024801}
   - {fileID: 368591663}
   - {fileID: 1061253933}
-  - {fileID: 1088357590}
   - {fileID: 565739657}
