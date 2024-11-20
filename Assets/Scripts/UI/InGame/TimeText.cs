@@ -9,6 +9,9 @@ public class TimeText : MonoBehaviour
 
     public float sec;
 
+    public int minutes;
+    public float seconds;
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,8 +27,8 @@ public class TimeText : MonoBehaviour
         sec = TimeManager.Instance.nowTime;
 
         // 분과 초 계산
-        int minutes = Mathf.FloorToInt(sec / 60);
-        float seconds = sec % 60;
+        minutes = Mathf.FloorToInt(sec / 60);
+        seconds = sec % 60;
 
         if (seconds >= 59)
         {

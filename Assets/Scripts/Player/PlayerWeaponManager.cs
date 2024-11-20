@@ -15,13 +15,9 @@ public class PlayerWeaponManager : MonoBehaviour
     public List<GameObject> playerSkills = new List<GameObject>(); // 무기 목록
 
     public int count { get; private set; }     // 무기 개수
-    private PlayerState playerState;
     
     private void Start()
     {
-        // 컴포넌트 초기화
-        playerState = transform.parent.GetComponent<PlayerState>();
-
         count = 1 + playerSkills.Count; // 기본 소지 무기 개수                    
         playerSkills.Add(defaultSkill); // 기본 무기 추가
 
@@ -31,7 +27,7 @@ public class PlayerWeaponManager : MonoBehaviour
     private void Update()
     {
         // 플레이어가 생존해있을 때만 작동
-        if (playerState.isPlayerDead == false)
+        if (PlayerState.Instance.isPlayerDead == false)
         {
             SkillRotate();
         }

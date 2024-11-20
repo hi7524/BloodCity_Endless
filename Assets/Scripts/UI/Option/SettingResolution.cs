@@ -62,7 +62,7 @@ public class SettingResolution : MonoBehaviour
                 SetScreenResolution(1920, 1080);
                 break;
             case 1:
-                SetScreenResolution(1680, 1050);
+                SetScreenResolution(1680, 945);
                 break;
             case 2:
                 SetScreenResolution(1280, 720);
