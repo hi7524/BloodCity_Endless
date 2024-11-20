@@ -28,10 +28,10 @@ public class GameResult : MonoBehaviour
     // 결과창에 떠야 하는 것
     public void Result()
     {
-        result.text = $"생존 시간 :                {TimeManager.Instance.nowMin}:{TimeText.Instance.sec.ToString("00")}\n" +
-            $"도달한 레벨 :             {PlayerLevel.Instance.playerLevel} Lv\n" +
-            $"처치한 적 :         {KillText.Instance.kill} 마리\n" +
-            $"획득한 코인 :           {GameManager.Instance.coin} G\n";
+        result.text = $"생존 시간 :                <color=lime>{TimeManager.Instance.nowMin}:{TimeText.Instance.sec.ToString("00")}</color>\n" +
+            $"도달한 레벨 :             <color=lime>{PlayerLevel.Instance.playerLevel}</color> Lv\n" +
+            $"처치한 적 :         <color=lime>{KillText.Instance.kill}</color> 마리\n" +
+            $"획득한 코인 :           <color=lime>{GameManager.Instance.coin}</color> G\n";
 
         BackBtn.SetActive(true);
     }

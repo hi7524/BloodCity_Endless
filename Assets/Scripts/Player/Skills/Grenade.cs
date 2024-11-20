@@ -61,17 +61,30 @@ public class Grenade : MonoBehaviour
             // 데미지 반경 내의 오브젝트 감지
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, damageRadius, damageLayer);
 
-            // 감지된 적 데미지
-            foreach (Collider2D obj in hitEnemies)
+            if (hitEnemies.Length > 0) // hitEnemies가 null이 아닌지, 그리고 요소가 있는지 확인
             {
-                // 적 데미지
-                obj.GetComponent<MobAI>().Damaged(damage);
-                ActivateSkill(obj);
+                // 감지된 적 데미지
+                foreach (Collider2D obj in hitEnemies)
+                {
+                    // MobAI 컴포넌트 가져오기
+                    MobAI mobAI = obj.GetComponent<MobAI>();
 
-                // 텍스트 플로팅
-                GameObject damageText = Instantiate(damageTextPrf);                       // 텍스트 플로팅 프리팹 생성
-                damageText.GetComponentInChildren<DamageTextFloating>().damage = damage;  // 텍스트로 띄울 공격력 전달
-                damageText.transform.position = obj.transform.position;
+                    if (mobAI != null) // Null 체크
+                    {
+                        // 적 데미지
+                        mobAI.Damaged(damage);
+                        ActivateSkill(obj);
+
+                        // 텍스트 플로팅
+                        GameObject damageText = Instantiate(damageTextPrf); // 텍스트 플로팅 프리팹 생성
+                        damageText.GetComponentInChildren<DamageTextFloating>().damage = damage; // 텍스트로 띄울 공격력 전달
+                        damageText.transform.position = obj.transform.position;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"{obj.name}에 MobAI 컴포넌트가 없습니다."); // 경고 메시지 출력
+                    }
+                }
             }
 
             StartCoroutine(ActiveFalseGrenades());

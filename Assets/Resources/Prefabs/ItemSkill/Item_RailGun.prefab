@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6102755189285805167}
   - component: {fileID: 390884449726134798}
   - component: {fileID: 6374053692801904970}
-  m_Layer: 0
+  - component: {fileID: 4485547953728379222}
+  m_Layer: 10
   m_Name: Item_RailGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -312030821
-  m_SortingLayer: 9
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 21f50225e4fdbca43a278d7e6a3d4de7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 0.71875}
+    oldSize: {x: 2.909091, y: 1.0454545}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,6 +147,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 3
+--- !u!114 &4485547953728379222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512091598059888970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66fd78d212bac64b946635e57bdbe3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8379846206712237292
 GameObject:
   m_ObjectHideFlags: 0

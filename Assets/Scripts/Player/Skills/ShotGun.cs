@@ -33,7 +33,7 @@ public class ShotGun : MonoBehaviour
 
     private void Update()
     {
-        if (UIManager.Instance.gameEndWindow.activeSelf == false)
+        if (PlayerState.Instance.isPlayerDead == false)
         {
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 

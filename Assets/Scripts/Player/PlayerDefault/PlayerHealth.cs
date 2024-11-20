@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    private bool isDead = false;
+    public bool isDead = false;
 
 
     private void Awake()
@@ -101,7 +101,6 @@ public class PlayerHealth : MonoBehaviour
     // 플레이어 사망
     private void Die()
     {
-        Debug.Log("dd");
         playerState.SetPlayerDead(); // 플레이어 사망 처리
         animator.speed = 1.0f;       // 애니메이션 재생
         animator.SetTrigger("Dead"); // 사망 애니메이션 재생

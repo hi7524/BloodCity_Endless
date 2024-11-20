@@ -136,5 +136,5 @@ MonoBehaviour:
   detectLayer:
     serializedVersion: 2
     m_Bits: 2048
-  bulletDamage: 20
+  bulletDamage: 3
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
