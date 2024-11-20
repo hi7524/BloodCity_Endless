@@ -169,8 +169,9 @@ public class MobAI : MonoBehaviour
 
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
-
+                
                 RB.MovePosition(RB.position + dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                RB.velocity = Vector3.zero; 
 
             }
             else if (obj.MoveType == AI_MoveType.Distance) // 거리 조절
@@ -183,6 +184,7 @@ public class MobAI : MonoBehaviour
                     {
 
                         RB.MovePosition(RB.position + dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.velocity = Vector3.zero;
 
                     }
 
@@ -194,6 +196,7 @@ public class MobAI : MonoBehaviour
                     {
 
                         RB.MovePosition(RB.position - dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.velocity = Vector3.zero;
 
                     }
 
@@ -279,7 +282,7 @@ public class MobAI : MonoBehaviour
                 // 강화 코인 드랍
                 int coinPer = Random.Range(1, 101);
                 if (obj.upgradeCoinDropPer >= coinPer)
-                    Instantiate(Coin, gameObject.transform.position + new Vector3 (Random.Range(-2, 3), Random.Range(-2, 3), 0), gameObject.transform.rotation);
+                    Instantiate(Coin, gameObject.transform.position + new Vector3 (Random.Range(-1, 2), Random.Range(-1, 2), 0), gameObject.transform.rotation);
 
 
                 // 사망 처리 시작
@@ -349,8 +352,19 @@ public class MobAI : MonoBehaviour
 
                 Invoke("BodyAttack_Delay", bodyAttackTime);
             }
-
+    
         }
+
+        // 충돌로 인한 속도 변화 (힘이 아닌 속도)
+        Vector3 velocityChange = RB.velocity;
+
+        // 임펄스 (속도 변화의 크기)가 최대값을 초과하면 제한
+        if (velocityChange.magnitude > 5)
+        {
+            // 속도 제한
+            RB.velocity = velocityChange.normalized * 5;
+        }
+
     }
 
     void BodyAttack_Delay() // 몸빵 피해 대기

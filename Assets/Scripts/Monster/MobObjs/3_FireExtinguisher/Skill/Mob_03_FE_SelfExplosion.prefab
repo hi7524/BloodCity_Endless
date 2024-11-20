@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 572430660786755480}
   - component: {fileID: 9086336043619782933}
   - component: {fileID: 8594852285019936186}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Mob_03_FE_SelfExplosion
   m_TagString: Enemy_Skill
   m_Icon: {fileID: 0}
@@ -4892,7 +4892,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_RenderMode: 4
   m_MeshDistribution: 0
@@ -9811,7 +9811,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700796365
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0

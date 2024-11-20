@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mob_08_Camera_Flash_Coll : MonoBehaviour
@@ -15,10 +16,14 @@ public class Mob_08_Camera_Flash_Coll : MonoBehaviour
         if(coll.tag == "Player")
         {
 
-            playerState = coll.GetComponent<PlayerState>();
+            Mob_08_Camera_Flash_Sturn Sturn = coll.GetComponent<Mob_08_Camera_Flash_Sturn>();
 
-            speed = playerState.speed;
-            playerState.speed = 0;
+            if (Sturn == null)
+            {
+                coll.AddComponent<Mob_08_Camera_Flash_Sturn>().SetSturn(0.5f);
+            }
+            else
+                Sturn.AddSturn(0.5f);
 
             StartCoroutine(Remove());
 
