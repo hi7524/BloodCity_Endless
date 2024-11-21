@@ -33,7 +33,7 @@ public class Mob_11_Bus_Rush : MonoBehaviour, IMobSkill
 
         yield return new WaitForSeconds(1.3f);
 
-        AI.AddSpeed(550);
+        AI.AddSpeed(5000);
         AI.bodyAttackDamage = 40;
 
         AI.GetComponent<Animator>().SetInteger("Rush_Act", 2);
@@ -47,7 +47,7 @@ public class Mob_11_Bus_Rush : MonoBehaviour, IMobSkill
         AI.Mob.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
         AI.ResetSpeed();
-        AI.bodyAttackDamage = 30;
+        AI.bodyAttackDamage = 30;   
             
         yield return new WaitForSeconds(1.2f);
 
