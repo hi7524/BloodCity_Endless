@@ -154,7 +154,7 @@ public class MobAI : MonoBehaviour
                 // 오브젝트가 보이지 않으면 렌더링 비활성화
                 render.enabled = false;
             }
-
+                
             yield return new WaitForSeconds(0.001f); // 0.001초마다 반복 수행
         }
     }
@@ -162,6 +162,8 @@ public class MobAI : MonoBehaviour
     private void Routine_Move(float dis, Vector2 dir) // 이동 루틴
     {
 
+        float addSpeed = 2.75f;      
+    
         if(!isUsingSkillState && speed > 0) // 스킬 사용 상태가 아니고 이동 속도가 1이상일 때만
         {
 
@@ -169,8 +171,7 @@ public class MobAI : MonoBehaviour
 
             if (obj.MoveType == AI_MoveType.Normal) // 단순 추적
             {
-                
-                RB.MovePosition(RB.position + dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                transform.Translate((Vector3)dir * addSpeed * Time.deltaTime);
                 RB.velocity = Vector3.zero; 
 
             }
@@ -183,7 +184,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range / 20) < dis) // 거리 범위 밖이라면 접근
                     {
 
-                        RB.MovePosition(RB.position + dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        transform.Translate((Vector3)dir * addSpeed * Time.deltaTime); // 플레이어 방향으로 이동
                         RB.velocity = Vector3.zero;
 
                     }
@@ -195,7 +196,7 @@ public class MobAI : MonoBehaviour
                     if ((obj.Distance_Range * -1 / 20) >= dis) // 거리 범위 안이라면 도주
                     {
 
-                        RB.MovePosition(RB.position - dir * (1 + (speed * 0.075f)) * Time.deltaTime); // 플레이어 방향으로 이동
+                        transform.Translate((Vector3)dir * -addSpeed * Time.deltaTime); // 플레이어 방향으로 이동
                         RB.velocity = Vector3.zero;
 
                     }
