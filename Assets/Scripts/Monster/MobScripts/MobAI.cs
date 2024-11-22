@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
@@ -159,8 +160,8 @@ public class MobAI : MonoBehaviour
     private void Routine_Move(float dis, Vector2 dir) // 이동 루틴
     {
 
-        float addSpeed = 2.75f;      
-    
+        float addSpeed = speed * 0.01f * 2.75f;      
+        
         if(!isUsingSkillState && speed > 0) // 스킬 사용 상태가 아니고 이동 속도가 1이상일 때만
         {
 
@@ -264,6 +265,7 @@ public class MobAI : MonoBehaviour
         if(!isDead) // 사망 상태가 아닌 경우 
         {
 
+            render.DOColor(Color.red, 0.15f).OnComplete(()=> { render.DOColor(Color.white, 0.15f); });
             hp -= damage; // 피해
 
             if(hp <= 0) // 사망할 경우

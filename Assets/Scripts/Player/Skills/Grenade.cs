@@ -60,7 +60,7 @@ public class Grenade : MonoBehaviour
 
             // 데미지 반경 내의 오브젝트 감지
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, damageRadius, damageLayer);
-
+                    
             if (hitEnemies.Length > 0) // hitEnemies가 null이 아닌지, 그리고 요소가 있는지 확인
             {
                 // 감지된 적 데미지

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8574908325761208001}
   - component: {fileID: 1142632765333661397}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShrapnelGrenadeSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

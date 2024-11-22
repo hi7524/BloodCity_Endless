@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315699530824269904}
   - component: {fileID: 75400590649605470}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: IceGrenadeSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
