@@ -233,7 +233,7 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         SpawnBossMonster();
         yield return new WaitForSeconds(10);
         SpawnBossMonster();
-        yield return new WaitForSeconds(70);
+        yield return new WaitForSeconds(40);
         SpawnBossMonster(1);
     }
 

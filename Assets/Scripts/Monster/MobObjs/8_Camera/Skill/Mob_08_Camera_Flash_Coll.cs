@@ -15,7 +15,7 @@ public class Mob_08_Camera_Flash_Coll : MonoBehaviour
         
         if(coll.tag == "Player")
         {
-
+            print(coll.name);
             Mob_08_Camera_Flash_Sturn Sturn = coll.GetComponent<Mob_08_Camera_Flash_Sturn>();
 
             if (Sturn == null)

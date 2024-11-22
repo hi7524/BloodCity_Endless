@@ -25,8 +25,8 @@ public class PlasmaGunBullet : Bullet
         // 추적 대상 미정인 경우 대상 설정 (중복 방지용)
         if (!isTargetSet)
         {
-            targetEnemy = collision.gameObject; 
-            StartCoroutine(TickDamage());       // 적 피격
+            targetEnemy = collision.gameObject;
+            StartCoroutine(TickDamage(collision.GetComponent<MobAI>()));       // 적 피격
             isTargetSet = true;                 // 추적 대상 정보 (중복 방지용)
         }
     }
@@ -38,12 +38,16 @@ public class PlasmaGunBullet : Bullet
     }
 
     // 적에게 일정 간격마다 데미지
-    IEnumerator TickDamage()
+    IEnumerator TickDamage(MobAI obj)
     {
-        while (true)
-        {
 
-            
+        float i = bulletLifeTime * 2;
+
+        while (i <= 0)
+        {
+            obj.Damaged(attackDamage + 2);
+            yield return new WaitForSeconds(damageCoolDown);
+            i -= damageCoolDown;
         }
     }
 

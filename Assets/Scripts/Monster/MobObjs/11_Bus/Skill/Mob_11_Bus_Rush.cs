@@ -24,7 +24,7 @@ public class Mob_11_Bus_Rush : MonoBehaviour, IMobSkill
 
     private IEnumerator Delay(MobAI AI)
     {
-
+                
         AI.isUsingSkillState = true;
         AI.isSkillBanState = true;
 
@@ -33,9 +33,9 @@ public class Mob_11_Bus_Rush : MonoBehaviour, IMobSkill
 
         yield return new WaitForSeconds(1.3f);
 
-        AI.AddSpeed(5000);
+        AI.AddSpeed(500);
         AI.bodyAttackDamage = 40;
-
+                
         AI.GetComponent<Animator>().SetInteger("Rush_Act", 2);
         AI.isUsingSkillState = false;
 
