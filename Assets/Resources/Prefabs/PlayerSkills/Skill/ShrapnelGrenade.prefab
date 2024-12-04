@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7944591667433400877}
   m_Layer: 14
   m_Name: ShrapnelGrenade
-  m_TagString: Untagged
+  m_TagString: PlayerSkill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -224,20 +224,19 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
     }
 
 
-    private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴 (임시)
-    {
+    //private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴 (임시)
+    //{
 
-        yield return new WaitForSeconds(10);
-        SpawnBossMonster();
-        yield return new WaitForSeconds(10);
-        SpawnBossMonster();
-        yield return new WaitForSeconds(10);
-        SpawnBossMonster();
-        yield return new WaitForSeconds(40);
-        SpawnBossMonster(1);
-    }
+    //    yield return new WaitForSeconds(10);
+    //    SpawnBossMonster();
+    //    yield return new WaitForSeconds(10);
+    //    SpawnBossMonster();
+    //    yield return new WaitForSeconds(10);
+    //    SpawnBossMonster();
+    //    yield return new WaitForSeconds(40);
+    //    SpawnBossMonster(1);
+    //}
 
-    /*
     private IEnumerator SpawnBossMonster_Routine() // 보스 몬스터 스폰 코루틴
     {
 
@@ -256,26 +255,23 @@ public class TimeManager : MonoBehaviour // 타임 매니저 (스폰 기능 처�
         yield return new WaitForSeconds(180);
         SpawnBossMonster(1);
     }
-    */
 
-    private IEnumerator WeaponDrop_Coroutine() // 무기 드랍 코루틴 (임시)
-    {
-        for (int i = 1; i <= 4; i++)
-        {
-            yield return new WaitForSeconds(10);
-            leftWeaponDrop += 1;
-        }
-    }
-
-    /*
+    //private IEnumerator WeaponDrop_Coroutine() // 무기 드랍 코루틴 (임시)
+    //{
+    //    for (int i = 1; i <= 4; i++)
+    //    {
+    //        yield return new WaitForSeconds(10);
+    //        leftWeaponDrop += 1;
+    //    }
+    //}
     private IEnumerator WeaponDrop_Coroutine() // 무기 드랍 코루틴
     {
-        for(int i = 1; i <= 4; i++)
+        for (int i = 1; i <= 4; i++)
         {
             yield return new WaitForSeconds(180);
             leftWeaponDrop += 1;
         }
-    }*/
+    }
 
     void OnDestroy()
     {

@@ -265,7 +265,8 @@ public class MobAI : MonoBehaviour
         if(!isDead) // 사망 상태가 아닌 경우 
         {
 
-            render.DOColor(Color.red, 0.15f).OnComplete(()=> { render.DOColor(Color.white, 0.15f); });
+            var prevColor = render.color;
+            render.DOColor(Color.red, 0.15f).OnComplete(()=> { render.DOColor(prevColor, 0.15f); });
             hp -= damage; // 피해
 
             if(hp <= 0) // 사망할 경우
@@ -319,7 +320,7 @@ public class MobAI : MonoBehaviour
 
     public void Dead() // 몬스터 사망 처리
     {
-        Destroy(gameObject);
+
         //if (isInstantSpawn)
         //    Destroy(gameObject);
         //else
@@ -332,9 +333,23 @@ public class MobAI : MonoBehaviour
         //    }
         //}
 
-        if(!isInstantSpawn)
+        StartCoroutine(Deading());
+        
+        if (!isInstantSpawn)
             TimeManager.Instance.MonsterDead(transform.position);
     }
+
+    private IEnumerator Deading() // 파괴 대기
+    {
+
+        GetComponent<Animator>().Play("Dead");
+        GetComponent<CapsuleCollider2D>().enabled = false;
+
+        yield return new WaitForSeconds(0.4f); // 대기
+        Destroy(gameObject);
+
+    }
+
 
     private void OnCollisionEnter2D(Collision2D coll)
     {

@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 704111289
   m_SortingLayer: 10
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1513514080, guid: e9cf114dce5016046a8bdaadbeae16b6, type: 3}
+  m_Sprite: {fileID: 1546273566, guid: 7a132ee84a89b314a90bae3ef692eb37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.84, y: 1.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -178,7 +178,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 24576
+    m_Bits: 92160
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 7223

@@ -18,7 +18,7 @@ public class Mob_08_Camera_Flash_Sturn : MonoBehaviour
 
     public void SetSturn(float sec)
     {
-        PlayerState state = GetComponent<PlayerState>();
+        PlayerState state = PlayerState.Instance;
 
         originSpeed = state.speed;
         state.speed = 0;
@@ -30,7 +30,7 @@ public class Mob_08_Camera_Flash_Sturn : MonoBehaviour
     public void RemoveSturn()
     {
 
-        GetComponent<PlayerState>().speed = originSpeed;
+        PlayerState.Instance.speed += originSpeed;
         Destroy(GetComponent<Mob_08_Camera_Flash_Sturn>());
 
     }
