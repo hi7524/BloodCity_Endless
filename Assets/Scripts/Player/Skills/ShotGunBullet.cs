@@ -48,7 +48,7 @@ public class ShotGunBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 적과 충돌시
-        if (collision.CompareTag("Enemy") && collEnemy == null)
+        if (collision.CompareTag("Enemy"))
         {
             collEnemy = collision.gameObject;
             int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;

@@ -11,39 +11,39 @@ public class PlasmaGunBullet : Bullet
     GameObject targetEnemy; // 추적 대상
     private bool isTargetSet = false; // 중복 실행 방지 위한 변수
 
-    private void Start()
+    new private void Start()
     {
         base.Start();
         Destroy(gameObject, bulletLifeTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    new private void OnTriggerEnter2D(Collider2D collision)
     {
         // 기존 충돌 행동 실행
         base.OnTriggerEnter2D(collision); 
 
         // 추적 대상 미정인 경우 대상 설정 (중복 방지용)
-        if (!isTargetSet)
+        if (!isTargetSet && collision.tag == "Enemy")
         {
             targetEnemy = collision.gameObject;
+           
             StartCoroutine(TickDamage(collision.GetComponent<MobAI>()));       // 적 피격
             isTargetSet = true;                 // 추적 대상 정보 (중복 방지용)
         }
     }
 
-    private void Update()
+    new private void Update()
     {
         base.Update();
-        Debug.Log(targetEnemy);
+        //Debug.Log(targetEnemy);
     }
 
     // 적에게 일정 간격마다 데미지
     IEnumerator TickDamage(MobAI obj)
     {
-
         float i = bulletLifeTime * 2;
 
-        while (i <= 0)
+        while (i >= 0)
         {
             obj.Damaged(attackDamage + 2);
             yield return new WaitForSeconds(damageCoolDown);

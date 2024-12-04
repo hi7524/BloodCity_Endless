@@ -17,7 +17,7 @@ public class RocketLauncherBullet : Bullet
     private bool isExplosioned = false;  // 폭발 여부 (폭발 중복 방지 변수)
     private AudioSource audioSource;
 
-    private void Start()
+    new private void Start()
     {
         // 컴포넌트 초기화
         audioSource = GetComponent<AudioSource>();
@@ -25,7 +25,7 @@ public class RocketLauncherBullet : Bullet
         distanceThreshold = damageRadius / 3; // 데미지 차별을 주기 위해 영향 범위를 3개로 나눔
     }
 
-    public override void Fire()
+     public override void Fire()
     {
         // 폭발이 일어나지 않았을 경우에만 작동하도록 함
         if (!isExplosioned)
@@ -47,44 +47,47 @@ public class RocketLauncherBullet : Bullet
             // 범위 내 감지된 오브젝트 들에 영향
             foreach (Collider2D obj in hitObjects)
             {
-                // 중심점과 오브젝트 사이의 거리 계산
-                float distance = Vector2.Distance(transform.position, obj.transform.position);
-
-                // 거리에 따른 데미지 적용
-                if (distance <= distanceThreshold)
+                if(obj.tag == "Enemy")
                 {
-                    int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 25; // 공격력 받아오기
-                    obj.GetComponent<MobAI>().Damaged(attackDamage);
+                    // 중심점과 오브젝트 사이의 거리 계산
+                    float distance = Vector2.Distance(transform.position, obj.transform.position);
 
-                    GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
-                    damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
-                    damageText.GetComponentInChildren<DamageTextFloating>().textColor = new Color(1f, 0.8235f, 0f);
-                    damageText.transform.position = obj.transform.position;                         // 충돌 위치에 프리팹 생성
-                }
-                else if (distance <= distanceThreshold * 2)
-                {
-                    int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 15; // 공격력 받아오기
-                    obj.GetComponent<MobAI>().Damaged(attackDamage);
-
-                    GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
-                    damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
-                    damageText.GetComponentInChildren<DamageTextFloating>().textColor = new Color(1f, 0.6588f, 0f);
-                    damageText.transform.position = obj.transform.position;
-                }
-                else
-                {
-                    int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 10; // 공격력 받아오기
-
-                    // MobAI 컴포넌트 가져오기
-                    MobAI mobAI = obj.GetComponent<MobAI>();
-
-                    if (mobAI != null) // Null 체크
+                    // 거리에 따른 데미지 적용
+                    if (distance <= distanceThreshold)
                     {
+                        int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 25; // 공격력 받아오기
                         obj.GetComponent<MobAI>().Damaged(attackDamage);
 
                         GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
                         damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
+                        damageText.GetComponentInChildren<DamageTextFloating>().textColor = new Color(1f, 0.8235f, 0f);
+                        damageText.transform.position = obj.transform.position;                         // 충돌 위치에 프리팹 생성
+                    }
+                    else if (distance <= distanceThreshold * 2)
+                    {
+                        int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 15; // 공격력 받아오기
+                        obj.GetComponent<MobAI>().Damaged(attackDamage);
+
+                        GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
+                        damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
+                        damageText.GetComponentInChildren<DamageTextFloating>().textColor = new Color(1f, 0.6588f, 0f);
                         damageText.transform.position = obj.transform.position;
+                    }
+                    else
+                    {
+                        int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 10; // 공격력 받아오기
+
+                        // MobAI 컴포넌트 가져오기
+                        MobAI mobAI = obj.GetComponent<MobAI>();
+
+                        if (mobAI != null) // Null 체크
+                        {
+                            obj.GetComponent<MobAI>().Damaged(attackDamage);
+
+                            GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
+                            damageText.GetComponentInChildren<DamageTextFloating>().damage = attackDamage;  // 텍스트로 띄울 공격력 전달
+                            damageText.transform.position = obj.transform.position;
+                        }
                     }
                 }
             }

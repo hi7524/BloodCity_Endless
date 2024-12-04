@@ -34313,9 +34313,10 @@ GameObject:
   - component: {fileID: 6226584759196296521}
   - component: {fileID: 8200599491324580433}
   - component: {fileID: 4067507277189153613}
+  - component: {fileID: 1574289668444741590}
   m_Layer: 14
   m_Name: PlasmaGunBullet
-  m_TagString: Untagged
+  m_TagString: PlayerSkill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34385,13 +34386,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4096
   bulletDamage: 1
   trackingSpeed: 4
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
   damageCoolDown: 0.5
   bulletLifeTime: 5
   bulletParticle: {fileID: 559572412118351995}
+--- !u!50 &1574289668444741590
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364380648405826876}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &8465998952484064570
 GameObject:
   m_ObjectHideFlags: 0
