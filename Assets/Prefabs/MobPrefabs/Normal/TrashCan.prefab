@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 704111289
   m_SortingLayer: 10
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1465835067, guid: c4c96cab8ed56f94594b289bfd16f3ba, type: 3}
+  m_Sprite: {fileID: -1500352218, guid: 0e240cf70a1c43e499b6d9e8f3047438, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.16, y: 1.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
   Exp: {fileID: 4822529438760083684, guid: d231911613efb0346858202eb3892b37, type: 3}
   Coin: {fileID: 6841886002081756839, guid: 8abeedfae1f5c33428fa6c18168ce06e, type: 3}
   render: {fileID: 0}
-  isReverseSprite: 0
+  isReverseSprite: 1
   bodyAttackDamage: 0
 --- !u!114 &1613201732743645168
 MonoBehaviour:
