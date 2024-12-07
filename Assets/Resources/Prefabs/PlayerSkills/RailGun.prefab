@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1186619145
-  m_SortingLayer: 13
+  m_SortingLayer: 14
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 21f50225e4fdbca43a278d7e6a3d4de7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -197,9 +197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePos: {fileID: 5123388981025013392}
   bulletPrf: {fileID: 9056647222278653129, guid: 62bfa3e50a35d5a45bf8e41cb881fe00, type: 3}
-  coolDown: 0.2
-  shakeDuration: 0.1
-  shakeIntens: 0.1
+  coolDown: 2
+  shakeDuration: 1
+  shakeIntens: 1
   fireSound: {fileID: 8300000, guid: 07564c490717e4b409e04893665fef49, type: 3}
   fireParticle: {fileID: 306631181220382953}
 --- !u!1 &3712426569868857179

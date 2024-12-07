@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -141,7 +142,11 @@ public class LevelUpPreview : MonoBehaviour
         }
         ResetState();
         select.SetActive(false);
-        UIManager.Instance.ToggleWindow(UIManager.Instance.levelUpWindow); // 레벨업 창 토글
+
+        PlayerLevelUPManager.Instance.UP.Play("UPStat_off");
+        PlayerLevelUPManager.Instance.UP0.Play("UpgradeState0_off");
+        PlayerLevelUPManager.Instance.UP1.Play("UpgradeState1_off");
+        PlayerLevelUPManager.Instance.UP2.Play("UpgradeState2_off");
     }
 
     private void surviveStats()

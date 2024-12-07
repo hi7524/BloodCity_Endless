@@ -11,6 +11,11 @@ public class PlayerLevelUPManager : MonoBehaviour
     public Image[] upgradeCards; // UpgradeState
     public Button card3;
 
+    public Animator UP;
+    public Animator UP0;
+    public Animator UP1;
+    public Animator UP2;
+
     private void Awake()
     {
         if (Instance == null)
