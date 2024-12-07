@@ -11,6 +11,8 @@ public class LevelUpPreview : MonoBehaviour
 
     public string selectState;
 
+    public GameObject select;
+
     private void Awake()
     {
         if (Instance == null)
@@ -27,7 +29,8 @@ public class LevelUpPreview : MonoBehaviour
     public void ResetState()
     {
         DesText[0].text = PlayerState.Instance.maxHealth.ToString();
-        DesText[1].text = PlayerState.Instance.restorePerSec.ToString("F1");
+        if (PlayerState.Instance.currentIndex != 1) { DesText[1].text = PlayerState.Instance.restorePerSec.ToString("F1"); }
+        else if (PlayerState.Instance.currentIndex == 1) { DesText[1].text = "<color=red>-</color>"; };
         DesText[2].text = PlayerState.Instance.defense.ToString("F1");
         DesText[3].text = PlayerState.Instance.speed.ToString("F1");
         DesText[4].text = PlayerState.Instance.attackDamage.ToString("F1");
@@ -56,6 +59,8 @@ public class LevelUpPreview : MonoBehaviour
     /* 스탯 표시 */
     public void TextUpdate(int num)
     {
+        select.SetActive(true);
+
         ResetState();
 
         selectState = upgradeCards[num].GetComponent<Image>().sprite.name;
@@ -80,7 +85,7 @@ public class LevelUpPreview : MonoBehaviour
     private void survive()
     {
         UpdateStat(0, 3);          // maxHealth
-        UpdateStat(1, 0.1f);       // restorePerSec
+        if (PlayerState.Instance.currentIndex != 1) { UpdateStat(1, 0.1f); }; // restorePerSec
         UpdateStat(2, 0.5f);       // defense
         UpdateStatPercentage(3, 0.01f); // speed
     }
@@ -135,14 +140,14 @@ public class LevelUpPreview : MonoBehaviour
                 break;
         }
         ResetState();
-
+        select.SetActive(false);
         UIManager.Instance.ToggleWindow(UIManager.Instance.levelUpWindow); // 레벨업 창 토글
     }
 
     private void surviveStats()
     {
         PlayerState.Instance.maxHealth += 3;
-        PlayerState.Instance.restorePerSec += 0.1f;
+        if (PlayerState.Instance.currentIndex != 1) { PlayerState.Instance.restorePerSec += 0.1f; }
         PlayerState.Instance.defense += 0.5f;
         PlayerState.Instance.speed += PlayerState.Instance.speed * 0.01f;
     }
