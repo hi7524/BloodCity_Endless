@@ -32,6 +32,8 @@ public class Mob_04_TrashCan_SelfExplosion : MonoBehaviour, IMobSkill
     private IEnumerator Remove(GameObject obj, MobAI AI)
     {
 
+        AI.GetComponent<Animator>().Play("Dead");
+
         yield return new WaitForSeconds(3f);
 
         Destroy(obj);

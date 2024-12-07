@@ -29,7 +29,7 @@ public class Mob_07_Egg_Spawn : MonoBehaviour, IMobSkill
 
         AI.GetComponent<Animator>().SetBool("isUseSkill", true);
 
-        yield return new WaitForSeconds(1.6f);
+        yield return new WaitForSeconds(1.4f);
 
         Instantiate(data.SkillEffect, AI.gameObject.transform.position, AI.gameObject.transform.rotation);
 

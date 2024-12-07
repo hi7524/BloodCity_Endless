@@ -21,6 +21,7 @@ public class Mob_09_Beast_Rush : MonoBehaviour, IMobSkill
     public void Use(MobAI AI)
     {
 
+        AI.GetComponent<Animator>().SetBool("isUseSkill", true);
         StartCoroutine(MoveDelay(AI));
 
     }
@@ -45,6 +46,7 @@ public class Mob_09_Beast_Rush : MonoBehaviour, IMobSkill
         }
 
         AI.isUsingSkillState = false;
+        AI.GetComponent<Animator>().SetBool("isUseSkill", false);
 
     }
 
