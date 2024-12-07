@@ -38,7 +38,7 @@ public class Mob_09_Beast_Rush : MonoBehaviour, IMobSkill
             var dir = (AI.Target.transform.position - transform.position).normalized; // 방향 계산
             AI.render.flipX = (!AI.isReverseSprite ? dir.x > 0 : dir.x < 0); // 방향 전환
 
-            AI.Mob.GetComponent<Rigidbody2D>().AddForce(dir * 17.5f, ForceMode2D.Impulse);
+            AI.Mob.GetComponent<Rigidbody2D>().AddForce(dir * 12f, ForceMode2D.Impulse);
 
             yield return new WaitForSeconds(1f);
             AI.Mob.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
