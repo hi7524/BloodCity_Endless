@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319905c727080ae44b891f89e554df45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLifeTime: 1
-  minForce: 7
-  maxForce: 8
+  bulletLifeTime: 0.4
+  minForce: 14
+  maxForce: 15
   bulletDamage: 4
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}

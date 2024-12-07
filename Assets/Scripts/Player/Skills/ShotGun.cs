@@ -21,6 +21,7 @@ public class ShotGun : MonoBehaviour
     private Vector3 mousePos;
     private AudioSource audioSource;
 
+    public Animator animator;
 
     private void Start()
     {
@@ -59,8 +60,10 @@ public class ShotGun : MonoBehaviour
     
     IEnumerator Fire()
     {
+        animator.Play("ShotGun");
+
         // 흔들림 효과
-        transform.DOShakePosition(0.2f, 0.2f, 1, 1);
+        transform.DOShakePosition(0.2f, 0.4f, 1, 1);
 
         // 이펙트
         audioSource.clip = fireSound;
