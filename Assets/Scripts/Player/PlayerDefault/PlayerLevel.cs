@@ -55,6 +55,11 @@ public class PlayerLevel : MonoBehaviour
         UIManager.Instance.levelText.text = "Lv. " + playerLevel.ToString(); // 레벨 나타냄
         PlayerLevelUPManager.Instance.GenerateLevelUpCards();
         UIManager.Instance.ToggleWindow(UIManager.Instance.levelUpWindow); // 레벨업 창 활성화
+
+        PlayerLevelUPManager.Instance.UP0.Play("UpgradeState0");
+        PlayerLevelUPManager.Instance.UP.Play("UPStat");
+        PlayerLevelUPManager.Instance.UP1.Play("UpgradeState1");
+        PlayerLevelUPManager.Instance.UP2.Play("UpgradeState2");
     }
 
     // 레벨업을 위한 획득 경험치 계산
