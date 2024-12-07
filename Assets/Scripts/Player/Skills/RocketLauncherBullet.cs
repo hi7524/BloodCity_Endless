@@ -55,7 +55,7 @@ public class RocketLauncherBullet : Bullet
                     // 거리에 따른 데미지 적용
                     if (distance <= distanceThreshold)
                     {
-                        int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 25; // 공격력 받아오기
+                        int attackDamage = (int)(PlayerState.Instance.attackDamage) + 25; // 공격력 받아오기
                         obj.GetComponent<MobAI>().Damaged(attackDamage);
 
                         GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
@@ -65,7 +65,7 @@ public class RocketLauncherBullet : Bullet
                     }
                     else if (distance <= distanceThreshold * 2)
                     {
-                        int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 15; // 공격력 받아오기
+                        int attackDamage = (int)(PlayerState.Instance.attackDamage) + 15; // 공격력 받아오기
                         obj.GetComponent<MobAI>().Damaged(attackDamage);
 
                         GameObject damageText = Instantiate(damageTextPrf);                             // 텍스트 플로팅 프리팹 생성
@@ -75,7 +75,7 @@ public class RocketLauncherBullet : Bullet
                     }
                     else
                     {
-                        int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + 10; // 공격력 받아오기
+                        int attackDamage = (int)(PlayerState.Instance.attackDamage) + 10; // 공격력 받아오기
 
                         // MobAI 컴포넌트 가져오기
                         MobAI mobAI = obj.GetComponent<MobAI>();

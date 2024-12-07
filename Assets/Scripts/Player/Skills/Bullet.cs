@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
     protected void Start()
     {
-        attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage; // 공격력 계산
+        attackDamage = (int)(PlayerState.Instance.attackDamage) + bulletDamage; // 공격력 계산
     }
 
     protected void Update()

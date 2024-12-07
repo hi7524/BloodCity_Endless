@@ -63,7 +63,7 @@ public class HeavyMachineGunBullet : MonoBehaviour
         // 적과 충돌시
         if (collision.CompareTag("Enemy"))
         {
-            int attackDamage = (int)(FindObjectOfType<PlayerState>().attackDamage) + bulletDamage;
+            int attackDamage = (int)(PlayerState.Instance.attackDamage) + bulletDamage;
             collision.GetComponent<MobAI>().Damaged(attackDamage);
 
             GameObject damageText = Instantiate(damageTextPrf);

@@ -59,15 +59,27 @@ public class PlayerHealth : MonoBehaviour
     // 초당 체력 회복
     private void RestoreHealthPerSec()
     {
-        // 체력이 닳아있는 상태이고, 플레이어가 생존 해 있을 때
-        if (health < PlayerState.Instance.maxHealth && !PlayerState.Instance.isPlayerDead)
+        if (PlayerState.Instance.currentIndex != 1)
         {
-            storeSec += Time.deltaTime;
-
-            if (storeSec > 1f)
+            // 체력이 닳아있는 상태이고, 플레이어가 생존 해 있을 때
+            if (health < PlayerState.Instance.maxHealth && !PlayerState.Instance.isPlayerDead)
             {
-                health += PlayerState.Instance.restorePerSec; // 초당 회복력 만큼 회복
-                storeSec = 0;
+                storeSec += Time.deltaTime;
+
+                if (storeSec > 1f)
+                {
+                    // 현재 체력과 최대 체력의 차이를 계산
+                    float healthToRestore = PlayerState.Instance.restorePerSec;
+
+                    // 회복할 수 있는 최대량을 계산
+                    float maxRestoreAmount = PlayerState.Instance.maxHealth - health;
+
+                    // 실제 회복량을 결정
+                    float actualRestoreAmount = Mathf.Min(healthToRestore, maxRestoreAmount);
+
+                    health += actualRestoreAmount; // 초당 회복력 만큼 회복
+                    storeSec = 0;
+                }
             }
         }
     }
