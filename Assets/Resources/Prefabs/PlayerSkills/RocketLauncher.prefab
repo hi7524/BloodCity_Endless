@@ -198,8 +198,8 @@ MonoBehaviour:
   firePos: {fileID: 2884473656045293768}
   bulletPrf: {fileID: 2731628550382717676, guid: 162f765536ee3c34dafe5397f4ffc72a, type: 3}
   coolDown: 3
-  shakeDuration: 1
-  shakeIntens: 1
+  shakeDuration: 0.4
+  shakeIntens: 1.2
   fireSound: {fileID: 8300000, guid: 141d6630dc350184db3c705354dfa5b2, type: 3}
   fireParticle: {fileID: 6246943518624903402}
 --- !u!1 &4228847533353668541

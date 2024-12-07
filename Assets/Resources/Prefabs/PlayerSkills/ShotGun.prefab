@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3788867710914462936}
   - component: {fileID: 9135211518783736005}
   - component: {fileID: 7132399967319007416}
+  - component: {fileID: 4838021818872867965}
   m_Layer: 0
   m_Name: ShotGun
   m_TagString: Untagged
@@ -233,6 +234,28 @@ MonoBehaviour:
   bulletCount: 6
   fireSound: {fileID: 8300000, guid: aa630408a04f8174b8ef8e9b28e420b6, type: 3}
   fireParticle: {fileID: 5015238748509573498}
+  animator: {fileID: 4838021818872867965}
+--- !u!95 &4838021818872867965
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430159223837483755}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2186e39577ef7bf49a4e1c96f2675987, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5140961571901705528
 PrefabInstance:
   m_ObjectHideFlags: 0

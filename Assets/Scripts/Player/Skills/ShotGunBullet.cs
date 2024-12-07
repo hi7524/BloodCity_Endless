@@ -3,9 +3,9 @@ using UnityEngine;
 // 샷건(플레이어 기본 스킬)의 총알 구현 → 날아감
 public class ShotGunBullet : MonoBehaviour
 {
-    public float bulletLifeTime = 1.0f; // 총알이 유지될 시간
-    public float minForce = 4f; // 최소 힘(속도)
-    public float maxForce = 5;  // 최고 힘(속도)
+    public float bulletLifeTime = 0.4f; // 총알이 유지될 시간
+    public float minForce = 14; // 최소 힘(속도)
+    public float maxForce = 15;  // 최고 힘(속도)
     public int bulletDamage = 3; // 공격 데미지
     public GameObject damageTextPrf;
 
