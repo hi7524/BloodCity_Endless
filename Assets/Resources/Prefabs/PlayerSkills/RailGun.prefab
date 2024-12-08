@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4006668150153523935}
   - component: {fileID: 46553962685235625}
   - component: {fileID: 8907953906100694535}
+  - component: {fileID: 893917561384464910}
   m_Layer: 0
   m_Name: RailGun
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1186619145
   m_SortingLayer: 14
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 21f50225e4fdbca43a278d7e6a3d4de7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0808e59e4d25d4b4fa1f5a82e304c20b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -202,6 +203,29 @@ MonoBehaviour:
   shakeIntens: 0.9
   fireSound: {fileID: 8300000, guid: 07564c490717e4b409e04893665fef49, type: 3}
   fireParticle: {fileID: 306631181220382953}
+  animator: {fileID: 893917561384464910}
+  aniName: RailGun
+--- !u!95 &893917561384464910
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805586469017882945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34bbe4076651c3f4a8eed3a84ed89589, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3712426569868857179
 GameObject:
   m_ObjectHideFlags: 0
