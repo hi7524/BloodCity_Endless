@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6549582574297493271}
   - component: {fileID: 6577742596137212776}
   - component: {fileID: 1043601885763561261}
+  - component: {fileID: 420559640725489673}
   m_Layer: 0
   m_Name: ShaftGun
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1186619145
   m_SortingLayer: 14
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 8082447081b7a9e40b1d389fe8f08b2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8953ca8067953d42b0757cc48726a8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -202,6 +203,29 @@ MonoBehaviour:
   shakeIntens: 0.6
   fireSound: {fileID: 8300000, guid: fc21263bf13af30498e168db08f7f4a1, type: 3}
   fireParticle: {fileID: 8393824633853216995}
+  animator: {fileID: 420559640725489673}
+  aniName: ShaftGun
+--- !u!95 &420559640725489673
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516594078548486106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87842d6fb14af144e90056b3dd30aaf4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6500947548680875246
 GameObject:
   m_ObjectHideFlags: 0

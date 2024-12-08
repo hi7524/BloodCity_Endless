@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8673525490646732493}
   - component: {fileID: 6307358264442912196}
   - component: {fileID: 8901112893007470495}
+  - component: {fileID: 436528527602177003}
   m_Layer: 0
   m_Name: PlasmaGun
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1186619145
   m_SortingLayer: 14
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 74c156bf6abec8c4ba28a5e05c015168, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b108f62457ce3e442be4cdfe5876c480, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -202,6 +203,29 @@ MonoBehaviour:
   shakeIntens: 0.9
   fireSound: {fileID: 8300000, guid: 564e570a18cd5fa468b699ff4fbe161e, type: 3}
   fireParticle: {fileID: 6841487506899394728}
+  animator: {fileID: 436528527602177003}
+  aniName: PlasmaGun
+--- !u!95 &436528527602177003
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288623194472715681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09b11c384c6e02b4bb26c1ee69c5af9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &839129149824152425
 GameObject:
   m_ObjectHideFlags: 0

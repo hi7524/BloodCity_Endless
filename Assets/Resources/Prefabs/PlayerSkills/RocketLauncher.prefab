@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4263305429940897957}
   - component: {fileID: 2732895067552297840}
   - component: {fileID: 6587958935527979627}
+  - component: {fileID: 3709720585635632511}
   m_Layer: 0
   m_Name: RocketLauncher
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1186619145
   m_SortingLayer: 14
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 95e6fbf23fe2e364995960c1bb96a39e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2728cdfa7d29be74085eb6b4a51d49eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -202,6 +203,29 @@ MonoBehaviour:
   shakeIntens: 1.2
   fireSound: {fileID: 8300000, guid: 141d6630dc350184db3c705354dfa5b2, type: 3}
   fireParticle: {fileID: 6246943518624903402}
+  animator: {fileID: 3709720585635632511}
+  aniName: RocketLauncher
+--- !u!95 &3709720585635632511
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153729896246787191}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9fa62ea2a00af044bb92943551bd14e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4228847533353668541
 GameObject:
   m_ObjectHideFlags: 0

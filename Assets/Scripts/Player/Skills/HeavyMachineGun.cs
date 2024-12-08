@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using System.Collections;
 
 // 플레이어 머신건 스킬
 public class HeavyMachineGun : MonoBehaviour
@@ -17,6 +18,10 @@ public class HeavyMachineGun : MonoBehaviour
     private float curCoolDown = 0;
     private Transform closetTarget; // 추적 대상
     private AudioSource audioSource;
+
+    public Animator animator;
+    public string aniName;
+    private bool isAnimating = false;
 
     private void Awake()
     {
@@ -98,7 +103,28 @@ public class HeavyMachineGun : MonoBehaviour
             // 총알 생성
             Instantiate(bulletPrf, firePos.position, Quaternion.identity);
             curCoolDown = 0;
+
+            PlayAnimation();
         }
+    }
+
+    public void PlayAnimation()
+    {
+        if (!isAnimating)
+        {
+            StartCoroutine(PlayAnimationCoroutine());
+        }
+    }
+
+    private IEnumerator PlayAnimationCoroutine()
+    {
+        isAnimating = true; // 애니메이션이 시작됨을 표시
+        animator.Play(aniName);
+
+        // 애니메이션이 끝날 때까지 대기
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        isAnimating = false; // 애니메이션이 끝났음을 표시
     }
 
 
