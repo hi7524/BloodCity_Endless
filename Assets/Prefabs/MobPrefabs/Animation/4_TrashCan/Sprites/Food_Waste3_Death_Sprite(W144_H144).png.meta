@@ -180,6 +180,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Food_Waste3_Death_Sprite(W144_H144)_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e5b51c8ced16a45a5ca6d524c7a8a6
+      internalID: 994890539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -195,6 +216,7 @@ TextureImporter:
       Food_Waste3_Death_Sprite(W144_H144)_1: -490428077
       Food_Waste3_Death_Sprite(W144_H144)_2: 1882091614
       Food_Waste3_Death_Sprite(W144_H144)_3: 420795375
+      Food_Waste3_Death_Sprite(W144_H144)_4: 994890539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
