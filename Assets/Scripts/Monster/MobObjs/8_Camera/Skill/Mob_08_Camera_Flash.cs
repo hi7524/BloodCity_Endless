@@ -30,13 +30,13 @@ public class Mob_08_Camera_Flash : MonoBehaviour, IMobSkill
 
         obj = Instantiate(data.SkillEffect, AI.gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, -90)), AI.transform);
 
-        obj.transform.localPosition = new Vector3(-2, 0.45f);
+        obj.transform.localPosition = new Vector3(-2.53f, 0.41f);
 
         ChaRen = obj.GetComponent<SpriteRenderer>();
         ParRen = AI.GetComponent<SpriteRenderer>();
 
         ChaRen.flipX = ParRen.flipX;
-        obj.transform.localPosition = new Vector3(ParRen.flipX ? 2 : -2, 0.45f);
+        obj.transform.localPosition = new Vector3(ParRen.flipX ? 2.53f : -2.53f, 0.41f);
         obj.transform.localScale = new Vector3(3, ParRen.flipX ? -4 : 4);
 
         isEnabled = true;
@@ -52,9 +52,9 @@ public class Mob_08_Camera_Flash : MonoBehaviour, IMobSkill
         {
 
             ChaRen.flipX = ParRen.flipX;
-            obj.transform.localPosition = new Vector3(ParRen.flipX ? 2 : -2, 0.45f);
+            obj.transform.localPosition = new Vector3(ParRen.flipX ? 2.53f : -2.53f, 0.41f);
             obj.transform.localScale = new Vector3(3, ParRen.flipX ? -4 : 4);
-       
+
         }
 
     }
