@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mob_05_LoudSpeaker_Speed_Coll : MonoBehaviour
@@ -18,13 +19,10 @@ public class Mob_05_LoudSpeaker_Speed_Coll : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D coll)
     {
         
-        if(coll.tag == "Enemy")
+        if(coll.tag == "Enemy" && coll.GetComponent<Mob_05_LoudSpeaker_Speed_Add>() == null)
         {
 
-            MobAI obj = coll.GetComponent<MobAI>();
-
-            if (obj != null && obj.obj.mobName != "확성기")
-                obj.SetSpeed(obj.speed * 1.2f);
+            coll.GetComponent<MobAI>().AddComponent<Mob_05_LoudSpeaker_Speed_Add>();
 
         }
 
