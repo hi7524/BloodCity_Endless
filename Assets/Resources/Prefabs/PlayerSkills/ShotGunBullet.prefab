@@ -164,5 +164,5 @@ MonoBehaviour:
   bulletLifeTime: 0.4
   minForce: 14
   maxForce: 15
-  bulletDamage: 4
+  bulletDamage: 2
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}

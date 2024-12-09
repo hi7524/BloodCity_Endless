@@ -10,7 +10,7 @@ public class DragItems : MonoBehaviour
 
     private void Magnet()
     {
-        detectRange = PlayerState.Instance.magnetism * 0.3f; // 자석 범위 설정
+        detectRange = PlayerState.Instance.magnetism * 1f; // 자석 범위 설정
 
         if (detectRange > 3)
         {

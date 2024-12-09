@@ -50,7 +50,7 @@ MonoBehaviour:
   damageRadius: 5
   damageLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4096
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
 --- !u!212 &1306892545731093328
 SpriteRenderer:
