@@ -198,6 +198,13 @@ public class MobAI : MonoBehaviour
                         RB.velocity = Vector3.zero;
 
                     }
+                    else // 거리 범위 밖이라면 추적
+                    {
+
+                        transform.Translate((Vector3)dir * addSpeed * Time.deltaTime); // 플레이어 방향으로 이동
+                        RB.velocity = Vector3.zero;
+
+                    }
 
                 }
 
@@ -265,8 +272,7 @@ public class MobAI : MonoBehaviour
         if(!isDead) // 사망 상태가 아닌 경우 
         {
 
-            var prevColor = render.color;
-            render.DOColor(Color.red, 0.15f).OnComplete(()=> { render.DOColor(prevColor, 0.15f); });
+            render.material.DOColor(Color.red, 0.15f).OnComplete(()=> { render.material.DOColor(Color.white, 0.15f); });
             hp -= damage; // 피해
 
             if(hp <= 0) // 사망할 경우

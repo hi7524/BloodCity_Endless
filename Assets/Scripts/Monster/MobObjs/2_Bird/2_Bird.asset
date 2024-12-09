@@ -17,8 +17,8 @@ MonoBehaviour:
   spawnPers: 00000000000000000000000000000000000000000a0000000a0000000a0000000a0000000000000000000000000000000a0000000a0000000a00000000000000
   MoveType: 1
   AttackType: 1
-  Attack_Range: 20
-  Distance_Range: 20
+  Attack_Range: 7.5
+  Distance_Range: 7.5
   minHealth: 1
   maxHealth: 5
   attackDamage: 7
