@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grenadeCount: 8
   grenadePrf: {fileID: 804007808375237664, guid: 6b19f3bc9322fc043b40623f7afab2ec, type: 3}
-  radius: 4
+  radius: 5
   coolDown: 10
