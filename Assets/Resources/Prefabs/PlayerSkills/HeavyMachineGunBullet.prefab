@@ -139,6 +139,7 @@ MonoBehaviour:
     m_Bits: 4096
   bulletDamage: 1
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
+  moveSpeed: 20
 --- !u!50 &6721918967048856564
 Rigidbody2D:
   serializedVersion: 4

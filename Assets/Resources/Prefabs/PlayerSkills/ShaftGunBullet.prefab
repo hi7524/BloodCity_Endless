@@ -137,8 +137,9 @@ MonoBehaviour:
   detectLayer:
     serializedVersion: 2
     m_Bits: 4096
-  bulletDamage: 3
+  bulletDamage: 5
   damageTextPrf: {fileID: 7746119750384025576, guid: 31963496c40f20346bff8585ef60c5bc, type: 3}
+  moveSpeed: 10
 --- !u!50 &8067941402078995600
 Rigidbody2D:
   serializedVersion: 4

@@ -24,6 +24,9 @@ public class PlayerData
     public int level = 1;
     public int engauge;
     public bool[] skillON = new bool[3]; // 각 SkillStates의 업그레이드 여부
+
+    public bool gun;
+    public bool min; // 이게 켜져있으면 3분 스폰으로 맞춰지게
 }
 
 public class DataManager : MonoBehaviour
