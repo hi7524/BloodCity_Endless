@@ -5,11 +5,11 @@ public class UI_StartScene : MonoBehaviour
 {
     public static UI_StartScene Instance { get; private set; }
 
-    [SerializeField] GameObject mainWindow; // 메인 창
-    [SerializeField] GameObject pauseWindow; // 옵션 창
-    [SerializeField] GameObject StageSelect; // 스테이지 선택 창
-    [SerializeField] GameObject chaWindow; // 캐릭터 창
-    [SerializeField] GameObject equipWindow; // 장비 창
+    [SerializeField] public GameObject mainWindow; // 메인 창
+    [SerializeField] public GameObject pauseWindow; // 옵션 창
+    [SerializeField] public GameObject StageSelect; // 스테이지 선택 창
+    [SerializeField] public GameObject chaWindow; // 캐릭터 창
+    [SerializeField] public GameObject equipWindow; // 장비 창
 
     private void Awake()
     {
