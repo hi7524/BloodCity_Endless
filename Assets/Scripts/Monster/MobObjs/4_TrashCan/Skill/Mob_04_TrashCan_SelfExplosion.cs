@@ -25,14 +25,12 @@ public class Mob_04_TrashCan_SelfExplosion : MonoBehaviour, IMobSkill
 
         StartCoroutine(Remove(Fire, AI));
 
-        AI.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0);
+        AI.GetComponent<Animator>().Play("Dead", 0);
 
     }
 
     private IEnumerator Remove(GameObject obj, MobAI AI)
     {
-
-        AI.GetComponent<Animator>().Play("Dead");
 
         yield return new WaitForSeconds(3f);
 
