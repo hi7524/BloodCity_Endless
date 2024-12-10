@@ -312,11 +312,7 @@ public class MobAI : MonoBehaviour
                 }
 
                 if (isDying) // 별도의 예외 없이 사망하는 경우 사망 처리
-                {
-
                     Dead();
-
-                }
 
             }
 
