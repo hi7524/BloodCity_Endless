@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrf: {fileID: 9056647222278653129, guid: 68ceab182fc509946824e52de68a5f9d, type: 3}
   bulletTrans: {fileID: 7940915440316689051}
-  coolDown: 1
+  coolDown: 0.5
   bulletCount: 6
   fireSound: {fileID: 8300000, guid: aa630408a04f8174b8ef8e9b28e420b6, type: 3}
   fireParticle: {fileID: 5015238748509573498}

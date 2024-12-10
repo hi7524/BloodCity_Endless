@@ -152,7 +152,7 @@ public class LevelUpPreview : MonoBehaviour
     private void surviveStats()
     {
         PlayerState.Instance.maxHealth += 3;
-        if (PlayerState.Instance.currentIndex != 1) { PlayerState.Instance.restorePerSec += 0.1f; }
+        if (PlayerState.Instance.currentIndex != 1) { PlayerState.Instance.restorePerSec += 0.05f; }
         PlayerState.Instance.defense += 0.5f;
         PlayerState.Instance.speed += PlayerState.Instance.speed * 0.01f;
     }

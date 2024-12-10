@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Baz
   maxHealth: 0
-  restorePerSec: 5
+  restorePerSec: 2
   defense: 0
   speed: 50
   attackDamage: 0
