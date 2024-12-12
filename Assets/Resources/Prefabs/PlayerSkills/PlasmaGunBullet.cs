@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlasmaGunBullet : Bullet
 {
     public float damageCoolDown = 0.5f;  // 틱 데미지 간격
-    public float bulletLifeTime = 5f;
+    public float bulletLifeTime = 2f;
     public ParticleSystem bulletParticle;
 
     GameObject targetEnemy; // 추적 대상
@@ -14,7 +14,6 @@ public class PlasmaGunBullet : Bullet
     new private void Start()
     {
         base.Start();
-        Destroy(gameObject, bulletLifeTime);
     }
 
     new private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +28,8 @@ public class PlasmaGunBullet : Bullet
            
             StartCoroutine(TickDamage(collision.GetComponent<MobAI>()));       // 적 피격
             isTargetSet = true;                 // 추적 대상 정보 (중복 방지용)
+
+            Destroy(gameObject, bulletLifeTime);
         }
     }
 
