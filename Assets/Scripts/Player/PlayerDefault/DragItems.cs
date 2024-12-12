@@ -10,11 +10,15 @@ public class DragItems : MonoBehaviour
 
     private void Magnet()
     {
-        detectRange = PlayerState.Instance.magnetism * 0.3f; // 자석 범위 설정
-
-        if (detectRange > 3)
+        detectRange = PlayerState.Instance.magnetism * 1f; // 자석 범위 설정
+        
+        if (detectRange > 12)
         {
-            magnetStrength = detectRange * 0.1f;   // 자석 힘 설정 (빨아들이는 빠르기)
+            magnetStrength = 8;   // 자석 힘 설정 (빨아들이는 빠르기)
+        }
+        else
+        {
+            magnetStrength = 6;
         }
     } 
 
